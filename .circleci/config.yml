@@ -1,0 +1,90 @@
+version: 2.1
+
+anchors:
+  workspace_root: &workspace_root ~/repo
+
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+
+jobs:
+  build:
+    executor: build_env
+    steps:
+      - setup
+      - lint
+      - run_tests
+  deploy:
+    executor: build_env
+    steps:
+      - *attach_workspace
+      - build_output
+      - deploy
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      # - deploy:
+      #     filters:
+      #       branches:
+      #         only: main
+      #     requires:
+      #       - build
+
+commands:
+  setup:
+    steps:
+      - checkout
+      - run: npm install
+  lint:
+    steps:
+      - run: npm run lint
+  run_tests:
+    steps:
+      - run:
+          name: Run unit tests
+          command: npm run test:unit
+      - persist_to_workspace:
+          root: *workspace_root # absolute path or relative to working_directory
+          paths: . # paths relative to the workspace root
+  build_output:
+    steps:
+      - run: npm run build:jsdoc
+      - persist_to_workspace:
+          root: *workspace_root # absolute path or relative to working_directory
+          paths: . # paths relative to the workspace root
+
+  deploy:
+    description: "Deploy to Netlify"
+    parameters:
+      production:
+        type: boolean
+        default: false
+    steps:
+      # - when:
+      #     condition: <<parameters.production>>
+      #     steps:
+      - run:
+          name: Install netlify-cli
+          command: npm install netlify-cli
+      - run:
+          name: setup deploy dir
+          command: |
+            mv jsdoc netlify/
+      - run:
+          name: Netlify production deploy
+          command: |
+            node_modules/netlify-cli/bin/run deploy --prod \
+              --auth $NETLIFY_AUTH_TOKEN \
+              --dir netlify \
+              --site $NETLIFY_SITE_ID \
+              --message "$CIRCLE_PROJECT_REPONAME deployed from CircleCI"
+
+executors:
+  build_env:
+    docker:
+      - image: cimg/node:15.4.0
+    working_directory: ~/repo
+    environment: CI:true

@@ -1,0 +1,117 @@
+{
+  "identified_by": [
+    {
+      "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/08d45f65-b135-4c93-a009-ae5587cca9f2",
+      "type": "Name",
+      "_label": "Group Title",
+      "content": "Irises",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417193",
+          "type": "Type",
+          "_label": "Titles (General, Names)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300417227",
+          "type": "Type",
+          "_label": "Alternate Title"
+        },
+        {
+          "id": "https://data.getty.edu/museum/ontology/linked-data/tms/object/titles/group-title",
+          "type": "Type",
+          "_label": "Group Title"
+        }
+      ]
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/08d45f65-b135-4c93-a009-ae5587cca9f2",
+      "type": "Name",
+      "_label": "Group Title",
+      "content": "Lirios",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417193",
+          "type": "Type",
+          "_label": "Titles (General, Names)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300417227",
+          "type": "Type",
+          "_label": "Alternate Title"
+        },
+        {
+          "id": "https://data.getty.edu/museum/ontology/linked-data/tms/object/titles/group-title",
+          "type": "Type",
+          "_label": "Group Title"
+        }
+      ],
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300389311",
+          "type": "Language",
+          "_label": "Spanish (language)"
+        }
+      ]
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/08d45f65-b135-4c93-a009-ae5587cca9f2",
+      "type": "Name",
+      "_label": "Title",
+      "content": "Iris",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417193",
+          "type": "Type",
+          "_label": "Titles (General, Names)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300417227",
+          "type": "Type",
+          "_label": "Alternate Title"
+        },
+        {
+          "id": "https://data.getty.edu/museum/ontology/linked-data/tms/object/titles/group-title",
+          "type": "Type",
+          "_label": "Group Title"
+        }
+      ],
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300388306",
+          "type": "Language",
+          "_label": "French (language)"
+        }
+      ]
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/08d45f65-b135-4c93-a009-ae5587cca9f2",
+      "type": "Name",
+      "_label": "Title",
+      "content": "홍채",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417193",
+          "type": "Type",
+          "_label": "Titles (General, Names)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300417227",
+          "type": "Type",
+          "_label": "Alternate Title"
+        },
+        {
+          "id": "https://data.getty.edu/museum/ontology/linked-data/tms/object/titles/group-title",
+          "type": "Type",
+          "_label": "Group Title"
+        }
+      ],
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300388633",
+          "type": "Language",
+          "_label": "Korean (language)"
+        }
+      ]
+    }
+  ]
+}
