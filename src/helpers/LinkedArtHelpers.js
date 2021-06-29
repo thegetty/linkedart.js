@@ -7,8 +7,10 @@
 
 import * as languageHelpers from "./LanguageHelpers";
 import { checkEmptyField } from "./BasicHelpers";
+
 const CLASSIFIED_AS = "classified_as";
 const CLASSIFIED_BY = "classified_by";
+const PART = "part";
 const REFERRED_TO_BY = "referred_to_by";
 
 /**
@@ -430,4 +432,44 @@ export function removeDuplicatesById(_array) {
   });
 
   return result;
+}
+
+/**
+ * Checks to see if an object's requested field has a part and returns the value. Otherwise, returns either the requested field (if availalble)
+ * or an empty array (if neither is availalbe)
+
+ * @param {Object} object - the LinkedArt Object
+ * @param {String} field  - the requested field to search for parts
+ * 
+ * @example (an example of the data)
+ *  "produced_by": {
+      "id": "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production",
+      "type": "Production",
+      "_label": "Production of Artwork",
+      "part": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production/1663467e-66d8-4170-91b0-2937ba6447e6/producer-description",
+          "type": "LinguisticObject",
+          "_label": "Artist/Maker (Producer) Description",
+          "classified_as": [
+          ]
+        },
+      ]
+    }
+ * 
+ * @return {Array} if the part was found, return it. if not, but the field was found, return the whole field requested in an array.
+ * otherwise, return an empty array.
+ */
+export function getObjectParts(object, field) {
+  const fieldRequested = object[field];
+  if (!fieldRequested) {
+    return [];
+  }
+
+  let fieldPart = checkEmptyField(fieldRequested, PART);
+  if (fieldPart.length == 0) {
+    return [fieldRequested];
+  }
+
+  return fieldPart;
 }
