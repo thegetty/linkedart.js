@@ -17,6 +17,16 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.9.2]
+
+### Added
+
+- Added `getObjectParts` to LinkedArtHelpers - this helper takes in a LinkedArt object and a requested field. It checks to see if that field exists and if it has any `part` values. It will either return an array of parts, the requested field or an empty array.
+
+## [0.9.1]
+
+- This version was `unpublished`.
+
 ## [0.9.0]
 
 - Initial fork from Getty LinkedArt Library.
