@@ -17,6 +17,12 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.9.1]
+
+### Added
+
+- added `getObjectParts` to LinkedArtHelpers
+
 ## [0.9.0]
 
 - Initial fork from Getty LinkedArt Library.
