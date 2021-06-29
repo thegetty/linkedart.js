@@ -1,5 +1,5 @@
 {
-  "name": "@thegetty/linked-art-helpers",
+  "name": "@thegetty/linkedart.js",
   "version": "0.9.0",
   "scripts": {
     "test:unit": "jest",
@@ -40,9 +40,9 @@
   "description": "Library of functions for parsing Linked Art (https://linked.art/) data for the Getty's Research Applications Development Team.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thegetty/linked-art-helpers.git"
+    "url": "git+https://github.com/thegetty/linkedart.js.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/thegetty/linked-art-helpers#readme"
+  "homepage": "https://github.com/thegetty/linkedart.js#readme"
 }
