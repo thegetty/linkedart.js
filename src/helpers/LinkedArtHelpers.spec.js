@@ -4,12 +4,15 @@ import {
   getValueByClassification,
 } from "./LinkedArtHelpers";
 import * as helpers from "./LinkedArtHelpers";
+import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
 import titan from "../data/mocks/dff75e58-f8b9-4507-8ab7-5d948451dea7.json";
 import stagBeetle from "../data/mocks/a69d5696-70c2-56ed-9f82-fb2e69311e5d";
+
 let aat = {
   PREFERRED_TERM: "http://vocab.getty.edu/aat/300404670",
   SEQUENCE_POSITION: "http://vocab.getty.edu/aat/300010269",
 };
+
 describe("classifiedAs", () => {
   const sampleData = {
     identified_by: [
@@ -542,5 +545,18 @@ describe("tests resourceByClassifications", () => {
         "http://vocab.getty.edu/aat/300404670",
       ])
     ).toEqual([]);
+  });
+});
+
+describe("tests getObjectParts", () => {
+  it("gets the expected part of an object", () => {
+    const objectParts = helpers.getObjectParts(fables, "produced_by");
+    expect(objectParts[0].id).toEqual(
+      "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production/1663467e-66d8-4170-91b0-2937ba6447e6"
+    );
+  });
+  it("returns an empty erray if no fields match", () => {
+    const objectParts = helpers.getObjectParts({}, "produced_by");
+    expect(objectParts).toEqual([]);
   });
 });
