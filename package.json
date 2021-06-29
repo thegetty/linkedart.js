@@ -1,5 +1,5 @@
 {
-  "name": "@thegetty/linkedart",
+  "name": "@thegetty/linkedart.js",
   "version": "0.9.0",
   "scripts": {
     "test:unit": "jest",
@@ -8,9 +8,6 @@
     "clean": "del ./dist",
     "build:jsdoc": "node node_modules/jsdoc/jsdoc.js -d jsdoc src/helpers/* -R src/docs/jsdoc_home.md",
     "lint": "prettier --check 'src/**/*.js'"
-  },
-  "publishConfig": {
-    "registry": "https://artifacts.getty.edu/repository/npm-internal"
   },
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
@@ -43,12 +40,9 @@
   "description": "Library of functions for parsing Linked Art (https://linked.art/) data for the Getty's Research Applications Development Team.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thegetty/linkedart.git"
+    "url": "git+https://github.com/thegetty/linkedart.js.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thegetty/linkedart/issues"
-  },
-  "homepage": "https://github.com/thegetty/linkedart#readme"
+  "homepage": "https://github.com/thegetty/linkedart.js#readme"
 }
