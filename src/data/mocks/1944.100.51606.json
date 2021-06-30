@@ -1,0 +1,237 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "http://numismatics.org/collection/1944.100.51606",
+  "type": "HumanMadeObject",
+  "_label": "Gold Coin of Philip III Arrhidaeus, Abydus, 323 BCE - 317 BCE. 1944.100.51606",
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Gold Coin of Philip III Arrhidaeus, Abydus, 323 BCE - 317 BCE. 1944.100.51606",
+      "classified_as": [
+        { "id": "aat:300404670", "_label": "preferred forms", "type": "Type" }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "content": "1944.100.51606",
+      "classified_as": [
+        { "id": "aat:300312355", "type": "Type", "_label": "accession numbers" }
+      ]
+    }
+  ],
+  "dimension": [
+    {
+      "type": "Dimension",
+      "value": 12,
+      "classified_as": [
+        {
+          "id": "http://nomisma.org/id/axis",
+          "type": "Type",
+          "_label": "die axis"
+        }
+      ]
+    },
+    {
+      "type": "Dimension",
+      "value": 8.61,
+      "classified_as": [
+        { "id": "aat:300056240", "type": "Type", "_label": "weight" }
+      ],
+      "unit": { "id": "aat:300379225", "type": "Type", "_label": "grams" }
+    }
+  ],
+  "classified_as": [
+    { "id": "aat:300133025", "type": "Type", "_label": "Artwork" },
+    {
+      "id": "http://nomisma.org/id/stater",
+      "type": "Type",
+      "_label": "Stater",
+      "part_of": "aat:300037222",
+      "classified_as": [
+        { "id": "aat:300435443", "type": "Type", "_label": "Type of Work" }
+      ]
+    },
+    {
+      "id": "aat:300037222",
+      "type": "Type",
+      "_label": "Coin",
+      "part_of": "aat:300387350",
+      "classified_as": [
+        { "id": "aat:300435443", "type": "Type", "_label": "Type of Work" }
+      ]
+    },
+    {
+      "id": "http://numismatics.org/pella/id/price.P36",
+      "type": "Type",
+      "_label": "Price P36",
+      "classified_as": [
+        { "id": "aat:300067209", "type": "Type", "_label": "typology" }
+      ]
+    }
+  ],
+  "produced_by": {
+    "type": "Production",
+    "timespan": {
+      "type": "TimeSpan",
+      "_label": "323 BCE - 317 BCE",
+      "begin_of_the_begin": "-0322-01-01T00:00:00Z",
+      "end_of_the_end": "-0316-12-31T23:59:59Z"
+    },
+    "carried_out_by": [
+      {
+        "id": "http://nomisma.org/id/philip_iii_arrhidaeus",
+        "type": "Person",
+        "_label": "Philip III Arrhidaeus",
+        "classified_as": [
+          { "type": "Type", "id": "aat:300025475", "_label": "rulers (people)" }
+        ]
+      }
+    ],
+    "took_place_at": [
+      {
+        "id": "tgn:6000030",
+        "type": "Place",
+        "_label": "Abydus",
+        "classified_as": [
+          {
+            "type": "Type",
+            "id": "aat:300006031",
+            "_label": "mints (buildings)"
+          }
+        ]
+      }
+    ]
+  },
+  "made_of": [{ "id": "aat:300011021", "type": "Material", "_label": "Gold" }],
+  "part": [
+    {
+      "id": "http://numismatics.org/collection/1944.100.51606#obverse",
+      "type": "HumanMadeObject",
+      "_label": "Obverse",
+      "classified_as": [
+        { "id": "aat:300190703", "type": "Type", "_label": "fronts" }
+      ],
+      "referred_to_by": [
+        {
+          "type": "LinguisticObject",
+          "content": "Head of Athena right wearing Corinthian helmet with crest",
+          "classified_as": [
+            {
+              "id": "aat:300080091",
+              "type": "Type",
+              "_label": "description (activity)"
+            }
+          ]
+        }
+      ],
+      "shows": [
+        {
+          "type": "VisualItem",
+          "represents": [
+            {
+              "id": "http://nomisma.org/id/athena",
+              "type": "Actor",
+              "_label": "Athena",
+              "classified_as": [
+                {
+                  "id": "aat:300189808",
+                  "type": "Type",
+                  "_label": "figures (representations)"
+                }
+              ]
+            },
+            {
+              "id": "http://nomisma.org/id/nike",
+              "type": "Actor",
+              "_label": "Nike",
+              "classified_as": [
+                {
+                  "id": "aat:300189808",
+                  "type": "Type",
+                  "_label": "figures (representations)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "representation": [
+        {
+          "id": "http://images.numismatics.org/collectionimages%2F19001949%2F1944%2F1944.100.51606.obv.noscale.jpg",
+          "type": "VisualItem",
+          "_label": "IIIF Image API",
+          "conforms_to": "http://iiif.io/api/image"
+        },
+        {
+          "id": "http://numismatics.org/collectionimages/19001949/1944/1944.100.51606.obv.width350.jpg",
+          "type": "VisualItem",
+          "_label": "Digital Image",
+          "format": "image/jpeg",
+          "classified_as": [
+            {
+              "id": "aat:300215302",
+              "type": "Type",
+              "_label": "digital images"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://numismatics.org/collection/1944.100.51606#reverse",
+      "type": "HumanMadeObject",
+      "_label": "Reverse",
+      "classified_as": [
+        { "id": "aat:300190692", "type": "Type", "_label": "backs" }
+      ],
+      "referred_to_by": [
+        {
+          "type": "LinguisticObject",
+          "content": "Nike standing left holding wreath in right hand, and stylis in her left hand",
+          "classified_as": [
+            {
+              "id": "aat:300080091",
+              "type": "Type",
+              "_label": "description (activity)"
+            }
+          ]
+        }
+      ],
+      "carries": [{ "type": "LinguisticObject", "content": "ΦΙΛΙΠΠΟΥ" }],
+      "representation": [
+        {
+          "id": "http://images.numismatics.org/collectionimages%2F19001949%2F1944%2F1944.100.51606.rev.noscale.jpg",
+          "type": "VisualItem",
+          "_label": "IIIF Image API",
+          "conforms_to": "http://iiif.io/api/image"
+        },
+        {
+          "id": "http://numismatics.org/collectionimages/19001949/1944/1944.100.51606.rev.width350.jpg",
+          "type": "VisualItem",
+          "_label": "Digital Image",
+          "format": "image/jpeg",
+          "classified_as": [
+            {
+              "id": "aat:300215302",
+              "type": "Type",
+              "_label": "digital images"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "current_owner": {
+    "id": "ulan:500303668",
+    "type": "Group",
+    "_label": "American Numismatic Society"
+  },
+  "subject_of": [
+    {
+      "id": "http://numismatics.org/search/manifest/1944.100.51606",
+      "type": "InformationObject",
+      "conforms_to": "http://iiif.io/api/presentation",
+      "format": "application/ld+json;profile=\"http://iiif.io/api/presentation/2/context.json\""
+    }
+  ]
+}
