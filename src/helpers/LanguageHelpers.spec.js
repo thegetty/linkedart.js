@@ -35,45 +35,47 @@ const defaultObj = {
 
 describe("Language Helpers: normalize language", () => {
   it("Gets all ID's in an object", () => {
-    expect(languageHelpers.normalizeLanguage(undefined)).toEqual(
+    expect(languageHelpers.normalizeLanguageId(undefined)).toEqual(
       languageHelpers.NO_LANGUAGE
     );
   });
 
   it("leaves the aat value as is", () => {
     expect(
-      languageHelpers.normalizeLanguage("http://vocab.getty.edu/aat/300389311")
+      languageHelpers.normalizeLanguageId(
+        "http://vocab.getty.edu/aat/300389311"
+      )
     ).toEqual("http://vocab.getty.edu/aat/300389311");
   });
 
   it("translates english (ISO url)", () => {
     expect(
-      languageHelpers.normalizeLanguage("http://vocab.getty.edu/language/en")
+      languageHelpers.normalizeLanguageId("http://vocab.getty.edu/language/en")
     ).toEqual("http://vocab.getty.edu/aat/300388277");
   });
 
   it("translates English (iso code)", () => {
-    expect(languageHelpers.normalizeLanguage("en")).toEqual(
+    expect(languageHelpers.normalizeLanguageId("en")).toEqual(
       "http://vocab.getty.edu/aat/300388277"
     );
   });
 
   it("translates English (iso code) with no lookup map", () => {
-    expect(languageHelpers.normalizeLanguage("en", {})).toEqual(
+    expect(languageHelpers.normalizeLanguageId("en", {})).toEqual(
       "http://vocab.getty.edu/aat/300388277"
     );
   });
 
   it("translates English (with custom mapping)", () => {
     expect(
-      languageHelpers.normalizeLanguage("english", {
+      languageHelpers.normalizeLanguageId("english", {
         lookupMap: { english: "http://vocab.getty.edu/aat/300388277" },
       })
     ).toEqual("http://vocab.getty.edu/aat/300388277");
   });
 
   it("returns the orignial English when not matched", () => {
-    expect(languageHelpers.normalizeLanguage("english")).toEqual("english");
+    expect(languageHelpers.normalizeLanguageId("english")).toEqual("english");
   });
 });
 
@@ -129,38 +131,38 @@ describe("Language Helpers: does language match", () => {
   });
 
   it("deals with no language specified", () => {
-    expect(languageHelpers.doesLanguageMatch(obj)).toEqual(true);
+    expect(languageHelpers.doesObjectLanguageMatch(obj)).toEqual(true);
   });
 
   it("deals with English specified aat (spanish data)", () => {
     expect(
-      languageHelpers.doesLanguageMatch(
+      languageHelpers.doesObjectLanguageMatch(
         obj,
         "http://vocab.getty.edu/aat/300388277"
       )
     ).toEqual(false);
   });
   it("does it match english ISO", () => {
-    expect(languageHelpers.doesLanguageMatch(obj, "en")).toEqual(false);
+    expect(languageHelpers.doesObjectLanguageMatch(obj, "en")).toEqual(false);
   });
 
   it("does it match spanish iso", () => {
-    expect(languageHelpers.doesLanguageMatch(obj, "es")).toEqual(true);
+    expect(languageHelpers.doesObjectLanguageMatch(obj, "es")).toEqual(true);
   });
 
   it("does it match spanish as a string", () => {
     obj.language = "es";
-    expect(languageHelpers.doesLanguageMatch(obj, "es")).toEqual(true);
+    expect(languageHelpers.doesObjectLanguageMatch(obj, "es")).toEqual(true);
   });
 
   it("does it match spanish as a string in an array", () => {
     obj.language = ["es"];
-    expect(languageHelpers.doesLanguageMatch(obj, "es")).toEqual(true);
+    expect(languageHelpers.doesObjectLanguageMatch(obj, "es")).toEqual(true);
   });
 
   it("Does it match 'spanish aat'", () => {
     expect(
-      languageHelpers.doesLanguageMatch(
+      languageHelpers.doesObjectLanguageMatch(
         obj,
         "http://vocab.getty.edu/aat/300389311"
       )
@@ -169,7 +171,7 @@ describe("Language Helpers: does language match", () => {
   it("returns true if it is supposted to includeItemsWithNoLanguage (default)", () => {
     obj.language = [];
     expect(
-      languageHelpers.doesLanguageMatch(
+      languageHelpers.doesObjectLanguageMatch(
         obj,
         "http://vocab.getty.edu/aat/300389311",
         { includeItemsWithNoLanguage: true }
@@ -180,7 +182,7 @@ describe("Language Helpers: does language match", () => {
   it("returns false if it's not supposted to includeItemsWithNoLanguage", () => {
     obj.language = [];
     expect(
-      languageHelpers.doesLanguageMatch(
+      languageHelpers.doesObjectLanguageMatch(
         obj,
         "http://vocab.getty.edu/aat/300389311",
         { includeItemsWithNoLanguage: false }
@@ -190,7 +192,7 @@ describe("Language Helpers: does language match", () => {
 
   it("properly falls back when a fallback language is specified", () => {
     expect(
-      languageHelpers.doesLanguageMatch(
+      languageHelpers.doesObjectLanguageMatch(
         obj,
         "http://vocab.getty.edu/aat/300388277",
         { fallbackLanguage: "es" }
@@ -206,28 +208,28 @@ describe("Language Helpers: does language match with broader data", () => {
   });
 
   it("deals with no language specified", () => {
-    expect(languageHelpers.doesLanguageMatch(obj)).toEqual(true);
+    expect(languageHelpers.doesObjectLanguageMatch(obj)).toEqual(true);
   });
 
   it("deals with English specified aat", () => {
     expect(
-      languageHelpers.doesLanguageMatch(
+      languageHelpers.doesObjectLanguageMatch(
         obj,
         "http://vocab.getty.edu/aat/300388277"
       )
     ).toEqual(true);
   });
   it("does it match english ISO", () => {
-    expect(languageHelpers.doesLanguageMatch(obj, "en")).toEqual(true);
+    expect(languageHelpers.doesObjectLanguageMatch(obj, "en")).toEqual(true);
   });
 
   it("does it match spanish iso", () => {
-    expect(languageHelpers.doesLanguageMatch(obj, "es")).toEqual(true);
+    expect(languageHelpers.doesObjectLanguageMatch(obj, "es")).toEqual(true);
   });
 
   it("Does it match 'spanish aat'", () => {
     expect(
-      languageHelpers.doesLanguageMatch(
+      languageHelpers.doesObjectLanguageMatch(
         obj,
         "http://vocab.getty.edu/aat/300389311"
       )

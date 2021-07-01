@@ -6,7 +6,7 @@
  */
 
 import * as languageHelpers from "./LanguageHelpers";
-import { checkEmptyField } from "./BasicHelpers";
+import { normalizeFieldToArray } from "./BasicHelpers";
 
 const CLASSIFIED_AS = "classified_as";
 const CLASSIFIED_BY = "classified_by";
@@ -20,17 +20,17 @@ const REFERRED_TO_BY = "referred_to_by";
  * @param {object} submittedResource -- the object to inspect
  * @param {string|array} requestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesLanguageMatch
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @returns {array} an array of objects that match
  */
-export function classifiedAs(
+export function getClassifiedAs(
   submittedResource,
   requestedClassification,
   language = undefined,
   languageOptions = {}
 ) {
-  return resourcesByClassifications(
+  return getClassified(
     submittedResource,
     requestedClassification,
     CLASSIFIED_AS,
@@ -46,19 +46,75 @@ export function classifiedAs(
  * @param {object} submittedResource -- the object to inspect
  * @param {string|array} requestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesLanguageMatch
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @returns {array} an array of objects that match
  */
-export function classifiedBy(
+export function getClassifiedBy(
   submittedResource,
   requestedClassification,
   language = undefined,
   languageOptions = {}
 ) {
-  return resourcesByClassifications(
+  return getClassified(
     submittedResource,
     requestedClassification,
+    CLASSIFIED_BY,
+    language,
+    languageOptions
+  );
+}
+
+/**
+ * Given an object or an array of objects, find all classification objects that are classified as
+ * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
+ * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
+ *
+ * @param {object} submittedResource -- the object to inspect
+ * @param {string|array} nestedClassification -- the classification ID/IDS to match
+ * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @private
+ *
+ * @returns {array} an array of objects that match
+ */
+export function getClassifiedAsWithClassification(
+  submittedResource,
+  nestedClassification,
+  language = undefined,
+  languageOptions = {}
+) {
+  return _getClassificationsWithNestedClass(
+    submittedResource,
+    nestedClassification,
+    CLASSIFIED_AS,
+    language,
+    languageOptions
+  );
+}
+
+/**
+ * Given an object or an array of objects, find all classification objects that are classified by
+ * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
+ * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
+ *
+ * @param {object} submittedResource -- the object to inspect
+ * @param {string|array} nestedClassification -- the classification ID/IDS to match
+ * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @private
+ *
+ * @returns {array} an array of objects that match
+ */
+export function getClassifiedByWithClassification(
+  submittedResource,
+  nestedClassification,
+  language = undefined,
+  languageOptions = {}
+) {
+  return _getClassificationsWithNestedClass(
+    submittedResource,
+    nestedClassification,
     CLASSIFIED_BY,
     language,
     languageOptions
@@ -74,11 +130,12 @@ export function classifiedBy(
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesLanguageMatch
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @private
  *
  * @returns {array} an array of objects that match
  */
-export function classificationsByNestedClass(
+export function _getClassificationsWithNestedClass(
   submittedResource,
   nestedClassification,
   classificationField = CLASSIFIED_AS,
@@ -86,20 +143,20 @@ export function classificationsByNestedClass(
   languageOptions = {}
 ) {
   let results = [];
-  let resourceArray = resourceParamToArray(submittedResource);
-  if (resourceArray.length == results.length) {
+  let resourceArray = _convertToArrayIfNeeded(submittedResource);
+  if (resourceArray.length == 0) {
     return results;
   }
 
   for (const resource of resourceArray) {
     // If there are no classifications, or the classification is just a string,
     // continue
-    var classified_as = checkEmptyField(resource, classificationField);
+    var classified_as = normalizeFieldToArray(resource, classificationField);
     if (!classified_as.length) {
       continue;
     }
     results = results.concat(
-      resourcesByClassifications(
+      getClassified(
         classified_as,
         nestedClassification,
         classificationField,
@@ -113,6 +170,58 @@ export function classificationsByNestedClass(
 }
 
 /**
+ * Given an object or an array of objects, find all objects that are classified as an object
+ * which is classified by nestedClassification
+ *
+ * @param {object} submittedResource -- the object to inspect
+ * @param {string|array} nestedClassification -- the classification ID/IDS to match
+ * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @returns {array} an array of objects that match
+ */
+export function getObjectsClassifiedAsWithClassification(
+  submittedResource,
+  nestedClassification,
+  language = undefined,
+  languageOptions = {}
+) {
+  return _getObjectWithNestedClass(
+    submittedResource,
+    nestedClassification,
+    CLASSIFIED_AS,
+    language,
+    languageOptions
+  );
+}
+
+/**
+ * Given an object or an array of objects, find all objects that are classified by an object
+ * which is classified by nestedClassification
+ *
+ * @param {object} submittedResource -- the object to inspect
+ * @param {string|array} nestedClassification -- the classification ID/IDS to match
+ * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @returns {array} an array of objects that match
+ */
+export function getObjectsClassifiedByWithClassification(
+  submittedResource,
+  nestedClassification,
+  language = undefined,
+  languageOptions = {}
+) {
+  return _getObjectWithNestedClass(
+    submittedResource,
+    nestedClassification,
+    CLASSIFIED_BY,
+    language,
+    languageOptions
+  );
+}
+
+/**
  * Given an object or an array of objects, find all objects that are classified by an object
  * which is classified by nestedClassification
  *
@@ -120,11 +229,12 @@ export function classificationsByNestedClass(
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesLanguageMatch
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @private
  *
  * @returns {array} an array of objects that match
  */
-export function objectsByNestedClass(
+export function _getObjectWithNestedClass(
   submittedResource,
   nestedClassification,
   classificationField = CLASSIFIED_AS,
@@ -132,19 +242,19 @@ export function objectsByNestedClass(
   languageOptions = {}
 ) {
   let results = [];
-  let resourceArray = resourceParamToArray(submittedResource);
-  if (resourceArray.length == results.length) {
+  let resourceArray = _convertToArrayIfNeeded(submittedResource);
+  if (resourceArray.length == 0) {
     return results;
   }
 
   for (const resource of resourceArray) {
     // If there are no classifications, or the classification is just a string,
     // continue
-    var classified_as = checkEmptyField(resource, classificationField);
+    var classified_as = normalizeFieldToArray(resource, classificationField);
     if (!classified_as.length) {
       continue;
     }
-    let classifications = resourcesByClassifications(
+    let classifications = getClassified(
       classified_as,
       nestedClassification,
       classificationField,
@@ -167,11 +277,11 @@ export function objectsByNestedClass(
  * @param {string|array} requestedClassifications -- either a string or an array of classification strings
  * @param {string} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesLanguageMatch
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @returns {array} an array of objects that match
  */
-export function resourcesByClassifications(
+export function getClassified(
   submittedResource,
   requestedClassifications,
   classificationField = CLASSIFIED_AS,
@@ -180,16 +290,16 @@ export function resourcesByClassifications(
   operator = "AND"
 ) {
   let results = [];
-  let resourceArray = resourceParamToArray(submittedResource);
-  let requestedClassArray = resourceParamToArray(requestedClassifications);
+  let resourceArray = _convertToArrayIfNeeded(submittedResource);
+  let requestedClassArray = _convertToArrayIfNeeded(requestedClassifications);
   if (resourceArray.length == 0 || requestedClassArray.length == 0) {
     return results;
   }
   for (const resource of resourceArray) {
     // If there is no classifications, or the classification is just a string,
     // continue
-    var classified_as = checkEmptyField(resource, classificationField);
-    let languageMatch = languageHelpers.doesLanguageMatch(
+    var classified_as = normalizeFieldToArray(resource, classificationField);
+    let languageMatch = languageHelpers.doesObjectLanguageMatch(
       resource,
       language,
       languageOptions
@@ -225,7 +335,7 @@ export function resourcesByClassifications(
  *
  * @returns {array} an array
  */
-function resourceParamToArray(resourceParam) {
+function _convertToArrayIfNeeded(resourceParam) {
   let results = [];
   let resourceArray = resourceParam;
 
@@ -245,7 +355,7 @@ function resourceParamToArray(resourceParam) {
  * @param {object} submittedResource
  * @param {string|array} requestedClassification
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesLanguageMatch
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @returns {string|number} the matching value
  */
@@ -255,7 +365,7 @@ export function getValueByClassification(
   language,
   languageOptions
 ) {
-  let results = classifiedAs(
+  let results = getClassifiedAs(
     submittedResource,
     requestedClassification,
     language,
@@ -273,7 +383,7 @@ export function getValueByClassification(
  * @param {object} submittedResource
  * @param {string|array} requestedClassification
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesLanguageMatch
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @returns {array} the matching values (string|array)
  */
@@ -283,7 +393,7 @@ export function getValuesByClassification(
   language,
   languageOptions
 ) {
-  let results = classifiedAs(
+  let results = getClassifiedAs(
     submittedResource,
     requestedClassification,
     language,
@@ -362,8 +472,8 @@ export function getReferredToByClassification(object, classification) {
  * 
  * @return {Array} the list of values that map to the attributed value
  */
-export function getAttributed(object, assignedProperty) {
-  let attributed = checkEmptyField(object, "attributed_by");
+export function getAttributedBy(object, assignedProperty) {
+  let attributed = normalizeFieldToArray(object, "attributed_by");
   if (attributed.length == 0) {
     return [];
   }
@@ -412,8 +522,8 @@ function _getAssignedProperty(assigned, assignedProperty) {
  * 
  * @return {Array} the list of values that map to the attributed value
  */
-export function getAssigned(object, assignedProperty) {
-  let assigned = checkEmptyField(object, "assigned_by");
+export function getAssignedBy(object, assignedProperty) {
+  let assigned = normalizeFieldToArray(object, "assigned_by");
   if (assigned.length == 0) {
     return [];
   }
@@ -466,7 +576,7 @@ export function getObjectParts(object, field) {
     return [];
   }
 
-  let fieldPart = checkEmptyField(fieldRequested, PART);
+  let fieldPart = normalizeFieldToArray(fieldRequested, PART);
   if (fieldPart.length == 0) {
     return [fieldRequested];
   }

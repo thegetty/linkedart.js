@@ -1,6 +1,6 @@
 import {
-  classifiedAs,
-  classifiedBy,
+  getClassifiedAs,
+  getClassifiedBy,
   getValueByClassification,
 } from "./LinkedArtHelpers";
 import * as helpers from "./LinkedArtHelpers";
@@ -160,7 +160,7 @@ describe("classifiedAs", () => {
   };
 
   test("classifiedBy checks the other classification field", () => {
-    let results = classifiedBy(
+    let results = getClassifiedBy(
       sampleData.classified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -168,7 +168,7 @@ describe("classifiedAs", () => {
   });
 
   test("it works with arrays of resources", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -177,7 +177,7 @@ describe("classifiedAs", () => {
   });
 
   test("It also works with single objects", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.no_array_identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -186,7 +186,7 @@ describe("classifiedAs", () => {
   });
 
   test("processes valid data with multiple classifications", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.multi_identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -195,7 +195,7 @@ describe("classifiedAs", () => {
   });
 
   test("returns all if there are multiple correct entries", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.two_identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -205,7 +205,7 @@ describe("classifiedAs", () => {
   });
 
   test("only returns the correct one if there are multiples", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.only_one_identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -214,7 +214,7 @@ describe("classifiedAs", () => {
   });
 
   test("returns an empty array with a missing classification", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.no_classification_identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -222,7 +222,7 @@ describe("classifiedAs", () => {
   });
 
   test("It also works with arrays of string classifications", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.string_array_identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -232,31 +232,34 @@ describe("classifiedAs", () => {
 
   // Appropriate values for no response
   test("It returns an empty array with an invalid classification", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.identified_by,
       "http://vocab.getty.edu/aat/not_an_id"
     );
     expect(results).toHaveLength(0);
   });
   test("It returns an empty array with classifications without ids", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.identified_by,
       "http://vocab.getty.edu/aat/not_an_id"
     );
     expect(results).toHaveLength(0);
   });
   test("It returns an empty array for missing data", () => {
-    const results = classifiedAs(null, "http://vocab.getty.edu/aat/300404670");
+    const results = getClassifiedAs(
+      null,
+      "http://vocab.getty.edu/aat/300404670"
+    );
     expect(results).toHaveLength(0);
   });
   test("It returns an empty array for missing classifications", () => {
-    const results = classifiedAs(sampleData.without_classified_id, null);
+    const results = getClassifiedAs(sampleData.without_classified_id, null);
     expect(results).toHaveLength(0);
   });
 
   // Inposed constraints (not accepting strings or objects)
   test("It does not work with string classifications", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.string_identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -264,7 +267,7 @@ describe("classifiedAs", () => {
   });
 
   test("It does not work with object classifications", () => {
-    const results = classifiedAs(
+    const results = getClassifiedAs(
       sampleData.object_identified_by,
       "http://vocab.getty.edu/aat/300404670"
     );
@@ -381,11 +384,13 @@ describe("getValueByClassification", () => {
 
 describe("get assigned", () => {
   it("tests undefined", () => {
-    expect(helpers.getAssigned(undefined, "part_of")).toEqual([]);
+    expect(helpers.getAssignedBy(undefined, "part_of")).toEqual([]);
   });
   it("tests value", () => {
-    expect(helpers.getAssigned(titan.produced_by, "part_of").length).toEqual(2);
-    expect(helpers.getAssigned(titan.produced_by, "part_of")[0].id).toEqual(
+    expect(helpers.getAssignedBy(titan.produced_by, "part_of").length).toEqual(
+      2
+    );
+    expect(helpers.getAssignedBy(titan.produced_by, "part_of")[0].id).toEqual(
       "https://data.getty.edu/museum/collection/object/dff75e58-f8b9-4507-8ab7-5d948451dea7/production/previous-attribution/07ebbfca-985b-4a07-96ed-8cc7cf0c1ff1/production"
     );
   });
@@ -393,11 +398,11 @@ describe("get assigned", () => {
 
 describe("get attributed", () => {
   it("tests undefined", () => {
-    expect(helpers.getAttributed(undefined, "identified_by")).toEqual([]);
+    expect(helpers.getAttributedBy(undefined, "identified_by")).toEqual([]);
   });
   it("tests value", () => {
-    expect(helpers.getAttributed(titan, "identified_by").length).toEqual(1);
-    expect(helpers.getAttributed(titan, "identified_by")[0].content).toEqual(
+    expect(helpers.getAttributedBy(titan, "identified_by").length).toEqual(1);
+    expect(helpers.getAttributedBy(titan, "identified_by")[0].content).toEqual(
       "Triton Blowing a Conch Shell"
     );
   });
@@ -414,7 +419,7 @@ describe("tests objectsByNestedClass", () => {
   });
   it("gets expected object", () => {
     expect(
-      helpers.objectsByNestedClass(
+      helpers.getObjectsClassifiedAsWithClassification(
         stagBeetle.subject_to,
         "https://data.getty.edu/local/thesaurus/clearance-level"
       )
@@ -431,7 +436,7 @@ describe("tests objectsByNestedClass", () => {
     resourceObject["classified_by"] = resourceObject["classified_as"];
     delete resourceObject["classified_as"];
     expect(
-      helpers.objectsByNestedClass(
+      helpers.getObjectsClassifiedByWithClassification(
         resourceObject,
         "https://data.getty.edu/local/thesaurus/clearance-level",
         "classified_by"
@@ -439,7 +444,9 @@ describe("tests objectsByNestedClass", () => {
     ).toEqual([resourceObject]);
   });
   it("returns an empty array when nothing matches", () => {
-    expect(helpers.objectsByNestedClass({}, "a_qualifier")).toEqual([]);
+    expect(
+      helpers.getObjectsClassifiedAsWithClassification({}, "a_qualifier")
+    ).toEqual([]);
   });
 });
 
@@ -460,7 +467,7 @@ describe("tests classificationsByNestedClass", () => {
       },
     ];
     expect(
-      helpers.classificationsByNestedClass(
+      helpers.getClassifiedAsWithClassification(
         stagBeetle.subject_to,
         "https://data.getty.edu/local/thesaurus/clearance-level"
       )
@@ -491,15 +498,16 @@ describe("tests classificationsByNestedClass", () => {
     resourceObject["classified_by"] = resourceObject["classified_as"];
     delete resourceObject["classified_as"];
     expect(
-      helpers.classificationsByNestedClass(
+      helpers.getClassifiedByWithClassification(
         resourceObject,
-        "https://data.getty.edu/local/thesaurus/clearance-level",
-        "classified_by"
+        "https://data.getty.edu/local/thesaurus/clearance-level"
       )
     ).toEqual(clearanceLevelBy);
   });
   it("returns an empty array when nothing matches", () => {
-    expect(helpers.classificationsByNestedClass({}, "a_qualifier")).toEqual([]);
+    expect(
+      helpers.getClassifiedAsWithClassification({}, "a_qualifier")
+    ).toEqual([]);
   });
   it("returns an empty array when passed undefined", () => {
     expect(
@@ -511,7 +519,7 @@ describe("tests classificationsByNestedClass", () => {
 describe("tests resourceByClassifications", () => {
   it("gets the expected resource with the AND operator", () => {
     expect(
-      helpers.resourcesByClassifications(titan.referred_to_by, [
+      helpers.getClassified(titan.referred_to_by, [
         "http://vocab.getty.edu/aat/300435430",
         "http://vocab.getty.edu/aat/300418049",
       ])
@@ -539,7 +547,7 @@ describe("tests resourceByClassifications", () => {
   });
   it("gets the expected resource with the OR operator", () => {
     expect(
-      helpers.resourcesByClassifications(
+      helpers.getClassified(
         titan.referred_to_by,
         [
           "http://vocab.getty.edu/aat/300435430",
@@ -554,7 +562,7 @@ describe("tests resourceByClassifications", () => {
   });
   it("returns an empty array if no objects match AND", () => {
     expect(
-      helpers.resourcesByClassifications(titan.identified_by, [
+      helpers.getClassified(titan.identified_by, [
         "http://vocab.getty.edu/aat/300435430",
         "http://vocab.getty.edu/aat/300404670",
       ])

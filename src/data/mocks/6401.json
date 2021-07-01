@@ -1,0 +1,376 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "about": [],
+  "classified_as": [
+    {
+      "id": "aat:300133025",
+      "label": "works of art",
+      "type": "Type"
+    },
+    {
+      "id": "aat:300046300",
+      "label": "photographs",
+      "type": "Type"
+    }
+  ],
+  "crm:P104_is_subject_to": {
+    "id": "http://rightsstatements.org/vocab/InC/1.0/",
+    "type": "crm:E30_Right"
+  },
+  "crm:P57_has_number_of_parts": null,
+  "current_keeper": {
+    "id": "http://data.okeeffemuseum.org/object/6401/department",
+    "label": "Archive",
+    "type": "Group"
+  },
+  "current_owner": {
+    "id": "http://data.okeeffemuseum.org/object/6401/currentowner",
+    "label": "Georgia O'Keeffe Museum (Santa Fe)",
+    "type": "Actor"
+  },
+  "custody_transferred_through": [],
+  "depicts": [],
+  "id": "http://data.okeeffemuseum.org/object/6401",
+  "identified_by": [
+    {
+      "classified_as": [
+        {
+          "id": "aat:300404670",
+          "label": "preferred terms",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/identifier",
+      "type": "Identifier",
+      "value": "6401"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300404670",
+          "label": "preferred terms",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/title",
+      "type": "Name",
+      "value": "Abiquiu House, Ladder Against Studio Wall"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300312355",
+          "label": "accession numbers",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/accessionnumber",
+      "type": "Identifier",
+      "value": "2006.6.1421"
+    }
+  ],
+  "label": "Georgia O'Keeffe. Abiquiu House, Ladder Against Studio Wall, ca. 1964. Gelatin silver print, 3 13/16 x 2 9/16 inches. Georgia O'Keeffe Museum. Gift of The Georgia O'Keeffe Foundation. \u00a9 Georgia O'Keeffe Museum. [2006.6.1421]",
+  "made_of": [
+    {
+      "id": "http://data.okeeffemuseum.org/object/6401/material/0",
+      "label": "Gelatin silver print/Photograph",
+      "type": "Material"
+    }
+  ],
+  "ore:isAggregatedBy": null,
+  "part_of": [],
+  "produced_by": {
+    "carried_out_by": ["http://data.okeeffemuseum.org/person/2"],
+    "consists_of": [
+      {
+        "carried_out_by": [
+          {
+            "classified_as": [],
+            "id": "http://data.okeeffemuseum.org/person/2",
+            "identified_by": [
+              {
+                "classified_as": ["aat:acronym"],
+                "exact_match": ["ulan:500018666"],
+                "id": "http://data.okeeffemuseum.org/person/2/name/1",
+                "type": "Name",
+                "value": "gok"
+              },
+              {
+                "classified_as": [
+                  {
+                    "id": "aat:300404670",
+                    "label": "preferred terms",
+                    "type": "Type"
+                  }
+                ],
+                "exact_match": ["ulan:500018666"],
+                "id": "http://data.okeeffemuseum.org/person/2/name/0",
+                "type": "Name",
+                "value": "Georgia O'Keeffe"
+              }
+            ],
+            "label": "Georgia O'Keeffe",
+            "type": "Actor"
+          }
+        ],
+        "classified_as": [],
+        "id": "http://data.okeeffemuseum.org/object/6401/production/0",
+        "technique": [
+          {
+            "id": "relators:pht",
+            "label": "Photographer",
+            "type": "Type"
+          }
+        ],
+        "type": "Production"
+      }
+    ],
+    "id": "http://data.okeeffemuseum.org/object/6401/production/",
+    "timespan": {
+      "begin_of_the_begin": "1959-01-01T00:00:00",
+      "end_of_the_end": "1969-12-31T00:00:00",
+      "id": "http://data.okeeffemuseum.org/object/6401/production/timespan/0",
+      "label": "ca. 1964",
+      "type": "TimeSpan"
+    },
+    "took_place_at": [
+      {
+        "id": "http://data.okeeffemuseum.org/place/abiquiu-new-mexico-",
+        "label": "Abiquiu/New Mexico   ",
+        "type": "Place"
+      }
+    ],
+    "type": "Production"
+  },
+  "referred_to_by": [
+    {
+      "classified_as": [
+        {
+          "id": "aat:300026687",
+          "label": "acknowledgments",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/CreditLine/",
+      "type": "LinguisticObject",
+      "value": "Gift of The Georgia O'Keeffe Foundation      "
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300080091",
+          "label": "description",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/Description/",
+      "type": "LinguisticObject",
+      "value": "A textured adobe wall with a kiva log ladder leaning against O'Keeffe's studio wall casting a shadow."
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300055547",
+          "label": "legal concepts",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/aquisition/method/",
+      "type": "LinguisticObject",
+      "value": "Gift"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300203630",
+          "label": "owners",
+          "type": "Type"
+        },
+        {
+          "id": "aat:300191074",
+          "label": "captions",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/institution_caption",
+      "type": "LinguisticObject",
+      "value": "Georgia O'Keeffe Museum"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300028702",
+          "label": "inscriptions",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/signaturemarks",
+      "type": "LinguisticObject",
+      "value": "Handwritten in pencil, on the back of the photograph, is the number 30."
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300191074",
+          "label": "captions",
+          "type": "Type"
+        },
+        {
+          "id": "aat:300025103",
+          "label": "artists",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/artist_caption",
+      "type": "LinguisticObject",
+      "value": "Georgia O'Keeffe"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300266036",
+          "label": "dimensions",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/Measurement/",
+      "type": "LinguisticObject",
+      "value": "3 13/16 x 2 9/16 inches"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300417193",
+          "label": "titles",
+          "type": "Type"
+        },
+        {
+          "id": "aat:300404439",
+          "label": "dates",
+          "type": "Type"
+        },
+        {
+          "id": "aat:300191074",
+          "label": "captions",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/title_date_caption",
+      "type": "LinguisticObject",
+      "value": "Abiquiu House, Ladder Against Studio Wall, ca. 1964"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300010358",
+          "label": "materials",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/Materials/",
+      "type": "LinguisticObject",
+      "value": "Gelatin silver print"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300055547",
+          "label": "legal concepts",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/Right/",
+      "type": "LinguisticObject",
+      "value": "\u00a9 Georgia O'Keeffe Museum"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300163343",
+          "label": "media",
+          "type": "Type"
+        },
+        {
+          "id": "aat:300191074",
+          "label": "captions",
+          "type": "Type"
+        },
+        {
+          "id": "aat:300266036",
+          "label": "dimensions",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/medium_dim_caption",
+      "type": "LinguisticObject",
+      "value": "Gelatin silver print, 3 13/16 x 2 9/16 inches"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300191074",
+          "label": "captions",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/caption/",
+      "label": "Georgia O'Keeffe. Abiquiu House, Ladder Against Studio Wall, ca. 1964. Gelatin silver print, 3 13/16 x 2 9/16 inches. Georgia O'Keeffe Museum. Gift of The Georgia O'Keeffe Foundation. \u00a9 Georgia O'Keeffe Museum. [2006.6.1421]",
+      "type": "LinguisticObject"
+    },
+    {
+      "classified_as": [
+        {
+          "id": "aat:300138082",
+          "label": "techniques",
+          "type": "Type"
+        },
+        {
+          "id": "aat:300191074",
+          "label": "captions",
+          "type": "Type"
+        }
+      ],
+      "id": "http://data.okeeffemuseum.org/object/6401/maker_role",
+      "type": "LinguisticObject",
+      "value": "Photographer: Georgia O'Keeffe"
+    }
+  ],
+  "refers_to": [],
+  "related": [],
+  "representation": [
+    {
+      "id": "https://iiif.okeeffemuseum.org/image/iiif/2/732891",
+      "type": "VisualItem"
+    }
+  ],
+  "specific_technique": [],
+  "subject_of": [
+    {
+      "classified_as": [
+        {
+          "id": "aat:300264578",
+          "label": "Web pages",
+          "type": "Type"
+        }
+      ],
+      "id": "https://www.okeeffemuseum.org/rights-and-repro/",
+      "type": "LinguisticObject"
+    }
+  ],
+  "type": "ManMadeObject",
+  "used_for": [
+    {
+      "classified_as": ["aat:300054766"],
+      "id": "http://data.okeeffemuseum.org/exhibition/25",
+      "identified_by": ["http://data.okeeffemuseum.org/exhibition/25/title"],
+      "label": "Living Modern",
+      "timespan": {
+        "begin_of_the_begin": "2017-03-03T00:00:00",
+        "end_of_the_end": "2020-02-09T00:00:00",
+        "id": "http://data.okeeffemuseum.org/exhibition/25/timespan",
+        "type": "TimeSpan"
+      },
+      "type": "Activity"
+    }
+  ]
+}
