@@ -408,7 +408,15 @@ describe("get attributed", () => {
   });
 });
 
-describe("tests objectsByNestedClass", () => {
+describe("tests getObjectsClassifiedAsWithClassification", () => {
+  it("returns an empty array when passed undefined", () => {
+    expect(
+      helpers.getObjectsClassifiedAsWithClassification(
+        undefined,
+        "https://data.getty.edu/local/thesaurus/clearance-level"
+      )
+    ).toEqual([]);
+  });
   it("gets expected object", () => {
     expect(
       helpers.getObjectsClassifiedAsWithClassification(
@@ -442,7 +450,7 @@ describe("tests objectsByNestedClass", () => {
   });
 });
 
-describe("tests classificationsByNestedClass", () => {
+describe("tests getClassifiedAsWithClassification", () => {
   it("gets expected classification objects", () => {
     let clearanceLevelAs = [
       {
@@ -499,6 +507,11 @@ describe("tests classificationsByNestedClass", () => {
   it("returns an empty array when nothing matches", () => {
     expect(
       helpers.getClassifiedAsWithClassification({}, "a_qualifier")
+    ).toEqual([]);
+  });
+  it("returns an empty array when passed undefined", () => {
+    expect(
+      helpers.getClassifiedAsWithClassification(undefined, "a_qualifier")
     ).toEqual([]);
   });
 });
@@ -575,5 +588,91 @@ describe("tests getObjectParts", () => {
   it("returns an empty erray if no fields match", () => {
     const objectParts = helpers.getObjectParts({}, "produced_by");
     expect(objectParts).toEqual([]);
+  });
+});
+
+describe("tests getValuesByClassification", () => {
+  it("returns undefined if submittedResource doesn't contain classification", () => {
+    expect(
+      helpers.getValuesByClassification(
+        {},
+        "http://vocab.getty.edu/aat/300435430"
+      )
+    ).toEqual(undefined);
+  });
+  it("returns all values that match classification", () => {
+    let result = helpers.getValuesByClassification(
+      titan.referred_to_by,
+      "http://vocab.getty.edu/aat/300418049"
+    );
+    expect(result).toHaveLength(7);
+    expect(result[0]).toEqual("The J. Paul Getty Museum, Los Angeles");
+  });
+  it("excludes 'values' that match classification, but are undefined", () => {
+    let mockValuesArray = [
+      {
+        classified_as: [{ id: "http://vocab.getty.edu/aat/300418049" }],
+        content: "test",
+      },
+      { classified_as: [{ id: "http://vocab.getty.edu/aat/300418049" }] },
+    ];
+    expect(
+      helpers.getValuesByClassification(
+        mockValuesArray,
+        "http://vocab.getty.edu/aat/300418049"
+      )
+    ).toEqual(["test"]);
+  });
+});
+
+describe("tests getReferredToByClassification", () => {
+  it("returns undefined when passed undefined", () => {
+    expect(
+      helpers.getReferredToByClassification(
+        undefined,
+        "http://vocab.getty.edu/aat/300055768"
+      )
+    ).toEqual(undefined);
+  });
+  it("returns undefined when object has no referred_to_by", () => {
+    expect(
+      helpers.getReferredToByClassification(
+        {},
+        "http://vocab.getty.edu/aat/300055768"
+      )
+    ).toEqual(undefined);
+  });
+  it("returns the expected value", () => {
+    expect(
+      helpers.getReferredToByClassification(
+        titan,
+        "http://vocab.getty.edu/aat/300055768"
+      )
+    ).toEqual("Italian");
+  });
+});
+
+describe("removeDuplicatesById", () => {
+  it("returns a list with objects of duplicate ids removed", () => {
+    const sellers = [
+      {
+        id: "urn:uuid:1475464c-752a-46b9-bfbe-0ab93a7ee921",
+        type: "Group",
+        _label: "Grand Central Art Galleries",
+      },
+      {
+        id: "urn:uuid:1475464c-752a-46b9-bfbe-0ab93a7ee921",
+        type: "Group",
+        _label: "Grand Central Art Galleries",
+      },
+    ];
+
+    expect(helpers.removeDuplicatesById(sellers)).toEqual([
+      {
+        id: "urn:uuid:1475464c-752a-46b9-bfbe-0ab93a7ee921",
+        type: "Group",
+        _label: "Grand Central Art Galleries",
+      },
+    ]);
   });
 });

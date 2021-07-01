@@ -144,7 +144,7 @@ export function _getClassificationsWithNestedClass(
 ) {
   let results = [];
   let resourceArray = _convertToArrayIfNeeded(submittedResource);
-  if (resourceArray == results) {
+  if (resourceArray.length == 0) {
     return results;
   }
 
@@ -243,7 +243,7 @@ export function _getObjectWithNestedClass(
 ) {
   let results = [];
   let resourceArray = _convertToArrayIfNeeded(submittedResource);
-  if (resourceArray == results) {
+  if (resourceArray.length == 0) {
     return results;
   }
 
