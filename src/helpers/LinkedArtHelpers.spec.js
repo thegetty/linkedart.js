@@ -408,10 +408,10 @@ describe("get attributed", () => {
   });
 });
 
-describe("tests objectsByNestedClass", () => {
+describe("tests getObjectsClassifiedAsWithClassification", () => {
   it("returns an empty array when passed undefined", () => {
     expect(
-      helpers.objectsByNestedClass(
+      helpers.getObjectsClassifiedAsWithClassification(
         undefined,
         "https://data.getty.edu/local/thesaurus/clearance-level"
       )
@@ -450,7 +450,7 @@ describe("tests objectsByNestedClass", () => {
   });
 });
 
-describe("tests classificationsByNestedClass", () => {
+describe("tests getClassifiedAsWithClassification", () => {
   it("gets expected classification objects", () => {
     let clearanceLevelAs = [
       {
@@ -511,7 +511,7 @@ describe("tests classificationsByNestedClass", () => {
   });
   it("returns an empty array when passed undefined", () => {
     expect(
-      helpers.classificationsByNestedClass(undefined, "a_qualifier")
+      helpers.getClassifiedAsWithClassification(undefined, "a_qualifier")
     ).toEqual([]);
   });
 });
