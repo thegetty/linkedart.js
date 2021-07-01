@@ -25,17 +25,21 @@ export const NO_LANGUAGE = "NO_LANGUAGE";
  * @param {object} languageOptions -- any additional options when working with language(s)
  * 
  * @example with language options
- * doesLanguageMatch({id: "1", content:"test"}, "en", { includeItemsWithNoLanguage: false } ) would return false
+ * doesObjectLanguageMatch({id: "1", content:"test"}, "en", { includeItemsWithNoLanguage: false } ) would return false
 
  * @example with a custom language map
- * doesLanguageMatch({id: "1", content:"test", language:"http://vocab.getty.edu/languge/fr"}, "en", {languageMap: {fr: "en" } } ) would return true
+ * doesObjectLanguageMatch({id: "1", content:"test", language:"http://vocab.getty.edu/languge/fr"}, "en", {languageMap: {fr: "en" } } ) would return true
  * 
  * @example with a fallback language
- * doesLanguageMatch({id: "1", content:"test", language:"http://vocab.getty.edu/languge/fr"}, "en", {fallbackLanguage:'en' } ) would return true
+ * doesObjectLanguageMatch({id: "1", content:"test", language:"http://vocab.getty.edu/languge/fr"}, "en", {fallbackLanguage:'en' } ) would return true
  * 
  * @returns {boolean}
  */
-export function doesLanguageMatch(object, language, languageOptions = {}) {
+export function doesObjectLanguageMatch(
+  object,
+  language,
+  languageOptions = {}
+) {
   // IF LANGUAGE IS UNDEFINED, RETURN ALL LANGUAGES
   if (language == undefined) {
     return true;
@@ -44,7 +48,7 @@ export function doesLanguageMatch(object, language, languageOptions = {}) {
   let lang_ids = getLanguageId(object, languageOptions);
 
   // if the langaugeId matches the specified language
-  if (lang_ids.includes(normalizeLanguage(language, languageOptions))) {
+  if (lang_ids.includes(normalizeLanguageId(language, languageOptions))) {
     return true;
   }
 
@@ -52,7 +56,7 @@ export function doesLanguageMatch(object, language, languageOptions = {}) {
   if (
     languageOptions.fallbackLanguage != undefined &&
     lang_ids.includes(
-      normalizeLanguage(languageOptions.fallbackLanguage, languageOptions)
+      normalizeLanguageId(languageOptions.fallbackLanguage, languageOptions)
     )
   ) {
     return true;
@@ -83,7 +87,7 @@ export function getLanguageId(obj, languageOptions) {
     return [NO_LANGUAGE];
   }
   if (typeof obj.language === "string") {
-    return [normalizeLanguage(obj.language, languageOptions)];
+    return [normalizeLanguageId(obj.language, languageOptions)];
   }
   let toReturn = new Set();
 
@@ -100,7 +104,7 @@ export function getLanguageId(obj, languageOptions) {
 
   // convert the set to an array and then normalize the results
   toReturn = Array.from(toReturn).map((item) =>
-    normalizeLanguage(item, languageOptions)
+    normalizeLanguageId(item, languageOptions)
   );
 
   return toReturn;
@@ -117,7 +121,7 @@ export function getLanguageId(obj, languageOptions) {
  *
  * @returns {string} the normalized version of the language (ideally, an aat URL), or if no match, it reverts to what was passed through
  */
-export function normalizeLanguage(lang_id, languageOptions) {
+export function normalizeLanguageId(lang_id, languageOptions) {
   if (lang_id == undefined) {
     return NO_LANGUAGE;
   }

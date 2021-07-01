@@ -3,41 +3,44 @@
  * from the appropriate helper and then export them as part of the module.
  */
 import {
-  classifiedAs,
-  classifiedBy,
-  classificationsByNestedClass,
-  resourcesByClassifications,
-  objectsByNestedClass,
+  getClassifiedAs,
+  getClassifiedBy,
+  getClassifiedAsWithClassification,
+  getClassifiedByWithClassification,
+  getClassified,
+  getObjectsClassifiedByWithClassification,
+  getObjectsClassifiedAsWithClassification,
   getValueByClassification,
   getValuesByClassification,
   getValueOrContent,
   getReferredToByClassification,
-  getAttributed,
-  getAssigned,
+  getAttributedBy,
+  getAssignedBy,
 } from "./helpers/LinkedArtHelpers";
 
-import { checkEmptyArray, checkEmptyField } from "./helpers/BasicHelpers";
+import { normalizeFieldToArray } from "./helpers/BasicHelpers";
 import {
-  doesLanguageMatch,
+  doesObjectLanguageMatch,
   getLanguageId,
-  normalizeLanguage,
+  normalizeLanguageId,
 } from "./helpers/LanguageHelpers";
 
 export {
-  checkEmptyArray,
-  checkEmptyField,
-  classifiedAs,
-  classifiedBy,
-  classificationsByNestedClass,
-  doesLanguageMatch,
-  objectsByNestedClass,
+  normalizeFieldToArray,
+  getClassifiedAs,
+  getClassifiedBy,
+  getClassifiedAsWithClassification,
+  getClassifiedByWithClassification,
+  doesObjectLanguageMatch,
+  getObjectsClassifiedByWithClassification,
+  getObjectsClassifiedAsWithClassification,
   getValueByClassification,
   getValueOrContent,
   getValuesByClassification,
   getReferredToByClassification,
-  getAttributed,
-  getAssigned,
+  getAttributedBy,
+  getAssignedBy,
   getLanguageId,
-  normalizeLanguage,
-  resourcesByClassifications,
+  normalizeLanguageId,
+  getClassified,
 };

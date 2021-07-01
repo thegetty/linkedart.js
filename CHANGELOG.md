@@ -17,6 +17,33 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.10.0]
+
+### Changed
+
+- renamed the following functions to fit naming convention:
+
+  - resourcesByClassifications -> getClassified
+  - classfiedAs -> getClassifiedAs
+  - classifiedBy -> getClassifiedBy
+  - checkEmptyField -> normalizeFieldToArray
+  - normalizeLanguage -> normalizeLanguageId
+  - doesLanguageMatch -> doesObjectLanguageMatch
+
+- the following functions were renamed and made @private as well
+  - resourceParamToArray ->\_convertToArrayIfNeeded
+  - classificationsByNestedClass -> \_getClassificationsWithNestedClass
+  - objectsByNestedClass -> \_getObjectWithNestedClass
+
+### Added
+
+- getClassifiedAsWithClassification and getClassifiedByWithClassification were added as public helpers for \_getClassificationsWithNestedClass which help get a classification that is classified by a specified value.
+- getObjectsClassifiedAsWithClassification and getObjectsClassifiedByWithClassification were added as public helpers for \_getObjectWithNestedClass which help get an object with a classification that is classified by a specified value.
+
+### Removed
+
+- checkEmptyArray was removed as it is no longer needed and it's inconsistent return could be confusing, use normalizeFieldToArray instead
+
 ## [0.9.2]
 
 ### Added

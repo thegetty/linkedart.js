@@ -4,7 +4,7 @@ import gold_coin from "../data/mocks/1944.100.51606.json";
 
 describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
   it("gets the title of the object", () => {
-    const identifiedBy = basicHelpers.checkEmptyField(
+    const identifiedBy = basicHelpers.normalizeFieldToArray(
       gold_coin,
       "identified_by"
     );
@@ -18,7 +18,7 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
   });
 
   it("gets the accession number of the object", () => {
-    const identifiedBy = basicHelpers.checkEmptyField(
+    const identifiedBy = basicHelpers.normalizeFieldToArray(
       gold_coin,
       "identified_by"
     );
@@ -30,7 +30,7 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
   });
 
   it("gets the type (ids) of the object", () => {
-    const classifiedAsType = helpers.classificationsByNestedClass(
+    const classifiedAsType = helpers.getClassifiedAsWithClassification(
       gold_coin,
       "aat:300435443"
     );
@@ -41,13 +41,13 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
   });
 
   it("gets the iiif image of the object", () => {
-    const part = basicHelpers.checkEmptyField(gold_coin, "part");
-    const frontObject = helpers.classifiedAs(part, "aat:300190703")[0];
-    const representation = basicHelpers.checkEmptyField(
+    const part = basicHelpers.normalizeFieldToArray(gold_coin, "part");
+    const frontObject = helpers.getClassifiedAs(part, "aat:300190703")[0];
+    const representation = basicHelpers.normalizeFieldToArray(
       frontObject,
       "representation"
     );
-    const digitalImageObject = helpers.classifiedAs(
+    const digitalImageObject = helpers.getClassifiedAs(
       representation,
       "aat:300215302"
     )[0];
