@@ -87,7 +87,7 @@ export function classificationsByNestedClass(
 ) {
   let results = [];
   let resourceArray = resourceParamToArray(submittedResource);
-  if (resourceArray == results) {
+  if (resourceArray.length == results.length) {
     return results;
   }
 
@@ -133,7 +133,7 @@ export function objectsByNestedClass(
 ) {
   let results = [];
   let resourceArray = resourceParamToArray(submittedResource);
-  if (resourceArray == results) {
+  if (resourceArray.length == results.length) {
     return results;
   }
 
