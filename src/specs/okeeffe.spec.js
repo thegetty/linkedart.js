@@ -4,8 +4,14 @@ import photo from "../data/mocks/6401.json";
 
 describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   it("gets the title of the object", () => {
-    const identifiedBy = basicHelpers.checkEmptyField(photo, "identified_by");
-    const preferredTerms = helpers.classifiedAs(identifiedBy, "aat:300404670");
+    const identifiedBy = basicHelpers.normalizeFieldToArray(
+      photo,
+      "identified_by"
+    );
+    const preferredTerms = helpers.getClassifiedAs(
+      identifiedBy,
+      "aat:300404670"
+    );
     const name = preferredTerms.filter((x) => {
       if (x.type == "Name") {
         return x;
@@ -17,10 +23,16 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   it("gets the creator of the object", () => {
     const creatorNames = [];
     const producedBy = photo["produced_by"];
-    const consistsOf = basicHelpers.checkEmptyField(producedBy, "consists_of");
+    const consistsOf = basicHelpers.normalizeFieldToArray(
+      producedBy,
+      "consists_of"
+    );
     consistsOf.forEach((item) => {
-      const carriedOutBy = basicHelpers.checkEmptyField(item, "carried_out_by");
-      const identifiedBy = basicHelpers.checkEmptyField(
+      const carriedOutBy = basicHelpers.normalizeFieldToArray(
+        item,
+        "carried_out_by"
+      );
+      const identifiedBy = basicHelpers.normalizeFieldToArray(
         carriedOutBy[0],
         "identified_by"
       );
@@ -34,7 +46,10 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   });
 
   it("gets the accession number of the object", () => {
-    const identifiedBy = basicHelpers.checkEmptyField(photo, "identified_by");
+    const identifiedBy = basicHelpers.normalizeFieldToArray(
+      photo,
+      "identified_by"
+    );
     const title = helpers.getValueByClassification(
       identifiedBy,
       "aat:300312355"
@@ -43,7 +58,7 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   });
 
   it("gets the type (ids) of the object", () => {
-    const classifiedAsType = basicHelpers.checkEmptyField(
+    const classifiedAsType = basicHelpers.normalizeFieldToArray(
       photo,
       "classified_as"
     );
@@ -54,7 +69,7 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   });
 
   it("gets the iiif manifest of the object", () => {
-    const representation = basicHelpers.checkEmptyField(
+    const representation = basicHelpers.normalizeFieldToArray(
       photo,
       "representation"
     );
