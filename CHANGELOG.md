@@ -17,6 +17,12 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.10.1]
+
+### Added
+
+- expanded test coverage
+
 ## [0.10.0]
 
 ### Changed
