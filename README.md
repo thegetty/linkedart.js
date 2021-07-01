@@ -1,6 +1,12 @@
-# linkedart
+# linkedart.js
 
 Library of functions for parsing Linked Art (https://linked.art/) data.
+
+## About
+
+# Documentation
+
+Documentation is available at [https://getty-linkedart-js.netlify.app](https://getty-linkedart-js.netlify.app).
 
 ## Project setup
 
@@ -31,4 +37,5 @@ npm run test:unit
 ```
 npm run lint
 ```
+
 # linked-art-helpers

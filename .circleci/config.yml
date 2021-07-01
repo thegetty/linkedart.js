@@ -26,12 +26,12 @@ workflows:
   build-deploy:
     jobs:
       - build
-      # - deploy:
-      #     filters:
-      #       branches:
-      #         only: main
-      #     requires:
-      #       - build
+      - deploy:
+          filters:
+            branches:
+              only: main
+          requires:
+            - build
 
 commands:
   setup:
@@ -63,9 +63,9 @@ commands:
         type: boolean
         default: false
     steps:
-      # - when:
-      #     condition: <<parameters.production>>
-      #     steps:
+      - when:
+          condition: <<parameters.production>>
+          steps:
       - run:
           name: Install netlify-cli
           command: npm install netlify-cli
