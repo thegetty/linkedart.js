@@ -63,9 +63,6 @@ commands:
         type: boolean
         default: false
     steps:
-      - when:
-          condition: <<parameters.production>>
-          steps:
       - run:
           name: Install netlify-cli
           command: npm install netlify-cli
