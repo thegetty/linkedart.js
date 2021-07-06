@@ -152,7 +152,7 @@ export function _getClassificationsWithNestedClass(
     language,
     languageOptions
   );
-  
+
   return classifications;
 }
 
