@@ -247,9 +247,11 @@ export function _getObjectWithNestedClass(
  * with the nestedClassification and return those classification objects as well as the full objects
  * from the original submittedResource to which those classification objects apply.
  *
- * fixme: is this example too Getty specific?
- * (e.g. for Visual Items we need to get the rights statement classification object, which we identify
- * by its own classification: see VisualItems.getClearanceLevel)
+ * (i.e. Some Linked Data objects will be classified by rights statements objects, such objects
+ * will have different IDs depending upon the rights of the Linked Data object, but will themselves
+ * be classified as "rights statements". This function could be used to grab all of the "rights
+ * statements" classification objects from a set of Linked Data objects as well as all of the Linked
+ * Data objects that are classified by a "rights statement" type of classification)
  *
  * @param {object} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
