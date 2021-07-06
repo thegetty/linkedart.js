@@ -142,31 +142,18 @@ export function _getClassificationsWithNestedClass(
   language = undefined,
   languageOptions = {}
 ) {
-  let results = [];
-  let resourceArray = _convertToArrayIfNeeded(submittedResource);
-  if (resourceArray.length == 0) {
-    return results;
-  }
-
-  for (const resource of resourceArray) {
-    // If there are no classifications, or the classification is just a string,
-    // continue
-    var classified_as = normalizeFieldToArray(resource, classificationField);
-    if (!classified_as.length) {
-      continue;
-    }
-    results = results.concat(
-      getClassified(
-        classified_as,
-        nestedClassification,
-        classificationField,
-        language,
-        languageOptions
-      )
-    );
-  }
-
-  return results;
+  let {
+    classifications,
+    objects,
+  } = _getObjectsAndClassificationsWithNestedClass(
+    submittedResource,
+    nestedClassification,
+    classificationField,
+    language,
+    languageOptions
+  );
+  
+  return classifications;
 }
 
 /**
@@ -241,10 +228,50 @@ export function _getObjectWithNestedClass(
   language = undefined,
   languageOptions = {}
 ) {
-  let results = [];
+  let {
+    classifications,
+    objects,
+  } = _getObjectsAndClassificationsWithNestedClass(
+    submittedResource,
+    nestedClassification,
+    classificationField,
+    language,
+    languageOptions
+  );
+
+  return objects;
+}
+
+/**
+ * Given an object or an array of objects, find all classification objects that are classified
+ * with the nestedClassification and return those classification objects as well as the full objects
+ * from the original submittedResource to which those classification objects apply.
+ *
+ * fixme: is this example too Getty specific?
+ * (e.g. for Visual Items we need to get the rights statement classification object, which we identify
+ * by its own classification: see VisualItems.getClearanceLevel)
+ *
+ * @param {object} submittedResource -- the object to inspect
+ * @param {string|array} nestedClassification -- the classification ID/IDS to match
+ * @param {string} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
+ * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @private
+ *
+ * @returns {object} an object with 'classifications' and 'objects' attributes containing arrays of
+ *   classification objects and full objects from the submittedResource respectively
+ */
+export function _getObjectsAndClassificationsWithNestedClass(
+  submittedResource,
+  nestedClassification,
+  classificationField = CLASSIFIED_AS,
+  language = undefined,
+  languageOptions = {}
+) {
+  let returnObject = { classifications: [], objects: [] };
   let resourceArray = _convertToArrayIfNeeded(submittedResource);
   if (resourceArray.length == 0) {
-    return results;
+    return returnObject;
   }
 
   for (const resource of resourceArray) {
@@ -261,12 +288,15 @@ export function _getObjectWithNestedClass(
       language,
       languageOptions
     );
+    returnObject.classifications = returnObject.classifications.concat(
+      classifications
+    );
     if (classifications.length > 0) {
-      results.push(resource);
+      returnObject.objects.push(resource);
     }
   }
 
-  return results;
+  return returnObject;
 }
 
 /**
