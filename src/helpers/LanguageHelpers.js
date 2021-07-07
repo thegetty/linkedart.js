@@ -129,15 +129,28 @@ export function getLanguageId(obj, languageOptions) {
 }
 
 /**
- * Normalize the language presented to deal with the following cases:
- * 1. an AAT language code: http://vocab.getty.edu/language/en
- * 2. an ISO code (2 letter): en
- * 3. an AAT Language id: e.g. http://vocab.getty.edu/aat/300388277
+ * Normalize a language id string to the corresponding AAT ID defined in the
+ * DEFAULT_LANGUAGE_LOOKUP or to something else defined by languageOptions.lookupMap
+ *
+ * Algorithm summary:
+ * 1. simplifies an AAT language code or other URL ending in ISO code (e.g. http://vocab.getty.edu/language/en)
+ * to just the ISO code (2 letter) (e.g. en) before checking for that code in the lookupMap.
+ * 2. if the simplified lang_id param can't be found in the lookupMap, returns the original lang_id
  *
  * @param {string} lang_id -- the language id to normalize
  * @param {object} languageOptions -- any additional options when working with language(s)
  *
- * @returns {string} the normalized version of the language (ideally, an aat URL), or if no match, it reverts to what was passed through
+ * @example AAT language code URL
+ * normalizeLanguageId('http://vocab.getty.edu/language/en') would return "http://vocab.getty.edu/aat/300388277"
+ *
+ * @example ISO code in DEFAULT_LANGUAGE_LOOKUP
+ * normalizeLanguageId('en') would return "http://vocab.getty.edu/aat/300388277"
+ *
+ * @example ISO code in languageOptions.lookupMap
+ * normalizeLanguageId('en', {lookupMap: {'el': 'greek'}}) would return "greek"
+ *
+ * @returns {string} the normalized version of the language (by default, an AAT URL), or if no match,
+ * reverts to the original lang_id parameter
  */
 export function normalizeLanguageId(lang_id, languageOptions) {
   if (lang_id == undefined) {
