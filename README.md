@@ -1,6 +1,6 @@
 # linkedart.js
 
-Linkedart.js iasibrary of functions for parsing [Linked Art](https://linked.art/), which is a Linked Open Data model used to describe art.
+Linkedart.js is a library of functions for parsing [Linked Art](https://linked.art/), which is a Linked Open Data model used to describe art.
 
 ## Installation
 
