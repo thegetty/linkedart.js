@@ -15,23 +15,31 @@ export const NO_LANGUAGE = "NO_LANGUAGE";
 
 /**
  * Checks whether the object matches the language specified in it's language declaration
- *
- * 1. if language is undefined, just return
- * 2. check whether the language of the object matches the language specified
- * 3. check wehther the language of the object is undefined, and whether we should treat that as a match
- *
- * @param {object} object -- the object to check the language for
- * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s)
  * 
- * @example with language options
- * doesObjectLanguageMatch({id: "1", content:"test"}, "en", { includeItemsWithNoLanguage: false } ) would return false
-
- * @example with a custom language map
- * doesObjectLanguageMatch({id: "1", content:"test", language:"http://vocab.getty.edu/languge/fr"}, "en", {languageMap: {fr: "en" } } ) would return true
+ * True cases:
+ * 1. if language is undefined, return true
+ * 2. if the language parameter matches the language of the object, return true
+ * 3. if the language parameter doesn't match the language of the object the, but the
+ *   languageOptions.fallbackLanguage parameter matches the language of the object, return true
+ * 4. if the language of the object is not defined and languageOptions.includeItemsWithNoLanguage
+ *   is true, return true
+ *
+ * @param {object} object -- the object to check for a matching language
+ * @param {string} language -- limits the results to just a specific language (or leave undefined to match all objects)
+ * @param {object} languageOptions -- optional object with expected attributes 'fallbackLanguage',
+ *   'includeItemsWithNoLanguage', and 'lookupMap' (see normalizeLanguageId)
  * 
- * @example with a fallback language
- * doesObjectLanguageMatch({id: "1", content:"test", language:"http://vocab.getty.edu/languge/fr"}, "en", {fallbackLanguage:'en' } ) would return true
+ * @example object without a 'language' attribute and with languageOptions.includeItemsWithNoLanguage == true
+ * doesObjectLanguageMatch({id: "1", content:"test"}, "en", { includeItemsWithNoLanguage: true } ) would return true
+ * 
+ * @example object without a 'language' attribute and no languageOptions
+ * doesObjectLanguageMatch({id: "1", content:"test"}, "en" ) would return false
+ * 
+ * @example with languageOptions.lookupMap
+ * doesObjectLanguageMatch({id: "1", content:"test", language:"fr"}, "en", {lookupMap: {fr: "en" } } ) would return true
+ * 
+ * @example with languageOptions.fallbackLanguage
+ * doesObjectLanguageMatch({id: "1", content:"test", language: "fr"}, "en", {fallbackLanguage:'fr' } ) would return true
  * 
  * @returns {boolean}
  */
@@ -40,7 +48,7 @@ export function doesObjectLanguageMatch(
   language,
   languageOptions = {}
 ) {
-  // IF LANGUAGE IS UNDEFINED, RETURN ALL LANGUAGES
+  // If the language parameter is undefined, return true
   if (language == undefined) {
     return true;
   }
