@@ -18,8 +18,28 @@ In Node.js:
 // import a single helper
 import { getClassifiedAs } from "@thegetty-private/linkedart";
 
-// import all Linked Art helpers
-import * as helpers from "../helpers/LinkedArtHelpers";
+const linkedArtObject = {
+  identified_by: [
+    {
+      type: "Name",
+      content: "Young Woman Picking Fruit",
+      classified_as: [
+        {
+          id: "http://vocab.getty.edu/aat/300404670",
+          _label: "preferred terms",
+          type: "Type",
+        },
+      ],
+    },
+  ],
+};
+
+const result = getClassifiedAs(
+  linkedArtObject["identified_by"],
+  "http://vocab.getty.edu/aat/300404670"
+);
+
+// result should equal "Young Woman Picking Fruit"
 ```
 
 ## License
