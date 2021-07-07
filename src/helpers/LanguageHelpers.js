@@ -88,6 +88,16 @@ export function doesObjectLanguageMatch(
  * @param {object} obj -- the object to look for the language block in
  * @param {object} languageOptions -- any additional options when working with language(s)
  *
+ * @example object with a string value in its 'language' attribute and no languageOptions
+ * getLanguageId({language: 'en'}) would return "http://vocab.getty.edu/aat/300388277"
+ *
+ * @example object with an object in its 'language' attribute and languageOptions.lookupMap defined
+ * getLanguageId({language: {id: 'http://vocab.getty.edu/language/en'}}, {lookupMap: {'en': 'fr'}})
+ * would return 'fr'
+ *
+ * @example object without a 'language' attribute and languageOptions.lookupMap defined
+ * getLanguageId({}, {lookupMap: {'en': 'fr'}}) would return "NO_LANGUAGE"
+ *
  * @returns {array} the unique list of languages represented in the data
  */
 export function getLanguageId(obj, languageOptions) {
