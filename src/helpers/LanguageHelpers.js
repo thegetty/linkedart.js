@@ -28,19 +28,19 @@ export const NO_LANGUAGE = "NO_LANGUAGE";
  * @param {string} language -- limits the results to just a specific language (or leave undefined to match all objects)
  * @param {object} languageOptions -- optional object with expected attributes 'fallbackLanguage',
  *   'includeItemsWithNoLanguage', and 'lookupMap' (see normalizeLanguageId)
- * 
- * @example object without a 'language' attribute and with languageOptions.includeItemsWithNoLanguage == true
- * doesObjectLanguageMatch({id: "1", content:"test"}, "en", { includeItemsWithNoLanguage: true } ) would return true
- * 
- * @example object without a 'language' attribute and no languageOptions
- * doesObjectLanguageMatch({id: "1", content:"test"}, "en" ) would return false
- * 
+ *
+ * @example object without a 'language' attribute
+ * doesObjectLanguageMatch({id:"1",content:"test"},"en") would return true
+ *
+ * @example object without a 'language' attribute and with languageOptions.includeItemsWithNoLanguage == false
+ * doesObjectLanguageMatch({id:"1",content:"test"},"en",{includeItemsWithNoLanguage:false}) would return false
+ *
  * @example with languageOptions.lookupMap
- * doesObjectLanguageMatch({id: "1", content:"test", language:"fr"}, "en", {lookupMap: {fr: "en" } } ) would return true
- * 
+ * doesObjectLanguageMatch({id:"1",content:"test",language:"fr"},"en",{lookupMap:{fr: "en"}}) would return true
+ *
  * @example with languageOptions.fallbackLanguage
- * doesObjectLanguageMatch({id: "1", content:"test", language: "fr"}, "en", {fallbackLanguage:'fr' } ) would return true
- * 
+ * doesObjectLanguageMatch({id:"1",content:"test",language:"fr"},"en",{fallbackLanguage:'fr'}) would return true
+ *
  * @returns {boolean}
  */
 export function doesObjectLanguageMatch(
@@ -55,7 +55,7 @@ export function doesObjectLanguageMatch(
   // Get the normalized LANGUAGE_IDs for the result
   let lang_ids = getLanguageId(object, languageOptions);
 
-  // if the langaugeId matches the specified language
+  // if the languageId matches the specified language
   if (lang_ids.includes(normalizeLanguageId(language, languageOptions))) {
     return true;
   }
@@ -70,7 +70,7 @@ export function doesObjectLanguageMatch(
     return true;
   }
 
-  // if the langageId matches "no language" or there are no languages
+  // if the languageId matches "no language" or there are no languages
   if (lang_ids.includes(NO_LANGUAGE) || lang_ids.length == 0) {
     if (languageOptions.includeItemsWithNoLanguage == false) {
       return false;
