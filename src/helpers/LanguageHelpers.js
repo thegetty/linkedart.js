@@ -15,7 +15,7 @@ export const NO_LANGUAGE = "NO_LANGUAGE";
 
 /**
  * Checks whether the object matches the language specified in it's language declaration
- * 
+ *
  * True cases:
  * 1. if language is undefined, return true
  * 2. if the language parameter matches the language of the object, return true
