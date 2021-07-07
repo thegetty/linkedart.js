@@ -39,7 +39,7 @@ const result = getClassifiedAs(
   "http://vocab.getty.edu/aat/300404670"
 );
 
-// result should equal "Young Woman Picking Fruit"
+// result should equal: "Young Woman Picking Fruit"
 ```
 
 ## License
