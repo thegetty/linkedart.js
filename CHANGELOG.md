@@ -17,6 +17,13 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.10.2]
+
+### Changed
+
+- changed `_getClassificationsWithNestedClass` and `_getObjectWithNestedClass` to use a helper function `_getObjectsAndClassificationsWithNestedClass` to avoid repetitive logic
+- moved all private helper functions used in `LinkedArtHelpers.js` to the end of the file to avoid clutter among exported functions
+
 ## [0.10.1]
 
 ### Added
