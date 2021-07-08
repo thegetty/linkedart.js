@@ -1,41 +1,47 @@
 # linkedart.js
 
-Library of functions for parsing Linked Art (https://linked.art/) data.
+Linkedart.js is a library of functions for parsing [Linked Art](https://linked.art/), which is a Linked Open Data model used to describe art.
 
-## About
+## Installation
 
-# Documentation
+Using npm:
 
-Documentation is available at [https://getty-linkedart-js.netlify.app](https://getty-linkedart-js.netlify.app).
-
-## Project setup
-
-```
-npm install
+```shell
+$ npm install @thegetty/linkedart.js --save
 ```
 
-### Compiles and minifies for production
+## Use
 
-```
-npm run build
+In Node.js:
+
+```js
+// import a single helper
+import { getClassifiedAs } from "@thegetty-private/linkedart";
+
+const linkedArtObject = {
+  identified_by: [
+    {
+      type: "Name",
+      content: "Young Woman Picking Fruit",
+      classified_as: [
+        {
+          id: "http://vocab.getty.edu/aat/300404670",
+          _label: "preferred terms",
+          type: "Type",
+        },
+      ],
+    },
+  ],
+};
+
+const result = getClassifiedAs(
+  linkedArtObject["identified_by"],
+  "http://vocab.getty.edu/aat/300404670"
+);
+
+// result should equal: "Young Woman Picking Fruit"
 ```
 
-### Build the JSDoc
+## License
 
-```
-npm run build:jsdoc
-```
-
-### Run your tests
-
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-# linked-art-helpers
+License info will go here
