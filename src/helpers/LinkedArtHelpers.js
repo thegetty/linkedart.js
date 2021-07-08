@@ -17,7 +17,7 @@ const REFERRED_TO_BY = "referred_to_by";
  * Given an object or an array of objects, find all entries that have an object in their classified_as
  * field with an id that matches the requestedClassification.
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} requestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
@@ -51,7 +51,7 @@ export function getClassifiedAs(
  * Given an object or an array of objects, find all entries that have an object in their classified_by
  * field with an id that matches the requestedClassification.
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} requestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
@@ -86,7 +86,7 @@ export function getClassifiedBy(
  * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
  * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
@@ -122,7 +122,7 @@ export function getClassifiedAsWithClassification(
  * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
  * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
@@ -157,7 +157,7 @@ export function getClassifiedByWithClassification(
  * Given an object or an array of objects, find all objects that are classified as an object
  * which is classified by nestedClassification
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
@@ -192,7 +192,7 @@ export function getObjectsClassifiedAsWithClassification(
  * Given an object or an array of objects, find all objects that are classified by an object
  * which is classified by nestedClassification
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
@@ -227,7 +227,7 @@ export function getObjectsClassifiedByWithClassification(
  * Given an object or an array of objects, find all objects that with classifications
  * that match either all of the requestedClassifications or any of the requestedClassifications.
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} requestedClassifications -- either a string or an array of classification strings
  * @param {string} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
@@ -300,7 +300,7 @@ export function getClassified(
  * Get the value of the first object that is classified as the requestedClassification
  * parameter.
  *
- * @param {object} submittedResource
+ * @param {object|array} submittedResource
  * @param {string|array} requestedClassification
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
@@ -338,7 +338,7 @@ export function getValueByClassification(
  * Get an array of all the values of objects that are classified as the
  * requestedClassification parameter.
  *
- * @param {object} submittedResource
+ * @param {object|array} submittedResource
  * @param {string|array} requestedClassification
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
@@ -610,7 +610,7 @@ function _getAssignedProperty(assigned, assignedProperty) {
  * Given an object or an array of objects, find all objects that are classified by an object
  * which is classified by nestedClassification
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)

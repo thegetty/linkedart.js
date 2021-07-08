@@ -11,7 +11,7 @@
  * or primitive, or the array
  *
  * @param {object} obj - The object that might have an array attribute
- * @param {string} key - The key for the attribute field we are interested in
+ * @param {string} key - The key for the attribute field we want to retrieve
  *
  * @example field doesn't exist
  * normalizeFieldToArray({"id": "1234"}, "type") would return an empty array ([])
