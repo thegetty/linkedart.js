@@ -17,10 +17,18 @@ const REFERRED_TO_BY = "referred_to_by";
  * Given an object or an array of objects, find all entries that have an object in their classified_as
  * field with an id that matches the requestedClassification.
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} requestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_by: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
+ * ]
+ * getClassifiedAs(submittedResource, 'description') would return the third object in the array
  *
  * @returns {array} an array of objects that match
  */
@@ -43,10 +51,18 @@ export function getClassifiedAs(
  * Given an object or an array of objects, find all entries that have an object in their classified_by
  * field with an id that matches the requestedClassification.
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} requestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_by: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
+ * ]
+ * getClassifiedBy(submittedResource, 'title') would return the first and second objects in the array
  *
  * @returns {array} an array of objects that match
  */
@@ -70,11 +86,19 @@ export function getClassifiedBy(
  * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
  * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
- * @private
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_by: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
+ * ]
+ * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the object with
+ * 'id': 'description' from the 'classified_as' attribute of the third object in the array
  *
  * @returns {array} an array of objects that match
  */
@@ -98,11 +122,19 @@ export function getClassifiedAsWithClassification(
  * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
  * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
- * @private
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_by: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
+ * ]
+ * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the object with
+ * 'id': 'title' from the 'classified_by' attribute of the second object in the array
  *
  * @returns {array} an array of objects that match
  */
@@ -125,10 +157,19 @@ export function getClassifiedByWithClassification(
  * Given an object or an array of objects, find all objects that are classified as an object
  * which is classified by nestedClassification
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_by: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
+ * ]
+ * getObjectsClassifiedByWithClassification(submittedResource, 'descriptive title') would return the
+ * third object in the array
  *
  * @returns {array} an array of objects that match
  */
@@ -151,10 +192,19 @@ export function getObjectsClassifiedAsWithClassification(
  * Given an object or an array of objects, find all objects that are classified by an object
  * which is classified by nestedClassification
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_by: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
+ * ]
+ * getObjectsClassifiedByWithClassification(submittedResource, 'descriptive title') would return the
+ * second object in the array
  *
  * @returns {array} an array of objects that match
  */
@@ -174,14 +224,31 @@ export function getObjectsClassifiedByWithClassification(
 }
 
 /**
- * Given an object or an array of objects, find all objects that have either all of the requestedClassifications
- * or any of the requestedClassifications.
+ * Given an object or an array of objects, find all objects that with classifications
+ * that match either all of the requestedClassifications or any of the requestedClassifications.
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} requestedClassifications -- either a string or an array of classification strings
  * @param {string} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_as: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_as: [{id: 'title'}, {id: 'description'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description'}]}
+ * ]
+ * getClassified(submittedResource, ['title', 'description']) would return the second object in the array
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_as: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_as: [{id: 'title'}, {id: 'description'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description'}]}
+ * ]
+ * getClassified(submittedResource, ['title', 'description'], 'classified_as', undefined, {}, 'OR')
+ * would return all objects in the array
  *
  * @returns {array} an array of objects that match
  */
@@ -230,11 +297,21 @@ export function getClassified(
 }
 
 /**
- * Get the 1st matching value for the classification
- * @param {object} submittedResource
+ * Get the value of the first object that is classified as the requestedClassification
+ * parameter.
+ *
+ * @param {object|array} submittedResource
  * @param {string|array} requestedClassification
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_as: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_as: [{id: 'title'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description'}]}
+ * ]
+ * getValuesByClassification(submittedResource, 'title') would return 'Irises'
  *
  * @returns {string|number} the matching value
  */
@@ -258,11 +335,21 @@ export function getValueByClassification(
 }
 
 /**
- * Get an array of values matching value for the classification
- * @param {object} submittedResource
+ * Get an array of all the values of objects that are classified as the
+ * requestedClassification parameter.
+ *
+ * @param {object|array} submittedResource
  * @param {string|array} requestedClassification
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example for the submittedResource:
+ * [
+ *   {content: 'Irises', classified_as: [{id: 'title'}]},
+ *   {content: 'Blue Irises', classified_as: [{id: 'title'}]},
+ *   {content: 'Van Gogh painting', classified_as: [{id: 'description'}]}
+ * ]
+ * getValuesByClassification(submittedResource, 'title') would return ['Irises', 'Blue Irises']
  *
  * @returns {array} the matching values (string|array)
  */
@@ -292,10 +379,15 @@ export function getValuesByClassification(
 }
 
 /**
- * Get an array of values matching value for the classification
+ * Given an object get the value of the 'value' or 'content' attribute (if
+ * an object has both returns the 'value' attribute)
+ *
  * @param {object} object
  *
- * @returns {string|number} the value or content depending on which exists.  String comes from the content field, Number comes from the value field
+ * @example getValueOrContent({'value': 123, 'content': '456'}) would return 123
+ *
+ * //fixme: if this should only return a string or number should we add a type check?
+ * @returns {string|number} the value or content depending on which exists.
  */
 export function getValueOrContent(object) {
   if (object == undefined) {
@@ -312,11 +404,20 @@ export function getValueOrContent(object) {
 }
 
 /**
- * Helper function that checks the 'referred_to_by' field for a birth place
+ * Gets all the values of objects in a Linked Art object's 'referred_to_by' field
+ * which are classified by the classification parameter.
  *
- * @private
  * @param {object} object - the Actor object to inspect
  * @param {string|array} classification - the classification
+ *
+ * @example for the object:
+ * {
+ *  'referred_to_by': [
+ *     {content: 'Irises', classified_as: [{id: 'title'}]},
+ *     {content: 'Van Gogh painting', classified_as: [{id: 'description'}]}
+ *   ]
+ * }
+ * getReferredToByClassification(object, 'title') would return ['Irises']
  *
  * @returns {string}  or undefined
  */
@@ -329,25 +430,29 @@ export function getReferredToByClassification(object, classification) {
 }
 
 /**
- * Gets an Attributed value (one assigned from an external source) for the object and returns matching values
-
+ * Gets all of the objects from a LinkedArt Object's 'attributed_by' attribute which have
+ * an 'assigned_property' attribute that matches the assignedProperty parameter.
+ *
  * @param {Object} object - the LinkedArt Object
- * @param {String} assignedProperty  - the assigned properly
+ * @param {String} assignedProperty  - the assigned property
  * 
- * @example (an example of the data)
+ * @example getAttributedBy(object, 'identified_by') would return the object with 'type': 'Name'
+ * from the example object below
+ * {
  *  "attributed_by": [
-    {
-      "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/f04fde5c-e645-4b4d-986c-443d7c6aa2ef/attribute-assignment",
-      "type": "AttributeAssignment",
-      "assigned_property": "identified_by",
-      "assigned": {
-        "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/f04fde5c-e645-4b4d-986c-443d7c6aa2ef",
-        "type": "Name",
-        "content": "Initial B: David Playing the Harp",
-        "classified_as": [
-        ]
-      },
-    }]
+     {
+       "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/f04fde5c-e645-4b4d-986c-443d7c6aa2ef/attribute-assignment",
+       "type": "AttributeAssignment",
+       "assigned_property": "identified_by",
+       "assigned": {
+         "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/f04fde5c-e645-4b4d-986c-443d7c6aa2ef",
+         "type": "Name",
+         "content": "Initial B: David Playing the Harp",
+         "classified_as": [
+         ]
+       },
+     }]
+   }
  * 
  * @return {Array} the list of values that map to the attributed value
  */
@@ -361,25 +466,29 @@ export function getAttributedBy(object, assignedProperty) {
 }
 
 /**
- * Gets an Assinged value (one assigned from an external source) for the object and returns matching values
-
+ * Gets all of the objects from a LinkedArt Object's 'assigned_by' attribute which have
+ * an 'assigned_property' attribute that matches the assignedProperty parameter.
+ *
  * @param {Object} object - the LinkedArt Object
  * @param {String} assignedProperty  - the assigned properly
  * 
- * @example (an example of the data)
- *  "assigned_by": [
-    {
-      "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/f04fde5c-e645-4b4d-986c-443d7c6aa2ef/attribute-assignment",
-      "type": "AttributeAssignment",
-      "assigned_property": "identified_by",
-      "assigned": {
-        "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/f04fde5c-e645-4b4d-986c-443d7c6aa2ef",
-        "type": "Name",
-        "content": "Initial B: David Playing the Harp",
-        "classified_as": [
-        ]
-      },
-    }]
+ * @example getAssignedBy(object, 'identified_by') would return the object with 'type': 'Name'
+ * from the example object below
+ *  {
+ *   "assigned_by": [
+     {
+       "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/f04fde5c-e645-4b4d-986c-443d7c6aa2ef/attribute-assignment",
+       "type": "AttributeAssignment",
+       "assigned_property": "identified_by",
+       "assigned": {
+         "id": "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/f04fde5c-e645-4b4d-986c-443d7c6aa2ef",
+         "type": "Name",
+         "content": "Initial B: David Playing the Harp",
+         "classified_as": [
+         ]
+       },
+     }]
+     }
  * 
  * @return {Array} the list of values that map to the attributed value
  */
@@ -392,11 +501,18 @@ export function getAssignedBy(object, assignedProperty) {
   return _getAssignedProperty(assigned, assignedProperty);
 }
 
-/*
-  takes: array of objects
-  returns: array of objects with duplicates removed
-  (keeps 1st object of ID and removes following with same ID)
-*/
+/**
+ * Removes all duplicate objects (those with the same 'id' property) from an array
+ * of objects. (keeps 1st object with a duplicated 'id' attribute and removes following
+ * objects with the same 'id' attribute)
+ *
+ * @param {array} _array - the array of objects to de-duplicate
+ *
+ * @example removeDuplicatesById([{id: '123', type: 'Object'}, {id: '123', type: 'Artist'}])
+ * would return [{id: '123', type: 'Object'}]
+ *
+ * @return {array} the array of objects with duplicates removed
+ */
 export function removeDuplicatesById(_array) {
   const result = Array.from(new Set(_array.map((a) => a.id))).map((id) => {
     return _array.find((a) => a.id === id);
@@ -406,9 +522,9 @@ export function removeDuplicatesById(_array) {
 }
 
 /**
- * Checks to see if an object's requested field has a part and returns the value. Otherwise, returns either the requested field (if availalble)
- * or an empty array (if neither is available)
-
+ * Checks to see if an object's requested field has a part and returns the value. Otherwise,
+ * returns either the requested field (if availalble) or an empty array (if neither is available)
+ * 
  * @param {object} object - the LinkedArt Object
  * @param {string} field  - the requested field to search for parts
  * 
@@ -428,8 +544,9 @@ export function removeDuplicatesById(_array) {
       ]
     }
  * 
- * @return {array} if the part was found, return it. if not, but the field was found, return the whole field requested in an array.
- * otherwise, return an empty array.
+ * @return {array} If the value of the object's field has a 'part' attribute, return it. If not, 
+ * return the value of the object's field as an array. If the object does not have an attribute 
+ * matching the field parameter return an empty array.
  */
 export function getObjectParts(object, field) {
   const fieldRequested = object[field];
@@ -493,7 +610,7 @@ function _getAssignedProperty(assigned, assignedProperty) {
  * Given an object or an array of objects, find all objects that are classified by an object
  * which is classified by nestedClassification
  *
- * @param {object} submittedResource -- the object to inspect
+ * @param {object|array} submittedResource -- the object to inspect
  * @param {string|array} nestedClassification -- the classification ID/IDS to match
  * @param {string} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
