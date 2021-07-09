@@ -17,7 +17,7 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
-## [0.11.0]
+## [0.12.0]
 
 ### Added
 
