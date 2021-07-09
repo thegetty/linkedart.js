@@ -17,6 +17,18 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.10.3]
+
+### Added
+
+- Added a .github/CONTRIBUTING.md file with some pull request guidelines, and added a link in the readme so that users can navigate to it easily
+- Added information to jsdoc_home.md
+
+### Changed
+
+- Replaced the default readme with one more specific to our library
+- Jsdoc for helper descriptions have been updated and more @examples have been added
+
 ## [0.10.2]
 
 ### Changed
