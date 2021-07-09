@@ -1,5 +1,9 @@
 # linkedart.js
 
+[Site](https://data.getty.edu/) |
+[Docs](https://data.getty.edu/) |
+[Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md)
+
 Linkedart.js is a library of functions for parsing [Linked Art](https://linked.art/), which is a Linked Open Data model used to describe art.
 
 ## Installation
