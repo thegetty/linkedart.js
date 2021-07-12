@@ -17,6 +17,13 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.11.0]
+
+### Changed
+
+- updated the license to be BSD-3
+- updated some of the intro text
+
 ## [0.10.3]
 
 ### Added
