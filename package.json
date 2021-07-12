@@ -44,6 +44,6 @@
     "url": "git+https://github.com/thegetty/linkedart.js.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
   "homepage": "https://github.com/thegetty/linkedart.js#readme"
 }

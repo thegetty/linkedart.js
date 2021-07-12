@@ -16,8 +16,6 @@ $ npm install @thegetty/linkedart.js --save
 
 ## Use
 
-In Node.js:
-
 ```js
 // import a single helper
 import { getClassifiedAs } from "@thegetty-private/linkedart";
@@ -48,4 +46,4 @@ const result = getClassifiedAs(
 
 ## License
 
-License info will go here
+This software is licensed under the [BSD-3](https://opensource.org/licenses/BSD-3-Clause) license.
