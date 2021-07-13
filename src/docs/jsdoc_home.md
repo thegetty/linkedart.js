@@ -1,11 +1,10 @@
 ### About Linked Art
 
-[Linked Art](https://linked.art/) is a community project that created the linked open data [model](https://linked.art/model/) that provides a standard for the data representation to describe art. Examples of this model being implemented can be found at organizations such as [The Getty Museum](https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb), [The Georgia O'Keeffe Musem](https://collections.okeeffemuseum.org/data/object/6401.json) and [Nomisma](http://numismatics.org/collection/1944.100.51606.jsonld?profile=linkedart).
+[Linked Art](https://linked.art/) is a community project that created the linked open data [model](https://linked.art/model/) that provides a standard for the data representation to describe art. Examples of this model being implemented can be found at organizations such as [The Getty Museum](https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb), [The Georgia O'Keeffe Musem](https://collections.okeeffemuseum.org/data/object/6401.json) and [Nomisma](http://numismatics.org/collection/1944.100.51606.jsonld?profile=linkedart) among others.
 
 ### About linkedart.js
 
 linkedart.js is a JavaScript library of functions to help parse Linked Art data and integrate it into a project.
-
 
 ### Getting Started
 
@@ -43,4 +42,4 @@ You'll want to install linkedart.js and its peer-dependencies via npm:
 
 ### License
 
-ISC
+This software is licensed under the [BSD-3](https://opensource.org/licenses/BSD-3-Clause) license.
