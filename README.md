@@ -1,10 +1,10 @@
 # linkedart.js
 
-[Site](https://data.getty.edu/) |
-[Docs](https://data.getty.edu/) |
+[Site](http://linkedartjs.org/) |
+[Docs](http://getty-linkedart-js.netlify.app) |
 [Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md)
 
-Linkedart.js is a library of functions for parsing [Linked Art](https://linked.art/), which is a Linked Open Data model used to describe art.
+Linkedart.js is a library of functions for parsing [Linked Art](https://linked.art/), which is a Linked Open Data model used to describe cultural heritage materials. This library includes helpers to ease working with Linked.art's basic JSON-LD patterns. This includes filtering data by classification, traversing the JSON-LD structure, and working with languages.
 
 ## Installation
 
@@ -29,11 +29,11 @@ const linkedArtObject = {
         {
           id: "http://vocab.getty.edu/aat/300404670",
           _label: "preferred terms",
-          type: "Type",
-        },
-      ],
-    },
-  ],
+          type: "Type"
+        }
+      ]
+    }
+  ]
 };
 
 const result = getClassifiedAs(
