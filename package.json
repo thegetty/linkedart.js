@@ -8,7 +8,7 @@
     "clean": "del ./dist",
     "build:jsdoc": "node node_modules/jsdoc/jsdoc.js -d jsdoc src/helpers/* -R src/docs/jsdoc_home.md",
     "lint": "prettier --check 'src/**/*.js'",
-    "prepare": "rollup -c build/rollup.config.js"
+    "prepublishOnly": "rollup -c build/rollup.config.js"
   },
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
