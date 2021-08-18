@@ -1,6 +1,6 @@
 {
   "name": "@thegetty/linkedart.js",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "scripts": {
     "test:unit": "jest",
     "build": "npm run clean:dist && rollup -c build/rollup.config.js",

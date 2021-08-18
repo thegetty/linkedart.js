@@ -17,6 +17,13 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.12.0]
+
+### Added
+
+- added additional languages to the `DEFAULT_LANGUAGE_LOOKUP`
+- added dedicated `lookupAatFromIso` and `lookupIsoFromAat` methods to help with resolution of languages.
+
 ## [0.11.0]
 
 ### Changed

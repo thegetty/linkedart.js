@@ -23,6 +23,8 @@ import {
   doesObjectLanguageMatch,
   getLanguageId,
   normalizeLanguageId,
+  lookupAatFromIso,
+  lookupIsoFromAat,
 } from "./helpers/LanguageHelpers";
 
 export {
@@ -43,4 +45,6 @@ export {
   getLanguageId,
   normalizeLanguageId,
   getClassified,
+  lookupAatFromIso,
+  lookupIsoFromAat,
 };
