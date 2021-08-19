@@ -236,3 +236,37 @@ describe("Language Helpers: does language match with broader data", () => {
     ).toEqual(true);
   });
 });
+
+describe("test language lookup", () => {
+  it("looks up ISO from AAT", () => {
+    expect(
+      languageHelpers.lookupIsoFromAat("http://vocab.getty.edu/aat/300388412")
+    ).toEqual("hi");
+  });
+  it("looks up ISO from AAT (https)", () => {
+    expect(
+      languageHelpers.lookupIsoFromAat("https://vocab.getty.edu/aat/300388412")
+    ).toEqual("hi");
+  });
+  it("looks up ISO from AAT (bad code)", () => {
+    expect(
+      languageHelpers.lookupIsoFromAat("http://vocab.getty.edu/aat/3000000")
+    ).toEqual(undefined);
+  });
+
+  it("looks up ISO from AAT (undefined)", () => {
+    expect(languageHelpers.lookupIsoFromAat()).toEqual(undefined);
+  });
+
+  it("looks up the AAT from the ISO code", () => {
+    expect(languageHelpers.lookupAatFromIso("hi")).toEqual(
+      "http://vocab.getty.edu/aat/300388412"
+    );
+  });
+  it("looks up the AAT from the ISO code (undefined)", () => {
+    expect(languageHelpers.lookupAatFromIso()).toEqual(undefined);
+  });
+  it("looks up the AAT from the ISO code (bad code)", () => {
+    expect(languageHelpers.lookupAatFromIso("hrk")).toEqual(undefined);
+  });
+});
