@@ -226,12 +226,14 @@ export function normalizeLanguageId(lang_id, languageOptions) {
  * Looks up the ISO language code from the full AAT URL
  *
  * @param {String} aat
- * @returns
+ *
+ * @returns {string} the 2-letter iso code
  */
-export function lookupIsoFromAat(aat) {
+export function lookupIsoFromAat(aat = "") {
   let iso = undefined;
+  let normalizedAat = aat.replace("https", "http");
   Object.keys(DEFAULT_LANGUAGE_LOOKUP).forEach((key) => {
-    if (DEFAULT_LANGUAGE_LOOKUP[key] == aat) {
+    if (DEFAULT_LANGUAGE_LOOKUP[key] == normalizedAat) {
       iso = key;
     }
   });
@@ -239,7 +241,7 @@ export function lookupIsoFromAat(aat) {
 }
 
 /**
- * Looks up the AAT Language Code from the ISO Code
+ * Looks up the AAT Language Code from the 2 letter ISO Code
  *
  * @param {string} iso
  *

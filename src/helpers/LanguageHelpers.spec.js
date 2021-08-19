@@ -243,6 +243,11 @@ describe("test language lookup", () => {
       languageHelpers.lookupIsoFromAat("http://vocab.getty.edu/aat/300388412")
     ).toEqual("hi");
   });
+  it("looks up ISO from AAT (https)", () => {
+    expect(
+      languageHelpers.lookupIsoFromAat("https://vocab.getty.edu/aat/300388412")
+    ).toEqual("hi");
+  });
   it("looks up ISO from AAT (bad code)", () => {
     expect(
       languageHelpers.lookupIsoFromAat("http://vocab.getty.edu/aat/3000000")
