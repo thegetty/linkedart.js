@@ -6,7 +6,7 @@
     "build": "npm run clean:dist && rollup -c build/rollup.config.js",
     "clean:dist": "rm -Rrf ./dist",
     "clean": "del ./dist",
-    "build:jsdoc": "node node_modules/jsdoc/jsdoc.js -d jsdoc src/helpers/* -R src/docs/jsdoc_home.md",
+    "build:jsdoc": "node node_modules/jsdoc/jsdoc.js -c jsdoc-config.json -d jsdoc src/helpers/* -R src/docs/jsdoc_home.md -t node_modules/better-docs",
     "lint": "prettier --check 'src/**/*.js'",
     "prepublishOnly": "rollup -c build/rollup.config.js"
   },
@@ -24,6 +24,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.5.1",
+    "better-docs": "^2.3.2",
     "core-js": "^3.8.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.15.0",
