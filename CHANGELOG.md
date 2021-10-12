@@ -17,6 +17,10 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.13.1]
+
+- fixed duplicate content in the jsdoc
+
 ## [0.13.0]
 
 - updated JSDoc theme to make it easier to read
