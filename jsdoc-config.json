@@ -1,0 +1,42 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": ["src"]
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "search": false,
+    "default": {
+      "outputSourceFiles": true
+    },
+    "better-docs": {
+      "name": "LinkedArt.js",
+      "title": "LinkedArt.js", // HTML title
+      "css": "style.css",
+      "trackingCode": "tracking-code-which-will-go-to-the-HEAD",
+      "hideGenerator": false,
+      "navLinks": [
+        {
+          "label": "Github",
+          "href": "http://github.com/thegetty/linkedart.js"
+        }
+      ]
+    }
+  },
+  "opts": {
+    "encoding": "utf8",
+    "destination": "output",
+    "recurse": true
+  },
+  "markdown.hardwrap": true,
+  "markdown": {
+    "hardwrap": true
+  },
+  "metadata": {
+    "title": "Some title"
+  }
+}
