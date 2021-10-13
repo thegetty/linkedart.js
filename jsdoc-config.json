@@ -3,7 +3,7 @@
     "allowUnknownTags": true
   },
   "source": {
-    "include": ["src"]
+    "include": ["src/helpers/"]
   },
   "plugins": ["plugins/markdown"],
   "templates": {
@@ -29,8 +29,10 @@
   },
   "opts": {
     "encoding": "utf8",
-    "destination": "output",
-    "recurse": true
+    "destination": "jsdoc",
+    "recurse": true,
+    "template": "node_modules/better-docs",
+    "readme": "src/docs/jsdoc_home.md"
   },
   "markdown.hardwrap": true,
   "markdown": {
