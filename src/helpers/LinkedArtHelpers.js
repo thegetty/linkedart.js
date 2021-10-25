@@ -7,11 +7,16 @@
 
 import * as languageHelpers from "./LanguageHelpers";
 import { normalizeFieldToArray } from "./BasicHelpers";
+import aat from "../data/aat.json";
 
+const ATTRIBUTED_BY = "attributed_by";
+const ASSIGNED_BY = "assigned_by";
 const CLASSIFIED_AS = "classified_as";
 const CLASSIFIED_BY = "classified_by";
+const IDENTIFIED_BY = "identified_by";
 const PART = "part";
 const REFERRED_TO_BY = "referred_to_by";
+const UNKNOWN = "Unknown";
 
 /**
  * Given an object or an array of objects, find all entries that have an object in their classified_as
@@ -224,6 +229,46 @@ export function getObjectsClassifiedByWithClassification(
 }
 
 /**
+ * Gets the primary name of the JSON-LD object based on an AAT value or other qualifier, uses the AAT value of Preferred Term as the default
+ *
+ * @param {Object} submittedResource - the JSON-LD object
+ * @param {string|array} requestedClassifications - the requested classification or list
+ * @param {string} language - the preferred language (empty by default)
+ * @param {Object} languageOptions - additional language options
+ *
+ * @returns {String}
+ */
+export function getPrimaryName(
+  submittedResource,
+  requestedClassifications = aat.PREFERRED_TERM,
+  language = undefined,
+  languageOptions = {}
+) {
+  if (submittedResource == undefined) {
+    return UNKNOWN;
+  }
+  let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
+  let names = identified_by.filter((item) => item.type == "Name");
+  let name = getValueByClassification(
+    names,
+    requestedClassifications,
+    language,
+    languageOptions
+  );
+
+  if (name != undefined) {
+    return name;
+  }
+
+  // fallback for error case
+  let label = UNKNOWN;
+  if (submittedResource && submittedResource.id) {
+    label += " (" + submittedResource.id + ")";
+  }
+  return label;
+}
+
+/**
  * Given an object or an array of objects, find all objects that with classifications
  * that match either all of the requestedClassifications or any of the requestedClassifications.
  *
@@ -282,7 +327,8 @@ export function getClassified(
       typeof obj == "string" ? obj : obj.id
     );
     let inClassificationIDs = (id) =>
-      languageMatch && classificationIDs.includes(id);
+      (languageMatch && classificationIDs.includes(id)) ||
+      classificationIDs.includes(convertToAlternateAat(id));
     if (operator == "AND") {
       if (requestedClassArray.every(inClassificationIDs)) {
         results.push(resource);
@@ -294,6 +340,20 @@ export function getClassified(
     }
   }
   return results;
+}
+
+/**
+ * Try to support alternate AAT constructions.
+ *
+ * @param {string} ids - an array of aat ids
+ *
+ * @returns {string}
+ */
+function convertToAlternateAat(id) {
+  if (id.startsWith("aat:")) {
+    return id.replace("aat:", "http://vocab.getty.edu/aat/");
+  }
+  return id.replace("http://vocab.getty.edu/aat/", "aat:");
 }
 
 /**
@@ -457,7 +517,7 @@ export function getReferredToByClassification(object, classification) {
  * @return {Array} the list of values that map to the attributed value
  */
 export function getAttributedBy(object, assignedProperty) {
-  let attributed = normalizeFieldToArray(object, "attributed_by");
+  let attributed = normalizeFieldToArray(object, ATTRIBUTED_BY);
   if (attributed.length == 0) {
     return [];
   }
@@ -493,7 +553,7 @@ export function getAttributedBy(object, assignedProperty) {
  * @return {Array} the list of values that map to the attributed value
  */
 export function getAssignedBy(object, assignedProperty) {
-  let assigned = normalizeFieldToArray(object, "assigned_by");
+  let assigned = normalizeFieldToArray(object, ASSIGNED_BY);
   if (assigned.length == 0) {
     return [];
   }
@@ -626,16 +686,14 @@ export function _getObjectWithNestedClass(
   language = undefined,
   languageOptions = {}
 ) {
-  let {
-    classifications,
-    objects,
-  } = _getObjectsAndClassificationsWithNestedClass(
-    submittedResource,
-    nestedClassification,
-    classificationField,
-    language,
-    languageOptions
-  );
+  let { classifications, objects } =
+    _getObjectsAndClassificationsWithNestedClass(
+      submittedResource,
+      nestedClassification,
+      classificationField,
+      language,
+      languageOptions
+    );
 
   return objects;
 }
@@ -661,16 +719,14 @@ export function _getClassificationsWithNestedClass(
   language = undefined,
   languageOptions = {}
 ) {
-  let {
-    classifications,
-    objects,
-  } = _getObjectsAndClassificationsWithNestedClass(
-    submittedResource,
-    nestedClassification,
-    classificationField,
-    language,
-    languageOptions
-  );
+  let { classifications, objects } =
+    _getObjectsAndClassificationsWithNestedClass(
+      submittedResource,
+      nestedClassification,
+      classificationField,
+      language,
+      languageOptions
+    );
 
   return classifications;
 }
@@ -723,9 +779,8 @@ export function _getObjectsAndClassificationsWithNestedClass(
       language,
       languageOptions
     );
-    returnObject.classifications = returnObject.classifications.concat(
-      classifications
-    );
+    returnObject.classifications =
+      returnObject.classifications.concat(classifications);
     if (classifications.length > 0) {
       returnObject.objects.push(resource);
     }
