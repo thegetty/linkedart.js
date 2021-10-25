@@ -686,14 +686,16 @@ export function _getObjectWithNestedClass(
   language = undefined,
   languageOptions = {}
 ) {
-  let { classifications, objects } =
-    _getObjectsAndClassificationsWithNestedClass(
-      submittedResource,
-      nestedClassification,
-      classificationField,
-      language,
-      languageOptions
-    );
+  let {
+    classifications,
+    objects,
+  } = _getObjectsAndClassificationsWithNestedClass(
+    submittedResource,
+    nestedClassification,
+    classificationField,
+    language,
+    languageOptions
+  );
 
   return objects;
 }
@@ -719,14 +721,16 @@ export function _getClassificationsWithNestedClass(
   language = undefined,
   languageOptions = {}
 ) {
-  let { classifications, objects } =
-    _getObjectsAndClassificationsWithNestedClass(
-      submittedResource,
-      nestedClassification,
-      classificationField,
-      language,
-      languageOptions
-    );
+  let {
+    classifications,
+    objects,
+  } = _getObjectsAndClassificationsWithNestedClass(
+    submittedResource,
+    nestedClassification,
+    classificationField,
+    language,
+    languageOptions
+  );
 
   return classifications;
 }
@@ -779,8 +783,9 @@ export function _getObjectsAndClassificationsWithNestedClass(
       language,
       languageOptions
     );
-    returnObject.classifications =
-      returnObject.classifications.concat(classifications);
+    returnObject.classifications = returnObject.classifications.concat(
+      classifications
+    );
     if (classifications.length > 0) {
       returnObject.objects.push(resource);
     }
