@@ -14,11 +14,12 @@ import {
   getValuesByClassification,
   getValueOrContent,
   getReferredToByClassification,
+  getPrimaryName,
   getAttributedBy,
   getAssignedBy,
 } from "./helpers/LinkedArtHelpers";
 
-import { normalizeFieldToArray } from "./helpers/BasicHelpers";
+import { normalizeAatId, normalizeFieldToArray } from "./helpers/BasicHelpers";
 import {
   doesObjectLanguageMatch,
   getLanguageId,
@@ -36,6 +37,7 @@ export {
   doesObjectLanguageMatch,
   getObjectsClassifiedByWithClassification,
   getObjectsClassifiedAsWithClassification,
+  getPrimaryName,
   getValueByClassification,
   getValueOrContent,
   getValuesByClassification,
@@ -44,6 +46,7 @@ export {
   getAssignedBy,
   getLanguageId,
   normalizeLanguageId,
+  normalizeAatId,
   getClassified,
   lookupAatFromIso,
   lookupIsoFromAat,

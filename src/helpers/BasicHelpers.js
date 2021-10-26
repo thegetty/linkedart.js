@@ -41,3 +41,29 @@ export function normalizeFieldToArray(obj, key) {
 
   return val;
 }
+
+/**
+ * Normalizes the AAT ID to one of two versions (an aat: prefixed id or a full url)
+ *
+ * @param {string} id - an ID to test
+ *
+ * @returns {string} - the alternate ID format
+ */
+export function normalizeAatId(id) {
+  let id_ = id.toLowerCase();
+  // if we're using the aat:<#> format, turn it into a full vocab url
+  if (id_.startsWith("aat:")) {
+    return id_.replace("aat:", "http://vocab.getty.edu/aat/");
+  }
+
+  // if we've got a full url with https://, replace it with http:// to make it internally consistent
+  if (id_.startsWith("https://vocab.getty.edu/aat/")) {
+    return id_.replace(
+      "https://vocab.getty.edu/aat/",
+      "http://vocab.getty.edu/aat/"
+    );
+  }
+
+  // otherwise, convert the full url to the aat:<#> format
+  return id_.replace("http://vocab.getty.edu/aat/", "aat:");
+}

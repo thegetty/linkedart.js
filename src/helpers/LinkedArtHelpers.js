@@ -5,8 +5,8 @@
  * @description This class contains helpers for working with linked.art JSON-LD data
  */
 
-import * as languageHelpers from "./LanguageHelpers";
-import { normalizeFieldToArray } from "./BasicHelpers";
+import { doesObjectLanguageMatch } from "./LanguageHelpers";
+import { normalizeAatId, normalizeFieldToArray } from "./BasicHelpers";
 import aat from "../data/aat.json";
 
 const ATTRIBUTED_BY = "attributed_by";
@@ -315,7 +315,7 @@ export function getClassified(
     // If there is no classifications, or the classification is just a string,
     // continue
     var classified_as = normalizeFieldToArray(resource, classificationField);
-    let languageMatch = languageHelpers.doesObjectLanguageMatch(
+    let languageMatch = doesObjectLanguageMatch(
       resource,
       language,
       languageOptions
@@ -326,9 +326,12 @@ export function getClassified(
     let classificationIDs = classified_as.map((obj) =>
       typeof obj == "string" ? obj : obj.id
     );
+
+    // function to check whether the ID matches
     let inClassificationIDs = (id) =>
       (languageMatch && classificationIDs.includes(id)) ||
-      classificationIDs.includes(convertToAlternateAat(id));
+      classificationIDs.includes(normalizeAatId(id));
+
     if (operator == "AND") {
       if (requestedClassArray.every(inClassificationIDs)) {
         results.push(resource);
@@ -340,20 +343,6 @@ export function getClassified(
     }
   }
   return results;
-}
-
-/**
- * Try to support alternate AAT constructions.
- *
- * @param {string} ids - an array of aat ids
- *
- * @returns {string}
- */
-function convertToAlternateAat(id) {
-  if (id.startsWith("aat:")) {
-    return id.replace("aat:", "http://vocab.getty.edu/aat/");
-  }
-  return id.replace("http://vocab.getty.edu/aat/", "aat:");
 }
 
 /**
@@ -686,10 +675,7 @@ export function _getObjectWithNestedClass(
   language = undefined,
   languageOptions = {}
 ) {
-  let {
-    classifications,
-    objects,
-  } = _getObjectsAndClassificationsWithNestedClass(
+  let { objects } = _getObjectsAndClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     classificationField,
@@ -721,10 +707,7 @@ export function _getClassificationsWithNestedClass(
   language = undefined,
   languageOptions = {}
 ) {
-  let {
-    classifications,
-    objects,
-  } = _getObjectsAndClassificationsWithNestedClass(
+  let { classifications } = _getObjectsAndClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     classificationField,
