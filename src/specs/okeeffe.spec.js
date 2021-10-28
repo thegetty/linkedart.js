@@ -9,6 +9,11 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
     );
   });
 
+  it("gets the creator", () => {
+    let creators = helpers.getCreators(photo);
+    expect(creators).toEqual(["http://data.okeeffemuseum.org/person/2"]);
+  });
+
   it("gets the creator of the object", () => {
     const creatorNames = [];
     const producedBy = photo["produced_by"];

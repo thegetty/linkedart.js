@@ -814,3 +814,43 @@ export function _getObjectsAndClassificationsWithNestedClass(
 
   return returnObject;
 }
+
+/**
+ *
+ * @param {object} object
+ *
+ * @returns {array}
+ */
+export function getCreators(object) {
+  return getProductionField(object, "produced_by", "carried_out_by");
+}
+
+/**
+ * Helper function that returns an array of requested production/creation information, tries to reconcile where the production may have parts
+ *
+ * @param {object} object - the HMO or IO
+ * @param {string} source - the data field in the object to look for the subfield
+ * @param {string} subfield - the subfield to look for
+ *
+ * @returns {array} an array of the matching values
+ */
+export function getProductionField(object, source, subfield) {
+  let produced_by = object[source];
+  let accumulator = [];
+
+  if (produced_by == undefined) {
+    return [];
+  }
+
+  let parts = produced_by["part"];
+  if (Array.isArray(parts) == false) {
+    parts = [produced_by];
+  }
+
+  parts.forEach((part) => {
+    let target = normalizeFieldToArray(part, subfield);
+    accumulator = accumulator.concat(target);
+  });
+
+  return accumulator;
+}

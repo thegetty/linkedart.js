@@ -9,6 +9,14 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
     );
   });
 
+  it("gets the creator", () => {
+    let creators = helpers.getCreators(gold_coin);
+    expect(creators.length).toEqual(1);
+    expect({ label: creators[0]._label, id: creators[0].id }).toEqual({
+      id: "http://nomisma.org/id/philip_iii_arrhidaeus",
+      label: "Philip III Arrhidaeus",
+    });
+  });
   it("gets the accession number of the object", () => {
     const identifiedBy = basicHelpers.normalizeFieldToArray(
       gold_coin,
