@@ -1,6 +1,6 @@
 /**
  * @file LinkedArtHelpers
- * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki
+ * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki, Nabil Kashyap
  * @module LinkedArtHelpers
  * @description This class contains helpers for working with linked.art JSON-LD data
  */
@@ -18,7 +18,7 @@ const PART = "part";
 const REFERRED_TO_BY = "referred_to_by";
 const UNKNOWN = "Unknown";
 
-const ASSIGNED_PROPERTY = "";
+const ASSIGNED_PROPERTY = "assigned_property";
 const NAME = "Name";
 const ASSIGNED = "assigned";
 const PRODUCED_BY = "produced_by";
@@ -810,9 +810,8 @@ export function _getObjectsAndClassificationsWithNestedClass(
       language,
       languageOptions
     );
-    returnObject.classifications = returnObject.classifications.concat(
-      classifications
-    );
+    returnObject.classifications =
+      returnObject.classifications.concat(classifications);
     if (classifications.length > 0) {
       returnObject.objects.push(resource);
     }
