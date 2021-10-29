@@ -10,6 +10,15 @@ describe("getDimensionsDescription", () => {
   });
 });
 
+describe("getDimensions", () => {
+  it("gets dimensions object", () => {
+    expect(objectHelpers.getDimensions(irises)).toEqual({
+      WIDTH: "94.2976885954",
+      HEIGHT: "74.2951485903",
+    });
+  });
+});
+
 describe("getAccessionNumber", () => {
   it("gets the correct accession number= if present", () => {
     expect(objectHelpers.getAccessionNumbers(irises)).toEqual("90.PA.20");
