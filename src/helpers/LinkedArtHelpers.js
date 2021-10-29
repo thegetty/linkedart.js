@@ -18,6 +18,12 @@ const PART = "part";
 const REFERRED_TO_BY = "referred_to_by";
 const UNKNOWN = "Unknown";
 
+const ASSIGNED_PROPERTY = "";
+const NAME = "Name";
+const ASSIGNED = "assigned";
+const PRODUCED_BY = "produced_by";
+const CARRIED_OUT_BY = "carried_out_by";
+
 /**
  * Given an object or an array of objects, find all entries that have an object in their classified_as
  * field with an id that matches the requestedClassification.
@@ -246,7 +252,7 @@ export function getPrimaryName2(submittedResource, options = {}) {
     return UNKNOWN;
   }
   let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
-  let names = identified_by.filter((item) => item.type == "Name");
+  let names = identified_by.filter((item) => item.type == NAME);
   let name = getValueByClassification(
     names,
     requestedClassifications,
@@ -286,7 +292,7 @@ export function getPrimaryName(
     return UNKNOWN;
   }
   let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
-  let names = identified_by.filter((item) => item.type == "Name");
+  let names = identified_by.filter((item) => item.type == NAME);
   let name = getValueByClassification(
     names,
     requestedClassifications,
@@ -370,11 +376,11 @@ export function getClassified(
       (languageMatch && classificationIDs.includes(id)) ||
       classificationIDs.includes(normalizeAatId(id));
 
-    if (operator == "AND") {
+    if (operator.toUpperCase() == "AND") {
       if (requestedClassArray.every(inClassificationIDs)) {
         results.push(resource);
       }
-    } else if (operator == "OR") {
+    } else if (operator.toUpperCase() == "OR") {
       if (requestedClassArray.some(inClassificationIDs)) {
         results.push(resource);
       }
@@ -686,8 +692,8 @@ function _convertToArrayIfNeeded(resourceParam) {
 function _getAssignedProperty(assigned, assignedProperty) {
   let accumulator = [];
   assigned.forEach((attr) => {
-    if (attr["assigned_property"] == assignedProperty) {
-      accumulator.push(attr["assigned"]);
+    if (attr[ASSIGNED_PROPERTY] == assignedProperty) {
+      accumulator.push(attr[ASSIGNED]);
     }
   });
   return accumulator;
@@ -822,35 +828,51 @@ export function _getObjectsAndClassificationsWithNestedClass(
  * @returns {array}
  */
 export function getCreators(object) {
-  return getProductionField(object, "produced_by", "carried_out_by");
+  return getProductionField(object, PRODUCED_BY, CARRIED_OUT_BY);
 }
 
 /**
  * Helper function that returns an array of requested production/creation information, tries to reconcile where the production may have parts
  *
  * @param {object} object - the HMO or IO
- * @param {string} source - the data field in the object to look for the subfield
+ * @param {string} field - the data field in the object to look for the subfield
  * @param {string} subfield - the subfield to look for
  *
  * @returns {array} an array of the matching values
  */
-export function getProductionField(object, source, subfield) {
-  let produced_by = object[source];
+export function getProductionField(object, field, subfield) {
+  let parts = normalizeFieldWithParts(object, field);
   let accumulator = [];
-
-  if (produced_by == undefined) {
-    return [];
-  }
-
-  let parts = produced_by["part"];
-  if (Array.isArray(parts) == false) {
-    parts = [produced_by];
-  }
-
   parts.forEach((part) => {
     let target = normalizeFieldToArray(part, subfield);
     accumulator = accumulator.concat(target);
   });
 
   return accumulator;
+}
+
+/**
+ * Normalize a field that may have parts.
+ *
+ * @description Some of the fields in LinkedArt may be (but sometimes dont) include parts.
+ * For example, `produced_by` which may have a production, or that production may contain multiple
+ * parts.  This method returns an array with the single or all parts
+ *
+ * @param {object} object - the JSON-LD object (or sub-bart)
+ * @param {string} field - the field to look for/in
+ *
+ * @returns {array} an array that contains the single or multiple parts
+ */
+export function normalizeFieldWithParts(object, field) {
+  let part = object[field];
+
+  if (part == undefined) {
+    return [];
+  }
+
+  let parts = part[PART];
+  if (Array.isArray(parts) == false) {
+    parts = [part];
+  }
+  return parts;
 }
