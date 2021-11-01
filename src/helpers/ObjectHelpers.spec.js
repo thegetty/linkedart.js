@@ -17,6 +17,14 @@ describe("getAccessionNumbers", () => {
   });
 });
 
+describe("getDigitalImages", () => {
+  it("gets the correct image urls if present", () => {
+    expect(objectHelpers.getDigitalImages(irises)[0]).toEqual(
+      "https://media.getty.edu/iiif/image/e5d29650-11f8-4897-9540-54a9dd65b04f/full/full/0/default.jpg"
+    );
+  });
+});
+
 describe("getRightsStatements", () => {
   it("gets the correct right statement if present", () => {
     expect(objectHelpers.getRightsStatements(irises)[0].id).toEqual(
