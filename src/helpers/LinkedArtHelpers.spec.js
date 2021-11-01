@@ -339,8 +339,7 @@ describe("getValueByClassification", () => {
             type: "Type",
           },
         ],
-        id:
-          "https://data.getty.edu/research/collections/object/946d57fa-9318-4ac8-829d-2b81eb44db54/tile/d41a1d1c-4d74-4eea-83b3-048971a18674/node/ad36af84-a04c-11ea-bfdd-0a6344088a1e",
+        id: "https://data.getty.edu/research/collections/object/946d57fa-9318-4ac8-829d-2b81eb44db54/tile/d41a1d1c-4d74-4eea-83b3-048971a18674/node/ad36af84-a04c-11ea-bfdd-0a6344088a1e",
         type: "Dimension",
         unit: {
           _label: "degrees",
@@ -539,8 +538,7 @@ describe("tests resourceByClassifications", () => {
           },
         ],
         content: "40.6 × 24.1 cm (16 × 9 1/2 in.)",
-        id:
-          "https://data.getty.edu/museum/collection/object/dff75e58-f8b9-4507-8ab7-5d948451dea7/dimensions/790c8915-292e-4825-af8b-629dbfb59f8b",
+        id: "https://data.getty.edu/museum/collection/object/dff75e58-f8b9-4507-8ab7-5d948451dea7/dimensions/790c8915-292e-4825-af8b-629dbfb59f8b",
         type: "LinguisticObject",
       },
     ]);

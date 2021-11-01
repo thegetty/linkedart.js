@@ -17,6 +17,13 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.14.0]
+
+### Added
+
+- added functions for handling primary names of objects `getPrimaryName` and `getPrimaryNames`, configurable with different language and aat values
+- added a function for normalizing AAT values `normalizeAatId` between aat:#### and http://vocabs.getty.edu/aat/####
+
 ## [0.13.1]
 
 - fixed duplicate content in the jsdoc
