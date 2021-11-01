@@ -6,20 +6,20 @@
  */
 
 import * as linkedArtHelpers from "./LinkedArtHelpers";
+import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
+import aat from "../data/aat.json";
 
 const REFERRED_TO_BY = "referred_to_by";
 
-// TODO: remove once aat.json is added
-const aat = {
-  DIMENSIONS_DESCRIPTION: "http://vocab.getty.edu/aat/300435430",
-};
-
 export function getDimensionsDescription(
   submittedResource,
-  requestedClassification = aat.DIMENSIONS_DESCRIPTION,
-  language = undefined,
-  languageOptions = {}
+  {
+    requestedClassification = aat.DIMENSIONS_DESCRIPTION,
+    language,
+    languageOptions = {},
+  } = {}
 ) {
+  requestedClassification = normalizeAatId(requestedClassification);
   let dimensionsDescription = linkedArtHelpers.getValueByClassification(
     submittedResource[REFERRED_TO_BY],
     requestedClassification,
