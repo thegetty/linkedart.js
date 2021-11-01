@@ -12,21 +12,21 @@ import {
   normalizeFieldWithParts,
 } from "./BasicHelpers";
 import aat from "../data/aat.json";
-
-const ATTRIBUTED_BY = "attributed_by";
-const ASSIGNED_BY = "assigned_by";
-const CLASSIFIED_AS = "classified_as";
-const CLASSIFIED_BY = "classified_by";
-const IDENTIFIED_BY = "identified_by";
-const PART = "part";
-const REFERRED_TO_BY = "referred_to_by";
-const UNKNOWN = "Unknown";
-
-const ASSIGNED_PROPERTY = "assigned_property";
-const NAME = "Name";
-const ASSIGNED = "assigned";
-const PRODUCED_BY = "produced_by";
-const CARRIED_OUT_BY = "carried_out_by";
+import {
+  ATTRIBUTED_BY,
+  ASSIGNED_BY,
+  CLASSIFIED_AS,
+  CLASSIFIED_BY,
+  IDENTIFIED_BY,
+  PART,
+  REFERRED_TO_BY,
+  UNKNOWN,
+  TIMESPAN,
+  ASSIGNED_PROPERTY,
+  ASSIGNED,
+  PRODUCED_BY,
+  CARRIED_OUT_BY,
+} from "../data/constants.json";
 
 /**
  * Given an object or an array of objects, find all entries that have an object in their classified_as
@@ -869,4 +869,30 @@ export function getProductionField(object, field, subfield) {
   });
 
   return accumulator;
+}
+
+/**
+ * Gets the timespan(s) for a production
+ * 
+ * @description This this gets the timespan object(s) for the production information regardless of whether the production has parts or not.
+ *
+ * @param {Object} object - a JSON-LD Object
+ *
+ * @example gets the timespan 
+ * getProductionTimespan({produced_by: { "timespan": {
+      "id": "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan",
+      "type": "TimeSpan",
+      "begin_of_the_begin": "1889-01-01T00:00:00",
+      "end_of_the_end": "1889-12-31T23:59:59"
+    },
+}}}) returns [{"id": "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan",
+      "type": "TimeSpan",
+      "begin_of_the_begin": "1889-01-01T00:00:00",
+      "end_of_the_end": "1889-12-31T23:59:59"
+}]
+ * 
+ * @returns {array} - an array of LinkedArt timespan objects
+ */
+export function getProductionTimespan(object) {
+  return helpers.getProductionField(object, PRODUCED_BY, TIMESPAN);
 }

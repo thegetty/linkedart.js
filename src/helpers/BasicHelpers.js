@@ -5,7 +5,7 @@
  * @description This class contains helpers for working with linked.art JSON-LD data
  */
 
-const PART = "part";
+import { PART } from "../data/constants.json";
 
 /**
  * Checks whether the object has the key as a property, and returns the result as either
