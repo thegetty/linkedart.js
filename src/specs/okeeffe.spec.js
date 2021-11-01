@@ -4,20 +4,9 @@ import photo from "../data/mocks/6401.json";
 
 describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   it("gets the title of the object", () => {
-    const identifiedBy = basicHelpers.normalizeFieldToArray(
-      photo,
-      "identified_by"
+    expect(helpers.getPrimaryName(photo)).toEqual(
+      "Abiquiu House, Ladder Against Studio Wall"
     );
-    const preferredTerms = helpers.getClassifiedAs(
-      identifiedBy,
-      "aat:300404670"
-    );
-    const name = preferredTerms.filter((x) => {
-      if (x.type == "Name") {
-        return x;
-      }
-    });
-    expect(name[0].value).toEqual("Abiquiu House, Ladder Against Studio Wall");
   });
 
   it("gets the creator of the object", () => {
