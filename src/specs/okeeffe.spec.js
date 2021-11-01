@@ -4,7 +4,7 @@ import photo from "../data/mocks/6401.json";
 
 describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   it("gets the title of the object", () => {
-    expect(helpers.getPrimaryName2(photo)).toEqual(
+    expect(helpers.getPrimaryName(photo)).toEqual(
       "Abiquiu House, Ladder Against Studio Wall"
     );
   });
