@@ -806,9 +806,8 @@ export function _getObjectsAndClassificationsWithNestedClass(
       language,
       languageOptions
     );
-    returnObject.classifications = returnObject.classifications.concat(
-      classifications
-    );
+    returnObject.classifications =
+      returnObject.classifications.concat(classifications);
     if (classifications.length > 0) {
       returnObject.objects.push(resource);
     }

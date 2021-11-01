@@ -1,8 +1,7 @@
 import * as languageHelpers from "./LanguageHelpers";
 import titles from "../data/mocks/titles_lanugages.json";
 const defaultObj = {
-  id:
-    "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/08d45f65-b135-4c93-a009-ae5587cca9f2",
+  id: "https://data.getty.edu/museum/collection/object/5be2eb9f-1b4e-49f6-bfc4-0fc7ab67a1c5/name/08d45f65-b135-4c93-a009-ae5587cca9f2",
   type: "Name",
   _label: "Group Title",
   content: "Lirios",
@@ -18,8 +17,7 @@ const defaultObj = {
       _label: "Alternate Title",
     },
     {
-      id:
-        "https://data.getty.edu/museum/ontology/linked-data/tms/object/titles/group-title",
+      id: "https://data.getty.edu/museum/ontology/linked-data/tms/object/titles/group-title",
       type: "Type",
       _label: "Group Title",
     },
