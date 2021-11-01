@@ -17,6 +17,13 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.15.0]
+
+### Added
+
+- added a function for managing fields with parts in BasicHelpers `normalizeFieldWithParts`
+- added a function to get a field out of a production `getProductionField` which can be used for similar top-level fields (like creation)
+
 ## [0.14.0]
 
 ### Added
