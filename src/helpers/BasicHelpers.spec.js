@@ -25,9 +25,9 @@ describe("normalizeFieldToArray", () => {
     );
   });
   it("tests check emptyArray with actual array", () => {
-    expect(
-      basicHelpers.normalizeFieldToArray({ test: ["a"] }, "test")
-    ).toEqual(["a"]);
+    expect(basicHelpers.normalizeFieldToArray({ test: ["a"] }, "test")).toEqual(
+      ["a"]
+    );
   });
 });
 
@@ -72,8 +72,8 @@ describe("normalizeFieldToArray", () => {
     );
   });
   it("tests check normalizeFieldToArray with actual array", () => {
-    expect(
-      basicHelpers.normalizeFieldToArray({ test: ["a"] }, "test")
-    ).toEqual(["a"]);
+    expect(basicHelpers.normalizeFieldToArray({ test: ["a"] }, "test")).toEqual(
+      ["a"]
+    );
   });
 });
