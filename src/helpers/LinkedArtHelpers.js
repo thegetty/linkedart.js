@@ -6,7 +6,11 @@
  */
 
 import { doesObjectLanguageMatch } from "./LanguageHelpers";
-import { normalizeAatId, normalizeFieldToArray } from "./BasicHelpers";
+import {
+  normalizeAatId,
+  normalizeFieldToArray,
+  normalizeFieldWithParts,
+} from "./BasicHelpers";
 import aat from "../data/aat.json";
 
 const ATTRIBUTED_BY = "attributed_by";
@@ -823,21 +827,36 @@ export function _getObjectsAndClassificationsWithNestedClass(
 }
 
 /**
+ * Gets the carried out by object(s) that are referenced in the productions and returns them.
  *
- * @param {object} object
+ * @description
+ * gets the creator from the JSON-LD (produced_by / carried_out_by ) and returns the result.  This is likely an object which
+ * is a reference to a Person or Group (Id, Type, and Label with nothing else), but could simply be an ID reference as well.
  *
- * @returns {array}
+ * @param {object} object - the JSON-LD Object to look in
+ *
+ * @example gets creator object/reference regardless of whether the production has a part or not
+ *  getCarriedOutBy({produced_by: { part: [{carried_out_by: {id:123}}}]}),  would return an array with one item [{id:123}]
+ *
+ * @returns {array} - an array of the references
  */
-export function getCreators(object) {
+export function getCarriedOutBy(object) {
   return getProductionField(object, PRODUCED_BY, CARRIED_OUT_BY);
 }
 
 /**
- * Helper function that returns an array of requested production/creation information, tries to reconcile where the production may have parts
+ * Gets the specified sub-field values for a field that may have parts.
  *
- * @param {object} object - the HMO or IO
+ * @description
+ * Helper function that returns an array of requested production/creation information, tries to reconcile where the production may have parts.
+ * This can be useful to get the Timespan for a creation, or the creator, or other nested fields
+ *
+ * @param {object} object - the JSON-LD HumanMadeObject or InformationObject
  * @param {string} field - the data field in the object to look for the subfield
  * @param {string} subfield - the subfield to look for
+ *
+ * @example gets the subfield regardless of whether the field has parts or not
+ *  getProductionField({produced_by: { part: [{carried_out_by: {id:123}}}]}, 'produced_by', 'carried_out_by'),  would return an array with one item [{id:123}]
  *
  * @returns {array} an array of the matching values
  */
@@ -850,30 +869,4 @@ export function getProductionField(object, field, subfield) {
   });
 
   return accumulator;
-}
-
-/**
- * Normalize a field that may have parts.
- *
- * @description Some of the fields in LinkedArt may be (but sometimes dont) include parts.
- * For example, `produced_by` which may have a production, or that production may contain multiple
- * parts.  This method returns an array with the single or all parts
- *
- * @param {object} object - the JSON-LD object (or sub-bart)
- * @param {string} field - the field to look for/in
- *
- * @returns {array} an array that contains the single or multiple parts
- */
-export function normalizeFieldWithParts(object, field) {
-  let part = object[field];
-
-  if (part == undefined) {
-    return [];
-  }
-
-  let parts = part[PART];
-  if (Array.isArray(parts) == false) {
-    parts = [part];
-  }
-  return parts;
 }
