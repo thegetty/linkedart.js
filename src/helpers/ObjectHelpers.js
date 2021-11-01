@@ -6,12 +6,21 @@
  */
 
 import * as linkedArtHelpers from "./LinkedArtHelpers";
-import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
+import { normalizeAatId } from "./BasicHelpers";
 import aat from "../data/aat.json";
 
 const REFERRED_TO_BY = "referred_to_by";
 
-export function getDimensionsDescription(
+/**
+ * 
+ * @param {object|array} submittedResource 
+ * @param {string|array} requestedClassification -- AAT dimensions description
+ * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ 
+ * @returns {string} content of AAT dimensions description
+ */
+export function getDimensionsDescriptions(
   submittedResource,
   {
     requestedClassification = aat.DIMENSIONS_DESCRIPTION,
@@ -20,7 +29,7 @@ export function getDimensionsDescription(
   } = {}
 ) {
   requestedClassification = normalizeAatId(requestedClassification);
-  let dimensionsDescription = linkedArtHelpers.getValueByClassification(
+  let dimensionsDescription = linkedArtHelpers.getValuesByClassification(
     submittedResource[REFERRED_TO_BY],
     requestedClassification,
     language,
