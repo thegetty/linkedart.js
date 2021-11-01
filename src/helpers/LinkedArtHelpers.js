@@ -893,6 +893,6 @@ export function getProductionField(object, field, subfield) {
  * 
  * @returns {array} - an array of LinkedArt timespan objects
  */
-export function getProductionTimespan(object) {
-  return helpers.getProductionField(object, PRODUCED_BY, TIMESPAN);
+export function getProductionTimespans(object) {
+  return getProductionField(object, PRODUCED_BY, TIMESPAN);
 }

@@ -101,9 +101,36 @@ export function normalizeFieldWithParts(object, field) {
     return [];
   }
 
-  let parts = part[PART];
-  if (Array.isArray(parts) == false) {
+  let parts = [];
+  if (Array.isArray(part[PART]) == false) {
     parts = [part];
+  } else {
+    // prevent circular refs
+    parts = [...part[PART]];
+    // make sure we shouldn't ignore the object that has the parts (look for other fields than just core fields)
+    if (_hasUniqueFields(part, ["id", "_label", "label", "type", PART])) {
+      parts.push(part);
+    }
   }
   return parts;
+}
+
+/**
+ * Checks whether the JSON-LD object has unique fields outside of some basic fields (id, type, _label). Useful for testing whether
+ * we should include the parent part in a list or not
+ *
+ * @param {object} object - the JSON-LD object to check
+ * @param {array} fieldsToIgnore - a list of fields to ignore when checking
+ * @private
+ *
+ * @returns {boolean}
+ */
+function _hasUniqueFields(
+  object,
+  fieldsToIgnore = ["id", "_label", "label", "type"]
+) {
+  let keys = Object.keys(object);
+  // remove known fields
+  keys.filter((key) => fieldsToIgnore.indexOf(key) == false);
+  return keys.length > 0;
 }

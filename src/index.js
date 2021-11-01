@@ -16,6 +16,7 @@ import {
   getReferredToByClassification,
   getPrimaryName,
   getPrimaryNames,
+  getProductionTimespans,
   getAttributedBy,
   getAssignedBy,
 } from "./helpers/LinkedArtHelpers";
@@ -40,6 +41,7 @@ export {
   getObjectsClassifiedAsWithClassification,
   getPrimaryName,
   getPrimaryNames,
+  getProductionTimespans,
   getValueByClassification,
   getValueOrContent,
   getValuesByClassification,

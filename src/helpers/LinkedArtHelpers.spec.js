@@ -2,6 +2,7 @@ import {
   getClassifiedAs,
   getClassifiedBy,
   getValueByClassification,
+  getProductionTimespans,
 } from "./LinkedArtHelpers";
 import * as helpers from "./LinkedArtHelpers";
 import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
@@ -717,5 +718,29 @@ describe("get creators", () => {
         label: "Berengarius Fredoli",
       },
     ]);
+  });
+});
+
+describe("get production information", () => {
+  it("gets a single production timespan(s)", () => {
+    expect(getProductionTimespans(irises)).toEqual([
+      {
+        begin_of_the_begin: "1889-01-01T00:00:00",
+        end_of_the_end: "1889-12-31T23:59:59",
+        id: "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan",
+        identified_by: [
+          {
+            _label: "Date",
+            content: "1889",
+            id: "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan/name",
+            type: "Name",
+          },
+        ],
+        type: "TimeSpan",
+      },
+    ]);
+  });
+  it("gets a multiple production timespan(s)", () => {
+    expect(getProductionTimespans(fables)).toEqual([]);
   });
 });
