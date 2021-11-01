@@ -5,28 +5,15 @@
  * @description This class contains convneience helpers for working with linked.art objects
  */
 
-import { normalizeFieldToArray } from "./BasicHelpers";
+import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
 import * as linkedArtHelpers from "./LinkedArtHelpers";
+import aat from "../data/aat.json";
 
-const DIMENSION = "dimension";
 const IDENTIFIED_BY = "identified_by";
 const REFERRED_TO_BY = "referred_to_by";
 const REPRESENTATION = "representation";
 const SUBJECT_TO = "subject_to";
 const CLASSIFIED_AS = "classified_as";
-
-// TODO: remove once aat.json is added
-const aat = {
-  DIMENSIONS_DESCRIPTION: "http://vocab.getty.edu/aat/300435430",
-  ACCESSION_NUMBERS: "http://vocab.getty.edu/aat/300312355",
-  WIDTH: "http://vocab.getty.edu/aat/300055647",
-  HEIGHT: "http://vocab.getty.edu/aat/300055644",
-  DEPTH: "http://vocab.getty.edu/aat/300072633",
-  WEIGHT: "http://vocab.getty.edu/aat/300056240",
-  DIGITAL_IMAGE: "http://vocab.getty.edu/aat/300215302",
-  RIGHTS_STATEMENT: "http://vocab.getty.edu/aat/300417696",
-  COPYRIGHT: "http://vocab.getty.edu/aat/300435434",
-};
 
 /**
  * 
@@ -39,10 +26,13 @@ const aat = {
  */
 export function getDimensionsDescription(
   submittedResource,
-  requestedClassification = aat.DIMENSIONS_DESCRIPTION,
-  language = undefined,
-  languageOptions = {}
+  {
+    requestedClassification = aat.DIMENSIONS_DESCRIPTION,
+    language,
+    languageOptions = {},
+  } = {}
 ) {
+  requestedClassification = normalizeAatId(requestedClassification);
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
 
   return linkedArtHelpers.getValueByClassification(
@@ -60,14 +50,17 @@ export function getDimensionsDescription(
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  
- * @returns {string} content of AAT dimensions description
+ * @returns {array} content of AAT accession numbers
  */
 export function getAccessionNumbers(
   submittedResource,
-  requestedClassification = aat.ACCESSION_NUMBERS,
-  language = undefined,
-  languageOptions = {}
+  {
+    requestedClassification = aat.ACCESSION_NUMBERS,
+    language,
+    languageOptions = {},
+  } = {}
 ) {
+  requestedClassification = normalizeAatId(requestedClassification);
   const identifiedBy = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
 
   return linkedArtHelpers.getValuesByClassification(
@@ -81,7 +74,7 @@ export function getAccessionNumbers(
 /**
  * 
  * @param {object|array} submittedResource 
- * @param {string|array} requestedClassification -- AAT digital image
+ * @param {string|array} requestedClassification -- AAT digital images
  * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  
@@ -89,10 +82,13 @@ export function getAccessionNumbers(
  */
 export function getDigitalImages(
   submittedResource,
-  requestedClassification = aat.DIGITAL_IMAGE,
-  language = undefined,
-  languageOptions = {}
+  {
+    requestedClassification = aat.DIGITAL_IMAGES,
+    language,
+    languageOptions = {},
+  } = {}
 ) {
+  requestedClassification = normalizeAatId(requestedClassification);
   const representations = normalizeFieldToArray(
     submittedResource,
     REPRESENTATION
@@ -100,7 +96,7 @@ export function getDigitalImages(
 
   let digitalImages = linkedArtHelpers.getClassifiedAs(
     representations,
-    "http://vocab.getty.edu/aat/300215302",
+    requestedClassification,
     language,
     languageOptions
   );
@@ -119,15 +115,20 @@ export function getDigitalImages(
  */
 export function getRightsStatements(
   submittedResource,
-  requestedClassification = aat.RIGHTS_STATEMENT,
-  language = undefined,
-  languageOptions = {}
+  {
+    requestedClassification = aat.RIGHTS_STATEMENT,
+    language,
+    languageOptions = {},
+  } = {}
 ) {
+  requestedClassification = normalizeAatId(requestedClassification);
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
 
   const rights = linkedArtHelpers.getClassifiedAs(
     referredToBy,
-    aat.RIGHTS_STATEMENT
+    requestedClassification,
+    language,
+    (languageOptions = {})
   );
 
   return rights;
@@ -144,15 +145,20 @@ export function getRightsStatements(
  */
 export function getCopyright(
   submittedResource,
-  requestedClassification = aat.COPYRIGHT,
-  language = undefined,
-  languageOptions = {}
+  {
+    requestedClassification = aat.COPYRIGHT,
+    language,
+    languageOptions = {},
+  } = {}
 ) {
+  requestedClassification = normalizeAatId(requestedClassification);
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
 
   const copyright = linkedArtHelpers.getClassifiedAs(
     referredToBy,
-    aat.COPYRIGHT
+    aat.COPYRIGHT,
+    language,
+    (languageOptions = {})
   );
 
   return copyright;
@@ -167,8 +173,7 @@ export function getCopyright(
  */
 export function getRightsAssertions(
   submittedResource,
-  language = undefined,
-  languageOptions = {}
+  { language, languageOptions = {} } = {}
 ) {
   const subjectTo = normalizeFieldToArray(submittedResource, SUBJECT_TO);
 

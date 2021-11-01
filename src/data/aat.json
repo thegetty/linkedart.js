@@ -45,5 +45,10 @@
     "tr": "http://vocab.getty.edu/aat/300389470",
     "cy": "http://vocab.getty.edu/aat/300389555"
   },
-  "PREFERRED_TERM": "http://vocab.getty.edu/aat/300404670"
+  "PREFERRED_TERM": "http://vocab.getty.edu/aat/300404670",
+  "DIMENSIONS_DESCRIPTION": "http://vocab.getty.edu/aat/300435430",
+  "ACCESSION_NUMBERS": "http://vocab.getty.edu/aat/300312355",
+  "DIGITAL_IMAGES": "http://vocab.getty.edu/aat/300215302",
+  "RIGHTS_STATEMENT": "http://vocab.getty.edu/aat/300417696",
+  "COPYRIGHT": "http://vocab.getty.edu/aat/300435434"
 }
