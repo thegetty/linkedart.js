@@ -741,6 +741,21 @@ describe("get production information", () => {
     ]);
   });
   it("gets a multiple production timespan(s)", () => {
-    expect(getProductionTimespans(fables)).toEqual([]);
+    expect(getProductionTimespans(fables)).toEqual([
+      {
+        begin_of_the_begin: "1450-01-01T00:00:00",
+        end_of_the_end: "1475-12-31T23:59:59",
+        id: "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production/timespan",
+        identified_by: [
+          {
+            _label: "Date",
+            content: "third quarter of 15th century",
+            id: "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production/timespan/name",
+            type: "Name",
+          },
+        ],
+        type: "TimeSpan",
+      },
+    ]);
   });
 });
