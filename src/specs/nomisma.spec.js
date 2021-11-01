@@ -4,7 +4,7 @@ import gold_coin from "../data/mocks/1944.100.51606.json";
 
 describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
   it("gets the title of the object", () => {
-    expect(helpers.getPrimaryName(gold_coin)).toEqual(
+    expect(helpers.getPrimaryNames(gold_coin)[0]).toEqual(
       "Gold Coin of Philip III Arrhidaeus, Abydus, 323 BCE - 317 BCE. 1944.100.51606"
     );
   });

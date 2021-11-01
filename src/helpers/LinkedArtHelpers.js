@@ -227,7 +227,6 @@ export function getObjectsClassifiedByWithClassification(
     languageOptions
   );
 }
-
 /**
  * Gets the primary name of the JSON-LD object based on an AAT value or other qualifier, uses the AAT value of Preferred Term as the default
  *
@@ -243,9 +242,41 @@ export function getObjectsClassifiedByWithClassification(
  * @example gets the primary name in french getPrimaryName(object, {language:'fr'})
  * @example gets the primary name using a different AAT term getPrimaryName(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300417193'})
  *
- * @returns {String}
+ * @returns {String} of items identified as primary names
  */
 export function getPrimaryName(
+  submittedResource,
+  {
+    requestedClassifications = aat.PREFERRED_TERM,
+    language,
+    languageOptions = {},
+  } = {}
+) {
+  return getPrimaryNames(submittedResource, {
+    requestedClassifications,
+    language,
+    languageOptions,
+  })[0];
+}
+
+/**
+ * Gets the primary names of the JSON-LD object based on an AAT value or other qualifier, uses the AAT value of Preferred Term as the default
+ *
+ * @param {Object} submittedResource - the JSON-LD object
+ * @param {Object} options - additional options
+ * @param {string|array} options.requestedClassifications - the requested classifications (default is aat.PRIMARY_TERM)
+ * @param {string} options.language - the requested language (default undefined)
+ * @param {Object} options.languageOptions - additional language options
+ * @param {Object} options.languageOptions.lookupMap - a map of terms -> values for translating language keys (eg. "en": "aat:11111")
+ * @param {string} options.languageOptions.fallbackLanguage - if a language is specified, this provides a fallback language if that language is not available in the data, e.g. use english if there is no french
+ *
+ * @example gets the primary name using defaults getPrimaryName(object)
+ * @example gets the primary name in french getPrimaryName(object, {language:'fr'})
+ * @example gets the primary name using a different AAT term getPrimaryName(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300417193'})
+ *
+ * @returns {Array} of items identified as primary names
+ */
+export function getPrimaryNames(
   submittedResource,
   {
     requestedClassifications = aat.PREFERRED_TERM,
@@ -258,14 +289,14 @@ export function getPrimaryName(
   }
   let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
   let names = identified_by.filter((item) => item.type == "Name");
-  let name = getValueByClassification(
+  let name = getValuesByClassification(
     names,
     requestedClassifications,
     language,
     languageOptions
   );
 
-  if (name != undefined) {
+  if (name.length > 0) {
     return name;
   }
 
@@ -274,7 +305,7 @@ export function getPrimaryName(
   if (submittedResource && submittedResource.id) {
     label += " (" + submittedResource.id + ")";
   }
-  return label;
+  return [label];
 }
 
 /**
@@ -775,9 +806,8 @@ export function _getObjectsAndClassificationsWithNestedClass(
       language,
       languageOptions
     );
-    returnObject.classifications = returnObject.classifications.concat(
-      classifications
-    );
+    returnObject.classifications =
+      returnObject.classifications.concat(classifications);
     if (classifications.length > 0) {
       returnObject.objects.push(resource);
     }
