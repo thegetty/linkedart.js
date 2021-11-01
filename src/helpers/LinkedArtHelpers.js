@@ -841,7 +841,7 @@ export function _getObjectsAndClassificationsWithNestedClass(
  * @returns {array} - an array of the references
  */
 export function getCarriedOutBy(object) {
-  return getProductionField(object, PRODUCED_BY, CARRIED_OUT_BY);
+  return getSubfieldInsidePart(object, PRODUCED_BY, CARRIED_OUT_BY);
 }
 
 /**
@@ -860,7 +860,7 @@ export function getCarriedOutBy(object) {
  *
  * @returns {array} an array of the matching values
  */
-export function getProductionField(object, field, subfield) {
+export function getSubfieldInsidePart(object, field, subfield) {
   let parts = normalizeFieldWithParts(object, field);
   let accumulator = [];
   parts.forEach((part) => {
