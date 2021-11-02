@@ -17,12 +17,16 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [1.14.2]
+
+- added a function for managing fields with parts in BasicHelpers `normalizeFieldWithParts`
+- added a function to get a field out of a production `getSubfieldInsidePart` which can be used for similar top-level fields (like creation)
+
 ## [0.14.1]
 
 ### Added
 
-- added a function for managing fields with parts in BasicHelpers `normalizeFieldWithParts`
-- added a function to get a field out of a production `getSubfieldInsidePart` which can be used for similar top-level fields (like creation)
+- adds `ObjectHelpers.js` with initial `getDimensionDescriptions` helper and tests
 
 ## [0.14.0]
 
