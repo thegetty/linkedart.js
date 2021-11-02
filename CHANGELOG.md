@@ -28,7 +28,13 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 - refactored shared methods to separate out constants into a dedicated file
 - refactored imports to be specific to more easily facilitate bundling
 
-## [1.14.2]
+## [0.14.3]
+
+### Added
+
+- added `getAccessionNumbers` to ObjectHelpers
+
+## [0.14.2]
 
 ### Added
 
