@@ -18,6 +18,7 @@ import {
   getPrimaryNames,
   getAttributedBy,
   getAssignedBy,
+  getFieldPartSubfield,
 } from "./helpers/LinkedArtHelpers";
 
 import { normalizeAatId, normalizeFieldToArray } from "./helpers/BasicHelpers";
@@ -41,6 +42,7 @@ export {
   getPrimaryName,
   getPrimaryNames,
   getValueByClassification,
+  getFieldPartSubfield,
   getValueOrContent,
   getValuesByClassification,
   getReferredToByClassification,

@@ -1,12 +1,16 @@
 /**
  * @file LinkedArtHelpers
- * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki
+ * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki, Nabil Kashyap
  * @module LinkedArtHelpers
  * @description This class contains helpers for working with linked.art JSON-LD data
  */
 
 import { doesObjectLanguageMatch } from "./LanguageHelpers";
-import { normalizeAatId, normalizeFieldToArray } from "./BasicHelpers";
+import {
+  normalizeAatId,
+  normalizeFieldToArray,
+  normalizeFieldWithParts,
+} from "./BasicHelpers";
 import aat from "../data/aat.json";
 
 const ATTRIBUTED_BY = "attributed_by";
@@ -17,6 +21,10 @@ const IDENTIFIED_BY = "identified_by";
 const PART = "part";
 const REFERRED_TO_BY = "referred_to_by";
 const UNKNOWN = "Unknown";
+
+const ASSIGNED_PROPERTY = "assigned_property";
+const NAME = "Name";
+const ASSIGNED = "assigned";
 
 /**
  * Given an object or an array of objects, find all entries that have an object in their classified_as
@@ -288,7 +296,7 @@ export function getPrimaryNames(
     return UNKNOWN;
   }
   let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
-  let names = identified_by.filter((item) => item.type == "Name");
+  let names = identified_by.filter((item) => item.type == NAME);
   let name = getValuesByClassification(
     names,
     requestedClassifications,
@@ -372,11 +380,11 @@ export function getClassified(
       (languageMatch && classificationIDs.includes(id)) ||
       classificationIDs.includes(normalizeAatId(id));
 
-    if (operator == "AND") {
+    if (operator.toUpperCase() == "AND") {
       if (requestedClassArray.every(inClassificationIDs)) {
         results.push(resource);
       }
-    } else if (operator == "OR") {
+    } else if (operator.toUpperCase() == "OR") {
       if (requestedClassArray.some(inClassificationIDs)) {
         results.push(resource);
       }
@@ -688,8 +696,8 @@ function _convertToArrayIfNeeded(resourceParam) {
 function _getAssignedProperty(assigned, assignedProperty) {
   let accumulator = [];
   assigned.forEach((attr) => {
-    if (attr["assigned_property"] == assignedProperty) {
-      accumulator.push(attr["assigned"]);
+    if (attr[ASSIGNED_PROPERTY] == assignedProperty) {
+      accumulator.push(attr[ASSIGNED]);
     }
   });
   return accumulator;
@@ -814,4 +822,31 @@ export function _getObjectsAndClassificationsWithNestedClass(
   }
 
   return returnObject;
+}
+
+/**
+ * Gets the specified sub-field values for a field that may have parts.
+ *
+ * @description
+ * Helper function that returns an array of requested production/creation information, tries to reconcile where the production may have parts.
+ * This can be useful to get the Timespan for a creation, or the creator, or other nested fields
+ *
+ * @param {object} object - the JSON-LD HumanMadeObject or InformationObject
+ * @param {string} field - the data field in the object to look for the subfield
+ * @param {string} subfield - the subfield to look for
+ *
+ * @example gets the subfield regardless of whether the field has parts or not
+ *  getFieldPartSubfield({produced_by: { part: [{carried_out_by: {id:123}}}]}, 'produced_by', 'carried_out_by'),  would return an array with one item [{id:123}]
+ *
+ * @returns {array} an array of the matching values
+ */
+export function getFieldPartSubfield(object, field, subfield) {
+  let parts = normalizeFieldWithParts(object, field);
+  let accumulator = [];
+  parts.forEach((part) => {
+    let target = normalizeFieldToArray(part, subfield);
+    accumulator = accumulator.concat(target);
+  });
+
+  return accumulator;
 }
