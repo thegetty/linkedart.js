@@ -17,6 +17,10 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.14.1]
+
+- adds `ObjectHelpers.js` with initial `getDimensionDescriptions` helper and tests
+
 ## [0.14.0]
 
 ### Added
