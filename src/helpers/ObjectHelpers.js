@@ -29,9 +29,9 @@ const CARRIED_OUT_BY = "carried_out_by";
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
- * @example gets dimensions descriptions using defaults: getDimensionsDescriptions(object)
- * @example gets dimensions descriptions in Welsh: getDimensionsDescriptions(object, {language:'cy'})
- * @example gets dimensions descriptions using a different AAT term: getDimensionsDescriptions(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300266036'})
+ * @example getDimensionsDescriptions(object) // gets dimensions descriptions using defaults
+ * @example getDimensionsDescriptions(object, {language:'cy'}) // gets dimensions descriptions in Welsh
+ * @example getDimensionsDescriptions(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300266036'}) // gets dimensions descriptions using a different AAT term
  *
  * @returns {array} content of AAT dimensions descriptions
  */
@@ -62,10 +62,9 @@ export function getDimensionsDescriptions(
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
- * @example gets accession numbers using defaults getAccessionNumbers(object)
- * @example gets accession numbers in Hindi getAccessionNumbers(object, {language:'hi'})
- * @example gets accession numbers using a different AAT term getAccessionNumbers(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300444185'})
- *
+ * @example getAccessionNumbers(object) // gets accession numbers using defaults
+ * @example getAccessionNumbers(object, {language:'hi'}) // gets accession numbers in Hindi
+ * @example getAccessionNumbers(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300444185'}) // gets accession numbers using a different AAT term
  * @returns {array} content of AAT accession numbers
  */
 export function getAccessionNumbers(
@@ -113,9 +112,9 @@ export function getCarriedOutBy(object) {
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
- * @example gets digital images using defaults: getDigitalImages(object)
- * @example gets digital images in Polish: getDigitalImages(object, {language:'pl'})
- * @example gets digital images using a different AAT term: getDigitalImages(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300412188'})
+ * @example getDigitalImages(object) // gets digital images using defaults
+ * @example getDigitalImages(object, {language:'pl'}) // gets digital images in Polish
+ * @example getDigitalImages(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300412188'}) // gets digital images using a different AAT term
  *
  * @returns {array} urls of AAT digital images
  */
@@ -151,9 +150,9 @@ export function getDigitalImages(
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
- * @example gets rights statements using defaults: getRightsStatements(object)
- * @example gets rights statements in Catalan: getRightsStatements(object, {language:'ca'})
- * @example gets rights statements using a different AAT term: getRightsStatements(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300055617'})
+ * @example getRightsStatements(object) // gets rights statements using defaults
+ * @example getRightsStatements(object, {language:'ca'}) // gets rights statements in Catalan
+ * @example getRightsStatements(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300055617'}) // gets rights statements using a different AAT term
  *
  * @returns {array} array of rights statements
  */
@@ -186,9 +185,9 @@ export function getRightsStatements(
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
- * @example gets copyright using defaults: getCopyright(object)
- * @example gets copyright in Catalan: getCopyright(object, {language:'ca'})
- * @example gets copyright using a different AAT term: getCopyright(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300055617'})
+ * @example getCopyright(object) // gets copyright using defaults
+ * @example getCopyright(object, {language:'ca'}) // gets copyright in Catalan
+ * @example getCopyright(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300055617'}) // gets copyright using a different AAT term
  *
  * @returns {array} array of copyright objects
  */
@@ -220,8 +219,8 @@ export function getCopyright(
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
- * @example gets rights assertions using defaults: getRightsAssertions(object)
- * @example gets rights assertions in Macedonian: getRightsAssertions(object, {language:'mk'})
+ * @example getRightsAssertions(object) // gets rights assertions using defaults
+ * @example getRightsAssertions(object, {language:'mk'}) // gets rights assertions in Macedonian
  *
  * @returns {array} array of urls of assertions of rights the resource is subject to
  */
