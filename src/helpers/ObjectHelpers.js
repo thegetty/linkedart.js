@@ -8,6 +8,7 @@
 import {
   getFieldPartSubfield,
   getValuesByClassification,
+  getClassifiedAs,
 } from "./LinkedArtHelpers";
 import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
 import aat from "../data/aat.json";
@@ -132,7 +133,7 @@ export function getDigitalImages(
     REPRESENTATION
   );
 
-  let digitalImages = linkedArtHelpers.getClassifiedAs(
+  let digitalImages = getClassifiedAs(
     representations,
     requestedClassification,
     language,
@@ -167,7 +168,7 @@ export function getRightsStatements(
   requestedClassification = normalizeAatId(requestedClassification);
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
 
-  const rights = linkedArtHelpers.getClassifiedAs(
+  const rights = getClassifiedAs(
     referredToBy,
     requestedClassification,
     language,
@@ -202,7 +203,7 @@ export function getCopyright(
   requestedClassification = normalizeAatId(requestedClassification);
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
 
-  const copyright = linkedArtHelpers.getClassifiedAs(
+  const copyright = getClassifiedAs(
     referredToBy,
     aat.COPYRIGHT,
     language,

@@ -1,11 +1,8 @@
 import * as objectHelpers from "./ObjectHelpers";
 
 import irises from "../data/mocks/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb.json";
-<<<<<<< HEAD
 import beetle from "../data/mocks/a69d5696-70c2-56ed-9f82-fb2e69311e5d.json";
-=======
 import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
->>>>>>> main
 
 describe("getDimensionsDescription", () => {
   it("gets the correct dimensions description if present", () => {
@@ -15,17 +12,12 @@ describe("getDimensionsDescription", () => {
   });
 });
 
-<<<<<<< HEAD
 describe("getAccessionNumbers", () => {
-=======
-describe("getAccessionNumber", () => {
->>>>>>> main
   it("gets the correct accession number if present", () => {
     expect(objectHelpers.getAccessionNumbers(irises)).toEqual(["90.PA.20"]);
   });
 });
 
-<<<<<<< HEAD
 describe("getDigitalImages", () => {
   it("gets the correct image urls if present", () => {
     expect(objectHelpers.getDigitalImages(irises)[0]).toEqual(
@@ -56,10 +48,6 @@ describe("getRightsAssertions", () => {
   });
 });
 
-describe("getAccessionNumber", () => {
-  it("gets the correct accession number= if present", () => {
-    expect(objectHelpers.getAccessionNumbers(irises)).toEqual(["90.PA.20"]);
-=======
 describe("get creators", () => {
   it("gets the creator", () => {
     let creators = objectHelpers.getCarriedOutBy(fables);
@@ -102,6 +90,5 @@ describe("get creators", () => {
         label: "Berengarius Fredoli",
       },
     ]);
->>>>>>> main
   });
 });
