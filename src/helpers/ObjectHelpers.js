@@ -6,7 +6,7 @@
  */
 
 import {
-  getSubfieldInsidePart,
+  getFieldPartSubfield,
   getValuesByClassification,
 } from "./LinkedArtHelpers";
 import { normalizeAatId } from "./BasicHelpers";
@@ -65,7 +65,7 @@ export function getDimensionsDescriptions(
  * @returns {array} - an array of the references
  */
 export function getCarriedOutBy(object) {
-  return getSubfieldInsidePart(object, PRODUCED_BY, CARRIED_OUT_BY);
+  return getFieldPartSubfield(object, PRODUCED_BY, CARRIED_OUT_BY);
 }
 
 /**
@@ -91,5 +91,5 @@ export function getCarriedOutBy(object) {
  * @returns {array} - an array of LinkedArt timespan objects
  */
 export function getProductionTimespans(object) {
-  return getSubfieldInsidePart(object, PRODUCED_BY, TIMESPAN);
+  return getFieldPartSubfield(object, PRODUCED_BY, TIMESPAN);
 }
