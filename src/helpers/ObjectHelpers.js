@@ -36,7 +36,7 @@ export function getDimensionsDescriptions(
   requestedClassification = normalizeAatId(requestedClassification);
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
 
-  return linkedArtHelpers.getValueByClassification(
+  return linkedArtHelpers.getValuesByClassification(
     referredToBy,
     requestedClassification,
     language,
@@ -68,7 +68,7 @@ export function getAccessionNumbers(
   requestedClassification = normalizeAatId(requestedClassification);
   const identifiedBy = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
 
-  return linkedArtHelpers.getValueByClassification(
+  return linkedArtHelpers.getValuesByClassification(
     identifiedBy,
     requestedClassification,
     language,
