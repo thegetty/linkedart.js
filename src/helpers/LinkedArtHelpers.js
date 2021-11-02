@@ -298,7 +298,7 @@ export function getPrimaryNames(
     return UNKNOWN;
   }
   let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
-  let names = identified_by.filter((item) => item.type == "Name");
+  let names = identified_by.filter((item) => item.type == NAME);
   let name = getValuesByClassification(
     names,
     requestedClassifications,
@@ -869,4 +869,30 @@ export function getSubfieldInsidePart(object, field, subfield) {
   });
 
   return accumulator;
+}
+
+/**
+ * Normalize a field that may have parts.
+ *
+ * @description Some of the fields in LinkedArt may be (but sometimes dont) include parts.
+ * For example, `produced_by` which may have a production, or that production may contain multiple
+ * parts.  This method returns an array with the single or all parts
+ *
+ * @param {object} object - the JSON-LD object (or sub-bart)
+ * @param {string} field - the field to look for/in
+ *
+ * @returns {array} an array that contains the single or multiple parts
+ */
+export function normalizeFieldWithParts(object, field) {
+  let part = object[field];
+
+  if (part == undefined) {
+    return [];
+  }
+
+  let parts = part[PART];
+  if (Array.isArray(parts) == false) {
+    parts = [part];
+  }
+  return parts;
 }
