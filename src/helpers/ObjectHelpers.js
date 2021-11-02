@@ -5,11 +5,16 @@
  * @description This class contains convenience helpers for working with linked.art objects
  */
 
-import * as linkedArtHelpers from "./LinkedArtHelpers";
+import {
+  getSubfieldInsidePart,
+  getValuesByClassification,
+} from "./LinkedArtHelpers";
 import { normalizeAatId } from "./BasicHelpers";
 import aat from "../data/aat.json";
 
 const REFERRED_TO_BY = "referred_to_by";
+const PRODUCED_BY = "produced_by";
+const CARRIED_OUT_BY = "carried_out_by";
 
 /**
  *
@@ -33,11 +38,29 @@ export function getDimensionsDescriptions(
   } = {}
 ) {
   requestedClassification = normalizeAatId(requestedClassification);
-  let dimensionsDescription = linkedArtHelpers.getValuesByClassification(
+  let dimensionsDescription = getValuesByClassification(
     submittedResource[REFERRED_TO_BY],
     requestedClassification,
     language,
     languageOptions
   );
   return dimensionsDescription;
+}
+
+/**
+ * Gets the carried out by object(s) that are referenced in the productions and returns them.
+ *
+ * @description
+ * gets the creator from the JSON-LD (produced_by / carried_out_by ) and returns the result.  This is likely an object which
+ * is a reference to a Person or Group (Id, Type, and Label with nothing else), but could simply be an ID reference as well.
+ *
+ * @param {object} object - the JSON-LD Object to look in
+ *
+ * @example gets creator object/reference regardless of whether the production has a part or not
+ *  getCarriedOutBy({produced_by: { part: [{carried_out_by: {id:123}}}]}),  would return an array with one item [{id:123}]
+ *
+ * @returns {array} - an array of the references
+ */
+export function getCarriedOutBy(object) {
+  return getSubfieldInsidePart(object, PRODUCED_BY, CARRIED_OUT_BY);
 }
