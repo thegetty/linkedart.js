@@ -608,6 +608,7 @@ export function getAssignedBy(object, assignedProperty) {
  * @example removeDuplicatesById([{id: '123', type: 'Object'}, {id: '123', type: 'Artist'}])
  * would return [{id: '123', type: 'Object'}]
  *
+ * @private
  * @return {array} the array of objects with duplicates removed
  */
 export function removeDuplicatesById(_array) {
