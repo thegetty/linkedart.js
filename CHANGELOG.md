@@ -24,8 +24,6 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 ## [0.14.1]
 
-### Added
-
 - adds `ObjectHelpers.js` with initial `getDimensionDescriptions` helper and tests
 
 ## [0.14.0]
