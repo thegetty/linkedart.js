@@ -11,6 +11,12 @@ describe("getDimensionsDescription", () => {
   });
 });
 
+describe("getAccessionNumber", () => {
+  it("gets the correct accession number if present", () => {
+    expect(objectHelpers.getAccessionNumbers(irises)).toEqual(["90.PA.20"]);
+  });
+});
+
 describe("get creators", () => {
   it("gets the creator", () => {
     let creators = objectHelpers.getCarriedOutBy(fables);

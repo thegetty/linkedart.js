@@ -9,19 +9,21 @@ import {
   getFieldPartSubfield,
   getValuesByClassification,
 } from "./LinkedArtHelpers";
-import { normalizeAatId } from "./BasicHelpers";
+import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
 import aat from "../data/aat.json";
 
+const IDENTIFIED_BY = "identified_by";
 const REFERRED_TO_BY = "referred_to_by";
 const PRODUCED_BY = "produced_by";
 const CARRIED_OUT_BY = "carried_out_by";
 
 /**
- *
- * @param {object} submittedResource
- * @param {string|array} requestedClassification -- AAT dimensions description
- * @param {string} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @description Gets descriptive statement(s) about the physical extent of an object if available.
+ * @param {object} submittedResource -- JSON-LD object
+ * @param {Object} options - additional options
+ * @param {string|array} options.requestedClassification -- AAT dimensions description (default: {@link http://vocab.getty.edu/aat/300435430|aat.DIMENSIONS_DESCRIPTION})
+ * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example gets dimensions descriptions using defaults getDimensionsDescriptions(object)
  * @example gets dimensions descriptions in Welsh getDimensionsDescriptions(object, {language:'cy'})
@@ -38,13 +40,47 @@ export function getDimensionsDescriptions(
   } = {}
 ) {
   requestedClassification = normalizeAatId(requestedClassification);
-  let dimensionsDescription = getValuesByClassification(
-    submittedResource[REFERRED_TO_BY],
+  const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
+
+  return getValuesByClassification(
+    referredToBy,
     requestedClassification,
     language,
     languageOptions
   );
-  return dimensionsDescription;
+}
+
+/**
+ * @description Gets accession number(s) associated with an object if available.
+ * @param {object} submittedResource -- JSON-LD object
+ * @param {Object} options - additional options
+ * @param {string|array} options.requestedClassification -- AAT accession numbers (default: {@link http://vocab.getty.edu/aat/300312355|aat.ACCESSION_NUMBERS})
+ * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example gets accession numbers using defaults getAccessionNumbers(object)
+ * @example gets accession numbers in Hindi getAccessionNumbers(object, {language:'hi'})
+ * @example gets accession numbers using a different AAT term getAccessionNumbers(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300444185'})
+ *
+ * @returns {array} content of AAT accession numbers
+ */
+export function getAccessionNumbers(
+  submittedResource,
+  {
+    requestedClassification = aat.ACCESSION_NUMBERS,
+    language,
+    languageOptions = {},
+  } = {}
+) {
+  requestedClassification = normalizeAatId(requestedClassification);
+  const identifiedBy = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
+
+  return getValuesByClassification(
+    identifiedBy,
+    requestedClassification,
+    language,
+    languageOptions
+  );
 }
 
 /**
