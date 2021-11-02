@@ -6,7 +6,7 @@
  */
 
 import {
-  getSubfieldInsidePart,
+  getFieldPartSubfield,
   getValuesByClassification,
 } from "./LinkedArtHelpers";
 import { normalizeAatId } from "./BasicHelpers";
@@ -62,5 +62,5 @@ export function getDimensionsDescriptions(
  * @returns {array} - an array of the references
  */
 export function getCarriedOutBy(object) {
-  return getSubfieldInsidePart(object, PRODUCED_BY, CARRIED_OUT_BY);
+  return getFieldPartSubfield(object, PRODUCED_BY, CARRIED_OUT_BY);
 }
