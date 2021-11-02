@@ -18,6 +18,7 @@ import {
   CLASSIFIED_AS,
   CLASSIFIED_BY,
   IDENTIFIED_BY,
+  NAME,
   PART,
   REFERRED_TO_BY,
   UNKNOWN,
@@ -835,7 +836,7 @@ export function _getObjectsAndClassificationsWithNestedClass(
  * @param {string} subfield - the subfield to look for
  *
  * @example gets the subfield regardless of whether the field has parts or not
- *  getProductionField({produced_by: { part: [{carried_out_by: {id:123}}}]}, 'produced_by', 'carried_out_by'),  would return an array with one item [{id:123}]
+ *  getSubfieldInsidePart({produced_by: { part: [{carried_out_by: {id:123}}}]}, 'produced_by', 'carried_out_by'),  would return an array with one item [{id:123}]
  *
  * @returns {array} an array of the matching values
  */

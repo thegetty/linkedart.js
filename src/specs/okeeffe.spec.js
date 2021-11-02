@@ -82,7 +82,7 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   });
 
   it("gets the timespan", () => {
-    expect(helpers.getProductionTimespans(photo)).toEqual([
+    expect(objectHelpers.getProductionTimespans(photo)).toEqual([
       {
         begin_of_the_begin: "1959-01-01T00:00:00",
         end_of_the_end: "1969-12-31T00:00:00",

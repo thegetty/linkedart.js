@@ -91,5 +91,5 @@ export function getCarriedOutBy(object) {
  * @returns {array} - an array of LinkedArt timespan objects
  */
 export function getProductionTimespans(object) {
-  return getProductionField(object, PRODUCED_BY, TIMESPAN);
+  return getSubfieldInsidePart(object, PRODUCED_BY, TIMESPAN);
 }
