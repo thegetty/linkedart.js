@@ -17,12 +17,27 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [1.15.0]
+
+### Added
+
+- added a function for getting the production date for an object `getProductionTimespans`
+
+### Changed
+
+- refactored shared methods to separate out constants into a dedicated file
+- refactored imports to be specific to more easily facilitate bundling
+
 ## [1.14.2]
+
+### Added
 
 - added a function for managing fields with parts in BasicHelpers `normalizeFieldWithParts`
 - added a function to get a field out of a production `getFieldPartSubfield` which can be used for similar top-level fields (like creation)
 
 ## [0.14.1]
+
+### Added
 
 - adds `ObjectHelpers.js` with initial `getDimensionDescriptions` helper and tests
 
