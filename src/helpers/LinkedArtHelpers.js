@@ -21,11 +21,8 @@ import {
   PART,
   REFERRED_TO_BY,
   UNKNOWN,
-  TIMESPAN,
   ASSIGNED_PROPERTY,
   ASSIGNED,
-  PRODUCED_BY,
-  CARRIED_OUT_BY,
 } from "../data/constants.json";
 
 /**
@@ -298,7 +295,7 @@ export function getPrimaryNames(
     return UNKNOWN;
   }
   let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
-  let names = identified_by.filter((item) => item.type == "Name");
+  let names = identified_by.filter((item) => item.type == NAME);
   let name = getValuesByClassification(
     names,
     requestedClassifications,
@@ -827,24 +824,6 @@ export function _getObjectsAndClassificationsWithNestedClass(
 }
 
 /**
- * Gets the carried out by object(s) that are referenced in the productions and returns them.
- *
- * @description
- * gets the creator from the JSON-LD (produced_by / carried_out_by ) and returns the result.  This is likely an object which
- * is a reference to a Person or Group (Id, Type, and Label with nothing else), but could simply be an ID reference as well.
- *
- * @param {object} object - the JSON-LD Object to look in
- *
- * @example gets creator object/reference regardless of whether the production has a part or not
- *  getCarriedOutBy({produced_by: { part: [{carried_out_by: {id:123}}}]}),  would return an array with one item [{id:123}]
- *
- * @returns {array} - an array of the references
- */
-export function getCarriedOutBy(object) {
-  return getProductionField(object, PRODUCED_BY, CARRIED_OUT_BY);
-}
-
-/**
  * Gets the specified sub-field values for a field that may have parts.
  *
  * @description
@@ -860,7 +839,7 @@ export function getCarriedOutBy(object) {
  *
  * @returns {array} an array of the matching values
  */
-export function getProductionField(object, field, subfield) {
+export function getSubfieldInsidePart(object, field, subfield) {
   let parts = normalizeFieldWithParts(object, field);
   let accumulator = [];
   parts.forEach((part) => {
@@ -869,30 +848,4 @@ export function getProductionField(object, field, subfield) {
   });
 
   return accumulator;
-}
-
-/**
- * Gets the timespan(s) for a production
- * 
- * @description This this gets the timespan object(s) for the production information regardless of whether the production has parts or not.
- *
- * @param {Object} object - a JSON-LD Object
- *
- * @example gets the timespan 
- * getProductionTimespan({produced_by: { "timespan": {
-      "id": "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan",
-      "type": "TimeSpan",
-      "begin_of_the_begin": "1889-01-01T00:00:00",
-      "end_of_the_end": "1889-12-31T23:59:59"
-    },
-}}}) returns [{"id": "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan",
-      "type": "TimeSpan",
-      "begin_of_the_begin": "1889-01-01T00:00:00",
-      "end_of_the_end": "1889-12-31T23:59:59"
-}]
- * 
- * @returns {array} - an array of LinkedArt timespan objects
- */
-export function getProductionTimespans(object) {
-  return getProductionField(object, PRODUCED_BY, TIMESPAN);
 }

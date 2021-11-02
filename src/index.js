@@ -19,6 +19,7 @@ import {
   getProductionTimespans,
   getAttributedBy,
   getAssignedBy,
+  getSubfieldInsidePart,
 } from "./helpers/LinkedArtHelpers";
 
 import { normalizeAatId, normalizeFieldToArray } from "./helpers/BasicHelpers";
@@ -43,6 +44,7 @@ export {
   getPrimaryNames,
   getProductionTimespans,
   getValueByClassification,
+  getSubfieldInsidePart,
   getValueOrContent,
   getValuesByClassification,
   getReferredToByClassification,

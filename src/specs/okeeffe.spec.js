@@ -1,6 +1,7 @@
 import * as basicHelpers from "../helpers/BasicHelpers";
 import * as helpers from "../helpers/LinkedArtHelpers";
 import photo from "../data/mocks/6401.json";
+import * as objectHelpers from "../helpers/ObjectHelpers";
 
 describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   it("gets the title of the object", () => {
@@ -10,7 +11,7 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   });
 
   it("gets the creator", () => {
-    let creators = helpers.getCarriedOutBy(photo);
+    let creators = objectHelpers.getCarriedOutBy(photo);
     expect(creators).toEqual(["http://data.okeeffemuseum.org/person/2"]);
   });
 
