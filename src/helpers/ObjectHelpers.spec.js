@@ -34,9 +34,9 @@ describe("getRightsStatements", () => {
   });
 });
 
-describe("getCopyright", () => {
+describe("getCopyrightStatements", () => {
   it("return empty array if no copyright", () => {
-    expect(objectHelpers.getCopyright(irises)).toEqual([]);
+    expect(objectHelpers.getCopyrightStatements(irises)).toEqual(undefined);
   });
 });
 

@@ -109,12 +109,8 @@ export function getCarriedOutBy(object) {
  * @param {object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
  * @param {string|array} options.requestedClassification -- AAT digital images (default: {@link http://vocab.getty.edu/aat/300215302|aat.DIGITAL_IMAGES})
- * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example getDigitalImages(object) // gets digital images using defaults
- * @example getDigitalImages(object, {language:'pl'}) // gets digital images in Polish
- * @example getDigitalImages(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300412188'}) // gets digital images using a different AAT term
  *
  * @returns {array} urls of AAT digital images
  */
@@ -132,19 +128,14 @@ export function getDigitalImages(
     REPRESENTATION
   );
 
-  let digitalImages = getClassifiedAs(
-    representations,
-    requestedClassification,
-    language,
-    languageOptions
-  );
+  let digitalImages = getClassifiedAs(representations, requestedClassification);
   // return the digital image ids
   return digitalImages.map((img) => img.id);
 }
 
 /**
  * @description Gets rights statements associated with an object if available.
- * @param {object|array} submittedResource
+ * @param {object} submittedResource
  * @param {Object} options - additional options
  * @param {string|array} options.requestedClassification -- AAT rights statement (default: {@link http://vocab.getty.edu/aat/300417696|aat.RIGHTS_STATEMENT})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
@@ -179,7 +170,7 @@ export function getRightsStatements(
 
 /**
  * @description Gets copyright or licensing statements associated with an object if available.
- * @param {object|array} submittedResource
+ * @param {object} submittedResource
  * @param {Object} options - additional options
  * @param {string|array} options.requestedClassification -- AAT copyright (default: {@link http://vocab.getty.edu/aat/300435434 |aat.COPYRIGHT})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
@@ -191,7 +182,7 @@ export function getRightsStatements(
  *
  * @returns {array} array of copyright objects
  */
-export function getCopyright(
+export function getCopyrightStatements(
   submittedResource,
   {
     requestedClassification = aat.COPYRIGHT,
@@ -202,7 +193,7 @@ export function getCopyright(
   requestedClassification = normalizeAatId(requestedClassification);
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
 
-  const copyright = getClassifiedAs(
+  const copyright = getValuesByClassification(
     referredToBy,
     aat.COPYRIGHT,
     language,
@@ -214,13 +205,9 @@ export function getCopyright(
 
 /**
  * @description Gets URLs for rights assertions an object is subject to if available.
- * @param {object|array} submittedResource
- * @param {Object} options - additional options
- * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {object} submittedResource
  *
- * @example getRightsAssertions(object) // gets rights assertions using defaults
- * @example getRightsAssertions(object, {language:'mk'}) // gets rights assertions in Macedonian
+ * @example getRightsAssertions(object) // gets rights assertions
  *
  * @returns {array} array of urls of assertions of rights the resource is subject to
  */
