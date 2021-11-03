@@ -81,7 +81,7 @@ describe("get production information", () => {
       },
     ]);
   });
-  it("gets a multiple production timespan(s)", () => {
+  it("gets the timespan(s) in a case where there are multiple productions (in this case, still just one)", () => {
     expect(objectHelpers.getProductionTimespans(fables)).toEqual([
       {
         begin_of_the_begin: "1450-01-01T00:00:00",
