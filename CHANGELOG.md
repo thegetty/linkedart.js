@@ -17,7 +17,18 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
-## [1.15.0]
+## [0.15.1]
+
+### Added
+
+- `getDigitalImages`: added function for getting URLs to digital images
+- `getRightsStatement`: added function for getting rights statements
+- `getCopyrightStatements`: added function for getting copyright/licensing statements
+- `getRightsAssertion`: added function for getting rights assertions, (e.g., from https://rightsstatements.org/)
+- `getAcknowledgementStatements`: added function for getting acknowledgment/credit statements
+- added tests and test data
+
+## [0.15.0]
 
 ### Added
 
