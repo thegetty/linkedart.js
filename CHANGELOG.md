@@ -8,16 +8,34 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Added`: for new features
 
-* `Bumped`: updated dependencies, only minor or higher will be listed
-* `Changed`: for changes in existing functionality
+- `Bumped`: updated dependencies, only minor or higher will be listed
+
+- `Changed`: for changes in existing functionality
 
 - `Deprecated`: for once-stable features removed in upcoming releases
 
-* `Fixed`: for any bug fixes
+- `Fixed`: for any bug fixes
 
 - `Removed`: for deprecated features removed in this release
 
-## [1.15.0]
+## [0.15.2]
+
+### Added
+
+- added `getCultures` to ObjectHelpers
+
+## [0.15.1]
+
+### Added
+
+- `getDigitalImages`: added function for getting URLs to digital images
+- `getRightsStatement`: added function for getting rights statements
+- `getCopyrightStatements`: added function for getting copyright/licensing statements
+- `getRightsAssertion`: added function for getting rights assertions, (e.g., from https://rightsstatements.org/)
+- `getAcknowledgementStatements`: added function for getting acknowledgment/credit statements
+- added tests and test data
+
+## [0.15.0]
 
 ### Added
 

@@ -1,5 +1,4 @@
 {
-  "ACCESSION_NUMBER": "http://vocab.getty.edu/aat/300312355",
   "LANGUAGES": {
     "en": "http://vocab.getty.edu/aat/300388277",
     "fr": "http://vocab.getty.edu/aat/300388306",
@@ -45,7 +44,13 @@
     "tr": "http://vocab.getty.edu/aat/300389470",
     "cy": "http://vocab.getty.edu/aat/300389555"
   },
-  "PREFERRED_TERM": "http://vocab.getty.edu/aat/300404670",
+  "ACCESSION_NUMBERS": "http://vocab.getty.edu/aat/300312355",
+  "ACKNOWLEDGEMENT": "http://vocab.getty.edu/aat/300026687",
+  "COPYRIGHT": "http://vocab.getty.edu/aat/300435434",
+  "CULTURE": "http://vocab.getty.edu/aat/300055768",
+  "DIGITAL_IMAGES": "http://vocab.getty.edu/aat/300215302",
   "DIMENSIONS_DESCRIPTION": "http://vocab.getty.edu/aat/300435430",
-  "ACCESSION_NUMBERS": "http://vocab.getty.edu/aat/300312355"
+  "LEGAL_CONCEPTS": "http://vocab.getty.edu/aat/300055547",
+  "PREFERRED_TERM": "http://vocab.getty.edu/aat/300404670",
+  "RIGHTS": "http://vocab.getty.edu/aat/300417696"
 }
