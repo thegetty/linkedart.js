@@ -116,11 +116,7 @@ export function getCarriedOutBy(object) {
  */
 export function getCultures(
   submittedResource,
-  {
-    requestedClassification = aat.CULTURE,
-    language,
-    languageOptions = {},
-  } = {}
+  { requestedClassification = aat.CULTURE, language, languageOptions = {} } = {}
 ) {
   requestedClassification = normalizeAatId(requestedClassification);
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
