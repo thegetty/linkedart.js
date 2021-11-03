@@ -148,4 +148,14 @@ describe("get production information", () => {
       },
     ]);
   });
+
+  it("get the work type(s) of the object", () => {
+    expect(objectHelpers.getWorkTypes(irises)).toEqual(["Painting"]);
+  });
+
+  it("get the work type(s) of the object", () => {
+    expect(objectHelpers.getClassifications(irises)).toEqual([
+      "http://vocab.getty.edu/aat/300033618",
+    ]);
+  });
 });

@@ -56,4 +56,11 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
       "http://numismatics.org/collectionimages/19001949/1944/1944.100.51606.obv.width350.jpg"
     );
   });
+
+  it("get the work type(s) of the object", () => {
+    expect(objectHelpers.getWorkTypes(gold_coin)).toEqual([
+      "http://nomisma.org/id/stater",
+      "aat:300037222",
+    ]);
+  });
 });
