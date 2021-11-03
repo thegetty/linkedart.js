@@ -3,6 +3,7 @@ import * as objectHelpers from "./ObjectHelpers";
 import irises from "../data/mocks/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb.json";
 import beetle from "../data/mocks/a69d5696-70c2-56ed-9f82-fb2e69311e5d.json";
 import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
+import kasten from "../data/mocks/1cd16038-091e-4010-ae07-df95acfce9a4.json";
 
 describe("getDimensionsDescription", () => {
   it("gets the correct dimensions description if present", () => {
@@ -36,7 +37,9 @@ describe("getRightsStatements", () => {
 
 describe("getCopyrightStatements", () => {
   it("return empty array if no copyright", () => {
-    expect(objectHelpers.getCopyrightStatements(irises)).toEqual(undefined);
+    expect(objectHelpers.getCopyrightStatements(kasten)).toEqual([
+      "© Barbara Kasten",
+    ]);
   });
 });
 
