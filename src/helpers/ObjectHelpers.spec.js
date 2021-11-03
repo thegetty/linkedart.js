@@ -30,9 +30,9 @@ describe("getDigitalImages", () => {
 
 describe("getRightsStatements", () => {
   it("gets the correct right statement if present", () => {
-    expect(objectHelpers.getRightsStatements(irises)[0].id).toEqual(
-      "https://rightsstatements.org/vocab/NoC-US/1.0/"
-    );
+    expect(objectHelpers.getRightsStatements(irises)).toEqual([
+      "No Copyright - United States",
+    ]);
   });
 });
 

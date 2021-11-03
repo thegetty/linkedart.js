@@ -51,5 +51,6 @@
   "DIGITAL_IMAGES": "http://vocab.getty.edu/aat/300215302",
   "RIGHTS_STATEMENT": "http://vocab.getty.edu/aat/300417696",
   "COPYRIGHT": "http://vocab.getty.edu/aat/300435434",
-  "ACKNOWLEDGEMENT": "http://vocab.getty.edu/aat/300026687"
+  "ACKNOWLEDGEMENT": "http://vocab.getty.edu/aat/300026687",
+  "LEGAL_CONCEPTS": "http://vocab.getty.edu/aat/300055547"
 }

@@ -9,8 +9,10 @@ import {
   getFieldPartSubfield,
   getFieldValuesByClassifications,
   getClassifiedAs,
+  getClassified,
+  getValueOrContent,
 } from "./LinkedArtHelpers";
-import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
+import { normalizeAatId, normalizeFieldToArray } from "./BasicHelpers";
 import aat from "../data/aat.json";
 
 const IDENTIFIED_BY = "identified_by";
@@ -20,6 +22,7 @@ const SUBJECT_TO = "subject_to";
 const CLASSIFIED_AS = "classified_as";
 const PRODUCED_BY = "produced_by";
 const CARRIED_OUT_BY = "carried_out_by";
+const OR = "OR";
 
 /**
  * @description Gets descriptive statement(s) about the physical extent of an object if available.
@@ -135,7 +138,7 @@ export function getDigitalImages(
  * @description Gets rights statements associated with an object if available.
  * @param {object} submittedResource
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassifications -- AAT rights statement (default: {@link http://vocab.getty.edu/aat/300417696|aat.RIGHTS_STATEMENT})
+ * @param {string|array} options.requestedClassifications -- (default: [{@link http://vocab.getty.edu/aat/300417696|aat.RIGHTS_STATEMENT}, {@link http://vocab.getty.edu/aat/300055547|aat.LEGAL_CONCEPTS}])
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
@@ -148,22 +151,24 @@ export function getDigitalImages(
 export function getRightsStatements(
   submittedResource,
   {
-    requestedClassification = aat.RIGHTS_STATEMENT,
+    requestedClassifications = [aat.LEGAL_CONCEPTS, aat.RIGHTS_STATEMENT],
     language,
     languageOptions = {},
   } = {}
 ) {
-  requestedClassification = normalizeAatId(requestedClassification);
-  const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
-
-  const rights = getClassifiedAs(
-    referredToBy,
-    requestedClassification,
-    language,
-    (languageOptions = {})
+  requestedClassifications = requestedClassifications.map((c) =>
+    normalizeAatId(c)
   );
-
-  return rights;
+  const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
+  const rights = getClassified(
+    referredToBy,
+    requestedClassifications,
+    CLASSIFIED_AS,
+    language,
+    languageOptions,
+    OR
+  );
+  return rights.map((right) => getValueOrContent(right));
 }
 
 /**

@@ -87,4 +87,12 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
       ]);
     });
   });
+  describe("getRightsStatements", () => {
+    it("gets the correct rights statements if present", () => {
+      expect(objectHelpers.getRightsStatements(photo)).toEqual([
+        "Gift",
+        "© Georgia O'Keeffe Museum",
+      ]);
+    });
+  });
 });
