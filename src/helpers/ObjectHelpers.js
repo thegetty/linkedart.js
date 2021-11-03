@@ -107,16 +107,16 @@ export function getCarriedOutBy(object) {
 
 /**
  * @description Gets the culture(s) associated with an object if available.
- * @param {object} submittedResource -- JSON-LD object
+ * @param {Object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassifications -- AAT culture (default: {@link http://vocab.getty.edu/aat/300055768|aat.CULTURE})
- * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String|Array} options.requestedClassifications -- AAT culture (default: {@link http://vocab.getty.edu/aat/300055768|aat.CULTURE})
+ * @param {String} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example getCultures(object) // gets culture(s) using defaults
  * @example getCultures(object, {language:'fr'}) // gets culture(s) in French
  *
- * @returns {array} content of AAT culture(s)
+ * @returns {Array} content of AAT culture(s)
  */
 export function getCultures(
   submittedResource,
