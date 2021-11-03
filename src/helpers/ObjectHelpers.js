@@ -12,14 +12,14 @@ import {
   getClassified,
   getValueOrContent,
 } from "./LinkedArtHelpers";
-import { normalizeAatId, normalizeFieldToArray } from "./BasicHelpers";
+import { normalizeFieldToArray } from "./BasicHelpers";
 import aat from "../data/aat.json";
 import {
-  REFERRED_TO_BY,
-  TIMESPAN,
-  PRODUCED_BY,
   CARRIED_OUT_BY,
   IDENTIFIED_BY,
+  PRODUCED_BY,
+  REFERRED_TO_BY,
+  TIMESPAN,
   REPRESENTATION,
   SUBJECT_TO,
   CLASSIFIED_AS,
@@ -106,6 +106,36 @@ export function getCarriedOutBy(object) {
 }
 
 /**
+ * @description Gets the culture(s) associated with an object if available.
+ * @param {object} submittedResource -- JSON-LD object
+ * @param {Object} options - additional options
+ * @param {string|array} options.requestedClassifications -- AAT culture (default: {@link http://vocab.getty.edu/aat/300055768|aat.CULTURE})
+ * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example getCultures(object) // gets culture(s) using defaults
+ * @example getCultures(object, {language:'fr'}) // gets culture(s) in French
+ *
+ * @returns {array} content of AAT culture(s)
+ */
+export function getCultures(
+  submittedResource,
+  {
+    requestedClassifications = aat.CULTURE,
+    language,
+    languageOptions = {},
+  } = {}
+) {
+  return getFieldValuesByClassifications(
+    submittedResource,
+    REFERRED_TO_BY,
+    requestedClassifications,
+    language,
+    languageOptions
+  );
+}
+
+/**
  * @description Gets URLs for digital images associated with an object if available.
  * @param {object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
@@ -154,9 +184,6 @@ export function getRightsStatements(
     languageOptions = {},
   } = {}
 ) {
-  requestedClassifications = requestedClassifications.map((c) =>
-    normalizeAatId(c)
-  );
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
   const rights = getClassified(
     referredToBy,
