@@ -7,6 +7,7 @@
 
 import {
   getFieldPartSubfield,
+  getFieldValuesByClassifications,
   getValuesByClassification,
 } from "./LinkedArtHelpers";
 import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
@@ -108,25 +109,27 @@ export function getCarriedOutBy(object) {
  * @description Gets the culture(s) associated with an object if available.
  * @param {object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassification -- AAT culture (default: {@link http://vocab.getty.edu/aat/300055768|aat.CULTURE})
+ * @param {string|array} options.requestedClassifications -- AAT culture (default: {@link http://vocab.getty.edu/aat/300055768|aat.CULTURE})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
- * @example gets culture(s) using defaults getCultures(object)
- * @example gets culture(s) in French getCultures(object, {language:'fr'})
+ * @example getCultures(object) // gets culture(s) using defaults
+ * @example getCultures(object, {language:'fr'}) // gets culture(s) in French
  *
  * @returns {array} content of AAT culture(s)
  */
 export function getCultures(
   submittedResource,
-  { requestedClassification = aat.CULTURE, language, languageOptions = {} } = {}
+  {
+    requestedClassifications = aat.CULTURE,
+    language,
+    languageOptions = {},
+  } = {}
 ) {
-  requestedClassification = normalizeAatId(requestedClassification);
-  const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
-
-  return getValuesByClassification(
-    referredToBy,
-    requestedClassification,
+  return getFieldValuesByClassifications(
+    submittedResource,
+    REFERRED_TO_BY,
+    requestedClassifications,
     language,
     languageOptions
   );
