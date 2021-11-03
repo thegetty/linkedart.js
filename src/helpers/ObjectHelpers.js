@@ -153,7 +153,6 @@ export function getDigitalImages(
     submittedResource,
     REPRESENTATION
   );
-
   let digitalImages = getClassifiedAs(
     representations,
     requestedClassifications

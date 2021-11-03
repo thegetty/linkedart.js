@@ -474,7 +474,7 @@ export function getValuesByClassification(
     });
     return values;
   }
-  return undefined;
+  return [];
 }
 
 /**
@@ -883,10 +883,10 @@ export function getFieldValuesByClassifications(
 }
 
 /**
- * @description Gets the culture(s) associated with an object if available.
+ * @description Gets the descriptions(s) associated with an object if available.
  * @param {object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassifications -- AAT descriptions (default: {@link http://vocab.getty.edu/aat/300055768|aat.CULTURE})
+ * @param {string|array} options.requestedClassifications -- AAT descriptions (default: {@link http://vocab.getty.edu/aat/300080091|aat.DESCRIPTION})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *

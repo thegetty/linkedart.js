@@ -40,7 +40,12 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
     });
     expect(typeIds).toEqual(["http://nomisma.org/id/stater", "aat:300037222"]);
   });
-
+  it("gets the iiif image of the object", () => {
+    const part = basicHelpers.normalizeFieldToArray(gold_coin, "part")[0];
+    expect(objectHelpers.getDigitalImages(part)).toEqual([
+      "http://numismatics.org/collectionimages/19001949/1944/1944.100.51606.obv.width350.jpg",
+    ]);
+  });
   it("gets the iiif image of the object", () => {
     const part = basicHelpers.normalizeFieldToArray(gold_coin, "part");
     const frontObject = helpers.getClassifiedAs(part, "aat:300190703")[0];

@@ -22,16 +22,16 @@ describe("tests the VAM O'Keeffe record", () => {
     expect(objectHelpers.getProductionTimespans(photo)).toEqual([]);
   });
   it("gets the dimensions statement", () => {
-    expect(objectHelpers.getDimensionsDescriptions(photo)).toEqual(undefined);
+    expect(objectHelpers.getDimensionsDescriptions(photo)).toEqual([]);
   });
   it("gets the rights statement", () => {
-    expect(objectHelpers.getRightsStatements(photo)).toEqual(undefined);
+    expect(objectHelpers.getRightsStatements(photo)).toEqual([]);
   });
   it("gets the copyright statement", () => {
-    expect(objectHelpers.getCopyrightStatements(photo)).toEqual(undefined);
+    expect(objectHelpers.getCopyrightStatements(photo)).toEqual([]);
   });
   it("gets the rights assertions", () => {
-    expect(objectHelpers.getRightsAssertions(photo)).toEqual(undefined);
+    expect(objectHelpers.getRightsAssertions(photo)).toEqual([]);
   });
   it("gets the digital image", () => {
     expect(objectHelpers.getDigitalImages(photo)).toEqual([
@@ -40,7 +40,7 @@ describe("tests the VAM O'Keeffe record", () => {
     ]);
   });
   it("gets the culture", () => {
-    expect(objectHelpers.getCultures(photo)).toEqual(undefined);
+    expect(objectHelpers.getCultures(photo)).toEqual([]);
   });
   it("gets the acknowledgements", () => {
     expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([

@@ -94,6 +94,12 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
     ]);
   });
 
+  it("gets the correct descriptions if present", () => {
+    expect(helpers.getDescriptions(photo)).toEqual([
+      "A textured adobe wall with a kiva log ladder leaning against O'Keeffe's studio wall casting a shadow.",
+    ]);
+  });
+
   it("gets the timespan", () => {
     expect(objectHelpers.getProductionTimespans(photo)).toEqual([
       {
