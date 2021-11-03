@@ -18,6 +18,7 @@ import {
   getPrimaryNames,
   getAttributedBy,
   getAssignedBy,
+  getFieldValuesByClassifications,
   getFieldPartSubfield,
 } from "./helpers/LinkedArtHelpers";
 
@@ -55,6 +56,7 @@ export {
   getLanguageId,
   normalizeLanguageId,
   normalizeAatId,
+  getFieldValuesByClassifications,
   getClassified,
   lookupAatFromIso,
   lookupIsoFromAat,

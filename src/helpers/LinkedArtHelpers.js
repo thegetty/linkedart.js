@@ -850,3 +850,31 @@ export function getFieldPartSubfield(object, field, subfield) {
 
   return accumulator;
 }
+
+/**
+ * Builds on getValuesByClassification to look inside a field for those values, e.g. "referred_to_by" or "identified_by" and returns the entries classified by the values
+ *
+ * @param {Object} submittedResource - the JSON-LD Object
+ * @param {String} field - the field to look in (e.g. referred_to_by)
+ * @param {String|Array} requestedClassifications - the AAT or local classifications
+ * @param {String} language - the desired language (default is any)
+ * @param {Object} languageOptions (additional language options)
+ *
+ *  @example getFieldValuesByClassifications(object, "referred_to_by", aat.ACKNOWLEDGEMENTS, 'ja') // would return all of the acknowledgement entries in japanese
+ *
+ * @returns {Array} an array of objects
+ */
+export function getFieldValuesByClassifications(
+  submittedResource,
+  field,
+  requestedClassifications,
+  language,
+  languageOptions
+) {
+  return getValuesByClassification(
+    normalizeFieldToArray(submittedResource, field),
+    requestedClassifications,
+    language,
+    languageOptions
+  );
+}
