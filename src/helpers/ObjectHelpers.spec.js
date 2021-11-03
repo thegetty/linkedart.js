@@ -61,3 +61,9 @@ describe("get creators", () => {
     ]);
   });
 });
+
+describe("getCultures", () => {
+  it("gets the correct culture(s) if present", () => {
+    expect(objectHelpers.getCultures(irises)).toEqual(["Dutch"]);
+  });
+});

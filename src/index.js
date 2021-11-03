@@ -22,6 +22,7 @@ import {
 } from "./helpers/LinkedArtHelpers";
 
 import { normalizeAatId, normalizeFieldToArray } from "./helpers/BasicHelpers";
+
 import {
   doesObjectLanguageMatch,
   getLanguageId,
@@ -30,12 +31,15 @@ import {
   lookupIsoFromAat,
 } from "./helpers/LanguageHelpers";
 
+import { getCultures } from "./helpers/ObjectHelpers";
+
 export {
   normalizeFieldToArray,
   getClassifiedAs,
   getClassifiedBy,
   getClassifiedAsWithClassification,
   getClassifiedByWithClassification,
+  getCultures,
   doesObjectLanguageMatch,
   getObjectsClassifiedByWithClassification,
   getObjectsClassifiedAsWithClassification,

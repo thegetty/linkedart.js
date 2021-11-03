@@ -47,5 +47,6 @@
   },
   "PREFERRED_TERM": "http://vocab.getty.edu/aat/300404670",
   "DIMENSIONS_DESCRIPTION": "http://vocab.getty.edu/aat/300435430",
-  "ACCESSION_NUMBERS": "http://vocab.getty.edu/aat/300312355"
+  "ACCESSION_NUMBERS": "http://vocab.getty.edu/aat/300312355",
+  "CULTURE": "http://vocab.getty.edu/aat/300055768"
 }
