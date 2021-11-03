@@ -80,4 +80,11 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
       "https://iiif.okeeffemuseum.org/image/iiif/2/732891"
     );
   });
+  describe("getAcknowledgements", () => {
+    it("gets the correct acknowledgements if present", () => {
+      expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([
+        "Gift of The Georgia O'Keeffe Foundation      ",
+      ]);
+    });
+  });
 });
