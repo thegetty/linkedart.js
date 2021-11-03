@@ -81,6 +81,19 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
     );
   });
 
+  it("gets the correct acknowledgements if present", () => {
+    expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([
+      "Gift of The Georgia O'Keeffe Foundation      ",
+    ]);
+  });
+
+  it("gets the correct rights statements if present", () => {
+    expect(objectHelpers.getRightsStatements(photo)).toEqual([
+      "Gift",
+      "© Georgia O'Keeffe Museum",
+    ]);
+  });
+
   it("gets the timespan", () => {
     expect(objectHelpers.getProductionTimespans(photo)).toEqual([
       {
