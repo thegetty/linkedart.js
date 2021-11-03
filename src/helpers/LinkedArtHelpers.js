@@ -884,16 +884,16 @@ export function getFieldValuesByClassifications(
 
 /**
  * @description Gets the descriptions(s) associated with an object if available.
- * @param {object} submittedResource -- JSON-LD object
+ * @param {Object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassifications -- AAT descriptions (default: {@link http://vocab.getty.edu/aat/300080091|aat.DESCRIPTION})
- * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String|Array} options.requestedClassifications -- AAT descriptions (default: {@link http://vocab.getty.edu/aat/300080091|aat.DESCRIPTION})
+ * @param {String} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example getDescriptions(object) // gets descriptions(s) using defaults
  * @example getDescriptions(object, {language:'fr'}) // gets descriptions(s) in French
  *
- * @returns {array} content of descriptions(s)
+ * @returns {Array} content of descriptions(s)
  */
 export function getDescriptions(
   submittedResource,
