@@ -7,7 +7,7 @@
 
 import {
   getFieldPartSubfield,
-  getValuesByClassification,
+  getFieldValuesByClassifications,
   getClassifiedAs,
 } from "./LinkedArtHelpers";
 import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
@@ -25,7 +25,7 @@ const CARRIED_OUT_BY = "carried_out_by";
  * @description Gets descriptive statement(s) about the physical extent of an object if available.
  * @param {object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassification -- AAT dimensions description (default: {@link http://vocab.getty.edu/aat/300435430|aat.DIMENSIONS_DESCRIPTION})
+ * @param {string|array} options.requestedClassifications -- AAT dimensions description (default: {@link http://vocab.getty.edu/aat/300435430|aat.DIMENSIONS_DESCRIPTION})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
@@ -38,17 +38,15 @@ const CARRIED_OUT_BY = "carried_out_by";
 export function getDimensionsDescriptions(
   submittedResource,
   {
-    requestedClassification = aat.DIMENSIONS_DESCRIPTION,
+    requestedClassifications = aat.DIMENSIONS_DESCRIPTION,
     language,
     languageOptions = {},
   } = {}
 ) {
-  requestedClassification = normalizeAatId(requestedClassification);
-  const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
-
-  return getValuesByClassification(
-    referredToBy,
-    requestedClassification,
+  return getFieldValuesByClassifications(
+    submittedResource,
+    REFERRED_TO_BY,
+    requestedClassifications,
     language,
     languageOptions
   );
@@ -58,7 +56,7 @@ export function getDimensionsDescriptions(
  * @description Gets accession number(s) associated with an object if available.
  * @param {object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassification -- AAT accession numbers (default: {@link http://vocab.getty.edu/aat/300312355|aat.ACCESSION_NUMBERS})
+ * @param {string|array} options.requestedClassifications -- AAT accession numbers (default: {@link http://vocab.getty.edu/aat/300312355|aat.ACCESSION_NUMBERS})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
@@ -70,17 +68,15 @@ export function getDimensionsDescriptions(
 export function getAccessionNumbers(
   submittedResource,
   {
-    requestedClassification = aat.ACCESSION_NUMBERS,
+    requestedClassifications = aat.ACCESSION_NUMBERS,
     language,
     languageOptions = {},
   } = {}
 ) {
-  requestedClassification = normalizeAatId(requestedClassification);
-  const identifiedBy = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
-
-  return getValuesByClassification(
-    identifiedBy,
-    requestedClassification,
+  return getFieldValuesByClassifications(
+    submittedResource,
+    IDENTIFIED_BY,
+    requestedClassifications,
     language,
     languageOptions
   );
@@ -108,7 +104,7 @@ export function getCarriedOutBy(object) {
  * @description Gets URLs for digital images associated with an object if available.
  * @param {object} submittedResource -- JSON-LD object
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassification -- AAT digital images (default: {@link http://vocab.getty.edu/aat/300215302|aat.DIGITAL_IMAGES})
+ * @param {string|array} options.requestedClassifications -- AAT digital images (default: {@link http://vocab.getty.edu/aat/300215302|aat.DIGITAL_IMAGES})
  *
  * @example getDigitalImages(object) // gets digital images using defaults
  *
@@ -117,18 +113,20 @@ export function getCarriedOutBy(object) {
 export function getDigitalImages(
   submittedResource,
   {
-    requestedClassification = aat.DIGITAL_IMAGES,
+    requestedClassifications = aat.DIGITAL_IMAGES,
     language,
     languageOptions = {},
   } = {}
 ) {
-  requestedClassification = normalizeAatId(requestedClassification);
   const representations = normalizeFieldToArray(
     submittedResource,
     REPRESENTATION
   );
 
-  let digitalImages = getClassifiedAs(representations, requestedClassification);
+  let digitalImages = getClassifiedAs(
+    representations,
+    requestedClassifications
+  );
   // return the digital image ids
   return digitalImages.map((img) => img.id);
 }
@@ -137,7 +135,7 @@ export function getDigitalImages(
  * @description Gets rights statements associated with an object if available.
  * @param {object} submittedResource
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassification -- AAT rights statement (default: {@link http://vocab.getty.edu/aat/300417696|aat.RIGHTS_STATEMENT})
+ * @param {string|array} options.requestedClassifications -- AAT rights statement (default: {@link http://vocab.getty.edu/aat/300417696|aat.RIGHTS_STATEMENT})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
@@ -172,7 +170,7 @@ export function getRightsStatements(
  * @description Gets copyright or licensing statements associated with an object if available.
  * @param {object} submittedResource
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassification -- AAT copyright (default: {@link http://vocab.getty.edu/aat/300435434 |aat.COPYRIGHT})
+ * @param {string|array} options.requestedClassifications -- AAT copyright (default: {@link http://vocab.getty.edu/aat/300435434 |aat.COPYRIGHT})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
@@ -185,22 +183,18 @@ export function getRightsStatements(
 export function getCopyrightStatements(
   submittedResource,
   {
-    requestedClassification = aat.COPYRIGHT,
+    requestedClassifications = aat.COPYRIGHT,
     language,
     languageOptions = {},
   } = {}
 ) {
-  requestedClassification = normalizeAatId(requestedClassification);
-  const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
-
-  const copyright = getValuesByClassification(
-    referredToBy,
-    aat.COPYRIGHT,
+  return getFieldValuesByClassifications(
+    submittedResource,
+    REFERRED_TO_BY,
+    requestedClassifications,
     language,
-    (languageOptions = {})
+    languageOptions
   );
-
-  return copyright;
 }
 
 /**
@@ -225,4 +219,35 @@ export function getRightsAssertions(
 
   // return rights assertion ids
   return rightsAssertions.map((d) => d.id);
+}
+
+/**
+ * @description Gets the acknowledgement statement associated with an object if available.
+ * @param {object} submittedResource
+ * @param {Object} options - additional options
+ * @param {string|array} options.requestedClassifications -- AAT acknowledgement statement (default: {@link http://vocab.getty.edu/aat/300026687 |aat.ACKNOWLEDGEMENT})
+ * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example getAcknowledgementStatements(object) // gets acknowledgements using defaults
+ * @example getAcknowledgementStatements(object, {language:'ca'}) // gets acknowledgements in Catalan
+ * @example getAcknowledgementStatements(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300055617'}) // gets acknowledgement using a different AAT term
+ *
+ * @returns {array} array of acknowledgement statements
+ */
+export function getAcknowledgementStatements(
+  submittedResource,
+  {
+    requestedClassifications = aat.ACKNOWLEDGEMENT,
+    language,
+    languageOptions = {},
+  } = {}
+) {
+  return getFieldValuesByClassifications(
+    submittedResource,
+    REFERRED_TO_BY,
+    requestedClassifications,
+    language,
+    languageOptions
+  );
 }
