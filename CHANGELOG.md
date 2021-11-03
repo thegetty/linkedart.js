@@ -8,14 +8,21 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Added`: for new features
 
-* `Bumped`: updated dependencies, only minor or higher will be listed
-* `Changed`: for changes in existing functionality
+- `Bumped`: updated dependencies, only minor or higher will be listed
+
+- `Changed`: for changes in existing functionality
 
 - `Deprecated`: for once-stable features removed in upcoming releases
 
-* `Fixed`: for any bug fixes
+- `Fixed`: for any bug fixes
 
 - `Removed`: for deprecated features removed in this release
+
+## [0.15.2]
+
+### Added
+
+- added `getCultures` to ObjectHelpers
 
 ## [0.15.1]
 

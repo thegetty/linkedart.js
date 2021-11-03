@@ -105,6 +105,12 @@ describe("get creators", () => {
   });
 });
 
+describe("getCultures", () => {
+  it("gets the correct culture(s) if present", () => {
+    expect(objectHelpers.getCultures(irises)).toEqual(["Dutch"]);
+  });
+});
+
 describe("get production information", () => {
   it("gets a single production timespan(s)", () => {
     expect(objectHelpers.getProductionTimespans(irises)).toEqual([

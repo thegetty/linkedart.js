@@ -18,6 +18,7 @@ import {
   getPrimaryNames,
   getAttributedBy,
   getAssignedBy,
+  getFieldValuesByClassifications,
   getFieldPartSubfield,
   getObjectParts,
 } from "./helpers/LinkedArtHelpers";
@@ -36,12 +37,15 @@ import {
   lookupIsoFromAat,
 } from "./helpers/LanguageHelpers";
 
+import { getCultures } from "./helpers/ObjectHelpers";
+
 export {
   normalizeFieldToArray,
   getClassifiedAs,
   getClassifiedBy,
   getClassifiedAsWithClassification,
   getClassifiedByWithClassification,
+  getCultures,
   doesObjectLanguageMatch,
   getObjectsClassifiedByWithClassification,
   getObjectsClassifiedAsWithClassification,
@@ -59,6 +63,7 @@ export {
   normalizeLanguageId,
   normalizeFieldWithParts,
   normalizeAatId,
+  getFieldValuesByClassifications,
   getClassified,
   lookupAatFromIso,
   lookupIsoFromAat,
