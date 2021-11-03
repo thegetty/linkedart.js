@@ -18,6 +18,17 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.16.0]
+
+### Added
+
+- added `getDescriptions` to LinkedArtHelpers
+- added test cases from the LinkedArt Showcase
+
+### Changed
+
+- Changed `getValuesByClassication` to return [] when nothing's found instead of `undefined`
+
 ## [0.15.2]
 
 ### Added
