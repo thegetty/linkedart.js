@@ -117,11 +117,7 @@ export function getCarriedOutBy(object) {
  */
 export function getDigitalImages(
   submittedResource,
-  {
-    requestedClassifications = aat.DIGITAL_IMAGES,
-    language,
-    languageOptions = {},
-  } = {}
+  { requestedClassifications = aat.DIGITAL_IMAGES } = {}
 ) {
   const representations = normalizeFieldToArray(
     submittedResource,
@@ -137,10 +133,10 @@ export function getDigitalImages(
 }
 
 /**
- * @description Gets rights statements associated with an object if available.
+ * @description Gets rights statements associated with an object if available. Returns values from objects classified as "legal concepts" or "rights".
  * @param {object} submittedResource
  * @param {Object} options - additional options
- * @param {string|array} options.requestedClassifications -- (default: [{@link http://vocab.getty.edu/aat/300417696|aat.RIGHTS_STATEMENT}, {@link http://vocab.getty.edu/aat/300055547|aat.LEGAL_CONCEPTS}])
+ * @param {string|array} options.requestedClassifications -- AAT legal concepts OR AAT rights (legal concept) (default: [{@link http://vocab.getty.edu/aat/300055547|aat.LEGAL_CONCEPTS}, {@link http://vocab.getty.edu/aat/300417696|aat.RIGHTS}])
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
@@ -153,7 +149,7 @@ export function getDigitalImages(
 export function getRightsStatements(
   submittedResource,
   {
-    requestedClassifications = [aat.LEGAL_CONCEPTS, aat.RIGHTS_STATEMENT],
+    requestedClassifications = [aat.LEGAL_CONCEPTS, aat.RIGHTS],
     language,
     languageOptions = {},
   } = {}
