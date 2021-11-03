@@ -3,7 +3,7 @@ import * as objectHelpers from "./ObjectHelpers";
 import irises from "../data/mocks/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb.json";
 import beetle from "../data/mocks/a69d5696-70c2-56ed-9f82-fb2e69311e5d.json";
 import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
-
+import triton from "../data/mocks/dff75e58-f8b9-4507-8ab7-5d948451dea7";
 describe("getDimensionsDescription", () => {
   it("gets the correct dimensions description if present", () => {
     expect(objectHelpers.getDimensionsDescriptions(irises)[0]).toEqual(
@@ -44,6 +44,14 @@ describe("getRightsAssertions", () => {
   it("gets the correct rightsAssertions if present", () => {
     expect(objectHelpers.getRightsAssertions(beetle)[0]).toEqual(
       "https://rightsstatements.org/vocab/NoC-US/1.0/"
+    );
+  });
+});
+
+describe("getAcknowledgements", () => {
+  it("gets the correct acknowledgements if present", () => {
+    expect(objectHelpers.getAcknowledgementStatements(triton)).toEqual(
+      undefined
     );
   });
 });
