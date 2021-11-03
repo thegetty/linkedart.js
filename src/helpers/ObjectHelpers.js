@@ -132,6 +132,7 @@ export function getCultures(
   );
 }
 
+/**
  * Gets the timespan(s) for a production
  * 
  * @description This gets the timespan object(s) for the production information regardless of whether the production has parts or not.
