@@ -80,4 +80,16 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
       "https://iiif.okeeffemuseum.org/image/iiif/2/732891"
     );
   });
+
+  it("gets the timespan", () => {
+    expect(objectHelpers.getProductionTimespans(photo)).toEqual([
+      {
+        begin_of_the_begin: "1959-01-01T00:00:00",
+        end_of_the_end: "1969-12-31T00:00:00",
+        id: "http://data.okeeffemuseum.org/object/6401/production/timespan/0",
+        label: "ca. 1964",
+        type: "TimeSpan",
+      },
+    ]);
+  });
 });

@@ -12,19 +12,19 @@ import {
   normalizeFieldWithParts,
 } from "./BasicHelpers";
 import aat from "../data/aat.json";
-
-const ATTRIBUTED_BY = "attributed_by";
-const ASSIGNED_BY = "assigned_by";
-const CLASSIFIED_AS = "classified_as";
-const CLASSIFIED_BY = "classified_by";
-const IDENTIFIED_BY = "identified_by";
-const PART = "part";
-const REFERRED_TO_BY = "referred_to_by";
-const UNKNOWN = "Unknown";
-
-const ASSIGNED_PROPERTY = "assigned_property";
-const NAME = "Name";
-const ASSIGNED = "assigned";
+import {
+  ATTRIBUTED_BY,
+  ASSIGNED_BY,
+  CLASSIFIED_AS,
+  CLASSIFIED_BY,
+  IDENTIFIED_BY,
+  NAME,
+  PART,
+  REFERRED_TO_BY,
+  UNKNOWN,
+  ASSIGNED_PROPERTY,
+  ASSIGNED,
+} from "../data/constants.json";
 
 /**
  * Given an object or an array of objects, find all entries that have an object in their classified_as
@@ -608,6 +608,7 @@ export function getAssignedBy(object, assignedProperty) {
  * @example removeDuplicatesById([{id: '123', type: 'Object'}, {id: '123', type: 'Artist'}])
  * would return [{id: '123', type: 'Object'}]
  *
+ * @private
  * @return {array} the array of objects with duplicates removed
  */
 export function removeDuplicatesById(_array) {

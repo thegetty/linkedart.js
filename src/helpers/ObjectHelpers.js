@@ -12,10 +12,13 @@ import {
 import { normalizeFieldToArray, normalizeAatId } from "./BasicHelpers";
 import aat from "../data/aat.json";
 
-const IDENTIFIED_BY = "identified_by";
-const REFERRED_TO_BY = "referred_to_by";
-const PRODUCED_BY = "produced_by";
-const CARRIED_OUT_BY = "carried_out_by";
+import {
+  CARRIED_OUT_BY,
+  IDENTIFIED_BY,
+  PRODUCED_BY,
+  REFERRED_TO_BY,
+  TIMESPAN,
+} from "../data/constants.json";
 
 /**
  * @description Gets descriptive statement(s) about the physical extent of an object if available.
@@ -127,4 +130,29 @@ export function getCultures(
     language,
     languageOptions
   );
+}
+
+ * Gets the timespan(s) for a production
+ * 
+ * @description This gets the timespan object(s) for the production information regardless of whether the production has parts or not.
+ *
+ * @param {Object} object - a JSON-LD Object
+ *
+ * @example gets the timespan 
+ * getProductionTimespan({produced_by: { "timespan": {
+      "id": "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan",
+      "type": "TimeSpan",
+      "begin_of_the_begin": "1889-01-01T00:00:00",
+      "end_of_the_end": "1889-12-31T23:59:59"
+    },
+}}}) returns [{"id": "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan",
+      "type": "TimeSpan",
+      "begin_of_the_begin": "1889-01-01T00:00:00",
+      "end_of_the_end": "1889-12-31T23:59:59"
+}]
+ * 
+ * @returns {array} - an array of LinkedArt timespan objects
+ */
+export function getProductionTimespans(object) {
+  return getFieldPartSubfield(object, PRODUCED_BY, TIMESPAN);
 }
