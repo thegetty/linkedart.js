@@ -61,3 +61,42 @@ describe("get creators", () => {
     ]);
   });
 });
+
+describe("get production information", () => {
+  it("gets a single production timespan(s)", () => {
+    expect(objectHelpers.getProductionTimespans(irises)).toEqual([
+      {
+        begin_of_the_begin: "1889-01-01T00:00:00",
+        end_of_the_end: "1889-12-31T23:59:59",
+        id: "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan",
+        identified_by: [
+          {
+            _label: "Date",
+            content: "1889",
+            id: "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan/name",
+            type: "Name",
+          },
+        ],
+        type: "TimeSpan",
+      },
+    ]);
+  });
+  it("gets the timespan(s) in a case where there are multiple productions (in this case, still just one)", () => {
+    expect(objectHelpers.getProductionTimespans(fables)).toEqual([
+      {
+        begin_of_the_begin: "1450-01-01T00:00:00",
+        end_of_the_end: "1475-12-31T23:59:59",
+        id: "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production/timespan",
+        identified_by: [
+          {
+            _label: "Date",
+            content: "third quarter of 15th century",
+            id: "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production/timespan/name",
+            type: "Name",
+          },
+        ],
+        type: "TimeSpan",
+      },
+    ]);
+  });
+});
