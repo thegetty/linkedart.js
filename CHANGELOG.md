@@ -27,7 +27,7 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 ### Changed
 
-- Changed `getValuesByClassication` to return [] when nothing's found instead of `undefined`
+- Changed `getValuesByClassification` to return [] when nothing's found instead of `undefined`
 
 ## [0.15.2]
 
