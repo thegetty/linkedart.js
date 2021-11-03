@@ -41,15 +41,7 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   });
 
   it("gets the accession number of the object", () => {
-    const identifiedBy = basicHelpers.normalizeFieldToArray(
-      photo,
-      "identified_by"
-    );
-    const title = helpers.getValueByClassification(
-      identifiedBy,
-      "aat:300312355"
-    );
-    expect(title).toEqual("2006.6.1421");
+    expect(objectHelpers.getAccessionNumbers(photo)).toEqual(["2006.6.1421"]);
   });
 
   it("gets the type (ids) of the object", () => {
