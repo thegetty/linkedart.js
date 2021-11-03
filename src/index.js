@@ -19,9 +19,15 @@ import {
   getAttributedBy,
   getAssignedBy,
   getFieldPartSubfield,
+  getObjectParts,
 } from "./helpers/LinkedArtHelpers";
 
-import { normalizeAatId, normalizeFieldToArray } from "./helpers/BasicHelpers";
+import {
+  normalizeAatId,
+  normalizeFieldToArray,
+  normalizeFieldWithParts,
+} from "./helpers/BasicHelpers";
+
 import {
   doesObjectLanguageMatch,
   getLanguageId,
@@ -45,11 +51,13 @@ export {
   getFieldPartSubfield,
   getValueOrContent,
   getValuesByClassification,
+  getObjectParts,
   getReferredToByClassification,
   getAttributedBy,
   getAssignedBy,
   getLanguageId,
   normalizeLanguageId,
+  normalizeFieldWithParts,
   normalizeAatId,
   getClassified,
   lookupAatFromIso,

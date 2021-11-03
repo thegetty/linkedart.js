@@ -1,0 +1,19 @@
+{
+  "ATTRIBUTED_BY": "attributed_by",
+  "ASSIGNED_BY": "assigned_by",
+  "CLASSIFIED_AS": "classified_as",
+  "CLASSIFIED_BY": "classified_by",
+  "IDENTIFIED_BY": "identified_by",
+  "PART": "part",
+  "REFERRED_TO_BY": "referred_to_by",
+  "UNKNOWN": "Unknown",
+  "TIMESPAN": "timespan",
+  "ASSIGNED_PROPERTY": "assigned_property",
+  "NAME": "Name",
+  "ASSIGNED": "assigned",
+  "PRODUCED_BY": "produced_by",
+  "CARRIED_OUT_BY": "carried_out_by",
+  "REPRESENTATION": "representation",
+  "SUBJECT_TO": "subject_to",
+  "OR": "OR"
+}
