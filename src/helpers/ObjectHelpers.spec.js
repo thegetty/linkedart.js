@@ -54,9 +54,7 @@ describe("getRightsAssertions", () => {
 
 describe("getAcknowledgements", () => {
   it("gets the correct acknowledgements if present", () => {
-    expect(objectHelpers.getAcknowledgementStatements(triton)).toEqual(
-      undefined
-    );
+    expect(objectHelpers.getAcknowledgementStatements(triton)).toEqual([]);
   });
 });
 

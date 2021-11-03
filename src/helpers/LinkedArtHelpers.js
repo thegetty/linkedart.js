@@ -474,7 +474,7 @@ export function getValuesByClassification(
     });
     return values;
   }
-  return undefined;
+  return [];
 }
 
 /**
@@ -876,6 +876,36 @@ export function getFieldValuesByClassifications(
 ) {
   return getValuesByClassification(
     normalizeFieldToArray(submittedResource, field),
+    requestedClassifications,
+    language,
+    languageOptions
+  );
+}
+
+/**
+ * @description Gets the descriptions(s) associated with an object if available.
+ * @param {Object} submittedResource -- JSON-LD object
+ * @param {Object} options - additional options
+ * @param {String|Array} options.requestedClassifications -- AAT descriptions (default: {@link http://vocab.getty.edu/aat/300080091|aat.DESCRIPTION})
+ * @param {String} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example getDescriptions(object) // gets descriptions(s) using defaults
+ * @example getDescriptions(object, {language:'fr'}) // gets descriptions(s) in French
+ *
+ * @returns {Array} content of descriptions(s)
+ */
+export function getDescriptions(
+  submittedResource,
+  {
+    requestedClassifications = aat.DESCRIPTION,
+    language,
+    languageOptions = {},
+  } = {}
+) {
+  return getFieldValuesByClassifications(
+    submittedResource,
+    REFERRED_TO_BY,
     requestedClassifications,
     language,
     languageOptions
