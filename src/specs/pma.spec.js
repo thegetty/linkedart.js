@@ -31,4 +31,30 @@ describe("tests the PMA O'Keeffe record", () => {
   it("gets the dimensions statement", () => {
     expect(objectHelpers.getDimensionsDescriptions(photo)).toEqual(undefined);
   });
+
+  it("gets the rights statement", () => {
+    expect(objectHelpers.getRightsStatements(photo)).toEqual(undefined);
+  });
+  it("gets the copyright statement", () => {
+    expect(objectHelpers.getCopyrightStatements(photo)).toEqual(undefined);
+  });
+  it("gets the rights assertions", () => {
+    expect(objectHelpers.getRightsAssertions(photo)).toEqual(undefined);
+  });
+  it("gets the digital image", () => {
+    expect(objectHelpers.getDigitalImages(photo)).toEqual([
+      "https://philamuseum.org/images/cad/zoomers/1944-95-4.jpg",
+    ]);
+  });
+  it("gets the culture", () => {
+    expect(objectHelpers.getCultures(photo)).toEqual(undefined);
+  });
+  it("gets the descriptions", () => {
+    expect(helpers.getDescriptions(photo)).toEqual([]);
+  });
+  it("gets the acknowledgements", () => {
+    expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([
+      "Gift of Dr. Herman Lorber, 1944",
+    ]);
+  });
 });

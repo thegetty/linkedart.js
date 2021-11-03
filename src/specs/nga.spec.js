@@ -33,10 +33,34 @@ describe("tests the NGA O'Keeffe record", () => {
   it("gets the dimensions statement", () => {
     expect(
       objectHelpers.getDimensionsDescriptions(photo, {
-        requestedClassification: "http://vocab.getty.edu/aat/300266036",
+        requestedClassifications: "http://vocab.getty.edu/aat/300266036",
       })
     ).toEqual([
       "overall: 81.2 x 41.2 cm (31 15/16 x 16 1/4 in.) framed: 83.8 x 43.2 x 3.5 cm (33 x 17 x 1 3/8 in.)",
+    ]);
+  });
+
+  it("gets the rights statement", () => {
+    expect(objectHelpers.getRightsStatements(photo)).toEqual(undefined);
+  });
+  it("gets the copyright statement", () => {
+    expect(objectHelpers.getCopyrightStatements(photo)).toEqual(undefined);
+  });
+  it("gets the rights assertions", () => {
+    expect(objectHelpers.getRightsAssertions(photo)).toEqual(undefined);
+  });
+  it("gets the digital image", () => {
+    expect(objectHelpers.getDigitalImages(photo)).toEqual([]);
+  });
+  it("gets the culture", () => {
+    expect(objectHelpers.getCultures(photo)).toEqual(undefined);
+  });
+  it("gets the descriptions", () => {
+    expect(helpers.getDescriptions(photo)).toEqual([]);
+  });
+  it("gets the acknowledgements", () => {
+    expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([
+      "Alfred Stieglitz Collection, Bequest of Georgia O'Keeffe",
     ]);
   });
 });

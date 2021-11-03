@@ -881,3 +881,33 @@ export function getFieldValuesByClassifications(
     languageOptions
   );
 }
+
+/**
+ * @description Gets the culture(s) associated with an object if available.
+ * @param {object} submittedResource -- JSON-LD object
+ * @param {Object} options - additional options
+ * @param {string|array} options.requestedClassifications -- AAT descriptions (default: {@link http://vocab.getty.edu/aat/300055768|aat.CULTURE})
+ * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example getDescriptions(object) // gets descriptions(s) using defaults
+ * @example getDescriptions(object, {language:'fr'}) // gets descriptions(s) in French
+ *
+ * @returns {array} content of descriptions(s)
+ */
+export function getDescriptions(
+  submittedResource,
+  {
+    requestedClassifications = aat.DESCRIPTION,
+    language,
+    languageOptions = {},
+  } = {}
+) {
+  return getFieldValuesByClassifications(
+    submittedResource,
+    REFERRED_TO_BY,
+    requestedClassifications,
+    language,
+    languageOptions
+  );
+}

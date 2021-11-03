@@ -1,4 +1,3 @@
-import * as basicHelpers from "../helpers/BasicHelpers";
 import * as helpers from "../helpers/LinkedArtHelpers";
 import * as objectHelpers from "../helpers/ObjectHelpers";
 import photo from "../data/mocks/vam-e-902-2003.json";
@@ -24,5 +23,37 @@ describe("tests the VAM O'Keeffe record", () => {
   });
   it("gets the dimensions statement", () => {
     expect(objectHelpers.getDimensionsDescriptions(photo)).toEqual(undefined);
+  });
+  it("gets the rights statement", () => {
+    expect(objectHelpers.getRightsStatements(photo)).toEqual(undefined);
+  });
+  it("gets the copyright statement", () => {
+    expect(objectHelpers.getCopyrightStatements(photo)).toEqual(undefined);
+  });
+  it("gets the rights assertions", () => {
+    expect(objectHelpers.getRightsAssertions(photo)).toEqual(undefined);
+  });
+  it("gets the digital image", () => {
+    expect(objectHelpers.getDigitalImages(photo)).toEqual([
+      "http://media.vam.ac.uk/media/thira/collection_images/2006BB/2006BB4563.jpg",
+      "http://media.vam.ac.uk/media/thira/collection_images/2006AF/2006AF5252.jpg",
+    ]);
+  });
+  it("gets the culture", () => {
+    expect(objectHelpers.getCultures(photo)).toEqual(undefined);
+  });
+  it("gets the acknowledgements", () => {
+    expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([
+      "Gift of the Georgia O'Keeffe Foundation",
+    ]);
+  });
+  it("gets the descriptions", () => {
+    expect(
+      helpers
+        .getDescriptions(photo)[0]
+        .startsWith(
+          "Alfred Stieglitz (1864-1946) was a pioneer of modern photography"
+        )
+    ).toBe(true);
   });
 });
