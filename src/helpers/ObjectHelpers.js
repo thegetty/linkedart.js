@@ -68,6 +68,7 @@ export function getDimensionsDescriptions(
  * @example getAccessionNumbers(object) // gets accession numbers using defaults
  * @example getAccessionNumbers(object, {language:'hi'}) // gets accession numbers in Hindi
  * @example getAccessionNumbers(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300444185'}) // gets accession numbers using a different AAT term
+ *
  * @returns {array} content of AAT accession numbers
  */
 export function getAccessionNumbers(
@@ -281,6 +282,36 @@ export function getAcknowledgementStatements(
   );
 }
 
+/**
+ * @description Gets the materials description associated with an object if available.
+ * @param {object} submittedResource
+ * @param {Object} options - additional options
+ * @param {string|array} options.requestedClassifications -- AAT materials/technique description (default: {@link http://vocab.getty.edu/aat/300435429 |aat.MATERIALS_DESCRIPTION})
+ * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
+ * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ *
+ * @example getMaterials(object) // gets the materials using defaults
+ * @example getMaterials(object, {language:'ca'}) // gets the materials in Catalan
+ * @example getMaterialss(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300010358'}) // gets the materials using a different AAT term
+ *
+ * @returns {array} array of materials
+ */
+export function getMaterials(
+  submittedResource,
+  {
+    requestedClassifications = aat.MATERIALS_DESCRIPTION,
+    language,
+    languageOptions = {},
+  } = {}
+) {
+  return getFieldValuesByClassifications(
+    submittedResource,
+    REFERRED_TO_BY,
+    requestedClassifications,
+    language,
+    languageOptions
+  );
+}
 /**
  * Gets the timespan(s) for a production
  * 

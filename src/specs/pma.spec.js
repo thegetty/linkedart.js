@@ -31,7 +31,13 @@ describe("tests the PMA O'Keeffe record", () => {
   it("gets the dimensions statement", () => {
     expect(objectHelpers.getDimensionsDescriptions(photo)).toEqual([]);
   });
-
+  it("gets the materials statement", () => {
+    expect(
+      objectHelpers.getMaterials(photo, {
+        requestedClassifications: "http://vocab.getty.edu/aat/300010358",
+      })
+    ).toEqual(["Oil on canvas"]);
+  });
   it("gets the rights statement", () => {
     expect(objectHelpers.getRightsStatements(photo)).toEqual([]);
   });

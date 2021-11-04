@@ -109,6 +109,12 @@ describe("getCultures", () => {
   });
 });
 
+describe("getMaterials", () => {
+  it("gets the correct material(s) description if present", () => {
+    expect(objectHelpers.getMaterials(irises)).toEqual(["Oil on canvas"]);
+  });
+});
+
 describe("get production information", () => {
   it("gets a single production timespan(s)", () => {
     expect(objectHelpers.getProductionTimespans(irises)).toEqual([
