@@ -54,5 +54,7 @@
   "LEGAL_CONCEPTS": "http://vocab.getty.edu/aat/300055547",
   "MATERIALS_DESCRIPTION": "http://vocab.getty.edu/aat/300435429",
   "PREFERRED_TERM": "http://vocab.getty.edu/aat/300404670",
-  "RIGHTS": "http://vocab.getty.edu/aat/300417696"
+  "RIGHTS": "http://vocab.getty.edu/aat/300417696",
+  "WORK_TYPE": "http://vocab.getty.edu/aat/300435443",
+  "CLASSIFICATION": "http://vocab.getty.edu/aat/300435444"
 }

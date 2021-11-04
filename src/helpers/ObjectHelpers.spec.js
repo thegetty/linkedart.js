@@ -154,4 +154,17 @@ describe("get production information", () => {
       },
     ]);
   });
+
+  it("returns []] if no work type(s)", () => {
+    expect(objectHelpers.getWorkTypes(beetle)).toEqual([]);
+  });
+
+  it("get the classification(s)", () => {
+    expect(objectHelpers.getClassifications(irises)[0].id).toEqual(
+      "http://vocab.getty.edu/aat/300033618"
+    );
+  });
+  it("returns [] if no classification(s)", () => {
+    expect(objectHelpers.getClassifications(beetle)).toEqual([]);
+  });
 });
