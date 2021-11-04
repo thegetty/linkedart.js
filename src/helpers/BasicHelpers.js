@@ -12,8 +12,8 @@ import { PART } from "../data/constants.json";
  * an empty array (if it doesn't exist), an array with the single object if it's an object
  * or primitive, or the array
  *
- * @param {object} obj - The object that might have an array attribute
- * @param {string} key - The key for the attribute field we want to retrieve
+ * @param {Object} obj - The object that might have an array attribute
+ * @param {String} key - The key for the attribute field we want to retrieve
  *
  * @example field doesn't exist
  * normalizeFieldToArray({"id": "1234"}, "type") would return an empty array ([])
@@ -21,7 +21,7 @@ import { PART } from "../data/constants.json";
  * @example field value is not an array
  * normalizeFieldToArray({"id": "1234"}, "id") would return ["1234"]
  *
- * @returns {array} - The field's value normalized to an array
+ * @returns {Array} - The field's value normalized to an array
  */
 export function normalizeFieldToArray(obj, key) {
   if (obj == undefined) {
@@ -47,7 +47,7 @@ export function normalizeFieldToArray(obj, key) {
 /**
  * Normalizes the AAT ID to one of two versions (an aat: prefixed id or a full url)
  *
- * @param {string} id - an ID to test
+ * @param {String} id - an ID to test
  *
  * @example - short to full aat value
  * normalizeAatId("aat:300388306") would return http://vocab.getty.edu/aat/300388306
@@ -55,7 +55,7 @@ export function normalizeFieldToArray(obj, key) {
  * @example - full to short
  * normalizeAatId("http://vocab.getty.edu/aat/300388306") would return aat:300388306
  *
- * @returns {string} - the alternate ID format
+ * @returns {String} - the alternate ID format
  */
 export function normalizeAatId(id) {
   let id_ = id.toLowerCase();
@@ -83,8 +83,8 @@ export function normalizeAatId(id) {
  * For example, `produced_by` which may have a production, or that production may contain multiple
  * parts.  This method returns an array with the single or all parts
  *
- * @param {object} object - the JSON-LD object (or sub-bart)
- * @param {string} field - the field to look for/in
+ * @param {Object} object - the JSON-LD object (or sub-bart)
+ * @param {String} field - the field to look for/in
  *
  * @example with a production without parts:
  *  normalizeFieldWithParts({produced_by: { carried_out_by: {id:123}}}, 'produced_by'), it would return an array with 1 item [{ carried_out_by: {id:123}}}]
@@ -92,7 +92,7 @@ export function normalizeAatId(id) {
  * @example with a production with parts:
  *  normalizeFieldWithParts({produced_by: { part: [{carried_out_by: {id:123}}}]}, 'produced_by'), it would return an array with one item [{ carried_out_by: {id:123}}}]
  *
- * @returns {array} an array that contains the single or multiple parts
+ * @returns {Array} an array that contains the single or multiple parts
  */
 export function normalizeFieldWithParts(object, field) {
   let part = object[field];
@@ -119,8 +119,8 @@ export function normalizeFieldWithParts(object, field) {
  * Checks whether the JSON-LD object has unique fields outside of some basic fields (id, type, _label). Useful for testing whether
  * we should include the parent part in a list or not
  *
- * @param {object} object - the JSON-LD object to check
- * @param {array} fieldsToIgnore - a list of fields to ignore when checking
+ * @param {Object} object - the JSON-LD object to check
+ * @param {Array} fieldsToIgnore - a list of fields to ignore when checking
  * @private
  *
  * @returns {boolean}

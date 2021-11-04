@@ -18,10 +18,12 @@ import { normalizeAatId } from "./BasicHelpers";
  * 4. if the language of the object is not defined and languageOptions.includeItemsWithNoLanguage
  *   is true, return true
  *
- * @param {object} object -- the object to check for a matching language
- * @param {string} language -- limits the results to just a specific language (or leave undefined to match all objects)
- * @param {object} languageOptions -- optional object with expected attributes 'fallbackLanguage',
- *   'includeItemsWithNoLanguage', and 'lookupMap' (see normalizeLanguageId)
+ * @param {Object} object - the object to check for a matching language
+ * @param {String} language - limits the results to just a specific language (or leave undefined to match all objects)
+ * @param {Object} languageOptions - optional object with expected attributes
+ * @param {String} languageOptions.fallbackLanguage - the language to use if the specified language is not found
+ * @param {String} languageOptions.includeItemsWithNoLanguage - whether to include results with no language
+ * @param {Object} languageOptions.lookupMap - a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
  *
  * @example object without a 'language' attribute
  * doesObjectLanguageMatch({id:"1",content:"test"},"en") would return true
@@ -79,8 +81,11 @@ export function doesObjectLanguageMatch(
 /**
  * Get the LanguageId(s) for a given object and returns the unique list of languages (normalized)
  *
- * @param {object} obj -- the object to look for the language block in
- * @param {object} languageOptions -- any additional options when working with language(s)
+ * @param {Object} obj - the object to look for the language block in
+ * @param {Object} languageOptions - optional object with expected attributes
+ * @param {String} languageOptions.fallbackLanguage - the language to use if the specified language is not found
+ * @param {String} languageOptions.includeItemsWithNoLanguage - whether to include results with no language
+ * @param {Object} languageOptions.lookupMap - a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
  *
  * @example object with a string value in its 'language' attribute and no languageOptions
  * getLanguageId({language: 'en'}) would return "http://vocab.getty.edu/aat/300388277"
@@ -92,7 +97,7 @@ export function doesObjectLanguageMatch(
  * @example object without a 'language' attribute and languageOptions.lookupMap defined
  * getLanguageId({}, {lookupMap: {'en': 'fr'}}) would return "NO_LANGUAGE"
  *
- * @returns {array} the unique list of languages represented in the data
+ * @returns {Array} the unique list of languages represented in the data
  */
 export function getLanguageId(obj, languageOptions) {
   if (obj == undefined || obj.language == undefined) {
@@ -131,8 +136,11 @@ export function getLanguageId(obj, languageOptions) {
  * to just the ISO code (2 letter) (e.g. en) before checking for that code in the lookupMap.
  * 2. if the simplified lang_id param can't be found in the lookupMap, returns the original lang_id
  *
- * @param {string} lang_id -- the language id to normalize
- * @param {object} languageOptions -- any additional options when working with language(s)
+ * @param {String} lang_id - the language id to normalize
+ * @param {Object} languageOptions - optional object with expected attributes
+ * @param {String} languageOptions.fallbackLanguage - the language to use if the specified language is not found
+ * @param {String} languageOptions.includeItemsWithNoLanguage - whether to include results with no language
+ * @param {Object} languageOptions.lookupMap - a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
  *
  * @example AAT language code URL
  * normalizeLanguageId('http://vocab.getty.edu/language/en') would return "http://vocab.getty.edu/aat/300388277"
@@ -143,7 +151,7 @@ export function getLanguageId(obj, languageOptions) {
  * @example ISO code in languageOptions.lookupMap
  * normalizeLanguageId('en', {lookupMap: {'el': 'greek'}}) would return "greek"
  *
- * @returns {string} the normalized version of the language (by default, an AAT URL), or if no match,
+ * @returns {String} the normalized version of the language (by default, an AAT URL), or if no match,
  * reverts to the original lang_id parameter
  */
 export function normalizeLanguageId(lang_id, languageOptions) {
@@ -180,7 +188,7 @@ export function normalizeLanguageId(lang_id, languageOptions) {
  *
  * @param {String} id
  *
- * @returns {string} the 2-letter iso code
+ * @returns {String} the 2-letter iso code
  */
 export function lookupIsoFromAat(id = "") {
   let iso = undefined;
@@ -199,9 +207,9 @@ export function lookupIsoFromAat(id = "") {
 /**
  * Looks up the AAT Language Code from the 2 letter ISO Code
  *
- * @param {string} iso
+ * @param {String} iso
  *
- * @returns {string} the full AAT URL
+ * @returns {String} the full AAT URL
  */
 export function lookupAatFromIso(iso) {
   return aat.LANGUAGES[iso];
