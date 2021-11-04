@@ -1,0 +1,208 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "http://api.nga.gov/art/tms/objects/70182",
+  "type": "HumanMadeObject",
+  "_label": "Line and Curve",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300133025",
+      "type": "Type",
+      "_label": "works of art"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "paintings (visual works)"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300033799",
+      "type": "Type",
+      "_label": "oil paintings (visual works)"
+    }
+  ],
+  "identified_by": [
+    {
+      "id": "http://api.nga.gov/art/tms/objects/70182/id",
+      "type": "Identifier",
+      "_label": "NGA Collections Database Number for the Object",
+      "content": 70182,
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404621",
+          "type": "Type",
+          "_label": "repository numbers"
+        }
+      ]
+    },
+    {
+      "id": "http://api.nga.gov/art/tms/objects/70182/accession-number",
+      "type": "Identifier",
+      "_label": "NGA Accession Number for the Object",
+      "content": "1987.58.6",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "_label": "accession numbers"
+        }
+      ]
+    },
+    {
+      "id": "http://api.nga.gov/art/tms/objects/70182/title",
+      "type": "Name",
+      "_label": "Primary Title for the Object",
+      "content": "Line and Curve",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "preferred terms"
+        }
+      ]
+    }
+  ],
+  "made_of": [
+    {
+      "id": "http://vocab.getty.edu/aat/300015050",
+      "type": "Material",
+      "_label": "oil paint (paint)"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300014078",
+      "type": "Material",
+      "_label": "canvas (textile material)"
+    }
+  ],
+  "produced_by": {
+    "id": "http://api.nga.gov/art/tms/objects/70182/produced_by",
+    "type": "Production",
+    "carried_out_by": [
+      {
+        "id": "http://vocab.getty.edu/ulan/500018666",
+        "type": "Actor",
+        "_label": "O'Keeffe, Georgia"
+      }
+    ],
+    "timespan": {
+      "id": "http://api.nga.gov/art/tms/objects/70182/produced_by/timespan",
+      "type": "TimeSpan",
+      "_label": "1927",
+      "begin_of_the_begin": "1927-01-01T00:00:00",
+      "end_of_the_end": "1927-12-31T00:00:00"
+    }
+  },
+  "current_owner": {
+    "id": "http://vocab.getty.edu/ulan/500115983",
+    "type": "Group",
+    "_label": "National Gallery of Art",
+    "classified_as": [
+      {
+        "id": "http://vocab.getty.edu/aat/300312281",
+        "type": "Type",
+        "_label": "museums (institutions)"
+      }
+    ],
+    "acquired_title_through": [
+      {
+        "id": "http://api.nga.gov/art/tms/objects/70182/NGA-acquisition",
+        "type": "Acquisition",
+        "_label": "NGA Acquisition of the Object",
+        "classified_as": [
+          {
+            "id": "http://vocab.getty.edu/aat/300157782",
+            "type": "Type",
+            "_label": "acquisition (collections management)"
+          }
+        ],
+        "timespan": {
+          "id": "https://data.discovernewfields.org/object/16872/IMA-acquisition/timespan",
+          "type": "TimeSpan",
+          "_label": "1987",
+          "begin_of_the_begin": "1987-01-01T00:00:00",
+          "end_of_the_end": "1987-12-31T00:00:00"
+        }
+      }
+    ]
+  },
+  "referred_to_by": [
+    {
+      "id": "http://api.nga.gov/art/tms/objects/70182/credit-line",
+      "type": "LinguisticObject",
+      "_label": "NGA Credit Line for the Object",
+      "content": "Alfred Stieglitz Collection, Bequest of Georgia O'Keeffe",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300026687",
+          "type": "Type",
+          "_label": "acknowledgments"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "brief texts"
+        }
+      ]
+    },
+    {
+      "id": "http://api.nga.gov/art/tms/objects/70182/provenance-statement",
+      "type": "LinguisticObject",
+      "_label": "NGA Provenance Statement for the Object",
+      "content": "The artist [1887-1986]; her estate; bequest 1987 to NGA.",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055863",
+          "type": "Type",
+          "_label": "provenance (history of ownership)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "brief texts"
+        }
+      ]
+    },
+    {
+      "id": "http://api.nga.gov/art/tms/objects/70182/credit-line",
+      "type": "LinguisticObject",
+      "_label": "NGA Dimension Statement for the Object",
+      "content": "overall: 81.2 x 41.2 cm (31 15/16 x 16 1/4 in.) framed: 83.8 x 43.2 x 3.5 cm (33 x 17 x 1 3/8 in.)",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300266036",
+          "type": "Type",
+          "_label": "dimensions"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "brief texts"
+        }
+      ]
+    },
+    {
+      "id": "http://api.nga.gov/art/tms/objects/70182/mark-description",
+      "type": "LinguisticObject",
+      "_label": "Inscription on the Object",
+      "content": "across top reverse, in pencil: Line and Curve-27 / signed within five-pointed star: OK",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300028744",
+          "type": "Type",
+          "_label": "marks (symbols)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "brief texts"
+        }
+      ]
+    }
+  ],
+  "member_of": [
+    {
+      "id": "https://data.moma.org/exhibitions/2851/checklist",
+      "type": "Set",
+      "_label": "Objects in MoMA Georgia O'Keeffe exhibition, 1946"
+    }
+  ]
+}

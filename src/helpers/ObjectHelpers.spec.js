@@ -54,9 +54,7 @@ describe("getRightsAssertions", () => {
 
 describe("getAcknowledgements", () => {
   it("gets the correct acknowledgements if present", () => {
-    expect(objectHelpers.getAcknowledgementStatements(triton)).toEqual(
-      undefined
-    );
+    expect(objectHelpers.getAcknowledgementStatements(triton)).toEqual([]);
   });
 });
 
@@ -108,6 +106,14 @@ describe("get creators", () => {
 describe("getCultures", () => {
   it("gets the correct culture(s) if present", () => {
     expect(objectHelpers.getCultures(irises)).toEqual(["Dutch"]);
+  });
+});
+
+describe("getMaterialStatements", () => {
+  it("gets the correct material(s) description if present", () => {
+    expect(objectHelpers.getMaterialStatements(irises)).toEqual([
+      "Oil on canvas",
+    ]);
   });
 });
 

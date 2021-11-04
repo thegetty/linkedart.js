@@ -41,15 +41,7 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
   });
 
   it("gets the accession number of the object", () => {
-    const identifiedBy = basicHelpers.normalizeFieldToArray(
-      photo,
-      "identified_by"
-    );
-    const title = helpers.getValueByClassification(
-      identifiedBy,
-      "aat:300312355"
-    );
-    expect(title).toEqual("2006.6.1421");
+    expect(objectHelpers.getAccessionNumbers(photo)).toEqual(["2006.6.1421"]);
   });
 
   it("gets the type (ids) of the object", () => {
@@ -92,6 +84,20 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
       "Gift",
       "© Georgia O'Keeffe Museum",
     ]);
+  });
+
+  it("gets the correct descriptions if present", () => {
+    expect(helpers.getDescriptions(photo)).toEqual([
+      "A textured adobe wall with a kiva log ladder leaning against O'Keeffe's studio wall casting a shadow.",
+    ]);
+  });
+
+  it("gets the material statement(s) if present", () => {
+    expect(
+      objectHelpers.getMaterialStatements(photo, {
+        requestedClassifications: "aat:300010358",
+      })
+    ).toEqual(["Gelatin silver print"]);
   });
 
   it("gets the timespan", () => {

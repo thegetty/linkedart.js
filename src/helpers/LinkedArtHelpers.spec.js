@@ -597,7 +597,7 @@ describe("tests getValuesByClassification", () => {
         {},
         "http://vocab.getty.edu/aat/300435430"
       )
-    ).toEqual(undefined);
+    ).toEqual([]);
   });
   it("returns all values that match classification", () => {
     let result = helpers.getValuesByClassification(
