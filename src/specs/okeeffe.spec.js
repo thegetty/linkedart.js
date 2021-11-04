@@ -105,4 +105,12 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
       },
     ]);
   });
+
+  it("returns [] if no work type(s)", () => {
+    expect(objectHelpers.getWorkTypes(photo)).toEqual([]);
+  });
+
+  it("returns [] if no classification(s)", () => {
+    expect(objectHelpers.getClassifications(photo)).toEqual([]);
+  });
 });

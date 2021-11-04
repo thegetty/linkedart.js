@@ -149,13 +149,19 @@ describe("get production information", () => {
     ]);
   });
 
-  it("get the work type(s) of the object", () => {
-    expect(objectHelpers.getWorkTypes(irises)).toEqual(["Painting"]);
+  it("get the correct work type(s)", () => {
+    expect(objectHelpers.getWorkTypes(irises)[0].content).toEqual("Painting");
+  });
+  it("returns []] if work type(s)", () => {
+    expect(objectHelpers.getWorkTypes(beetle)).toEqual([]);
   });
 
-  it("get the work type(s) of the object", () => {
-    expect(objectHelpers.getClassifications(irises)).toEqual([
-      "http://vocab.getty.edu/aat/300033618",
-    ]);
+  it("get the classification(s)", () => {
+    expect(objectHelpers.getClassifications(irises)[0].id).toEqual(
+      "http://vocab.getty.edu/aat/300033618"
+    );
+  });
+  it("returns [] of no classification(s)", () => {
+    expect(objectHelpers.getClassifications(beetle)).toEqual([]);
   });
 });

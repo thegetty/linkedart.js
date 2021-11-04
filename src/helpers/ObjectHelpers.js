@@ -321,7 +321,7 @@ export function getProductionTimespans(object) {
  * @example getWorkTypes(object, {language:'mk'}) // gets types in Macedonian
  * @example getWorkTypes(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300375701'}) // gets types using a different AAT term
  *
- * @returns {array} array of acknowledgement statements
+ * @returns {array} array of work types
  */
 export function getWorkTypes(
   submittedResource,
@@ -342,7 +342,7 @@ export function getWorkTypes(
     language,
     languageOptions
   );
-  return workTypes.map((field) => getValueOrContent(field) || field.id);
+  return workTypes;
 }
 
 /**
@@ -357,7 +357,7 @@ export function getWorkTypes(
  * @example getClassifications(object, {language:'hu'}) // gets classifications in Magyar
  * @example getClassifications(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300375701'}) // gets classifications using a different AAT term
  *
- * @returns {array} array of acknowledgement statements
+ * @returns {array} array of classification objects
  */
 export function getClassifications(
   submittedResource,
@@ -373,5 +373,5 @@ export function getClassifications(
     language,
     languageOptions
   );
-  return classifications.map((c) => c.id);
+  return classifications;
 }

@@ -57,10 +57,13 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
     );
   });
 
-  it("get the work type(s) of the object", () => {
-    expect(objectHelpers.getWorkTypes(gold_coin)).toEqual([
-      "http://nomisma.org/id/stater",
-      "aat:300037222",
-    ]);
+  it("gets the work type(s) of the object", () => {
+    expect(objectHelpers.getWorkTypes(gold_coin)[1].id).toEqual(
+      "aat:300037222"
+    );
+  });
+
+  it("returns [] if no classification(s) of the object", () => {
+    expect(objectHelpers.getClassifications(gold_coin)).toEqual([]);
   });
 });
