@@ -92,6 +92,14 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
     ]);
   });
 
+  it("gets the material statement(s) if present", () => {
+    expect(
+      objectHelpers.getMaterialStatements(photo, {
+        requestedClassifications: "aat:300010358",
+      })
+    ).toEqual(["Gelatin silver print"]);
+  });
+
   it("gets the timespan", () => {
     expect(objectHelpers.getProductionTimespans(photo)).toEqual([
       {
