@@ -32,10 +32,10 @@ const OR = "OR";
  * Given an object or an array of objects, find all entries that have an object in their classified_as
  * field with an id that matches the requestedClassification.
  *
- * @param {Object|Array} submittedResource -- the object to inspect
- * @param {String|Array} requestedClassifications -- the classification ID/IDS to match
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the object to inspect
+ * @param {String|Array} requestedClassifications - the classification ID/IDS to match
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -66,10 +66,10 @@ export function getClassifiedAs(
  * Given an object or an array of objects, find all entries that have an object in their classified_by
  * field with an id that matches the requestedClassification.
  *
- * @param {Object|Array} submittedResource -- the object to inspect
- * @param {String|Array} requestedClassifications -- the classification ID/IDS to match
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the object to inspect
+ * @param {String|Array} requestedClassifications - the classification ID/IDS to match
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -101,10 +101,10 @@ export function getClassifiedBy(
  * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
  * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
  *
- * @param {Object|Array} submittedResource -- the object to inspect
- * @param {String|Array} nestedClassification -- the classification ID/IDS to match
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the object to inspect
+ * @param {String|Array} nestedClassification - the classification ID/IDS to match
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -137,10 +137,10 @@ export function getClassifiedAsWithClassification(
  * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
  * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
  *
- * @param {Object|Array} submittedResource -- the object to inspect
- * @param {String|Array} nestedClassification -- the classification ID/IDS to match
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the object to inspect
+ * @param {String|Array} nestedClassification - the classification ID/IDS to match
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -172,10 +172,10 @@ export function getClassifiedByWithClassification(
  * Given an object or an array of objects, find all objects that are classified as an object
  * which is classified by nestedClassification
  *
- * @param {Object|Array} submittedResource -- the object to inspect
- * @param {String|Array} nestedClassification -- the classification ID/IDS to match
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the object to inspect
+ * @param {String|Array} nestedClassification - the classification ID/IDS to match
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -207,10 +207,10 @@ export function getObjectsClassifiedAsWithClassification(
  * Given an object or an array of objects, find all objects that are classified by an object
  * which is classified by nestedClassification
  *
- * @param {Object|Array} submittedResource -- the object to inspect
- * @param {String|Array} nestedClassification -- the classification ID/IDS to match
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the object to inspect
+ * @param {String|Array} nestedClassification - the classification ID/IDS to match
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -322,11 +322,11 @@ export function getPrimaryNames(
  * Given an object or an array of objects, find all objects that with classifications
  * that match either all of the requestedClassifications or any of the requestedClassifications.
  *
- * @param {Object|Array} submittedResource -- the object to inspect
- * @param {String|Array} requestedClassifications -- either a string or an array of classification strings
- * @param {String} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the object to inspect
+ * @param {String|Array} requestedClassifications - either a string or an array of classification strings
+ * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -399,10 +399,10 @@ export function getClassified(
  * Get the value of the first object that is classified as the requestedClassification
  * parameter.
  *
- * @param {Object|Array} submittedResource -- the JSON-LD Object
- * @param {String|Array} requestedClassifications -- the requested classifications
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the JSON-LD Object
+ * @param {String|Array} requestedClassifications - the requested classifications
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -437,10 +437,10 @@ export function getValueByClassification(
  * Get an array of all the values of objects that are classified as the
  * requestedClassification parameter.
  *
- * @param {Object|Array} submittedResource -- the JSON-LD Object
- * @param {String|Array} requestedClassifications -- the requested classifications
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the JSON-LD Object
+ * @param {String|Array} requestedClassifications - the requested classifications
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example for the submittedResource:
  * [
@@ -481,7 +481,7 @@ export function getValuesByClassification(
  * Given an object get the value of the 'value' or 'content' attribute (if
  * an object has both returns the 'value' attribute)
  *
- * @param {Object} object -- the JSON-LD object
+ * @param {Object} object - the JSON-LD object
  *
  * @example getValueOrContent({'value': 123, 'content': '456'}) would return 123
  *
@@ -666,7 +666,7 @@ export function getObjectParts(object, field) {
  * Given an object or an array of objects, return the array or return an array containing the object.
  * Used to handle parameters like submittedResource where we need to handle either an object or array.
  *
- * @param {Object|Array} resourceParam -- the parameter that needs to be transformed or confirmed to be
+ * @param {Object|Array} resourceParam - the parameter that needs to be transformed or confirmed to be
  * an array.
  * @private
  *
@@ -710,11 +710,11 @@ function _getAssignedProperty(assigned, assignedProperty) {
  * Given an object or an array of objects, find all objects that are classified by an object
  * which is classified by nestedClassification
  *
- * @param {Object|Array} submittedResource -- the object to inspect
- * @param {String|Array} nestedClassification -- the classification ID/IDS to match
- * @param {String} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object|Array} submittedResource - the object to inspect
+ * @param {String|Array} nestedClassification - the classification ID/IDS to match
+ * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  * @private
  *
  * @returns {Array} an array of objects that match
@@ -742,11 +742,11 @@ export function _getObjectWithNestedClass(
  * with the nestedClassification. (e.g. for Visual Items we need to get the rights statement
  * classification object, which we identify by its own classification see VisualItems.getClearanceLevel)
  *
- * @param {Object} submittedResource -- the object to inspect
- * @param {String|Array} nestedClassifications -- the classification ID/IDS to match
- * @param {String} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} submittedResource - the object to inspect
+ * @param {String|Array} nestedClassifications - the classification ID/IDS to match
+ * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  * @private
  *
  * @returns {Array} an array of objects that match
@@ -780,11 +780,11 @@ export function _getClassificationsWithNestedClass(
  * statements" classification objects from a set of Linked Data objects as well as all of the Linked
  * Data objects that are classified by a "rights statement" type of classification)
  *
- * @param {Object} submittedResource -- the object to inspect
- * @param {String|Array} nestedClassifications -- the classification ID/IDS to match
- * @param {String} classificationField -- the field to investigate for an object's classification (e.g. classified_as, classified_by)
- * @param {String} language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} submittedResource - the object to inspect
+ * @param {String|Array} nestedClassifications - the classification ID/IDS to match
+ * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
+ * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  * @private
  *
  * @returns {Object} an object with 'classifications' and 'objects' attributes containing arrays of
@@ -884,11 +884,11 @@ export function getFieldValuesByClassifications(
 
 /**
  * @description Gets the descriptions(s) associated with an object if available.
- * @param {Object} submittedResource -- JSON-LD object
+ * @param {Object} submittedResource - JSON-LD object
  * @param {Object} options - additional options
- * @param {String|Array} options.requestedClassifications -- AAT descriptions (default: {@link http://vocab.getty.edu/aat/300080091|aat.DESCRIPTION})
- * @param {String} options.language -- limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String|Array} options.requestedClassifications - AAT descriptions (default: {@link http://vocab.getty.edu/aat/300080091|aat.DESCRIPTION})
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
  * @example getDescriptions(object) // gets descriptions(s) using defaults
  * @example getDescriptions(object, {language:'fr'}) // gets descriptions(s) in French

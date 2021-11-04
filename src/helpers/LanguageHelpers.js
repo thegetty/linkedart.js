@@ -18,12 +18,12 @@ import { normalizeAatId } from "./BasicHelpers";
  * 4. if the language of the object is not defined and languageOptions.includeItemsWithNoLanguage
  *   is true, return true
  *
- * @param {Object} object -- the object to check for a matching language
- * @param {String} language -- limits the results to just a specific language (or leave undefined to match all objects)
- * @param {Object} languageOptions -- optional object with expected attributes
- * @param {String} languageOptions.fallbackLanguage -- the language to use if the specified language is not found
- * @param {String} languageOptions.includeItemsWithNoLanguage -- whether to include results with no language
- * @param {Object} languageOptions.lookupMap -- a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
+ * @param {Object} object - the object to check for a matching language
+ * @param {String} language - limits the results to just a specific language (or leave undefined to match all objects)
+ * @param {Object} languageOptions - optional object with expected attributes
+ * @param {String} languageOptions.fallbackLanguage - the language to use if the specified language is not found
+ * @param {String} languageOptions.includeItemsWithNoLanguage - whether to include results with no language
+ * @param {Object} languageOptions.lookupMap - a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
  *
  * @example object without a 'language' attribute
  * doesObjectLanguageMatch({id:"1",content:"test"},"en") would return true
@@ -81,11 +81,11 @@ export function doesObjectLanguageMatch(
 /**
  * Get the LanguageId(s) for a given object and returns the unique list of languages (normalized)
  *
- * @param {Object} obj -- the object to look for the language block in
- * @param {Object} languageOptions -- optional object with expected attributes
- * @param {String} languageOptions.fallbackLanguage -- the language to use if the specified language is not found
- * @param {String} languageOptions.includeItemsWithNoLanguage -- whether to include results with no language
- * @param {Object} languageOptions.lookupMap -- a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
+ * @param {Object} obj - the object to look for the language block in
+ * @param {Object} languageOptions - optional object with expected attributes
+ * @param {String} languageOptions.fallbackLanguage - the language to use if the specified language is not found
+ * @param {String} languageOptions.includeItemsWithNoLanguage - whether to include results with no language
+ * @param {Object} languageOptions.lookupMap - a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
  *
  * @example object with a string value in its 'language' attribute and no languageOptions
  * getLanguageId({language: 'en'}) would return "http://vocab.getty.edu/aat/300388277"
@@ -136,11 +136,11 @@ export function getLanguageId(obj, languageOptions) {
  * to just the ISO code (2 letter) (e.g. en) before checking for that code in the lookupMap.
  * 2. if the simplified lang_id param can't be found in the lookupMap, returns the original lang_id
  *
- * @param {String} lang_id -- the language id to normalize
- * @param {Object} languageOptions -- optional object with expected attributes
- * @param {String} languageOptions.fallbackLanguage -- the language to use if the specified language is not found
- * @param {String} languageOptions.includeItemsWithNoLanguage -- whether to include results with no language
- * @param {Object} languageOptions.lookupMap -- a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
+ * @param {String} lang_id - the language id to normalize
+ * @param {Object} languageOptions - optional object with expected attributes
+ * @param {String} languageOptions.fallbackLanguage - the language to use if the specified language is not found
+ * @param {String} languageOptions.includeItemsWithNoLanguage - whether to include results with no language
+ * @param {Object} languageOptions.lookupMap - a map of language names and IDs to use instead of the ISO 2-digit keys and AAT values
  *
  * @example AAT language code URL
  * normalizeLanguageId('http://vocab.getty.edu/language/en') would return "http://vocab.getty.edu/aat/300388277"
