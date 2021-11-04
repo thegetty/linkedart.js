@@ -1,6 +1,6 @@
 {
   "name": "@thegetty/linkedart.js",
-  "version": "0.15.2",
+  "version": "0.16.2",
   "scripts": {
     "test:unit": "jest",
     "test": "jest",

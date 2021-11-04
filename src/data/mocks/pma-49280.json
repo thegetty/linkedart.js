@@ -1,0 +1,219 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://data.philamuseum.org/work/49280",
+  "type": "HumanMadeObject",
+  "_label": "Peach and Glass",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300133025",
+      "type": "Type",
+      "_label": "works of art"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "paintings (visual works)"
+    }
+  ],
+  "identified_by": [
+    {
+      "id": "https://data.philamuseum.org/work/49280/id",
+      "type": "Identifier",
+      "_label": "PMA Collections Database Number for the Work",
+      "content": "49280",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404621",
+          "type": "Type",
+          "_label": "repository numbers"
+        }
+      ]
+    },
+    {
+      "id": "https://data.philamuseum.org/work/49280/accession-number",
+      "type": "Identifier",
+      "_label": "PMA Accession Number for the Work",
+      "content": "1944-95-4",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "_label": "accession numbers"
+        }
+      ]
+    },
+    {
+      "id": "https://data.philamuseum.org/work/49280/title",
+      "type": "Name",
+      "_label": "Primary Title for the Work",
+      "content": "Peach and Glass",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "preferred terms"
+        }
+      ]
+    }
+  ],
+  "made_of": [
+    {
+      "id": "http://vocab.getty.edu/aat/300015050",
+      "type": "Material",
+      "_label": "oil paint (paint)"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300014078",
+      "type": "Material",
+      "_label": "canvas (textile material)"
+    }
+  ],
+  "produced_by": {
+    "id": "https://data.philamuseum.org/work/49280/production",
+    "type": "Production",
+    "_label": "Production of the Work",
+    "carried_out_by": [
+      {
+        "id": "http://vocab.getty.edu/ulan/500018666",
+        "type": "Actor",
+        "_label": "O'Keeffe, Georgia"
+      }
+    ],
+    "timespan": {
+      "id": "https://data.philamuseum.org/work/49280/production/timespan",
+      "type": "TimeSpan",
+      "_label": "1927"
+    }
+  },
+  "current_owner": {
+    "id": "http://vocab.getty.edu/ulan/500214534",
+    "type": "Group",
+    "_label": "Philadelphia Museum of Art",
+    "classified_as": [
+      {
+        "id": "http://vocab.getty.edu/aat/300312281",
+        "type": "Type",
+        "_label": "museums (institutions)"
+      }
+    ],
+    "acquired_title_through": [
+      {
+        "id": "https://data.philamuseum.org/work/49280/PMA-acquisition",
+        "type": "Acquisition",
+        "_label": "PMA Acquisition of the Work",
+        "classified_as": [
+          {
+            "id": "http://vocab.getty.edu/aat/300157782",
+            "type": "Type",
+            "_label": "acquisition (collections management)"
+          }
+        ]
+      }
+    ]
+  },
+  "member_of": [
+    {
+      "id": "https://data.philamuseum.org/collection/department/AA",
+      "type": "Set",
+      "_label": "American Art",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300025976",
+          "type": "Type",
+          "_label": "collections (object groupings)"
+        }
+      ]
+    }
+  ],
+  "referred_to_by": [
+    {
+      "id": "https://data.philamuseum.org/work/49280/credit-line",
+      "type": "LinguisticObject",
+      "_label": "PMA Credit Line for the Work",
+      "content": "Gift of Dr. Herman Lorber, 1944",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300026687",
+          "type": "Type",
+          "_label": "acknowledgments"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "brief texts"
+        }
+      ]
+    },
+    {
+      "id": "https://data.philamuseum.org/work/49280/dimension-statement",
+      "type": "LinguisticObject",
+      "_label": "Notes about the Dimensions of the Work",
+      "content": "9 1/8 × 6 1/16 inches (23.2 × 15.4 cm)\nFramed (shadowbox): 16 1/8 × 13 1/8 × 2 1/4 inches (41 × 33.3 × 5.7 cm)",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300266036",
+          "type": "Type",
+          "_label": "dimensions"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "brief texts"
+        }
+      ]
+    },
+    {
+      "id": "https://data.philamuseum.org/work/49280/materials-statement",
+      "type": "LinguisticObject",
+      "_label": "Notes about the Materials in the Work",
+      "content": "Oil on canvas",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300010358",
+          "type": "Type",
+          "_label": "materials (substances)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "brief texts"
+        }
+      ]
+    }
+  ],
+  "subject_of": [
+    {
+      "id": "https://www.philamuseum.org/collections/permanent/49280.html",
+      "type": "LinguisticObject",
+      "_label": "Homepage for the Work",
+      "classified_as": [
+        {
+          "id": "http://vocab/getty.edu/aat/300264578",
+          "type": "Type",
+          "_label": "Web pages (documents)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300266277",
+          "type": "Type",
+          "_label": "home pages"
+        }
+      ],
+      "format": "text/html"
+    }
+  ],
+  "representation": [
+    {
+      "id": "https://philamuseum.org/images/cad/zoomers/1944-95-4.jpg",
+      "type": "VisualItem",
+      "_label": "Primary Image of the Object",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300215302",
+          "type": "Type",
+          "_label": "digital images"
+        }
+      ],
+      "format": "image/jpeg"
+    }
+  ]
+}

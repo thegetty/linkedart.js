@@ -54,9 +54,7 @@ describe("getRightsAssertions", () => {
 
 describe("getAcknowledgements", () => {
   it("gets the correct acknowledgements if present", () => {
-    expect(objectHelpers.getAcknowledgementStatements(triton)).toEqual(
-      undefined
-    );
+    expect(objectHelpers.getAcknowledgementStatements(triton)).toEqual([]);
   });
 });
 
@@ -111,6 +109,14 @@ describe("getCultures", () => {
   });
 });
 
+describe("getMaterialStatements", () => {
+  it("gets the correct material(s) description if present", () => {
+    expect(objectHelpers.getMaterialStatements(irises)).toEqual([
+      "Oil on canvas",
+    ]);
+  });
+});
+
 describe("get production information", () => {
   it("gets a single production timespan(s)", () => {
     expect(objectHelpers.getProductionTimespans(irises)).toEqual([
@@ -147,5 +153,18 @@ describe("get production information", () => {
         type: "TimeSpan",
       },
     ]);
+  });
+
+  it("returns []] if no work type(s)", () => {
+    expect(objectHelpers.getWorkTypes(beetle)).toEqual([]);
+  });
+
+  it("get the classification(s)", () => {
+    expect(objectHelpers.getClassifications(irises)[0].id).toEqual(
+      "http://vocab.getty.edu/aat/300033618"
+    );
+  });
+  it("returns [] if no classification(s)", () => {
+    expect(objectHelpers.getClassifications(beetle)).toEqual([]);
   });
 });

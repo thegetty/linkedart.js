@@ -1,0 +1,302 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://data.vam.ac.uk/ManMadeObject/0",
+  "type": "ManMadeObject",
+  "current_location": {
+    "id": "https://data.vam.ac.uk/Place/0",
+    "type": "Place",
+    "label": "LVLF"
+  },
+  "subject_of": [
+    {
+      "id": "https://collections.vam.ac.uk/item/O119374",
+      "type": "LinguisticObject",
+      "label": "Page for object",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300264578",
+          "type": "Type",
+          "label": "Web Page"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "label": "Primary"
+        }
+      ],
+      "format": "text/html"
+    }
+  ],
+  "produced_by": {
+    "id": "https://data.vam.ac.uk/Production/0",
+    "type": "Production",
+    "carried_out_by": [
+      {
+        "id": "https://data.vam.ac.uk/Actor/0",
+        "type": "Actor",
+        "label": "photographer"
+      }
+    ]
+  },
+  "identified_by": [
+    {
+      "id": "https://data.vam.ac.uk/Identifier/0",
+      "type": "Identifier",
+      "label": "Museum Number",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "label": "Accession Number"
+        }
+      ],
+      "content": "E.902-2003"
+    },
+    {
+      "id": "https://data.vam.ac.uk/Identifier/1",
+      "type": "Identifier",
+      "label": "V&A Collections Database Number for the Object",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404621",
+          "type": "Type",
+          "label": "Local Number"
+        }
+      ],
+      "content": "O119374"
+    },
+    {
+      "id": "https://data.vam.ac.uk/Name/0",
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "label": "Primary Name"
+        }
+      ],
+      "content": "Georgia O'Keeffe"
+    }
+  ],
+  "shows": [
+    {
+      "id": "https://data.vam.ac.uk/VisualItem/0",
+      "type": "VisualItem",
+      "about": [
+        {
+          "id": "http://vocab.getty.edu/aat/AAT15637",
+          "type": "Type",
+          "label": "portraits"
+        }
+      ]
+    },
+    {
+      "id": "https://data.vam.ac.uk/VisualItem/1",
+      "type": "VisualItem",
+      "about": [
+        {
+          "id": "http://vocab.getty.edu/aat/AAT25943",
+          "type": "Type",
+          "label": "women"
+        }
+      ]
+    },
+    {
+      "id": "https://data.vam.ac.uk/VisualItem/2",
+      "type": "VisualItem",
+      "about": [
+        {
+          "id": "http://vocab.getty.edu/aat/AAT25103",
+          "type": "Type",
+          "label": "artists"
+        }
+      ]
+    },
+    {
+      "id": "https://data.vam.ac.uk/VisualItem/3",
+      "type": "VisualItem",
+      "represents": [
+        {
+          "id": "N2828",
+          "type": "Actor"
+        }
+      ]
+    }
+  ],
+  "referred_to_by": [
+    {
+      "id": "https://data.vam.ac.uk/ManMadeObject/0/statement/1",
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300010358",
+          "type": "Type",
+          "label": "Material Statement"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "label": "Brief Text"
+        }
+      ],
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300388277",
+          "type": "Language",
+          "label": "English"
+        }
+      ],
+      "content": "Gelatin-silver print"
+    },
+    {
+      "id": "https://data.vam.ac.uk/LinguisticObject/0",
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300080091",
+          "type": "Type",
+          "label": "Description"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "label": "Brief Text"
+        }
+      ],
+      "content": "Alfred Stieglitz (1864-1946) was a pioneer of modern photography. A photographer, publisher, writer and gallery owner, he played a key role in the promotion and exploration of photography as an art form. He also helped introduce modern art to an American audience. In 1916 Stieglitz first saw the work of Georgia O'Keeffe (1887-1986) and was impressed by the expressive power of her large abstract drawings. The following year he hosted her first solo exhibition at his gallery '291' in New York. He also started to photograph O'Keeffe, posing her in front of her work and finding ways to fuse her body with the compositions. This was the start of an extraordinary collaboration that lasted over twenty years and resulted in over three hundred photographs. Stieglitz and O'Keeffe's artistic dialogue extended to a profound influence on each other's work. They became lovers and married in 1924. \r\n\r\nThe Georgia O'Keeffe Foundation has recently given the V&A a group of photographs by Stieglitz. The ten portraits of O'Keeffe shown here were taken between 1918 and 1937. The early, sensuous images were taken in the studio and printed on platinum and palladium paper, giving a fine tonal range. Later, there is a move away from symbolically charged images to an increasingly frank record of an individual. Influenced by O'Keeffe's paintings and by the work of Paul Strand, Stieglitz adopted an arguably more Modernist approach in the 1920s and 1930s. He started to make small gelatin-silver prints of exquisite precision and sharp tonal contrast and to explore the artistic and spiritual potential of his everyday surroundings. \r\n\r\nStieglitz saw his photographs of O'Keeffe as a composite portrait. Seen together, they explore themes of multiplicity, fragmentation, time and change, as well as O'Keeffe's personality, beauty and creativity. We might also read the portraits as a record of Stieglitz and O'Keeffe's love affair and of their remarkable creative synergy."
+    },
+    {
+      "id": "https://data.vam.ac.uk/LinguisticObject/1",
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300026687",
+          "type": "Type",
+          "label": "Credit Statement"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "label": "Brief Text"
+        }
+      ],
+      "content": "Gift of the Georgia O'Keeffe Foundation"
+    }
+  ],
+  "current_owner": {
+    "id": "https://data.vam.ac.uk/Group/0",
+    "type": "Group",
+    "label": "V&A Museum",
+    "acquired_title_through": [
+      {
+        "id": "https://data.vam.ac.uk/Acquisition/0",
+        "type": "Acquisition"
+      }
+    ],
+    "classified_as": [
+      {
+        "id": "http://vocab.getty.edu/aat/300312281",
+        "type": "Type",
+        "label": "Museum"
+      }
+    ]
+  },
+  "dimension": [
+    {
+      "id": "https://data.vam.ac.uk/Dimension/0",
+      "type": "Dimension",
+      "value": "115",
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379097",
+        "type": "MeasurementUnit",
+        "label": "millimeters"
+      },
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055644",
+          "type": "Type",
+          "label": "Height"
+        }
+      ]
+    },
+    {
+      "id": "https://data.vam.ac.uk/Dimension/1",
+      "type": "Dimension",
+      "value": "90",
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379097",
+        "type": "MeasurementUnit",
+        "label": "millimeters"
+      },
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055647",
+          "type": "Type",
+          "label": "Width"
+        }
+      ]
+    },
+    {
+      "id": "https://data.vam.ac.uk/Dimension/2",
+      "type": "Dimension",
+      "value": "37",
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379098",
+        "type": "MeasurementUnit",
+        "label": "centimeters"
+      },
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055644",
+          "type": "Type",
+          "label": "Height"
+        }
+      ]
+    },
+    {
+      "id": "https://data.vam.ac.uk/Dimension/3",
+      "type": "Dimension",
+      "value": "29.5",
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379098",
+        "type": "MeasurementUnit",
+        "label": "centimeters"
+      },
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055647",
+          "type": "Type",
+          "label": "Width"
+        }
+      ]
+    }
+  ],
+  "representation": [
+    {
+      "id": "http://media.vam.ac.uk/media/thira/collection_images/2006BB/2006BB4563.jpg",
+      "type": "VisualItem",
+      "label": "Image of Object",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300215302",
+          "type": "Type",
+          "label": "Digital Image"
+        }
+      ],
+      "format": "image/jpeg"
+    },
+    {
+      "id": "http://media.vam.ac.uk/media/thira/collection_images/2006AF/2006AF5252.jpg",
+      "type": "VisualItem",
+      "label": "Image of Object",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300215302",
+          "type": "Type",
+          "label": "Digital Image"
+        }
+      ],
+      "format": "image/jpeg"
+    }
+  ]
+}

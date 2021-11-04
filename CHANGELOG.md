@@ -18,6 +18,30 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.16.2]
+
+### Added
+
+- added `getWorkTypes` to ObjectHelpers
+- added `getClassifications` to ObjectHelpers
+
+## [0.16.1]
+
+### Added
+
+- added `getMaterialStatements` to ObjectHelpers
+
+## [0.16.0]
+
+### Added
+
+- added `getDescriptions` to LinkedArtHelpers
+- added test cases from the LinkedArt Showcase
+
+### Changed
+
+- Changed `getValuesByClassification` to return [] when nothing's found instead of `undefined`
+
 ## [0.15.2]
 
 ### Added
