@@ -331,13 +331,8 @@ export function getWorkTypes(
     languageOptions = {},
   } = {}
 ) {
-  const fields = [
-    ...normalizeFieldToArray(submittedResource, REFERRED_TO_BY),
-    ...normalizeFieldToArray(submittedResource, CLASSIFIED_AS),
-  ];
-
-  let workTypes = getClassifiedAs(
-    fields,
+  let workTypes = getClassifiedAsWithClassification(
+    submittedResource,
     requestedClassifications,
     language,
     languageOptions

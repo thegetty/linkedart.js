@@ -149,10 +149,7 @@ describe("get production information", () => {
     ]);
   });
 
-  it("get the correct work type(s)", () => {
-    expect(objectHelpers.getWorkTypes(irises)[0].content).toEqual("Painting");
-  });
-  it("returns []] if work type(s)", () => {
+  it("returns []] if no work type(s)", () => {
     expect(objectHelpers.getWorkTypes(beetle)).toEqual([]);
   });
 
@@ -161,7 +158,7 @@ describe("get production information", () => {
       "http://vocab.getty.edu/aat/300033618"
     );
   });
-  it("returns [] of no classification(s)", () => {
+  it("returns [] if no classification(s)", () => {
     expect(objectHelpers.getClassifications(beetle)).toEqual([]);
   });
 });
