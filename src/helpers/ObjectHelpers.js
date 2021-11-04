@@ -283,20 +283,20 @@ export function getAcknowledgementStatements(
 }
 
 /**
- * @description Gets the materials description associated with an object if available.
+ * @description Gets the material statement(s) associated with an object if available.
  * @param {object} submittedResource
  * @param {Object} options - additional options
  * @param {string|array} options.requestedClassifications -- AAT materials/technique description (default: {@link http://vocab.getty.edu/aat/300435429 |aat.MATERIALS_DESCRIPTION})
  * @param {string} options.language -- limits the results to just a specific language (or leave undefined for all results)
  * @param {object} options.languageOptions -- any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
  *
- * @example getMaterials(object) // gets the materials using defaults
- * @example getMaterials(object, {language:'ca'}) // gets the materials in Catalan
- * @example getMaterialss(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300010358'}) // gets the materials using a different AAT term
+ * @example getMaterialStatements(object) // gets the material statement(s) using defaults
+ * @example getMaterialStatements(object, {language:'ca'}) // gets the material statement(s) in Catalan
+ * @example getMaterialsStatements(object, {requestedClassifications: 'http://vocab.getty.edu/aat/300010358'}) // gets the material statement(s) using a different AAT term
  *
- * @returns {array} array of materials
+ * @returns {array} array of material statement(s)
  */
-export function getMaterials(
+export function getMaterialStatements(
   submittedResource,
   {
     requestedClassifications = aat.MATERIALS_DESCRIPTION,

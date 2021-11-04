@@ -56,9 +56,9 @@ describe("tests the VAM O'Keeffe record", () => {
         )
     ).toBe(true);
   });
-  it("gets the materials statement", () => {
+  it("gets the material statement(s)", () => {
     expect(
-      objectHelpers.getMaterials(photo, {
+      objectHelpers.getMaterialStatements(photo, {
         requestedClassifications: "http://vocab.getty.edu/aat/300010358",
       })
     ).toEqual(["Gelatin-silver print"]);

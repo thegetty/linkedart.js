@@ -109,9 +109,11 @@ describe("getCultures", () => {
   });
 });
 
-describe("getMaterials", () => {
+describe("getMaterialStatements", () => {
   it("gets the correct material(s) description if present", () => {
-    expect(objectHelpers.getMaterials(irises)).toEqual(["Oil on canvas"]);
+    expect(objectHelpers.getMaterialStatements(irises)).toEqual([
+      "Oil on canvas",
+    ]);
   });
 });
 

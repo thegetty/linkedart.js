@@ -18,6 +18,12 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.16.1]
+
+### Added
+
+- added `getMaterialStatements` to ObjectHelpers
+
 ## [0.16.0]
 
 ### Added
