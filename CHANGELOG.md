@@ -18,6 +18,12 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.16.4]
+
+### Changed
+
+- exported all public functions from ObjectHelpers
+
 ## [0.16.3]
 
 ### Changed
