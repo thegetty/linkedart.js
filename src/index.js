@@ -37,7 +37,21 @@ import {
   lookupIsoFromAat,
 } from "./helpers/LanguageHelpers";
 
-import { getCultures } from "./helpers/ObjectHelpers";
+import {
+  getCultures,
+  getDimensionsDescriptions,
+  getAccessionNumbers,
+  getCarriedOutBy,
+  getDigitalImages,
+  getRightsStatements,
+  getCopyrightStatements,
+  getRightsAssertions,
+  getAcknowledgementStatements,
+  getMaterialStatements,
+  getProductionTimespans,
+  getWorkTypes,
+  getClassifications,
+} from "./helpers/ObjectHelpers";
 
 export {
   normalizeFieldToArray,
@@ -67,4 +81,16 @@ export {
   getClassified,
   lookupAatFromIso,
   lookupIsoFromAat,
+  getDimensionsDescriptions,
+  getAccessionNumbers,
+  getCarriedOutBy,
+  getDigitalImages,
+  getRightsStatements,
+  getCopyrightStatements,
+  getRightsAssertions,
+  getAcknowledgementStatements,
+  getMaterialStatements,
+  getProductionTimespans,
+  getWorkTypes,
+  getClassifications,
 };
