@@ -36,6 +36,7 @@ const OR = "OR";
  * @param {String|Array} requestedClassifications - the classification ID/IDS to match
  * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
  * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} operator - if the requestedClassifications is an array, specify an and/or between the elements (default AND).
  *
  * @example for the submittedResource:
  * [
@@ -51,14 +52,16 @@ export function getClassifiedAs(
   submittedResource,
   requestedClassifications,
   language = undefined,
-  languageOptions = {}
+  languageOptions = {},
+  operator
 ) {
   return getClassified(
     submittedResource,
     requestedClassifications,
     CLASSIFIED_AS,
     language,
-    languageOptions
+    languageOptions,
+    operator
   );
 }
 
@@ -70,6 +73,7 @@ export function getClassifiedAs(
  * @param {String|Array} requestedClassifications - the classification ID/IDS to match
  * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
  * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} operator - if the requestedClassifications is an array, specify an and/or between the elements (default AND).
  *
  * @example for the submittedResource:
  * [
@@ -85,14 +89,16 @@ export function getClassifiedBy(
   submittedResource,
   requestedClassifications,
   language = undefined,
-  languageOptions = {}
+  languageOptions = {},
+  operator
 ) {
   return getClassified(
     submittedResource,
     requestedClassifications,
     CLASSIFIED_BY,
     language,
-    languageOptions
+    languageOptions,
+    operator
   );
 }
 
@@ -105,6 +111,7 @@ export function getClassifiedBy(
  * @param {String|Array} nestedClassification - the classification ID/IDS to match
  * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
  * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} operator - if the requestedClassifications is an array, specify an and/or between the elements (default AND).
  *
  * @example for the submittedResource:
  * [
@@ -121,14 +128,16 @@ export function getClassifiedAsWithClassification(
   submittedResource,
   nestedClassification,
   language = undefined,
-  languageOptions = {}
+  languageOptions = {},
+  operator
 ) {
   return _getClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_AS,
     language,
-    languageOptions
+    languageOptions,
+    operator
   );
 }
 
@@ -141,6 +150,7 @@ export function getClassifiedAsWithClassification(
  * @param {String|Array} nestedClassification - the classification ID/IDS to match
  * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
  * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} operator - if the requestedClassifications is an array, specify an and/or between the elements (default AND).
  *
  * @example for the submittedResource:
  * [
@@ -157,14 +167,16 @@ export function getClassifiedByWithClassification(
   submittedResource,
   nestedClassification,
   language = undefined,
-  languageOptions = {}
+  languageOptions = {},
+  operator
 ) {
   return _getClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_BY,
     language,
-    languageOptions
+    languageOptions,
+    operator
   );
 }
 
@@ -327,6 +339,7 @@ export function getPrimaryNames(
  * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
  * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} operator - if the requestedClassifications is an array, specify an and/or between the elements (default AND).
  *
  * @example for the submittedResource:
  * [
@@ -390,6 +403,8 @@ export function getClassified(
       if (requestedClassArray.some(inClassificationIDs)) {
         results.push(resource);
       }
+    } else {
+      throw `unknown operator specified: ${operator}, please use and/or`;
     }
   }
   return results;
@@ -403,6 +418,7 @@ export function getClassified(
  * @param {String|Array} requestedClassifications - the requested classifications
  * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
  * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} operator - if the requestedClassifications is an array, specify an and/or between the elements (default AND).
  *
  * @example for the submittedResource:
  * [
@@ -418,13 +434,15 @@ export function getValueByClassification(
   submittedResource,
   requestedClassifications,
   language,
-  languageOptions
+  languageOptions,
+  operator
 ) {
   let results = getClassifiedAs(
     submittedResource,
     requestedClassifications,
     language,
-    languageOptions
+    languageOptions,
+    operator
   );
   if (results.length) {
     let result = getValueOrContent(results[0]);
@@ -441,6 +459,7 @@ export function getValueByClassification(
  * @param {String|Array} requestedClassifications - the requested classifications
  * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
  * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} operator - if the requestedClassifications is an array, specify an and/or between the elements (default AND).
  *
  * @example for the submittedResource:
  * [
@@ -456,13 +475,15 @@ export function getValuesByClassification(
   submittedResource,
   requestedClassifications,
   language,
-  languageOptions
+  languageOptions,
+  operator
 ) {
   let results = getClassifiedAs(
     submittedResource,
     requestedClassifications,
     language,
-    languageOptions
+    languageOptions,
+    operator
   );
   if (results.length) {
     let values = [];
@@ -785,6 +806,7 @@ export function _getClassificationsWithNestedClass(
  * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
  * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
  * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} operator - if the requestedClassifications is an array, specify an and/or between the elements (default AND).
  * @private
  *
  * @returns {Object} an object with 'classifications' and 'objects' attributes containing arrays of
@@ -795,7 +817,8 @@ export function _getObjectsAndClassificationsWithNestedClass(
   nestedClassifications,
   classificationField = CLASSIFIED_AS,
   language = undefined,
-  languageOptions = {}
+  languageOptions = {},
+  operator
 ) {
   let returnObject = { classifications: [], objects: [] };
   let resourceArray = _convertToArrayIfNeeded(submittedResource);
@@ -815,7 +838,8 @@ export function _getObjectsAndClassificationsWithNestedClass(
       nestedClassifications,
       classificationField,
       language,
-      languageOptions
+      languageOptions,
+      operator
     );
     returnObject.classifications =
       returnObject.classifications.concat(classifications);
