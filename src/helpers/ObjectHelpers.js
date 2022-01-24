@@ -186,14 +186,12 @@ export function getRightsStatements(
   } = {}
 ) {
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
-  const rights = getClassified(
-    referredToBy,
-    requestedClassifications,
-    CLASSIFIED_AS,
+  const rights = getClassified(referredToBy, requestedClassifications, {
+    classificationField: CLASSIFIED_AS,
     language,
     languageOptions,
-    OR
-  );
+    operator: OR,
+  });
   return rights.map((right) => getValueOrContent(right));
 }
 

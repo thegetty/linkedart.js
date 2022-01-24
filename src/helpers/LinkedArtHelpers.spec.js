@@ -552,10 +552,7 @@ describe("tests resourceByClassifications", () => {
           "http://vocab.getty.edu/aat/300435430",
           "http://vocab.getty.edu/aat/300418049",
         ],
-        undefined,
-        undefined,
-        undefined,
-        "OR"
+        { operator: "OR" }
       ).length
     ).toEqual(7);
   });
@@ -567,9 +564,7 @@ describe("tests resourceByClassifications", () => {
           "http://vocab.getty.edu/aat/300435430",
           "http://vocab.getty.edu/aat/300418049",
         ],
-        undefined,
-        undefined,
-        "OR"
+        { operator: "OR" }
       )
     ).toEqual([
       "The J. Paul Getty Museum, Los Angeles",

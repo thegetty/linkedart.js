@@ -51,18 +51,14 @@ const OR = "OR";
 export function getClassifiedAs(
   submittedResource,
   requestedClassifications,
-  language = undefined,
-  languageOptions = {},
-  operator
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
-  return getClassified(
-    submittedResource,
-    requestedClassifications,
-    CLASSIFIED_AS,
+  return getClassified(submittedResource, requestedClassifications, {
+    classificationField: CLASSIFIED_AS,
     language,
     languageOptions,
-    operator
-  );
+    operator,
+  });
 }
 
 /**
@@ -88,18 +84,14 @@ export function getClassifiedAs(
 export function getClassifiedBy(
   submittedResource,
   requestedClassifications,
-  language = undefined,
-  languageOptions = {},
-  operator
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
-  return getClassified(
-    submittedResource,
-    requestedClassifications,
-    CLASSIFIED_BY,
+  return getClassified(submittedResource, requestedClassifications, {
+    classificationField: CLASSIFIED_BY,
     language,
     languageOptions,
-    operator
-  );
+    operator,
+  });
 }
 
 /**
@@ -127,17 +119,13 @@ export function getClassifiedBy(
 export function getClassifiedAsWithClassification(
   submittedResource,
   nestedClassification,
-  language = undefined,
-  languageOptions = {},
-  operator
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   return _getClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_AS,
-    language,
-    languageOptions,
-    operator
+    { language, languageOptions, operator }
   );
 }
 
@@ -166,17 +154,13 @@ export function getClassifiedAsWithClassification(
 export function getClassifiedByWithClassification(
   submittedResource,
   nestedClassification,
-  language = undefined,
-  languageOptions = {},
-  operator
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   return _getClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_BY,
-    language,
-    languageOptions,
-    operator
+    { language, languageOptions, operator }
   );
 }
 
@@ -203,15 +187,13 @@ export function getClassifiedByWithClassification(
 export function getObjectsClassifiedAsWithClassification(
   submittedResource,
   nestedClassification,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   return _getObjectWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_AS,
-    language,
-    languageOptions
+    { language, languageOptions, operator }
   );
 }
 
@@ -238,15 +220,13 @@ export function getObjectsClassifiedAsWithClassification(
 export function getObjectsClassifiedByWithClassification(
   submittedResource,
   nestedClassification,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {} } = {}
 ) {
   return _getObjectWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_BY,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 /**
@@ -363,10 +343,12 @@ export function getPrimaryNames(
 export function getClassified(
   submittedResource,
   requestedClassifications,
-  classificationField = CLASSIFIED_AS,
-  language = undefined,
-  languageOptions = {},
-  operator = AND
+  {
+    classificationField = CLASSIFIED_AS,
+    language = undefined,
+    languageOptions = {},
+    operator = AND,
+  } = {}
 ) {
   let results = [];
   let resourceArray = _convertToArrayIfNeeded(submittedResource);
@@ -433,17 +415,13 @@ export function getClassified(
 export function getValueByClassification(
   submittedResource,
   requestedClassifications,
-  language,
-  languageOptions,
-  operator
+  { language, languageOptions, operator } = {}
 ) {
-  let results = getClassifiedAs(
-    submittedResource,
-    requestedClassifications,
+  let results = getClassifiedAs(submittedResource, requestedClassifications, {
     language,
     languageOptions,
-    operator
-  );
+    operator,
+  });
   if (results.length) {
     let result = getValueOrContent(results[0]);
     return result;
@@ -474,17 +452,13 @@ export function getValueByClassification(
 export function getValuesByClassification(
   submittedResource,
   requestedClassifications,
-  language,
-  languageOptions,
-  operator
+  { language, languageOptions, operator } = {}
 ) {
-  let results = getClassifiedAs(
-    submittedResource,
-    requestedClassifications,
+  let results = getClassifiedAs(submittedResource, requestedClassifications, {
     language,
     languageOptions,
-    operator
-  );
+    operator,
+  });
   if (results.length) {
     let values = [];
     results.forEach((result) => {
@@ -744,15 +718,13 @@ export function _getObjectWithNestedClass(
   submittedResource,
   nestedClassification,
   classificationField = CLASSIFIED_AS,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   let { objects } = _getObjectsAndClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     classificationField,
-    language,
-    languageOptions
+    { language, languageOptions, operator }
   );
 
   return objects;
@@ -776,15 +748,13 @@ export function _getClassificationsWithNestedClass(
   submittedResource,
   nestedClassifications,
   classificationField = CLASSIFIED_AS,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {} } = {}
 ) {
   let { classifications } = _getObjectsAndClassificationsWithNestedClass(
     submittedResource,
     nestedClassifications,
     classificationField,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 
   return classifications;
@@ -816,9 +786,7 @@ export function _getObjectsAndClassificationsWithNestedClass(
   submittedResource,
   nestedClassifications,
   classificationField = CLASSIFIED_AS,
-  language = undefined,
-  languageOptions = {},
-  operator
+  { language = undefined, languageOptions = {}, operator }
 ) {
   let returnObject = { classifications: [], objects: [] };
   let resourceArray = _convertToArrayIfNeeded(submittedResource);
@@ -833,14 +801,12 @@ export function _getObjectsAndClassificationsWithNestedClass(
     if (!classified_as.length) {
       continue;
     }
-    let classifications = getClassified(
-      classified_as,
-      nestedClassifications,
+    let classifications = getClassified(classified_as, nestedClassifications, {
       classificationField,
       language,
       languageOptions,
-      operator
-    );
+      operator,
+    });
     returnObject.classifications =
       returnObject.classifications.concat(classifications);
     if (classifications.length > 0) {
@@ -895,14 +861,12 @@ export function getFieldValuesByClassifications(
   submittedResource,
   field,
   requestedClassifications,
-  language,
-  languageOptions
+  { language, languageOptions } = {}
 ) {
   return getValuesByClassification(
     normalizeFieldToArray(submittedResource, field),
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -931,7 +895,6 @@ export function getDescriptions(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
