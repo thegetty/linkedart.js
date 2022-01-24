@@ -53,8 +53,7 @@ export function getDimensionsDescriptions(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -84,8 +83,7 @@ export function getAccessionNumbers(
     submittedResource,
     IDENTIFIED_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -132,8 +130,7 @@ export function getCultures(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -221,8 +218,7 @@ export function getCopyrightStatements(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -276,8 +272,7 @@ export function getAcknowledgementStatements(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -307,8 +302,7 @@ export function getMaterialStatements(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 /**
@@ -362,8 +356,7 @@ export function getWorkTypes(
   let workTypes = getClassifiedAsWithClassification(
     submittedResource,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
   return workTypes;
 }
@@ -393,8 +386,7 @@ export function getClassifications(
   let classifications = getClassifiedAsWithClassification(
     submittedResource,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
   return classifications;
 }

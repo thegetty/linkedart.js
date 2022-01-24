@@ -291,12 +291,10 @@ export function getPrimaryNames(
   }
   let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
   let names = identified_by.filter((item) => item.type == NAME);
-  let name = getValuesByClassification(
-    names,
-    requestedClassifications,
+  let name = getValuesByClassification(names, requestedClassifications, {
     language,
-    languageOptions
-  );
+    languageOptions,
+  });
 
   if (name.length > 0) {
     return name;
