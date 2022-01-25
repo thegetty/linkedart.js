@@ -53,8 +53,7 @@ export function getDimensionsDescriptions(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -84,8 +83,7 @@ export function getAccessionNumbers(
     submittedResource,
     IDENTIFIED_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -132,8 +130,7 @@ export function getCultures(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -186,14 +183,12 @@ export function getRightsStatements(
   } = {}
 ) {
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
-  const rights = getClassified(
-    referredToBy,
-    requestedClassifications,
-    CLASSIFIED_AS,
+  const rights = getClassified(referredToBy, requestedClassifications, {
+    classificationField: CLASSIFIED_AS,
     language,
     languageOptions,
-    OR
-  );
+    operator: OR,
+  });
   return rights.map((right) => getValueOrContent(right));
 }
 
@@ -223,8 +218,7 @@ export function getCopyrightStatements(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -278,8 +272,7 @@ export function getAcknowledgementStatements(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 
@@ -309,8 +302,7 @@ export function getMaterialStatements(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 /**
@@ -364,8 +356,7 @@ export function getWorkTypes(
   let workTypes = getClassifiedAsWithClassification(
     submittedResource,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
   return workTypes;
 }
@@ -395,8 +386,7 @@ export function getClassifications(
   let classifications = getClassifiedAsWithClassification(
     submittedResource,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
   return classifications;
 }

@@ -2,7 +2,7 @@ import {
   getClassifiedAs,
   getClassifiedBy,
   getValueByClassification,
-  getProductionTimespans,
+  getValuesByClassification,
 } from "./LinkedArtHelpers";
 import * as helpers from "./LinkedArtHelpers";
 import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
@@ -291,6 +291,56 @@ describe("getValueByClassification", () => {
       getValueByClassification(object.identified_by, aat.PREFERRED_TERM)
     ).toEqual("Rembrandt van Rijn");
   });
+  it("finds content with 'or'", () => {
+    const object = {
+      identified_by: [
+        {
+          content: "Rembrandt van Rijn",
+          classified_as: [
+            {
+              id: "http://vocab.getty.edu/aat/300404670",
+            },
+          ],
+        },
+        {
+          content: "Hilma af Klint",
+          classified_as: [{ id: "http://local-thesaurus/primary-name" }],
+        },
+      ],
+    };
+    expect(
+      getValuesByClassification(
+        object.identified_by,
+        [aat.PREFERRED_TERM, "http://local-thesaurus/primary-name"],
+        { operator: "or" }
+      )
+    ).toEqual(["Rembrandt van Rijn", "Hilma af Klint"]);
+  });
+  it("finds no content with 'and'", () => {
+    const object = {
+      identified_by: [
+        {
+          content: "Rembrandt van Rijn",
+          classified_as: [
+            {
+              id: "http://vocab.getty.edu/aat/300404670",
+            },
+          ],
+        },
+        {
+          content: "Hilma af Klint",
+          classified_as: [{ id: "http://local-thesaurus/primary-name" }],
+        },
+      ],
+    };
+    expect(
+      getValuesByClassification(
+        object.identified_by,
+        [aat.PREFERRED_TERM, "http://local-thesaurus/primary-name"],
+        { operator: "and" }
+      )
+    ).toEqual([]);
+  });
 
   it("finds content", () => {
     const object = {
@@ -552,12 +602,29 @@ describe("tests resourceByClassifications", () => {
           "http://vocab.getty.edu/aat/300435430",
           "http://vocab.getty.edu/aat/300418049",
         ],
-        undefined,
-        undefined,
-        undefined,
-        "OR"
+        { operator: "OR" }
       ).length
     ).toEqual(7);
+  });
+  it("gets the expected values with the OR operator", () => {
+    expect(
+      helpers.getValuesByClassification(
+        titan.referred_to_by,
+        [
+          "http://vocab.getty.edu/aat/300435430",
+          "http://vocab.getty.edu/aat/300418049",
+        ],
+        { operator: "OR" }
+      )
+    ).toEqual([
+      "The J. Paul Getty Museum, Los Angeles",
+      "Italian",
+      "<p>A nude triton displays his rippling, muscular figure as he turns to blow a conch shell announcing a special event. His powerful sculptural form and sense of monumentality derive from ancient Roman sculpture and Renaissance art, especially Michelangelo's Sistine Chapel <i>ignudi</i>, while the use of black and white chalks on blue-gray paper reflects Annibale Carracci's interest in Venetian art of the 1500s.</p><p>Annibale made this drawing as a study for a triton for Agostino Carracci’s fresco, <i>Thetis Borne to the Wedding Chamber of Peleus</i>, also known as Galatea. The Carracci brothers began work on the decoration of the Galleria Farnese in Rome, including this fresco, in 1597. For centuries, this cycle of paintings influenced artists as much as Michelangelo's Sistine ceiling.</p><p>Beginning with drawing from life and understanding anatomy, the Carracci focused on painting the human figure. Their drawings of the nude maintained monumental proportions while broadly sketching the body's essential structure; combining robust energy with soft, rhythmic contours.</p><p>The fragment of an arm on the verso of this drawing was trimmed from a study of a triton now in the Metropolitan Museum of Art, proving that this sheet was once part of a larger one.</p>",
+      "40.6 × 24.1 cm (16 × 9 1/2 in.)",
+      "Black and white chalk (recto); black chalk (verso) on blue paper",
+      "Drawing",
+      "No Copyright - United States",
+    ]);
   });
   it("returns an empty array if no objects match AND", () => {
     expect(

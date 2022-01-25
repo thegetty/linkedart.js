@@ -34,8 +34,11 @@ const OR = "OR";
  *
  * @param {Object|Array} submittedResource - the object to inspect
  * @param {String|Array} requestedClassifications - the classification ID/IDS to match
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
+
  *
  * @example for the submittedResource:
  * [
@@ -50,16 +53,14 @@ const OR = "OR";
 export function getClassifiedAs(
   submittedResource,
   requestedClassifications,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
-  return getClassified(
-    submittedResource,
-    requestedClassifications,
-    CLASSIFIED_AS,
+  return getClassified(submittedResource, requestedClassifications, {
+    classificationField: CLASSIFIED_AS,
     language,
-    languageOptions
-  );
+    languageOptions,
+    operator,
+  });
 }
 
 /**
@@ -68,8 +69,10 @@ export function getClassifiedAs(
  *
  * @param {Object|Array} submittedResource - the object to inspect
  * @param {String|Array} requestedClassifications - the classification ID/IDS to match
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  * @example for the submittedResource:
  * [
@@ -84,16 +87,14 @@ export function getClassifiedAs(
 export function getClassifiedBy(
   submittedResource,
   requestedClassifications,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
-  return getClassified(
-    submittedResource,
-    requestedClassifications,
-    CLASSIFIED_BY,
+  return getClassified(submittedResource, requestedClassifications, {
+    classificationField: CLASSIFIED_BY,
     language,
-    languageOptions
-  );
+    languageOptions,
+    operator,
+  });
 }
 
 /**
@@ -103,8 +104,10 @@ export function getClassifiedBy(
  *
  * @param {Object|Array} submittedResource - the object to inspect
  * @param {String|Array} nestedClassification - the classification ID/IDS to match
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  * @example for the submittedResource:
  * [
@@ -120,15 +123,13 @@ export function getClassifiedBy(
 export function getClassifiedAsWithClassification(
   submittedResource,
   nestedClassification,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   return _getClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_AS,
-    language,
-    languageOptions
+    { language, languageOptions, operator }
   );
 }
 
@@ -139,8 +140,10 @@ export function getClassifiedAsWithClassification(
  *
  * @param {Object|Array} submittedResource - the object to inspect
  * @param {String|Array} nestedClassification - the classification ID/IDS to match
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  * @example for the submittedResource:
  * [
@@ -156,15 +159,13 @@ export function getClassifiedAsWithClassification(
 export function getClassifiedByWithClassification(
   submittedResource,
   nestedClassification,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   return _getClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_BY,
-    language,
-    languageOptions
+    { language, languageOptions, operator }
   );
 }
 
@@ -174,8 +175,10 @@ export function getClassifiedByWithClassification(
  *
  * @param {Object|Array} submittedResource - the object to inspect
  * @param {String|Array} nestedClassification - the classification ID/IDS to match
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  * @example for the submittedResource:
  * [
@@ -191,15 +194,13 @@ export function getClassifiedByWithClassification(
 export function getObjectsClassifiedAsWithClassification(
   submittedResource,
   nestedClassification,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   return _getObjectWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_AS,
-    language,
-    languageOptions
+    { language, languageOptions, operator }
   );
 }
 
@@ -209,8 +210,10 @@ export function getObjectsClassifiedAsWithClassification(
  *
  * @param {Object|Array} submittedResource - the object to inspect
  * @param {String|Array} nestedClassification - the classification ID/IDS to match
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  * @example for the submittedResource:
  * [
@@ -226,15 +229,13 @@ export function getObjectsClassifiedAsWithClassification(
 export function getObjectsClassifiedByWithClassification(
   submittedResource,
   nestedClassification,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {} } = {}
 ) {
   return _getObjectWithNestedClass(
     submittedResource,
     nestedClassification,
     CLASSIFIED_BY,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
 /**
@@ -299,12 +300,10 @@ export function getPrimaryNames(
   }
   let identified_by = normalizeFieldToArray(submittedResource, IDENTIFIED_BY);
   let names = identified_by.filter((item) => item.type == NAME);
-  let name = getValuesByClassification(
-    names,
-    requestedClassifications,
+  let name = getValuesByClassification(names, requestedClassifications, {
     language,
-    languageOptions
-  );
+    languageOptions,
+  });
 
   if (name.length > 0) {
     return name;
@@ -325,8 +324,10 @@ export function getPrimaryNames(
  * @param {Object|Array} submittedResource - the object to inspect
  * @param {String|Array} requestedClassifications - either a string or an array of classification strings
  * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  * @example for the submittedResource:
  * [
@@ -350,10 +351,12 @@ export function getPrimaryNames(
 export function getClassified(
   submittedResource,
   requestedClassifications,
-  classificationField = CLASSIFIED_AS,
-  language = undefined,
-  languageOptions = {},
-  operator = AND
+  {
+    classificationField = CLASSIFIED_AS,
+    language = undefined,
+    languageOptions = {},
+    operator = AND,
+  } = {}
 ) {
   let results = [];
   let resourceArray = _convertToArrayIfNeeded(submittedResource);
@@ -390,6 +393,8 @@ export function getClassified(
       if (requestedClassArray.some(inClassificationIDs)) {
         results.push(resource);
       }
+    } else {
+      throw `unknown operator specified: ${operator}, please use and/or`;
     }
   }
   return results;
@@ -401,8 +406,10 @@ export function getClassified(
  *
  * @param {Object|Array} submittedResource - the JSON-LD Object
  * @param {String|Array} requestedClassifications - the requested classifications
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  * @example for the submittedResource:
  * [
@@ -417,15 +424,13 @@ export function getClassified(
 export function getValueByClassification(
   submittedResource,
   requestedClassifications,
-  language,
-  languageOptions
+  { language, languageOptions, operator } = {}
 ) {
-  let results = getClassifiedAs(
-    submittedResource,
-    requestedClassifications,
+  let results = getClassifiedAs(submittedResource, requestedClassifications, {
     language,
-    languageOptions
-  );
+    languageOptions,
+    operator,
+  });
   if (results.length) {
     let result = getValueOrContent(results[0]);
     return result;
@@ -439,8 +444,10 @@ export function getValueByClassification(
  *
  * @param {Object|Array} submittedResource - the JSON-LD Object
  * @param {String|Array} requestedClassifications - the requested classifications
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  * @example for the submittedResource:
  * [
@@ -455,15 +462,13 @@ export function getValueByClassification(
 export function getValuesByClassification(
   submittedResource,
   requestedClassifications,
-  language,
-  languageOptions
+  { language, languageOptions, operator } = {}
 ) {
-  let results = getClassifiedAs(
-    submittedResource,
-    requestedClassifications,
+  let results = getClassifiedAs(submittedResource, requestedClassifications, {
     language,
-    languageOptions
-  );
+    languageOptions,
+    operator,
+  });
   if (results.length) {
     let values = [];
     results.forEach((result) => {
@@ -713,8 +718,10 @@ function _getAssignedProperty(assigned, assignedProperty) {
  * @param {Object|Array} submittedResource - the object to inspect
  * @param {String|Array} nestedClassification - the classification ID/IDS to match
  * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  * @private
  *
  * @returns {Array} an array of objects that match
@@ -723,15 +730,13 @@ export function _getObjectWithNestedClass(
   submittedResource,
   nestedClassification,
   classificationField = CLASSIFIED_AS,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   let { objects } = _getObjectsAndClassificationsWithNestedClass(
     submittedResource,
     nestedClassification,
     classificationField,
-    language,
-    languageOptions
+    { language, languageOptions, operator }
   );
 
   return objects;
@@ -745,8 +750,10 @@ export function _getObjectWithNestedClass(
  * @param {Object} submittedResource - the object to inspect
  * @param {String|Array} nestedClassifications - the classification ID/IDS to match
  * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  * @private
  *
  * @returns {Array} an array of objects that match
@@ -755,15 +762,13 @@ export function _getClassificationsWithNestedClass(
   submittedResource,
   nestedClassifications,
   classificationField = CLASSIFIED_AS,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator } = {}
 ) {
   let { classifications } = _getObjectsAndClassificationsWithNestedClass(
     submittedResource,
     nestedClassifications,
     classificationField,
-    language,
-    languageOptions
+    { language, languageOptions, operator }
   );
 
   return classifications;
@@ -783,8 +788,10 @@ export function _getClassificationsWithNestedClass(
  * @param {Object} submittedResource - the object to inspect
  * @param {String|Array} nestedClassifications - the classification ID/IDS to match
  * @param {String} classificationField - the field to investigate for an object's classification (e.g. classified_as, classified_by)
- * @param {String} language - limits the results to just a specific language (or leave undefined for all results)
- * @param {Object} languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  * @private
  *
  * @returns {Object} an object with 'classifications' and 'objects' attributes containing arrays of
@@ -794,8 +801,7 @@ export function _getObjectsAndClassificationsWithNestedClass(
   submittedResource,
   nestedClassifications,
   classificationField = CLASSIFIED_AS,
-  language = undefined,
-  languageOptions = {}
+  { language = undefined, languageOptions = {}, operator }
 ) {
   let returnObject = { classifications: [], objects: [] };
   let resourceArray = _convertToArrayIfNeeded(submittedResource);
@@ -810,13 +816,12 @@ export function _getObjectsAndClassificationsWithNestedClass(
     if (!classified_as.length) {
       continue;
     }
-    let classifications = getClassified(
-      classified_as,
-      nestedClassifications,
+    let classifications = getClassified(classified_as, nestedClassifications, {
       classificationField,
       language,
-      languageOptions
-    );
+      languageOptions,
+      operator,
+    });
     returnObject.classifications =
       returnObject.classifications.concat(classifications);
     if (classifications.length > 0) {
@@ -860,8 +865,10 @@ export function getFieldPartSubfield(object, field, subfield) {
  * @param {Object} submittedResource - the JSON-LD Object
  * @param {String} field - the field to look in (e.g. referred_to_by)
  * @param {String|Array} requestedClassifications - the AAT or local classifications
- * @param {String} language - the desired language (default is any)
- * @param {Object} languageOptions (additional language options)
+ * @param {Object} options additional options
+ * @param {String} options.language - limits the results to just a specific language (or leave undefined for all results)
+ * @param {Object} options.languageOptions - any additional options when working with language(s) @see LanguageHelpers.doesObjectLanguageMatch
+ * @param {String} options.operator - a boolean operator (AND|OR) for how to treat the nested classifications
  *
  *  @example getFieldValuesByClassifications(object, "referred_to_by", aat.ACKNOWLEDGEMENTS, 'ja') // would return all of the acknowledgement entries in japanese
  *
@@ -871,14 +878,12 @@ export function getFieldValuesByClassifications(
   submittedResource,
   field,
   requestedClassifications,
-  language,
-  languageOptions
+  { language, languageOptions, operator } = {}
 ) {
   return getValuesByClassification(
     normalizeFieldToArray(submittedResource, field),
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions, operator }
   );
 }
 
@@ -907,7 +912,6 @@ export function getDescriptions(
     submittedResource,
     REFERRED_TO_BY,
     requestedClassifications,
-    language,
-    languageOptions
+    { language, languageOptions }
   );
 }
