@@ -2,7 +2,7 @@ import {
   getClassifiedAs,
   getClassifiedBy,
   getValueByClassification,
-  getProductionTimespans,
+  getValuesByClassification,
 } from "./LinkedArtHelpers";
 import * as helpers from "./LinkedArtHelpers";
 import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
@@ -290,6 +290,56 @@ describe("getValueByClassification", () => {
     expect(
       getValueByClassification(object.identified_by, aat.PREFERRED_TERM)
     ).toEqual("Rembrandt van Rijn");
+  });
+  it("finds content with 'or'", () => {
+    const object = {
+      identified_by: [
+        {
+          content: "Rembrandt van Rijn",
+          classified_as: [
+            {
+              id: "http://vocab.getty.edu/aat/300404670",
+            },
+          ],
+        },
+        {
+          content: "Hilma af Klint",
+          classified_as: [{ id: "http://local-thesaurus/primary-name" }],
+        },
+      ],
+    };
+    expect(
+      getValuesByClassification(
+        object.identified_by,
+        [aat.PREFERRED_TERM, "http://local-thesaurus/primary-name"],
+        { operator: "or" }
+      )
+    ).toEqual(["Rembrandt van Rijn", "Hilma af Klint"]);
+  });
+  it("finds no content with 'and'", () => {
+    const object = {
+      identified_by: [
+        {
+          content: "Rembrandt van Rijn",
+          classified_as: [
+            {
+              id: "http://vocab.getty.edu/aat/300404670",
+            },
+          ],
+        },
+        {
+          content: "Hilma af Klint",
+          classified_as: [{ id: "http://local-thesaurus/primary-name" }],
+        },
+      ],
+    };
+    expect(
+      getValuesByClassification(
+        object.identified_by,
+        [aat.PREFERRED_TERM, "http://local-thesaurus/primary-name"],
+        { operator: "and" }
+      )
+    ).toEqual([]);
   });
 
   it("finds content", () => {
