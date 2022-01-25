@@ -18,7 +18,7 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
-## [0.17.0-b1]
+## [0.17.0]
 
 - modified many of our mid-level functions to take an options object instead of feeding in optional params. This is a potentially breaking change for `getClassified`, `getClassifiedBy`, `getClassifiedAs`, `getClassifiedAsWithClassification`, `getClassifiedByWithClassification`, `getFieldValuesByClassification`, `getObjectsClassifiedAsWithClassification`, `getObjectsClassifiedByWithClassification`, `getValueByClassification`, and `getValuesByClassification`. This change introduces the ability to pass in an `operator` as well as the `language`, and `languageOptions`.
 
