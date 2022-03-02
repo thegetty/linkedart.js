@@ -59,7 +59,7 @@ const linkedArtObject = {
 };
 
 // get the title using the built-in helper
-const title = getPrimaryName(linketArtObject);
+const title = getPrimaryName(linkedArtObject);
 
 // get the title using the lower-level methods which allow you to specify a different classification, or other settings
 const result = getClassifiedAs(
