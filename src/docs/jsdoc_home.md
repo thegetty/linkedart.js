@@ -30,7 +30,11 @@ Using npm:
 $ npm install @thegetty/linkedart.js --save
 ```
 
-## A Simple Example to get the title of an object:
+## Examples
+
+Below is a simple example of how to use the LinkedArt library, for more examples, please see the tutorials [Working with Linked Art](https://observablehq.com/@jrladd/linked-art-2), [Understanding Linked Art](https://observablehq.com/@jrladd/linked-art-1), [Exploring Linked Art](https://observablehq.com/@jrladd/linked-art-3) for using Linked.Art with the Getty Museum’s linked open data APIs.
+
+### A Simple Example to get the title of an object:
 
 For more examples, please see the tutorials for using Linked.Art with the Getty Museum’s linked open data APIs.
 
