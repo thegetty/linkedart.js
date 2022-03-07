@@ -27,7 +27,7 @@ We know this library does not include every use-case, or a simple helper for acc
 
 You will need to be comfortable with javascript and npm (Node Package Manager). You will also need data that is formatted to the Linked.Art model. Example sets you can work with can be found at [https://linked.art/cookbook/data-sources/](https://linked.art/cookbook/data-sources/)
 
-##How do I install it?
+## How do I install it?
 Using npm:
 
 ```shell
