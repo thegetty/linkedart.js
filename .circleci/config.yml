@@ -73,7 +73,7 @@ commands:
             --acl public-read \
             --delete
             --cache-control "max-age=86400"
-          overwrite: true # default is false
+          # overwrite: true # default is false
 
 executors:
   build_env:
