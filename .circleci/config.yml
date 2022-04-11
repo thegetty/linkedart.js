@@ -69,7 +69,7 @@ commands:
         default: S3_BUCKET
       path:
         type: string
-        default: S3_PATH
+        default: "prod"
       additional_arguments:
         type: string
         default: ' --acl public-read --cache-control "max-age=86400" '
