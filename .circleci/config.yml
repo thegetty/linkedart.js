@@ -22,10 +22,9 @@ jobs:
     steps:
       - *attach_workspace
       - build_output
-      - deploy
-    environment:
-      S3_BUCKET_NAME: "jpgt-or-stg-collection-online-20"
-      S3_PATH: "test"
+      - deploy:
+          bucket: "jpgt-or-stg-collection-online-20"
+          path: "test"
 
 workflows:
   version: 2
@@ -68,10 +67,16 @@ commands:
       production:
         type: boolean
         default: false
+      bucket:
+        type: string
+        default: S3_BUCKET
+      path:
+        type: string
+        default: S3_PATH
     steps:
       - aws-s3/sync:
           from: jsdoc
-          to: "s3://${S3_BUCKET}/${S3_PATH}"
+          to: "s3://${<< parameters.bucket >>}/${<< parameters.path >>}"
           arguments: | # Optional arguments
             --acl public-read \
             --delete
