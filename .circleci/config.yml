@@ -23,6 +23,9 @@ jobs:
       - *attach_workspace
       - build_output
       - deploy
+    environment:
+      S3_BUCKET_NAME: "jpgt-or-stg-collection-online-20"
+      S3_PATH: "test"
 
 workflows:
   version: 2
@@ -35,9 +38,6 @@ workflows:
           #     only: main
           requires:
             - build
-          environment:
-            S3_BUCKET_NAME: "jpgt-or-stg-collection-online-20"
-            S3_PATH: "test"
 
 commands:
   setup:
