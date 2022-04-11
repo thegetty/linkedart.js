@@ -64,23 +64,21 @@ commands:
   deploy:
     description: "Deploy to s3"
     parameters:
-      production:
-        type: boolean
-        default: false
       bucket:
         type: string
         default: S3_BUCKET
       path:
         type: string
         default: S3_PATH
+      additional_arguments:
+        type: string
+        default: ' --acl public-read --cache-control "max-age=86400 '
+
     steps:
       - aws-s3/sync:
           from: jsdoc
           to: "s3://<< parameters.bucket >>/<< parameters.path >>"
-          arguments: | # Optional arguments
-            --acl public-read \
-            --delete
-            --cache-control "max-age=86400"
+          arguments: "--delete << parameters.additional_arguments >>"
           # overwrite: true # default is false
 
 executors:
