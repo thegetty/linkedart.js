@@ -7,6 +7,9 @@ anchors:
     attach_workspace:
       at: *workspace_root
 
+orbs:
+  aws-s3: circleci/aws-s3@3.0.0 # use the AWS S3 orb in your config
+
 jobs:
   build:
     executor: build_env
@@ -26,12 +29,12 @@ workflows:
   build-deploy:
     jobs:
       - build
-      - deploy:
-          filters:
-            branches:
-              only: main
-          requires:
-            - build
+      - deploy
+        # filters:
+        #   branches:
+        #     only: main
+        # requires:
+        #   - build
 
 commands:
   setup:
@@ -57,27 +60,20 @@ commands:
           paths: . # paths relative to the workspace root
 
   deploy:
-    description: "Deploy to Netlify"
+    description: "Deploy to s3"
     parameters:
       production:
         type: boolean
         default: false
     steps:
-      - run:
-          name: Install netlify-cli
-          command: npm install netlify-cli
-      - run:
-          name: setup deploy dir
-          command: |
-            mv jsdoc netlify/
-      - run:
-          name: Netlify production deploy
-          command: |
-            node_modules/netlify-cli/bin/run deploy --prod \
-              --auth $NETLIFY_AUTH_TOKEN \
-              --dir netlify \
-              --site $NETLIFY_SITE_ID \
-              --message "$CIRCLE_PROJECT_REPONAME deployed from CircleCI"
+      - aws-s3/sync:
+          from: jsdoc
+          to: "s3://${S3_BUCKET}/${S3_PATH}"
+          arguments: | # Optional arguments
+            --acl public-read \
+            --delete
+            --cache-control "max-age=86400"
+          overwrite: true # default is false
 
 executors:
   build_env:
