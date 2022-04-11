@@ -30,11 +30,11 @@ workflows:
     jobs:
       - build
       - deploy:
-        # filters:
-        #   branches:
-        #     only: main
-        requires:
-          - build
+          # filters:
+          #   branches:
+          #     only: main
+          requires:
+            - build
 
 commands:
   setup:
