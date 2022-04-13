@@ -23,7 +23,7 @@ jobs:
       - *attach_workspace
       - build_output
       - deploy:
-          bucket: "jpgt-or-stg-collection-online-20"
+          bucket: "jpgt-or-prd-static-site-linkedartjs"
           path: "test"
 
 workflows:
@@ -70,7 +70,7 @@ commands:
       path:
         type: string
         default: "prod"
-      additional_arguments:
+      sync_arguments:
         type: string
         default: ' --acl public-read --cache-control "max-age=86400" '
 
@@ -78,7 +78,7 @@ commands:
       - aws-s3/sync:
           from: jsdoc
           to: "s3://<< parameters.bucket >>/<< parameters.path >>"
-          arguments: " --delete << parameters.additional_arguments >>"
+          arguments: " --delete << parameters.sync_arguments >>"
           # overwrite: true # default is false
 
 executors:
