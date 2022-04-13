@@ -72,7 +72,8 @@ commands:
         default: "prod"
       sync_arguments:
         type: string
-        default: ' --acl public-read --cache-control "max-age=86400" '
+        ## --acl public-read
+        default: ' --cache-control "max-age=86400" '
 
     steps:
       - aws-s3/sync:
