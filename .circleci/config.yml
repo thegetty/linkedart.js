@@ -24,6 +24,7 @@ jobs:
       - build_output
       - deploy:
           bucket: "jpgt-or-prd-static-site-linkedartjs"
+          local-path: "jsdoc"
 
 workflows:
   version: 2
@@ -66,20 +67,21 @@ commands:
       bucket:
         type: string
         default: S3_BUCKET
-      path:
+      s3-path:
+        type: string
+        default: ""
+      local-path:
         type: string
         default: ""
       sync_arguments:
         type: string
-        ## --acl public-read
-        default: ' --cache-control "max-age=86400" '
+        default: ' --acl public-read --cache-control "max-age=86400" '
 
     steps:
       - aws-s3/sync:
-          from: jsdoc
-          to: "s3://<< parameters.bucket >>/<< parameters.path >>"
+          from: <<parameters.local-path>>
+          to: "s3://<< parameters.bucket >>/<< parameters.s3-path >>"
           arguments: " --delete << parameters.sync_arguments >>"
-          # overwrite: true # default is false
 
 executors:
   build_env:
