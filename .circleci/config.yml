@@ -24,7 +24,6 @@ jobs:
       - build_output
       - deploy:
           bucket: "jpgt-or-prd-static-site-linkedartjs"
-          path: "test"
 
 workflows:
   version: 2
@@ -69,7 +68,7 @@ commands:
         default: S3_BUCKET
       path:
         type: string
-        default: "prod"
+        default: ""
       sync_arguments:
         type: string
         ## --acl public-read
