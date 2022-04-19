@@ -7,6 +7,9 @@ anchors:
     attach_workspace:
       at: *workspace_root
 
+orbs:
+  aws-s3: circleci/aws-s3@3.0.0 # use the AWS S3 orb in your config
+
 jobs:
   build:
     executor: build_env
@@ -19,7 +22,8 @@ jobs:
     steps:
       - *attach_workspace
       - build_output
-      - deploy
+      - deploy:
+          local-path: "jsdoc"
 
 workflows:
   version: 2
@@ -57,27 +61,28 @@ commands:
           paths: . # paths relative to the workspace root
 
   deploy:
-    description: "Deploy to Netlify"
+    description: "Deploy to s3"
     parameters:
-      production:
-        type: boolean
-        default: false
+      bucket:
+        type: string
+        default: S3_BUCKET
+      s3-path:
+        type: string
+        default: ""
+      local-path:
+        type: string
+        default: ""
+      sync_arguments:
+        type: string
+        ## by default, we don't need to implement permissions b/c this will be handled via cloudfront
+        ## --acl public-read
+        default: ' --cache-control "max-age=86400" '
+
     steps:
-      - run:
-          name: Install netlify-cli
-          command: npm install netlify-cli
-      - run:
-          name: setup deploy dir
-          command: |
-            mv jsdoc netlify/
-      - run:
-          name: Netlify production deploy
-          command: |
-            node_modules/netlify-cli/bin/run deploy --prod \
-              --auth $NETLIFY_AUTH_TOKEN \
-              --dir netlify \
-              --site $NETLIFY_SITE_ID \
-              --message "$CIRCLE_PROJECT_REPONAME deployed from CircleCI"
+      - aws-s3/sync:
+          from: <<parameters.local-path>>
+          to: "s3://<< parameters.bucket >>/<< parameters.s3-path >>"
+          arguments: " --delete << parameters.sync_arguments >>"
 
 executors:
   build_env:

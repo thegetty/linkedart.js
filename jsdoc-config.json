@@ -17,8 +17,7 @@
       "name": "LinkedArt.js",
       "title": "LinkedArt.js", // HTML title
       "css": "style.css",
-      "trackingCode": "tracking-code-which-will-go-to-the-HEAD",
-      "hideGenerator": false,
+      "hideGenerator": true,
       "navLinks": [
         {
           "label": "Github",
