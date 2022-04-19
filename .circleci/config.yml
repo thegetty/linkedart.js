@@ -75,7 +75,9 @@ commands:
         default: ""
       sync_arguments:
         type: string
-        default: ' --acl public-read --cache-control "max-age=86400" '
+        ## by default, we don't need to implement permissions b/c this will be handled via cloudfront
+        ## --acl public-read
+        default: ' --cache-control "max-age=86400" '
 
     steps:
       - aws-s3/sync:
