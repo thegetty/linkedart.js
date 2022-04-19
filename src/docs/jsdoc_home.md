@@ -1,4 +1,4 @@
-# About LinkedArt.js
+## About LinkedArt.js
 
 This library includes a set of methods for working with [linked.art](https://linked.art) data. Easily manipulate and access rich, complexly nested linked data from any Linked.Art source. This library includes two different types of methods:
 
