@@ -23,7 +23,6 @@ jobs:
       - *attach_workspace
       - build_output
       - deploy:
-          bucket: "jpgt-or-prd-static-site-linkedartjs"
           local-path: "jsdoc"
 
 workflows:
