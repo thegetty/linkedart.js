@@ -17,17 +17,18 @@ You probably know this if you’ve made it this far but just in case: Linked.Art
 
 ## How Does it Work?
 
-The library includes a number of helpers for working with Linked.Art’s basic JSON-LD patterns. You can do basic things like normalize a field to an array and filter by classification, as well as more advanced tasks like working with languages and other elements of the Linked.Art model.
+The library includes a number of helpers for working with Linked.Art’s basic JSON-LD patterns. You can do basic things like getting values based on a classification or set of classifications, as well as more advanced tasks like working with languages and other elements of the Linked.Art model. Want to know more, take a look at the [examples below](#examples).
 
 ## Contributing
 
-We know this library does not include every use-case, or a simple helper for accessing every Linked.Art property. We’d love feedback, or contributions to continue to broaden and deepen the library to better support the community.
+We know this library does not include every use-case, or a simple helper for accessing every Linked.Art property. We’d love feedback or pull-requests to continue to broaden and deepen the library to better support the community.
 
 ## What Do I Need to Use It?
 
 You will need to be comfortable with javascript and npm (Node Package Manager). You will also need data that is formatted to the Linked.Art model. Example sets you can work with can be found at [https://linked.art/cookbook/data-sources/](https://linked.art/cookbook/data-sources/)
 
 ## How do I install it?
+
 Using npm:
 
 ```shell
