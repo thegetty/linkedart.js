@@ -31,9 +31,9 @@ workflows:
     jobs:
       - build
       - deploy:
-          filters:
-            branches:
-              only: main
+          # filters:
+          #   branches:
+          #     only: main
           requires:
             - build
 
@@ -65,7 +65,7 @@ commands:
     parameters:
       bucket:
         type: string
-        default: S3_BUCKET
+        default: $S3_BUCKET
       s3-path:
         type: string
         default: ""
