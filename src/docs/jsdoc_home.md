@@ -1,6 +1,4 @@
-### About Linked Art
-
-## What is the LinkedArt.js Library?
+# About LinkedArt.js
 
 This library includes a set of methods for working with [linked.art](https://linked.art) data. Easily manipulate and access rich, complexly nested linked data from any Linked.Art source. This library includes two different types of methods:
 
@@ -50,11 +48,11 @@ const linkedArtObject = {
         {
           id: "http://vocab.getty.edu/aat/300404670",
           _label: "preferred terms",
-          type: "Type",
-        },
-      ],
-    },
-  ],
+          type: "Type"
+        }
+      ]
+    }
+  ]
 };
 
 // get the title using the built-in helper

@@ -1,7 +1,6 @@
 # linkedart.js
 
-[Site](http://linkedartjs.org/) |
-[Docs](http://getty-linkedart-js.netlify.app) |
+[Docs](http://linkedartjs.org/) |
 [Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md)
 
 ## What is the LinkedArt.js Library?
