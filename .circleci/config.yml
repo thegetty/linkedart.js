@@ -22,7 +22,7 @@ jobs:
     steps:
       - *attach_workspace
       - build_output
-      - getty-devops/deploy:
+      - getty-devops/sync-with-s3:
           local-path: "jsdoc"
 
 workflows:
