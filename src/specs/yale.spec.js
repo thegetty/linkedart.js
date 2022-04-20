@@ -152,6 +152,7 @@ describe("tests the yale record", () => {
       )
     ).toEqual([
       {
+        type: "TimeSpan",
         begin_of_the_begin: "1891-01-01T00:00:00Z",
         end_of_the_end: "1891-12-31T23:59:59Z",
         identified_by: [
