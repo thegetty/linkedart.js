@@ -16,7 +16,31 @@ You probably know this if you’ve made it this far but just in case: Linked.Art
 
 ## How Does it Work?
 
-The library includes a number of helpers for working with Linked.Art’s basic JSON-LD patterns. You can do basic things like getting values based on a classification or set of classifications, as well as more advanced tasks like working with languages and other elements of the Linked.Art model. Want to know more, take a look at the [examples below](#examples).
+The library includes a number of helpers for working with Linked.Art’s basic JSON-LD patterns.
+
+### Simple Helpers for Simple Functions
+
+#### Find me the title of this record
+
+#### Find me the accession
+
+### Working with Arrays or Objects
+
+### Working with Values
+
+### Working with Classifications
+
+#### Find me all of the things classified by X
+
+#### Find me all of the things with either of these classifications
+
+#### Find me all of the things with both of these classifications
+
+#### Find me all of the things that have a classification that's classified by this
+
+### Working with Languages
+
+You can do basic things like getting values based on a classification or set of classifications, as well as more advanced tasks like working with languages and other elements of the Linked.Art model. Want to know more, take a look at the [examples below](#examples).
 
 ## Contributing
 
