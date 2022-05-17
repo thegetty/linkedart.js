@@ -2,7 +2,7 @@
  * @file LinkedArtHelpers
  * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki, Nabil Kashyap
  * @module LinkedArtHelpers
- * @description This class contains helpers for working with linked.art JSON-LD data
+ * @description This file contains helpers for working with linked.art JSON-LD data
  */
 
 import { doesObjectLanguageMatch } from "./LanguageHelpers";
@@ -115,7 +115,7 @@ export function getClassifiedBy(
  *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
  *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
  * ]
- * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the object with
+ * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the classification with
  * 'id': 'description' from the 'classified_as' attribute of the third object in the array
  *
  * @returns {Array} an array of objects that match
@@ -151,7 +151,7 @@ export function getClassifiedAsWithClassification(
  *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
  *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
  * ]
- * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the object with
+ * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the classification with
  * 'id': 'title' from the 'classified_by' attribute of the second object in the array
  *
  * @returns {Array} an array of objects that match
@@ -417,7 +417,7 @@ export function getClassified(
  *   {content: 'Blue Irises', classified_as: [{id: 'title'}]},
  *   {content: 'Van Gogh painting', classified_as: [{id: 'description'}]}
  * ]
- * getValuesByClassification(submittedResource, 'title') would return 'Irises'
+ * getValueByClassification(submittedResource, 'title') would return 'Irises'
  *
  * @returns {String|number} the matching value
  */

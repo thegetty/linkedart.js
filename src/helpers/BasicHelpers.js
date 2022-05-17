@@ -2,7 +2,7 @@
  * @file BasicHelpers
  * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki
  * @module BasicHelpers
- * @description This class contains helpers for working with linked.art JSON-LD data
+ * @description This file contains helpers for working with linked.art JSON-LD data
  */
 
 import { PART } from "../data/constants.json";
