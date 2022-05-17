@@ -217,6 +217,10 @@ You can do basic things like getting values based on a classification or set of 
 
 Want to know more, take a look at the [examples below](#getting started).
 
+## More Examples & Documentation
+
+The links on the left will take you to detailed documentation for each of the methods in this library. Furthermore, the [specs](https://github.com/thegetty/linkedart.js/tree/main/src/specs) folder in the source repository shows some practical examples using data from the community.
+
 ## What this Library doesn't do
 
 One of the big challenges with JSON-LD and serializing Linked Data is determining where to place the boundaries between documents. Different implementations will maintain different boundaries -- for example there may be good reasons to embed a `LinguisticObject` inside a `HumanMadeObject` or separate it.
@@ -229,7 +233,7 @@ We know this library does not include every use-case, or a simple helper for acc
 
 ## What Do I Need to Use It?
 
-You will need to be comfortable with javascript and npm (Node Package Manager). You will also need data that is formatted to the Linked.Art model. Example sets you can work with can be found at [https://linked.art/cookbook/data-sources/](https://linked.art/cookbook/data-sources/)
+You will need to be comfortable with javascript and npm (Node Package Manager). You will also need data that is formatted to the Linked.Art model. Example sets you can work with can be found at [https://linked.art/cookbook/](https://linked.art/cookbook/)
 
 ## How do I install it?
 
