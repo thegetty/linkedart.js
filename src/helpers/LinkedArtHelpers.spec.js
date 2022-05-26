@@ -9,6 +9,7 @@ import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
 import irises from "../data/mocks/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb";
 import titan from "../data/mocks/dff75e58-f8b9-4507-8ab7-5d948451dea7.json";
 import stagBeetle from "../data/mocks/a69d5696-70c2-56ed-9f82-fb2e69311e5d";
+import atticFragment from "../data/mocks/dd808888-4dfe-441c-b3d0-ce57c4167c5b";
 
 let aat = {
   PREFERRED_TERM: "http://vocab.getty.edu/aat/300404670",
@@ -443,6 +444,19 @@ describe("get assigned", () => {
     expect(helpers.getAssignedBy(titan.produced_by, "part_of")[0].id).toEqual(
       "https://data.getty.edu/museum/collection/object/dff75e58-f8b9-4507-8ab7-5d948451dea7/production/previous-attribution/07ebbfca-985b-4a07-96ed-8cc7cf0c1ff1/production"
     );
+  });
+
+  it("gets the previously attributed artist (single)", () => {
+    expect(
+      helpers.getAssignedBy(atticFragment.produced_by, "part_of")[0]
+        .carried_out_by
+    ).toEqual([
+      {
+        _label: "Unknown",
+        id: "https://data.getty.edu/museum/collection/person/25936a78-da08-44b5-b237-9bed6da06204",
+        type: "Person",
+      },
+    ]);
   });
 });
 

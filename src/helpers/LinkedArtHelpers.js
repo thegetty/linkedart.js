@@ -705,7 +705,11 @@ function _getAssignedProperty(assigned, assignedProperty) {
   let accumulator = [];
   assigned.forEach((attr) => {
     if (attr[ASSIGNED_PROPERTY] == assignedProperty) {
-      accumulator.push(attr[ASSIGNED]);
+      if (Array.isArray(attr[ASSIGNED])) {
+        accumulator = accumulator.concat(attr[ASSIGNED]);
+      } else {
+        accumulator.push(attr[ASSIGNED]);
+      }
     }
   });
   return accumulator;
