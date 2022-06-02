@@ -2,7 +2,7 @@
  * @file LinkedArtHelpers
  * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki, Nabil Kashyap
  * @module LinkedArtHelpers
- * @description This file contains helpers for working with linked.art JSON-LD data
+ * @description This file contains helpers for working with LinkedArt JSON-LD data
  */
 
 import { doesObjectLanguageMatch } from "./LanguageHelpers";
@@ -508,7 +508,7 @@ export function getValueOrContent(object) {
 }
 
 /**
- * Gets all the values of objects in a Linked Art object's 'referred_to_by' field
+ * Gets all the values of objects in a LinkedArt object's 'referred_to_by' field
  * which are classified by the classification parameter.
  *
  * @param {Object} object - the Actor object to inspect

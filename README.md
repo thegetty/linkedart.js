@@ -3,15 +3,15 @@
 [Docs](http://linkedartjs.org/) |
 [Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md)
 
-## What is Linked.Art?
+## What is LinkedArt?
 
-Linked.Art is a Linked Open Data model which is used to describe cultural heritage materials. Much more information about the model, and the community that is building it, can be found at [https://linked.art/](https://linked.art/)
+LinkedArt is a Linked Open Data model which is used to describe cultural heritage materials. Much more information about the model, and the community that is building it, can be found at [https://linked.art/](https://linked.art/)
 
 ## What is the LinkedArt.js Library?
 
-This library includes a set of methods for working with [linked.art](https://linked.art) data. Easily manipulate and access rich, complexly nested linked data from any Linked.Art source. This library includes different types of functions or methods:
+This library includes a set of methods for working with [linked.art](https://linked.art) data. Easily manipulate and access rich, complexly nested linked data from any LinkedArt source. This library includes different types of functions or methods:
 
-- _Basic Functions_: for things like getting the Title, Name, Identifier, or other common properties from a Linked.Art Object. Please see the helpers, or examples in our tests.
+- _Basic Helpers_: for things like getting the Title, Name, Identifier, or other common properties from a LinkedArt Object. Please see the helpers, or examples in our tests.
 - _Document Navigation and Filters_: to use when building custom functions and queries -- this includes filtering data by multiple classifications, traversing the JSON-LD structure, and working with languages.
 
 ## Why did we create this?
@@ -26,13 +26,13 @@ This project evolved out of Getty's implementation of the [Research Collections 
 
 ## How Does it Work?
 
-The library includes a number of methods or helpers for working with Linked.Art’s basic JSON-LD patterns.
+The library includes a number of methods or helpers for working with LinkedArt’s basic JSON-LD patterns.
 
 ### Simple Helpers for Simple Functions
 
 While we cannot imagine every possible use, we've created some simple helpers to facilitate the request of common data fields (Title, Name, Accession #, Description, Materials, Cultures, Dimensions, Rights Statements, and Images, for example).
 
-Note, full examples of many of these functions are available by browsing the "specs" folder in the source, or in the JSDoc.
+Note, full examples of many of these functions are available by browsing the "[specs](https://github.com/thegetty/linkedart.js/tree/main/src/specs)" folder in the source, or the links on the left of [this page](https://www.linkedartjs.org).
 
 #### Example: Find the Title of this Record
 
@@ -213,13 +213,13 @@ let objects = getObjectsClassifiedAsWithClassification(
 
 ### Working with Languages
 
-You can do basic things like getting values based on a classification or set of classifications, as well as more advanced tasks like working with languages and other elements of the Linked.Art model. Almost every function can be passed a `language` attribute to filter on the language returned.
+You can do basic things like getting values based on a classification or set of classifications, as well as more advanced tasks like working with languages and other elements of the LinkedArt model. Almost every function can be passed a `language` attribute to filter on the language returned.
 
 Want to know more, take a look at the [examples below](#getting started).
 
 ## More Examples & Documentation
 
-The links on the left will take you to detailed documentation for each of the methods in this library. Furthermore, the [specs](https://github.com/thegetty/linkedart.js/tree/main/src/specs) folder in the source repository shows some practical examples using data from the community.
+The links on the left of [this page](https://www.linkedartjs.org) will take you to detailed documentation for each of the methods in this library. Furthermore, the [specs](https://github.com/thegetty/linkedart.js/tree/main/src/specs) folder in the source repository shows some practical examples using data from the community.
 
 ## What this Library doesn't do
 
@@ -229,11 +229,11 @@ To that end, this library does not make HTTP requests or attempt to resolve link
 
 ## Contributing
 
-We know this library does not include every use-case, or a simple helper for accessing every Linked.Art property. We’d love feedback or pull-requests to continue to broaden and deepen the library to better support the community.
+We know this library does not include every use-case, or a simple helper for accessing every LinkedArt property. We’d love feedback or pull-requests to continue to broaden and deepen the library to better support the community.
 
 ## What Do I Need to Use It?
 
-You will need to be comfortable with javascript and npm (Node Package Manager). You will also need data that is formatted to the Linked.Art model. Example sets you can work with can be found at [https://linked.art/cookbook/](https://linked.art/cookbook/)
+You will need to be comfortable with javascript and npm (Node Package Manager). You will also need data that is formatted to the LinkedArt model. Example sets you can work with can be found at [https://linked.art/cookbook/](https://linked.art/cookbook/)
 
 ## How do I install it?
 
@@ -245,7 +245,7 @@ $ npm install @thegetty/linkedart.js --save
 
 ## Getting Started
 
-Below is a simple example of how to use the LinkedArt library, for more examples, please see the tutorials [Understanding Linked Art](https://observablehq.com/@jrladd/linked-art-1), [Working with Linked Art](https://observablehq.com/@jrladd/linked-art-2), [Exploring Linked Art](https://observablehq.com/@jrladd/linked-art-3) for using Linked.Art with the Getty Museum’s linked open data APIs.
+Below is a simple example of how to use the LinkedArt library, for more examples, please see the tutorials [Understanding Linked Art](https://observablehq.com/@jrladd/linked-art-1), [Working with Linked Art](https://observablehq.com/@jrladd/linked-art-2), [Exploring Linked Art](https://observablehq.com/@jrladd/linked-art-3) for using LinkedArt with the Getty Museum’s linked open data APIs.
 
 ### A Simple Example to get the title of an object:
 

@@ -5,7 +5,7 @@
   "source": {
     "include": ["src/helpers/"]
   },
-  "plugins": ["plugins/markdown"],
+  "plugins": ["plugins/markdown", "node_modules/better-docs/category"],
   "templates": {
     "cleverLinks": false,
     "monospaceLinks": false,

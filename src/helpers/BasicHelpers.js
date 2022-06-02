@@ -1,8 +1,8 @@
 /**
  * @file BasicHelpers
  * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki
- * @module BasicHelpers
- * @description This file contains helpers for working with linked.art JSON-LD data
+ * @category Basic
+ * @description This file contains helpers for working with LinkedArt JSON-LD data
  */
 
 import { PART } from "../data/constants.json";
@@ -12,6 +12,7 @@ import { PART } from "../data/constants.json";
  * an empty array (if it doesn't exist), an array with the single object if it's an object
  * or primitive, or the array
  *
+ * @category Basic Helpers
  * @param {Object} obj - The object that might have an array attribute
  * @param {String} key - The key for the attribute field we want to retrieve
  *
@@ -47,6 +48,7 @@ export function normalizeFieldToArray(obj, key) {
 /**
  * Normalizes the AAT ID to one of two versions (an aat: prefixed id or a full url)
  *
+ * @category Basic Helpers
  * @param {String} id - an ID to test
  *
  * @example - short to full aat value
@@ -79,6 +81,7 @@ export function normalizeAatId(id) {
 /**
  * Normalize a field that may have parts.
  *
+ * @category Basic Helpers
  * @description Some of the fields in LinkedArt may be (but sometimes dont) include parts.
  * For example, `produced_by` which may have a production, or that production may contain multiple
  * parts.  This method returns an array with the single or all parts
@@ -119,6 +122,7 @@ export function normalizeFieldWithParts(object, field) {
  * Checks whether the JSON-LD object has unique fields outside of some basic fields (id, type, _label). Useful for testing whether
  * we should include the parent part in a list or not
  *
+ * @category Basic Helpers
  * @param {Object} object - the JSON-LD object to check
  * @param {Array} fieldsToIgnore - a list of fields to ignore when checking
  * @private
