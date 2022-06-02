@@ -1,7 +1,8 @@
 /**
  * @file BasicHelpers
  * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki
- * @category Basic
+ * @module BasicHelpers
+ * @category Files
  * @description This file contains helpers for working with LinkedArt JSON-LD data
  */
 
@@ -84,7 +85,7 @@ export function normalizeAatId(id) {
  * @category Basic Helpers
  * @description Some of the fields in LinkedArt may be (but sometimes dont) include parts.
  * For example, `produced_by` which may have a production, or that production may contain multiple
- * parts.  This method returns an array with the single or all parts
+ * parts.  This function returns an array with the single or all parts
  *
  * @param {Object} object - the JSON-LD object (or sub-bart)
  * @param {String} field - the field to look for/in

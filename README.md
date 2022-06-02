@@ -1,7 +1,6 @@
 # linkedart.js
 
-[Docs](http://linkedartjs.org/) |
-[Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md)
+[Docs](http://linkedartjs.org/) | [Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md) | [NPM](https://www.npmjs.com/package/@thegetty/linkedart.js)
 
 ## What is LinkedArt?
 
@@ -11,8 +10,8 @@ LinkedArt is a Linked Open Data model which is used to describe cultural heritag
 
 This library includes a set of methods for working with [linked.art](https://linked.art) data. Easily manipulate and access rich, complexly nested linked data from any LinkedArt source. This library includes different types of functions or methods:
 
-- _Basic Helpers_: for things like getting the Title, Name, Identifier, or other common properties from a LinkedArt Object. Please see the helpers, or examples in our tests.
-- _Document Navigation and Filters_: to use when building custom functions and queries -- this includes filtering data by multiple classifications, traversing the JSON-LD structure, and working with languages.
+- _Accessors_: Helpers for common use cases like getting the Title, Name, Identifier, or other common properties from a LinkedArt Object. Please see the helpers, or examples in our tests.
+- _Document Navigation and Filters_: For building custom functions and queries -- this includes filtering data by multiple classifications, traversing the JSON-LD structure, and working with languages.
 
 ## Why did we create this?
 
@@ -280,6 +279,15 @@ const result = getClassifiedAs(
 
 // result should equal: "Young Woman Picking Fruit"
 ```
+
+## List of Files
+
+To better manage the functions into logical groups, this library breaks them into files (described below).
+
+- **Basic Helpers**: Commonly used and shared helpers across the library, mainly for unifying or normalizing the LinkedArt document structure
+- **Language Helpers**: Functions for filtering and managing data in multiple languages
+- **LinkedArt Helpers**: Mainly low-level accessors and filter logic for working with LinkedArt Document Structure, but also includes some higher-level functions such as getPrimaryName (for getting the title).
+- **Object Helpers**: High-level functions for accessing common fields in documents.
 
 ## License
 

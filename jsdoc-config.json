@@ -31,7 +31,7 @@
     "destination": "jsdoc",
     "recurse": true,
     "template": "node_modules/better-docs",
-    "readme": "src/docs/jsdoc_home.md"
+    "readme": "./README.md"
   },
   "markdown.hardwrap": true,
   "markdown": {

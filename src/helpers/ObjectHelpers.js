@@ -2,6 +2,7 @@
  * @file LinkedArtHelpers
  * @author Adam Brin, Pamela Lam, Nabil Kashyap
  * @module ObjectHelpers
+ * @category Files
  * @description This file contains convenience helpers for working with LinkedArt objects
  */
 

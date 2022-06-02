@@ -2,6 +2,7 @@
  * @file LinkedArtHelpers
  * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki, Nabil Kashyap
  * @module LinkedArtHelpers
+ * @category Files
  * @description This file contains helpers for working with LinkedArt JSON-LD data
  */
 
@@ -241,6 +242,7 @@ export function getObjectsClassifiedByWithClassification(
 /**
  * Gets the primary name of the JSON-LD object based on an AAT value or other qualifier, uses the AAT value of Preferred Term as the default
  *
+ * @category Accessors
  * @param {Object} submittedResource - the JSON-LD object
  * @param {Object} options - additional options
  * @param {String|Array} options.requestedClassifications - the requested classifications (default is aat.PRIMARY_TERM)
@@ -273,6 +275,7 @@ export function getPrimaryName(
 /**
  * Gets the primary names of the JSON-LD object based on an AAT value or other qualifier, uses the AAT value of Preferred Term as the default
  *
+ * @category Accessors
  * @param {Object} submittedResource - the JSON-LD object
  * @param {Object} options - additional options
  * @param {String|Array} options.requestedClassifications - the requested classifications (default is aat.PRIMARY_TERM)
