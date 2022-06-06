@@ -9,6 +9,7 @@ anchors:
 
 orbs:
   aws-s3: circleci/aws-s3@3.0.0 # use the AWS S3 orb in your config
+  getty-devops: thegetty/devops-orb@2
 
 jobs:
   build:
@@ -22,7 +23,7 @@ jobs:
     steps:
       - *attach_workspace
       - build_output
-      - deploy:
+      - getty-devops/sync-with-s3:
           local-path: "jsdoc"
 
 workflows:
@@ -59,30 +60,6 @@ commands:
       - persist_to_workspace:
           root: *workspace_root # absolute path or relative to working_directory
           paths: . # paths relative to the workspace root
-
-  deploy:
-    description: "Deploy to s3"
-    parameters:
-      bucket:
-        type: string
-        default: S3_BUCKET
-      s3-path:
-        type: string
-        default: ""
-      local-path:
-        type: string
-        default: ""
-      sync_arguments:
-        type: string
-        ## by default, we don't need to implement permissions b/c this will be handled via cloudfront
-        ## --acl public-read
-        default: ' --cache-control "max-age=86400" '
-
-    steps:
-      - aws-s3/sync:
-          from: <<parameters.local-path>>
-          to: "s3://<< parameters.bucket >>/<< parameters.s3-path >>"
-          arguments: " --delete << parameters.sync_arguments >>"
 
 executors:
   build_env:
