@@ -1,0 +1,9 @@
+/* make the links to the code clearer to read*/
+p.tag-source span a {
+  color: black;
+}
+
+/* hide the subcategories which label things as modules, that aren't */
+.category h3 {
+  display: none;
+}
