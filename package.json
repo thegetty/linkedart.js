@@ -1,6 +1,13 @@
 {
   "name": "@thegetty/linkedart.js",
   "version": "0.17.0",
+  "keywords": [
+    "LinkedArt",
+    "Linked Art",
+    "JSON-LD",
+    "Getty"
+  ],
+  "description": "Library of functions for parsing Linked Art (https://linked.art/) data for the Getty's Research Applications Development Team.",
   "scripts": {
     "test:unit": "jest",
     "test": "jest",
@@ -41,12 +48,14 @@
     "rollup": "^2.51.1",
     "rollup-plugin-terser": "^7.0.2"
   },
-  "description": "Library of functions for parsing Linked Art (https://linked.art/) data for the Getty's Research Applications Development Team.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thegetty/linkedart.js.git"
   },
-  "author": "",
+  "author": "Getty Digital",
+  "bugs": {
+    "url": "https://github.com/thegetty/linkedart.js/issues"
+  },
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/thegetty/linkedart.js#readme"
 }
