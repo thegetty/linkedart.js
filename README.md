@@ -2,6 +2,31 @@
 
 [Docs](http://linkedartjs.org/) | [Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md) | [NPM](https://www.npmjs.com/package/@thegetty/linkedart.js)
 
+## Table of Contents
+
+<!-- toc -->
+
+- [What is LinkedArt?](#what-is-linkedart)
+- [What is the LinkedArt.js Library?](#what-is-the-linkedartjs-library)
+- [Why did we create this?](#why-did-we-create-this)
+- [Common Terms](#common-terms)
+- [How Does it Work?](#how-does-it-work)
+  * [Simple Helpers for Simple Functions](#simple-helpers-for-simple-functions)
+  * [Working with Arrays, Objects, Parts, and Values](#working-with-arrays-objects-parts-and-values)
+  * [Working with Classifications](#working-with-classifications)
+  * [Working with Languages](#working-with-languages)
+- [More Examples & Documentation](#more-examples--documentation)
+- [What this Library does not do](#what-this-library-does-not-do)
+- [Contributing](#contributing)
+- [What Do I Need to Use It?](#what-do-i-need-to-use-it)
+- [How do I install it?](#how-do-i-install-it)
+- [Getting Started](#getting-started)
+  * [A Simple Example to get the title of an object:](#a-simple-example-to-get-the-title-of-an-object)
+- [List of Files](#list-of-files)
+- [License](#license)
+
+<!-- tocstop -->
+
 ## What is LinkedArt?
 
 LinkedArt is a Linked Open Data model which is used to describe cultural heritage materials. Much more information about the model, and the community that is building it, can be found at [https://linked.art/](https://linked.art/)
@@ -220,7 +245,7 @@ Want to know more, take a look at the [examples below](#getting started).
 
 The links on the left of [this page](https://www.linkedartjs.org) will take you to detailed documentation for each of the methods in this library. Furthermore, the [specs](https://github.com/thegetty/linkedart.js/tree/main/src/specs) folder in the source repository shows some practical examples using data from the community.
 
-## What this Library doesn't do
+## What this Library does not do
 
 One of the big challenges with JSON-LD and serializing Linked Data is determining where to place the boundaries between documents. Different implementations will maintain different boundaries -- for example there may be good reasons to embed a `LinguisticObject` inside a `HumanMadeObject` or separate it.
 
