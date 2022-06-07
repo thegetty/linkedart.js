@@ -2,6 +2,29 @@
 
 [Docs](http://linkedartjs.org/) | [Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md) | [NPM](https://www.npmjs.com/package/@thegetty/linkedart.js)
 
+<!-- toc -->
+
+- [What is LinkedArt?](#what-is-linkedart)
+- [What is the LinkedArt.js Library?](#what-is-the-linkedartjs-library)
+- [Why did we create this?](#why-did-we-create-this)
+- [Common Terms](#common-terms)
+- [How Does it Work?](#how-does-it-work)
+  - [Simple Helpers for Simple Functions](#simple-helpers-for-simple-functions)
+  - [Working with Arrays, Objects, Parts, and Values](#working-with-arrays-objects-parts-and-values)
+  - [Working with Classifications](#working-with-classifications)
+  - [Working with Languages](#working-with-languages)
+- [More Examples & Documentation](#more-examples--documentation)
+- [What this Library doesn't do](#what-this-library-doesnt-do)
+- [Contributing](#contributing)
+- [What Do I Need to Use It?](#what-do-i-need-to-use-it)
+- [How do I install it?](#how-do-i-install-it)
+- [Getting Started](#getting-started)
+  - [A Simple Example to get the title of an object:](#a-simple-example-to-get-the-title-of-an-object)
+- [List of Files](#list-of-files)
+- [License](#license)
+
+<!-- tocstop -->
+
 ## What is LinkedArt?
 
 LinkedArt is a Linked Open Data model which is used to describe cultural heritage materials. Much more information about the model, and the community that is building it, can be found at [https://linked.art/](https://linked.art/)
