@@ -2,6 +2,8 @@
 
 [Docs](http://linkedartjs.org/) | [Contributing](https://github.com/thegetty/linkedart.js/blob/master/.github/CONTRIBUTING.md) | [NPM](https://www.npmjs.com/package/@thegetty/linkedart.js)
 
+## Table of Contents
+
 <!-- toc -->
 
 - [What is LinkedArt?](#what-is-linkedart)
