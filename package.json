@@ -21,6 +21,7 @@
   },
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.0.0",
     "@babel/preset-env": "^7.12.10",
