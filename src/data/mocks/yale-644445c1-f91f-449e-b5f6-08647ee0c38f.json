@@ -1,0 +1,892 @@
+{
+  "id": "https://lux-front-tst.collections.yale.edu/data/object/644445c1-f91f-449e-b5f6-08647ee0c38f",
+  "type": "HumanMadeObject",
+  "_label": "Torosaurus latus: HOLOTYPE. Wyoming. Niobrara County. Lightning Creek. ceratopsian locality 19, near top of bluff on the north side of Lightning Creek, about 2 miles southeast of the mouth, in the bottom and near the extreme head of a small, dry watercourse. Yale Hatcher 1891 Cretaceous Expedition. Coll: Hatcher, J. B. 1891. Cretaceous. Late Cretaceous. Lance Fm. [mounted].",
+  "@context": "https://linked.art.ns.v1/linked-art.json",
+  "dimension": [
+    {
+      "type": "Dimension",
+      "unit": {
+        "id": "https://lux-front-tst.collections.yale.edu/data/concept/793bb760-4208-42b6-a5c1-e7eafe7071ac",
+        "type": "MeasurementUnit",
+        "_label": "in"
+      },
+      "value": "45",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/034411a7-32ae-45ad-a764-f988f9983f35",
+          "type": "Type",
+          "_label": "display height (y)"
+        }
+      ]
+    },
+    {
+      "type": "Dimension",
+      "unit": {
+        "id": "https://lux-front-tst.collections.yale.edu/data/concept/793bb760-4208-42b6-a5c1-e7eafe7071ac",
+        "type": "MeasurementUnit",
+        "_label": "in"
+      },
+      "value": "66",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/df11c3fd-c250-45ed-a43a-36b6e8c0d153",
+          "type": "Type",
+          "_label": "display depth (z)"
+        }
+      ]
+    },
+    {
+      "type": "Dimension",
+      "unit": {
+        "id": "https://lux-front-tst.collections.yale.edu/data/concept/793bb760-4208-42b6-a5c1-e7eafe7071ac",
+        "type": "MeasurementUnit",
+        "_label": "in"
+      },
+      "value": "102",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/d1eb42fe-4da5-492c-a5e7-021bf6177ab1",
+          "type": "Type",
+          "_label": "display width (x)"
+        }
+      ]
+    }
+  ],
+  "member_of": [
+    {
+      "id": "https://lux-front-tst.collections.yale.edu/data/set/8a00c482-ba6c-4753-88f4-7a9e941d0469",
+      "type": "Set",
+      "_label": "Vertebrate Paleontology (YPM)"
+    }
+  ],
+  "equivalent": [
+    {
+      "id": "https://images.peabody.yale.edu/data/object/9/df/9dfb2054-48c0-4c20-9430-6d7d53c298ff.json",
+      "type": "HumanMadeObject",
+      "_label": "Equivalent Entity"
+    }
+  ],
+  "subject_of": [
+    {
+      "type": "LinguisticObject",
+      "_label": "Online Peabody homepage for YPM VP 001830",
+      "digitally_carried_by": [
+        {
+          "type": "DigitalObject",
+          "_label": "Online Peabody homepage for YPM VP 001830",
+          "format": "text/html",
+          "access_point": [
+            {
+              "id": "https://collections.peabody.yale.edu/search/Record/YPM-VP-001830",
+              "type": "DigitalObject"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/54f3ea5b-d8ad-4eb0-b35a-3be019ba4c51",
+              "type": "Type",
+              "_label": "Web Page"
+            }
+          ],
+          "identified_by": [
+            {
+              "type": "Name",
+              "content": "Online Peabody homepage for YPM VP 001830",
+              "classified_as": [
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                  "type": "Type",
+                  "_label": "Primary Name"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "LinguisticObject",
+      "_label": "IIIF manifest for YPM VP 001830",
+      "digitally_carried_by": [
+        {
+          "type": "DigitalObject",
+          "_label": "IIIF manifest for YPM VP 001830",
+          "format": "application/ld+json",
+          "conforms_to": [
+            {
+              "id": "http://iiif.io/api/presentation/3/context.json",
+              "type": "InformationObject"
+            }
+          ],
+          "access_point": [
+            {
+              "id": "https://manifests.collections.yale.edu/ypm/nat/835577",
+              "type": "DigitalObject"
+            }
+          ],
+          "identified_by": [
+            { "type": "Name", "content": "IIIF manifest for YPM VP 001830" }
+          ]
+        }
+      ]
+    }
+  ],
+  "produced_by": {
+    "type": "Production",
+    "occurred_during": [
+      {
+        "id": "https://lux-front-tst.collections.yale.edu/data/activity/5c8b3997-c3f8-4a3f-bc8c-879442902e4e",
+        "type": "Period",
+        "_label": "Cretaceous",
+        "identified_by": [
+          {
+            "type": "Name",
+            "content": "Cretaceous",
+            "language": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/d735d432-1cdd-460d-ac94-1999bde22f68",
+                "type": "Language",
+                "_label": "English"
+              }
+            ],
+            "classified_as": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                "type": "Type",
+                "_label": "Primary Name"
+              }
+            ]
+          },
+          {
+            "type": "Name",
+            "content": "Crétacé",
+            "language": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/bd559a50-38cd-43a4-94da-b54ae3dec0bb",
+                "type": "Language",
+                "_label": "French"
+              }
+            ],
+            "classified_as": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                "type": "Type",
+                "_label": "Primary Name"
+              }
+            ]
+          },
+          {
+            "type": "Name",
+            "content": "Kreide",
+            "language": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/22641a9b-e7f3-4b18-985b-b0ea6b257584",
+                "type": "Language",
+                "_label": "German"
+              }
+            ],
+            "classified_as": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                "type": "Type",
+                "_label": "Primary Name"
+              }
+            ]
+          },
+          {
+            "type": "Name",
+            "content": "Cretácico",
+            "language": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/91b28104-ea81-4a87-a4f0-92e6969b0be3",
+                "type": "Language",
+                "_label": "Spanish"
+              }
+            ],
+            "classified_as": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                "type": "Type",
+                "_label": "Primary Name"
+              }
+            ]
+          },
+          {
+            "type": "Name",
+            "content": "白垩纪",
+            "language": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/2bd5028d-0966-462e-8bef-89a8866d4f27",
+                "type": "Language",
+                "_label": "Chinese"
+              }
+            ],
+            "classified_as": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                "type": "Type",
+                "_label": "Primary Name"
+              }
+            ]
+          },
+          {
+            "type": "Name",
+            "content": "krijt",
+            "language": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/3bd83627-fddd-4167-ba2f-b741f2297bb5",
+                "type": "Language",
+                "_label": "Dutch"
+              }
+            ],
+            "classified_as": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                "type": "Type",
+                "_label": "Primary Name"
+              }
+            ]
+          },
+          {
+            "type": "Name",
+            "content": "عصر طباشيري",
+            "language": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/cf230cb9-e81d-4a17-84d9-6999e7eceabb",
+                "type": "Language",
+                "_label": "Arabic"
+              }
+            ],
+            "classified_as": [
+              {
+                "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                "type": "Type",
+                "_label": "Primary Name"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "classified_as": [
+    {
+      "id": "https://lux-front-tst.collections.yale.edu/data/concept/2f5683d0-9e3b-42fb-8fce-1c53926dca50",
+      "type": "Type",
+      "_label": "Fossils",
+      "identified_by": [
+        {
+          "type": "Name",
+          "content": "fossil",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/d735d432-1cdd-460d-ac94-1999bde22f68",
+              "type": "Language",
+              "_label": "English"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "content": "fossile",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/bd559a50-38cd-43a4-94da-b54ae3dec0bb",
+              "type": "Language",
+              "_label": "French"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "content": "Fossil",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/22641a9b-e7f3-4b18-985b-b0ea6b257584",
+              "type": "Language",
+              "_label": "German"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "content": "fósil",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/91b28104-ea81-4a87-a4f0-92e6969b0be3",
+              "type": "Language",
+              "_label": "Spanish"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "content": "化石",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/2bd5028d-0966-462e-8bef-89a8866d4f27",
+              "type": "Language",
+              "_label": "Chinese"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "content": "fossiel",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/3bd83627-fddd-4167-ba2f-b741f2297bb5",
+              "type": "Language",
+              "_label": "Dutch"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "content": "مستحاثة",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/cf230cb9-e81d-4a17-84d9-6999e7eceabb",
+              "type": "Language",
+              "_label": "Arabic"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lux-front-tst.collections.yale.edu/data/concept/f25217ad-41c0-4730-a40f-efc1a1b18bfa",
+      "type": "Type",
+      "_label": "Torosaurus latus",
+      "identified_by": [
+        {
+          "type": "Name",
+          "content": "Torosaurus latus",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/d735d432-1cdd-460d-ac94-1999bde22f68",
+              "type": "Language",
+              "_label": "English"
+            },
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/91b28104-ea81-4a87-a4f0-92e6969b0be3",
+              "type": "Language",
+              "_label": "Spanish"
+            },
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/bd559a50-38cd-43a4-94da-b54ae3dec0bb",
+              "type": "Language",
+              "_label": "French"
+            },
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/aa47a3fe-ceaf-410d-b8d2-8f4a5ed22a18",
+              "type": "Language",
+              "_label": "Portuguese"
+            },
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/22641a9b-e7f3-4b18-985b-b0ea6b257584",
+              "type": "Language",
+              "_label": "German"
+            },
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/3bd83627-fddd-4167-ba2f-b741f2297bb5",
+              "type": "Language",
+              "_label": "Dutch"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/8555f5f3-4ebe-4946-ab4a-db5b1b555974",
+              "type": "Type",
+              "_label": "Official Name"
+            },
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/45f2d698-61a3-4eec-9447-70bae0d78d31",
+              "type": "Type",
+              "_label": "ICZN"
+            },
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ],
+          "referred_to_by": [
+            {
+              "type": "LinguisticObject",
+              "_label": "Reference",
+              "identified_by": [{ "type": "Name", "content": "Marsh, 1891" }]
+            },
+            {
+              "type": "LinguisticObject",
+              "content": "dinosaurs",
+              "classified_as": [
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/8b1e653b-20b8-4778-acfc-0401f1813a98",
+                  "type": "Type",
+                  "_label": "Common Name"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lux-front-tst.collections.yale.edu/data/concept/f2a2e28f-41ae-47b0-94dd-955793d9d141",
+      "type": "Type",
+      "_label": "HOLOTYPE",
+      "identified_by": [
+        {
+          "type": "Name",
+          "content": "type specimen",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/d735d432-1cdd-460d-ac94-1999bde22f68",
+              "type": "Language",
+              "_label": "English"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "content": "Spécimen type",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/bd559a50-38cd-43a4-94da-b54ae3dec0bb",
+              "type": "Language",
+              "_label": "French"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "content": "Typusexemplar",
+          "language": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/22641a9b-e7f3-4b18-985b-b0ea6b257584",
+              "type": "Language",
+              "_label": "German"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+              "type": "Type",
+              "_label": "Primary Name"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Torosaurus latus",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+          "type": "Type",
+          "_label": "Primary Name"
+        },
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "content": "VP.001830",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/5020b403-c0cd-400e-b9f9-63aae5f360af",
+          "type": "Type",
+          "_label": "YPM Internal Catalog Number"
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "content": "YPM VP 001830",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/5020b403-c0cd-400e-b9f9-63aae5f360af",
+          "type": "Type",
+          "_label": "YPM External Catalog Number"
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "content": "ACCNARRAY.3469|3809.2",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/5020b403-c0cd-400e-b9f9-63aae5f360af",
+          "type": "Type",
+          "_label": "YPM Accession Number"
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "content": "Skull #19",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/5020b403-c0cd-400e-b9f9-63aae5f360af",
+          "type": "Type",
+          "_label": "field number"
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "content": "ypm:ecatalogue:835577",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/5020b403-c0cd-400e-b9f9-63aae5f360af",
+          "type": "Type",
+          "_label": "YPM EMu IRN"
+        }
+      ]
+    }
+  ],
+  "encountered_by": [
+    {
+      "type": "Encounter",
+      "_label": "Collecting Event",
+      "timespan": {
+        "type": "TimeSpan",
+        "identified_by": [{ "type": "Name", "content": "1891" }],
+        "end_of_the_end": "1891-12-31T23:59:59Z",
+        "begin_of_the_begin": "1891-01-01T00:00:00Z"
+      },
+      "took_place_at": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/place/4f1d9eee-1c8a-4e24-a8ef-f56759987029",
+          "type": "Place",
+          "_label": "North America. USA. Wyoming. Niobrara County. Lightning Creek. ceratopsian locality 19, near top of bluff on the north side of Lightning Creek, about 2 miles southeast of the mouth, in the bottom and near the extreme head of a small, dry watercourse.",
+          "identified_by": [
+            {
+              "type": "Name",
+              "content": "North America. USA. Wyoming. Niobrara County. Niobrara County. Niobrara County",
+              "classified_as": [
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                  "type": "Type",
+                  "_label": "Primary Name"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "carried_out_by": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/person/cbe10ead-6035-4dd3-9ce5-4910994b8a43",
+          "type": "Person",
+          "_label": "Collector",
+          "identified_by": [
+            {
+              "part": [
+                {
+                  "type": "Name",
+                  "content": "John",
+                  "classified_as": [
+                    {
+                      "id": "https://lux-front-tst.collections.yale.edu/data/concept/ef2b8dd3-00c6-440b-bc02-b3cdb4d3e721",
+                      "type": "Type",
+                      "_label": "First Name"
+                    }
+                  ]
+                },
+                {
+                  "type": "Name",
+                  "content": "Bell",
+                  "classified_as": [
+                    {
+                      "id": "https://lux-front-tst.collections.yale.edu/data/concept/f557f720-8e7c-47f3-89d5-390ce740a3a5",
+                      "type": "Type",
+                      "_label": "Middle Name"
+                    }
+                  ]
+                },
+                {
+                  "type": "Name",
+                  "content": "Hatcher",
+                  "classified_as": [
+                    {
+                      "id": "https://lux-front-tst.collections.yale.edu/data/concept/a50a5ee1-3852-4077-b592-891bbd258236",
+                      "type": "Type",
+                      "_label": "Last Name"
+                    }
+                  ]
+                }
+              ],
+              "type": "Name",
+              "content": "John Bell Hatcher",
+              "language": [
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/bd559a50-38cd-43a4-94da-b54ae3dec0bb",
+                  "type": "Language",
+                  "_label": "French"
+                },
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/d735d432-1cdd-460d-ac94-1999bde22f68",
+                  "type": "Language",
+                  "_label": "English"
+                },
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/aa47a3fe-ceaf-410d-b8d2-8f4a5ed22a18",
+                  "type": "Language",
+                  "_label": "Portuguese"
+                },
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/3bd83627-fddd-4167-ba2f-b741f2297bb5",
+                  "type": "Language",
+                  "_label": "Dutch"
+                }
+              ],
+              "classified_as": [
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                  "type": "Type",
+                  "_label": "Primary Name"
+                }
+              ]
+            },
+            {
+              "type": "Name",
+              "content": "John B. Hatcher",
+              "language": [
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/22641a9b-e7f3-4b18-985b-b0ea6b257584",
+                  "type": "Language",
+                  "_label": "German"
+                }
+              ],
+              "classified_as": [
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                  "type": "Type",
+                  "_label": "Primary Name"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/group/a236bcce-e721-4d1a-83f2-fcb233f2f512",
+          "type": "Group",
+          "_label": "Collector",
+          "identified_by": [
+            {
+              "type": "Name",
+              "content": "Yale Hatcher 1891 Cretaceous Expedition",
+              "classified_as": [
+                {
+                  "id": "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+                  "type": "Type",
+                  "_label": "Primary Name"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "content": "in collection",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/a0c1a3f1-7a35-4de8-ac44-85a327061ef9",
+          "type": "Type",
+          "_label": "Access Statement",
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/f50df166-c737-4f86-9669-b5707b72b219",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "LinguisticObject",
+      "content": "Preservation Notes: mounted",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/30267c5d-c887-44e4-ac17-3d95f752df6b",
+          "type": "Type",
+          "_label": "Note"
+        }
+      ]
+    },
+    {
+      "type": "LinguisticObject",
+      "content": "Anatomical Notes: skull; femur",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/30267c5d-c887-44e4-ac17-3d95f752df6b",
+          "type": "Type",
+          "_label": "Note"
+        }
+      ]
+    },
+    {
+      "type": "LinguisticObject",
+      "content": "Other Attributes: Stratigraphy = Period:Cretaceous, Epoch:Late Cretaceous, Formation:Lance Fm",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/30267c5d-c887-44e4-ac17-3d95f752df6b",
+          "type": "Type",
+          "_label": "Note"
+        }
+      ]
+    },
+    {
+      "type": "LinguisticObject",
+      "content": "Identification Notes: Det. Marsh, O. C., 1891. Marsh, Othniel C. 1891. Notice of new vertebrate fossils. American Journal of Science. (3) xlii: 265-269. [p. 266; table p. 266.]",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/30267c5d-c887-44e4-ac17-3d95f752df6b",
+          "type": "Type",
+          "_label": "Note"
+        }
+      ]
+    },
+    {
+      "type": "LinguisticObject",
+      "content": "Other Identifications: Triceratops, Torosaurus",
+      "classified_as": [
+        {
+          "id": "https://lux-front-tst.collections.yale.edu/data/concept/30267c5d-c887-44e4-ac17-3d95f752df6b",
+          "type": "Type",
+          "_label": "Note"
+        }
+      ]
+    }
+  ],
+  "representation": [
+    {
+      "type": "VisualItem",
+      "_label": "Primary Image",
+      "digitally_shown_by": [
+        {
+          "type": "DigitalObject",
+          "_label": "Primary Image",
+          "access_point": [
+            {
+              "id": "https://images.collections.yale.edu/iiif/2/ypm:fc70725f-29a9-46aa-9693-f4839ae6627e/full/!480,480/0/default.jpg",
+              "type": "DigitalObject"
+            }
+          ],
+          "classified_as": [
+            {
+              "id": "https://lux-front-tst.collections.yale.edu/data/concept/3a2ed981-70a1-4d7c-a315-b364d4dfc449",
+              "type": "Type",
+              "_label": "Digital Image"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "number_of_parts": "1",
+  "_links": {
+    "curies": [
+      {
+        "name": "la",
+        "href": "https://linked.art/api/1.0/rels/{rel}",
+        "templated": true
+      },
+      {
+        "name": "lux",
+        "href": "https://lux-front-tst.collections.yale.edu/api/rels/{rel}",
+        "templated": true
+      }
+    ],
+    "self": {
+      "href": "https://lux-front-tst.collections.yale.edu/data/object/644445c1-f91f-449e-b5f6-08647ee0c38f"
+    },
+    "la:depictingObject": {
+      "href": "https://lux-front-tst.collections.yale.edu/data/object/644445c1-f91f-449e-b5f6-08647ee0c38f/common:depictingObject"
+    },
+    "la:influencedConcept": {
+      "href": "https://lux-front-tst.collections.yale.edu/data/object/644445c1-f91f-449e-b5f6-08647ee0c38f/common:influencedConcept"
+    },
+    "la:subjectOf": {
+      "href": "https://lux-front-tst.collections.yale.edu/data/object/644445c1-f91f-449e-b5f6-08647ee0c38f/common:subjectOf"
+    }
+  }
+}

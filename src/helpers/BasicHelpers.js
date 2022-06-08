@@ -107,7 +107,12 @@ export function normalizeFieldWithParts(object, field) {
 
   let parts = [];
   if (Array.isArray(part[PART]) == false) {
-    parts = [part];
+    // A yale record has the top level as an array with no parts, so taking that into account
+    if (Array.isArray(part)) {
+      parts = part;
+    } else {
+      parts = [part];
+    }
   } else {
     // prevent circular refs
     parts = [...part[PART]];

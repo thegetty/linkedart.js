@@ -25,10 +25,10 @@ import {
   UNKNOWN,
   ASSIGNED_PROPERTY,
   ASSIGNED,
+  AND,
+  OR,
 } from "../data/constants.json";
 
-const AND = "AND";
-const OR = "OR";
 /**
  * Given an object or an array of objects, find all entries that have an object in their classified_as
  * field with an id that matches the requestedClassification.

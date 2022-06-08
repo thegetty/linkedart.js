@@ -18,6 +18,17 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.17.2]
+
+### Changed
+
+- adjusted the `carriedOutBy` logic to be able to support more general relationships than just production
+
+### Added
+
+- added constants for `encountered_by`
+- added a sample record from yale
+
 ## [0.17.1]
 
 ### Fixed
@@ -25,6 +36,8 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 - fixed a bug with `_getAssignedProperty` where we were expecting an object to always be returned but the new data model includes an array instead.
 
 ## [0.17.0]
+
+### Changed
 
 - modified many of our mid-level functions to take an options object instead of feeding in optional params. This is a potentially breaking change for `getClassified`, `getClassifiedBy`, `getClassifiedAs`, `getClassifiedAsWithClassification`, `getClassifiedByWithClassification`, `getFieldValuesByClassification`, `getObjectsClassifiedAsWithClassification`, `getObjectsClassifiedByWithClassification`, `getValueByClassification`, and `getValuesByClassification`. This change introduces the ability to pass in an `operator` as well as the `language`, and `languageOptions`.
 

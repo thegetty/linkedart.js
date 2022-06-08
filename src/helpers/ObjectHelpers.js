@@ -96,14 +96,16 @@ export function getAccessionNumbers(
  * is a reference to a Person or Group (Id, Type, and Label with nothing else), but could simply be an ID reference as well.
  *
  * @param {Object} object - the JSON-LD Object to look in
+ * @param {String} field - the field to look for the `carried_out_by` in. For art this will often be "produced_by", but it may also include
+ *  "encountered_by" or other terms
  *
  * @example gets creator object/reference regardless of whether the production has a part or not
  *  getCarriedOutBy({produced_by: { part: [{carried_out_by: {id:123}}}]}),  would return an array with one item [{id:123}]
  *
  * @returns {Array} - an array of the references
  */
-export function getCarriedOutBy(object) {
-  return getFieldPartSubfield(object, PRODUCED_BY, CARRIED_OUT_BY);
+export function getCarriedOutBy(object, field = PRODUCED_BY) {
+  return getFieldPartSubfield(object, field, CARRIED_OUT_BY);
 }
 
 /**

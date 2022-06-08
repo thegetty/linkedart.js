@@ -15,5 +15,7 @@
   "CARRIED_OUT_BY": "carried_out_by",
   "REPRESENTATION": "representation",
   "SUBJECT_TO": "subject_to",
-  "OR": "OR"
+  "OR": "OR",
+  "AND": "AND",
+  "ENCOUNTERED_BY": "encountered_by"
 }
