@@ -1,0 +1,1665 @@
+{
+  "@context": "https://static.getty.edu/contexts/linked.art/ns/v1.1.0/linked-art.json",
+  "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b",
+  "type": "HumanMadeObject",
+  "_label": "Attic Black-Figure Cup Fragment",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300133025",
+      "type": "Type",
+      "_label": "Artwork"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300193015",
+      "type": "Type",
+      "_label": "Vessels (Containers)",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435444",
+          "type": "Type",
+          "_label": "Classification (Category)"
+        }
+      ]
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300117130",
+      "type": "Type",
+      "_label": "Fragments (Object Portions)"
+    },
+    {
+      "id": "https://data.getty.edu/local/thesaurus/object-record-structure-whole",
+      "type": "Type",
+      "_label": "Object Record Structure: Whole",
+      "classified_as": [
+        {
+          "id": "https://data.getty.edu/local/thesaurus/object-record-structure-type",
+          "type": "Type",
+          "_label": "Object Record Structure Type"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/identifier/09ac9e73-e09e-4cad-a045-b13c4a79e675",
+      "type": "Identifier",
+      "_label": "Accession Number",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404626",
+          "type": "Type",
+          "_label": "Identification Number"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "_label": "Accession Number"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Preferred Term"
+        }
+      ],
+      "content": "86.AE.183"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/identifier/dor-id",
+      "type": "Identifier",
+      "_label": "Getty DOR ID",
+      "classified_as": [
+        {
+          "id": "https://data.getty.edu/museum/ontology/linked-data/dor-id",
+          "type": "Type",
+          "_label": "Getty DOR ID",
+          "_deprecated": {
+            "reason": "Migration to unified `data.getty.edu/local/thesaurus` URLs for custom terms.",
+            "replacement": "Filter on `Getty DOR ID` (https://data.getty.edu/local/thesaurus/dor-id) instead.",
+            "since": "2021-01-05"
+          }
+        },
+        {
+          "id": "https://data.getty.edu/local/thesaurus/dor-id",
+          "type": "Type",
+          "_label": "Getty DOR ID"
+        }
+      ],
+      "content": "11916"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/identifier/dor-uuid",
+      "type": "Identifier",
+      "_label": "Getty DOR UUID",
+      "classified_as": [
+        {
+          "id": "https://data.getty.edu/museum/ontology/linked-data/dor-uuid",
+          "type": "Type",
+          "_label": "Getty DOR UUID",
+          "_deprecated": {
+            "reason": "Migration to unified `data.getty.edu/local/thesaurus` URLs for custom terms.",
+            "replacement": "Filter on `Getty DOR UUID` (https://data.getty.edu/local/thesaurus/dor-uuid) instead.",
+            "since": "2021-01-05"
+          }
+        },
+        {
+          "id": "https://data.getty.edu/local/thesaurus/dor-uuid",
+          "type": "Type",
+          "_label": "Getty DOR UUID"
+        }
+      ],
+      "content": "dd808888-4dfe-441c-b3d0-ce57c4167c5b"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/identifier/1e7681c3-2d9f-53fb-a100-41866ee3a14c",
+      "type": "Identifier",
+      "_label": "Slug Identifier",
+      "classified_as": [
+        {
+          "id": "https://data.getty.edu/local/thesaurus/slug-identifier",
+          "type": "Type",
+          "_label": "Slug Identifier"
+        }
+      ],
+      "content": "urn:getty-local:idm:object:slug/103W3W"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/name/f118f253-b4ac-4793-96b8-efef3031caba",
+      "type": "Name",
+      "_label": "Primary Title",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417193",
+          "type": "Type",
+          "_label": "Titles (General, Names)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Preferred Term"
+        }
+      ],
+      "content": "Attic Black-Figure Cup Fragment"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/identifier/tms-id",
+      "type": "Identifier",
+      "_label": "Gallery Systems' TMS ID",
+      "classified_as": [
+        {
+          "id": "https://data.getty.edu/museum/ontology/linked-data/tms-id",
+          "type": "Type",
+          "_label": "Gallery Systems' TMS ID",
+          "_deprecated": {
+            "reason": "Migration to unified `data.getty.edu/local/thesaurus` URLs for custom terms.",
+            "replacement": "Filter on `Gallery Systems' TMS ID` (https://data.getty.edu/local/thesaurus/tms-id) instead.",
+            "since": "2021-01-05"
+          }
+        },
+        {
+          "id": "https://data.getty.edu/local/thesaurus/tms-id",
+          "type": "Type",
+          "_label": "Gallery Systems' TMS ID"
+        }
+      ],
+      "content": "13991"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/citation/159b4f1f-482a-47a4-8d74-0f6a2052af78",
+      "type": "LinguisticObject",
+      "_label": "Citation (Bibliographic Reference)",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300311705",
+          "type": "Type",
+          "_label": "Citations (Bibliographic References)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "\"Acquisitions/1986.\" <i>The J. Paul Getty Museum Journal</i> 15 (1987), pp. 160-61, no. 7.",
+      "about": [
+        {
+          "id": "https://data.getty.edu/museum/collection/document/159b4f1f-482a-47a4-8d74-0f6a2052af78",
+          "type": "LinguisticObject",
+          "_label": "\"Acquisitions/1986.\" The J. Paul Getty Museum Journal 15 (1987)"
+        }
+      ],
+      "dimension": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/citation/159b4f1f-482a-47a4-8d74-0f6a2052af78/sequence",
+          "type": "Dimension",
+          "_label": "Citation (Bibliographic Reference) Sequence",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300010269",
+              "type": "Type",
+              "_label": "Positional Attributes"
+            },
+            {
+              "id": "http://vocab.getty.edu/aat/300192339",
+              "type": "Type",
+              "_label": "Sequences"
+            }
+          ],
+          "value": 1,
+          "unit": {
+            "id": "http://vocab.getty.edu/aat/300055665",
+            "type": "MeasurementUnit",
+            "_label": "Numbers"
+          }
+        }
+      ],
+      "format": "text/html",
+      "subject_of": [
+        {
+          "id": "http://www.getty.edu/publications/virtuallibrary/0892361336.html",
+          "type": "LinguisticObject",
+          "_label": "\"Acquisitions/1986.\" <i>The J. Paul Getty Museum Journal</i> 15 (1987), pp. 160-61, no. 7.",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300264578",
+              "type": "Type",
+              "_label": "Web Page"
+            }
+          ],
+          "format": "text/html"
+        }
+      ]
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/citation/df4f63c9-cb10-4368-9df3-b1658c44c0bf",
+      "type": "LinguisticObject",
+      "_label": "Citation (Bibliographic Reference)",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300311705",
+          "type": "Type",
+          "_label": "Citations (Bibliographic References)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "Clark, Andrew J. Corpus Vasorum Antiquorum. The J. Paul Getty Museum 2 (USA 25). The Molly and Walter Bareiss Collection. Malibu: 1990, p. 71; pl. 120, 2.",
+      "about": [
+        {
+          "id": "https://data.getty.edu/museum/collection/document/df4f63c9-cb10-4368-9df3-b1658c44c0bf",
+          "type": "LinguisticObject",
+          "_label": "Clark, Andrew J. Corpus Vasorum Antiquorum. The J. Paul Getty Museum 2 (USA 25). The Molly and Walter Bareiss Collection. Malibu: 1990"
+        }
+      ],
+      "dimension": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/citation/df4f63c9-cb10-4368-9df3-b1658c44c0bf/sequence",
+          "type": "Dimension",
+          "_label": "Citation (Bibliographic Reference) Sequence",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300010269",
+              "type": "Type",
+              "_label": "Positional Attributes"
+            },
+            {
+              "id": "http://vocab.getty.edu/aat/300192339",
+              "type": "Type",
+              "_label": "Sequences"
+            }
+          ],
+          "value": 2,
+          "unit": {
+            "id": "http://vocab.getty.edu/aat/300055665",
+            "type": "MeasurementUnit",
+            "_label": "Numbers"
+          }
+        }
+      ],
+      "format": "text/html",
+      "subject_of": [
+        {
+          "id": "http://www.getty.edu/publications/virtuallibrary/0892361700.html",
+          "type": "LinguisticObject",
+          "_label": "Clark, Andrew J. Corpus Vasorum Antiquorum. The J. Paul Getty Museum 2 (USA 25). The Molly and Walter Bareiss Collection. Malibu: 1990, p. 71; pl. 120, 2.",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300264578",
+              "type": "Type",
+              "_label": "Web Page"
+            }
+          ],
+          "format": "text/html"
+        }
+      ]
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/text/ae7fd5a7-60c2-4a15-aaad-cc3ba94650fa",
+      "type": "LinguisticObject",
+      "_label": "Source Credit Line",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435418",
+          "type": "Type",
+          "_label": "Credit Line"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300404764",
+          "type": "Type",
+          "_label": "Sources (General Concept)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "The J. Paul Getty Museum, Villa Collection, Malibu, California"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/culture/758389b5-4a3a-49ef-ae25-30d18e680a88",
+      "type": "LinguisticObject",
+      "_label": "Culture Statement",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055768",
+          "type": "Type",
+          "_label": "Culture"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "Greek (Attic)"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/description/2496c001-8e39-486d-b04b-5ffa0d840470",
+      "type": "LinguisticObject",
+      "_label": "Object Description",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300080091",
+          "type": "Type",
+          "_label": "Description"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "The fragment preserves the center of a stemless cup. On the interior, a gorgoneion with four dots on the forehead. Added red for the pupils and tongue; white for the teeth.\r\n\r\nThe exterior of the bowl, the fillet and the topside of the foot are black. The side of the foot and the resting surface are reserved. On the underside of the foot, the sloping surface is black, while the exposed bottom of the bowl is reserved. \r\n\r\nAdapted from Clark, A., CVA Malibu 2 (1990).",
+      "_deprecated": {
+        "reason": "Migration from HTML to Markdown for Object Descriptions.",
+        "replacement": "Additionally filter Object Descriptions via the `format` property to select between the 'text/html' or 'text/markdown' variants during the deprecation period.",
+        "since": "2021-06-28"
+      },
+      "subject_to": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/description/2496c001-8e39-486d-b04b-5ffa0d840470/licensing",
+          "type": "Right",
+          "_label": "License for Object Description",
+          "classified_as": [
+            {
+              "id": "http://creativecommons.org/licenses/by/4.0/",
+              "type": "Type",
+              "_label": "Attribution 4.0 International (CC BY 4.0)"
+            }
+          ],
+          "possessed_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/group/c496a7b4-6087-4deb-a1ac-0f21bd3fd87b",
+              "type": "Group",
+              "_label": "J. Paul Getty Museum, Los Angeles, California",
+              "member_of": [
+                {
+                  "id": "http://vocab.getty.edu/ulan/500115987",
+                  "type": "Group",
+                  "_label": "The J. Paul Getty Trust, Los Angeles, California",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/ulan/500000003",
+                      "type": "Type",
+                      "_label": "Corporate Bodies"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "subject_of": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/description/2496c001-8e39-486d-b04b-5ffa0d840470/licensing/acknowledgements",
+              "type": "LinguisticObject",
+              "_label": "Acknowledgements for Object Description",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300026687",
+                  "type": "Type",
+                  "_label": "Acknowledgements"
+                }
+              ],
+              "content": "Text provided by the J. Paul Getty Museum. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)."
+            }
+          ]
+        }
+      ],
+      "format": "text/html"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/description/fe518cc1-fe94-52a8-a7f1-88e30f19d3d9",
+      "type": "LinguisticObject",
+      "_label": "Object Description",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300080091",
+          "type": "Type",
+          "_label": "Description"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "The fragment preserves the center of a stemless cup. On the interior, a gorgoneion with four dots on the forehead. Added red for the pupils and tongue; white for the teeth.\r\n\r\nThe exterior of the bowl, the fillet and the topside of the foot are black. The side of the foot and the resting surface are reserved. On the underside of the foot, the sloping surface is black, while the exposed bottom of the bowl is reserved. \r\n\r\nAdapted from Clark, A., CVA Malibu 2 (1990).",
+      "subject_to": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/description/fe518cc1-fe94-52a8-a7f1-88e30f19d3d9/licensing",
+          "type": "Right",
+          "_label": "License for Object Description",
+          "classified_as": [
+            {
+              "id": "http://creativecommons.org/licenses/by/4.0/",
+              "type": "Type",
+              "_label": "Attribution 4.0 International (CC BY 4.0)"
+            }
+          ],
+          "possessed_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/group/c496a7b4-6087-4deb-a1ac-0f21bd3fd87b",
+              "type": "Group",
+              "_label": "J. Paul Getty Museum, Los Angeles, California",
+              "member_of": [
+                {
+                  "id": "http://vocab.getty.edu/ulan/500115987",
+                  "type": "Group",
+                  "_label": "The J. Paul Getty Trust, Los Angeles, California",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/ulan/500000003",
+                      "type": "Type",
+                      "_label": "Corporate Bodies"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "subject_of": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/description/fe518cc1-fe94-52a8-a7f1-88e30f19d3d9/licensing/acknowledgements",
+              "type": "LinguisticObject",
+              "_label": "Acknowledgements for Object Description",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300026687",
+                  "type": "Type",
+                  "_label": "Acknowledgements"
+                }
+              ],
+              "content": "Text provided by the J. Paul Getty Museum. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)."
+            }
+          ]
+        }
+      ],
+      "format": "text/markdown"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/dimensions/f0c498f3-3187-45fa-84ca-dad746aeaa5a",
+      "type": "LinguisticObject",
+      "_label": "Dimensions Statement",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435430",
+          "type": "Type",
+          "_label": "Dimensions Description"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "3.8 × 9.9 × 6.8 cm (1 1/2 × 3 7/8 × 2 11/16 in.)"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/materials-description/5f5fa1dc-a49c-4bd6-95c2-b4599e682607",
+      "type": "LinguisticObject",
+      "_label": "Materials Description",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435429",
+          "type": "Type",
+          "_label": "Materials Description"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "Terracotta"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/type",
+      "type": "LinguisticObject",
+      "_label": "Object Type",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Object/Work Type (Category)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "Cup"
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/place/created",
+      "type": "LinguisticObject",
+      "_label": "Place Created",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435448",
+          "type": "Type",
+          "_label": "Creation Place Description"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "Athens, Greece"
+    },
+    {
+      "id": "https://rightsstatements.org/vocab/NoC-US/1.0/",
+      "type": "LinguisticObject",
+      "_label": "RightsStatements.org Rights Assertion",
+      "classified_as": [
+        {
+          "id": "https://data.getty.edu/museum/ontology/linked-data/object/rights-statement",
+          "type": "Type",
+          "_label": "Rights Statement",
+          "_deprecated": {
+            "reason": "Migration to unified `data.getty.edu/local/thesaurus` URLs for custom terms.",
+            "replacement": "Filter on `Rights Statement` (https://data.getty.edu/local/thesaurus/rights-statement) instead.",
+            "since": "2020-11-10"
+          }
+        },
+        {
+          "id": "https://data.getty.edu/local/thesaurus/rights-statement",
+          "type": "Type",
+          "_label": "Rights Statement"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300417696",
+          "type": "Type",
+          "_label": "Rights (Legal Concept)"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300418049",
+          "type": "Type",
+          "_label": "Brief Text"
+        }
+      ],
+      "content": "No Copyright - United States"
+    }
+  ],
+  "dimension": [
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/dimension/acde8099-e990-4173-b3b4-f23528b7a9ed",
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055644",
+          "type": "Type",
+          "_label": "Height"
+        }
+      ],
+      "value": "3.8000000000",
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379098",
+        "type": "MeasurementUnit",
+        "_label": "Centimeters (Measurements)"
+      }
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/dimension/9e05aaff-99a5-4c4c-867a-67ce756aa25d",
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055647",
+          "type": "Type",
+          "_label": "Width"
+        }
+      ],
+      "value": "9.9000000000",
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379098",
+        "type": "MeasurementUnit",
+        "_label": "Centimeters (Measurements)"
+      }
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/dimension/4e0da508-e794-404e-b632-49b89438a63f",
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055624",
+          "type": "Type",
+          "_label": "Diameter"
+        }
+      ],
+      "value": "6.7600000000",
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379098",
+        "type": "MeasurementUnit",
+        "_label": "Centimeters (Measurements)"
+      }
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/sort-number",
+      "type": "Dimension",
+      "_label": "Sort Number",
+      "classified_as": [
+        {
+          "id": "https://data.getty.edu/local/thesaurus/sort-number",
+          "type": "Type",
+          "_label": "Sort Number"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300010269",
+          "type": "Type",
+          "_label": "Positional Attributes"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300192339",
+          "type": "Type",
+          "_label": "Sequences"
+        }
+      ],
+      "value": "86  183",
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300055665",
+        "type": "MeasurementUnit",
+        "_label": "Numbers"
+      }
+    }
+  ],
+  "shows": [
+    {
+      "id": "https://data.getty.edu/media/image/cc6e326a-68ef-5529-be1a-0da8e1038841",
+      "type": "VisualItem",
+      "_label": "Related Media (Image): 01399101 - 2313d604f2641b8b5108041806d318a7b8eacf5c",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300215302",
+          "type": "Type",
+          "_label": "Digital Image"
+        }
+      ],
+      "assigned_by": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/related/media/613094bc-8dc1-4885-b5ad-a79bc7cef17b/sequence-assignment",
+          "type": "AttributeAssignment",
+          "_label": "Related Media Sequence Assignment",
+          "used_specific_object": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/related/media/set",
+              "type": "Set",
+              "_label": "Related Media Set for 86.AE.183"
+            }
+          ],
+          "assigned": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/related/media/613094bc-8dc1-4885-b5ad-a79bc7cef17b/sequence-position",
+              "type": "Dimension",
+              "_label": "Related Media Sequence",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300010269",
+                  "type": "Type",
+                  "_label": "Positional Attributes"
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300192339",
+                  "type": "Type",
+                  "_label": "Sequences"
+                }
+              ],
+              "value": 1,
+              "unit": {
+                "id": "http://vocab.getty.edu/aat/300055665",
+                "type": "MeasurementUnit",
+                "_label": "Numbers"
+              }
+            }
+          ]
+        }
+      ],
+      "format": "application/ld+json"
+    },
+    {
+      "id": "https://data.getty.edu/media/image/ba4ea70e-fd56-54a8-abfc-372161ce4cfd",
+      "type": "VisualItem",
+      "_label": "Related Media (Image): 013991F1V1 - 7d49c591b0da3e302ab7054e0c759915d5a35a0d",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300215302",
+          "type": "Type",
+          "_label": "Digital Image"
+        }
+      ],
+      "assigned_by": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/related/media/b23b7810-f1cf-4711-8ea7-a836866093a3/sequence-assignment",
+          "type": "AttributeAssignment",
+          "_label": "Related Media Sequence Assignment",
+          "used_specific_object": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/related/media/set",
+              "type": "Set",
+              "_label": "Related Media Set for 86.AE.183"
+            }
+          ],
+          "assigned": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/related/media/b23b7810-f1cf-4711-8ea7-a836866093a3/sequence-position",
+              "type": "Dimension",
+              "_label": "Related Media Sequence",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300010269",
+                  "type": "Type",
+                  "_label": "Positional Attributes"
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300192339",
+                  "type": "Type",
+                  "_label": "Sequences"
+                }
+              ],
+              "value": 2,
+              "unit": {
+                "id": "http://vocab.getty.edu/aat/300055665",
+                "type": "MeasurementUnit",
+                "_label": "Numbers"
+              }
+            }
+          ]
+        }
+      ],
+      "format": "application/ld+json"
+    }
+  ],
+  "produced_by": {
+    "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production",
+    "type": "Production",
+    "_label": "Production of Artwork",
+    "referred_to_by": [
+      {
+        "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/7181b70c-124a-436e-a87e-1ec1754e4ad9/producer-description",
+        "type": "LinguisticObject",
+        "_label": "Artist/Maker (Producer) Description",
+        "classified_as": [
+          {
+            "id": "https://data.getty.edu/museum/ontology/linked-data/tms/object/producer-description",
+            "type": "Type",
+            "_label": "Producer Description",
+            "_deprecated": {
+              "reason": "Migration to unified `data.getty.edu/local/thesaurus` URLs for custom terms.",
+              "replacement": "Filter on `Producer Description` (https://data.getty.edu/local/thesaurus/producer-description) instead.",
+              "since": "2020-11-10"
+            }
+          },
+          {
+            "id": "https://data.getty.edu/local/thesaurus/producer-description",
+            "type": "Type",
+            "_label": "Producer Description"
+          },
+          {
+            "id": "http://vocab.getty.edu/aat/300418049",
+            "type": "Type",
+            "_label": "Brief Text"
+          }
+        ],
+        "content": "Probably belongs to the Class of Top-band Stemless Cups (Greek (Athenian), active 510 - 490 B.C.)"
+      },
+      {
+        "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/7181b70c-124a-436e-a87e-1ec1754e4ad9/producer-name",
+        "type": "LinguisticObject",
+        "_label": "Artist/Maker (Producer) Name",
+        "classified_as": [
+          {
+            "id": "https://data.getty.edu/local/thesaurus/producer-name",
+            "type": "Type",
+            "_label": "Producer Name"
+          },
+          {
+            "id": "http://vocab.getty.edu/aat/300418049",
+            "type": "Type",
+            "_label": "Brief Text"
+          }
+        ],
+        "content": "Class of Top-band Stemless Cups"
+      },
+      {
+        "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/7181b70c-124a-436e-a87e-1ec1754e4ad9/producer-name-prefix",
+        "type": "LinguisticObject",
+        "_label": "Artist/Maker (Producer) Name Prefix",
+        "classified_as": [
+          {
+            "id": "https://data.getty.edu/local/thesaurus/producer-name-prefix",
+            "type": "Type",
+            "_label": "Producer Name Prefix"
+          },
+          {
+            "id": "http://vocab.getty.edu/aat/300418049",
+            "type": "Type",
+            "_label": "Brief Text"
+          }
+        ],
+        "content": "Probably belongs to the"
+      },
+      {
+        "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/7181b70c-124a-436e-a87e-1ec1754e4ad9/producer-nationality-and-dates",
+        "type": "LinguisticObject",
+        "_label": "Artist/Maker (Producer) Nationality & Dates",
+        "classified_as": [
+          {
+            "id": "https://data.getty.edu/local/thesaurus/nationality-and-dates",
+            "type": "Type",
+            "_label": "Producer Nationality & Dates"
+          },
+          {
+            "id": "http://vocab.getty.edu/aat/300418049",
+            "type": "Type",
+            "_label": "Brief Text"
+          }
+        ],
+        "content": "Greek (Athenian), active 510 - 490 B.C."
+      }
+    ],
+    "timespan": {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/timespan",
+      "type": "TimeSpan",
+      "identified_by": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/timespan/name",
+          "type": "Name",
+          "_label": "Date",
+          "content": "about 500 B.C."
+        }
+      ],
+      "begin_of_the_begin": "-0500-01-01T00:00:00",
+      "end_of_the_end": "-0500-12-31T23:59:59"
+    },
+    "carried_out_by": [
+      {
+        "id": "https://data.getty.edu/museum/collection/group/eea77cd7-8a1b-4baa-b16d-347b05e981dc",
+        "type": "Group",
+        "_label": "Class of Top-band Stemless Cups",
+        "referred_to_by": [
+          {
+            "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/7181b70c-124a-436e-a87e-1ec1754e4ad9/role-statement",
+            "type": "LinguisticObject",
+            "_label": "Artist/Maker (Producer) Role Statement",
+            "classified_as": [
+              {
+                "id": "https://data.getty.edu/museum/ontology/linked-data/object/artist-maker-role-statement",
+                "type": "Type",
+                "_label": "Artist/Maker (Producer) Role Statement",
+                "_deprecated": {
+                  "reason": "Migration to unified `data.getty.edu/local/thesaurus` URLs for custom terms.",
+                  "replacement": "Filter on `Artist/Maker Role Statement` (https://data.getty.edu/local/thesaurus/artist-maker-role-statement) instead.",
+                  "since": "2020-11-10"
+                }
+              },
+              {
+                "id": "https://data.getty.edu/local/thesaurus/producer-role-statement",
+                "type": "Type",
+                "_label": "Artist/Maker (Producer) Role Statement"
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300418049",
+                "type": "Type",
+                "_label": "Brief Text"
+              }
+            ],
+            "content": "Potters",
+            "close_match": [
+              {
+                "id": "http://vocab.getty.edu/aat/300025414",
+                "type": "Type",
+                "_label": "Potters"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "assigned_by": [
+      {
+        "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/previous-attribution/433b1487-e855-4263-af6a-a9193c1a0cc3/attribution",
+        "type": "AttributeAssignment",
+        "_label": "Previous Attribution of Unknown",
+        "classified_as": [
+          {
+            "id": "http://vocab.getty.edu/aat/300404908",
+            "type": "Type",
+            "_label": "Obsolete"
+          }
+        ],
+        "assigned_by": [
+          {
+            "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/previous-attribution/433b1487-e855-4263-af6a-a9193c1a0cc3/attribution/sequence-assignment",
+            "type": "AttributeAssignment",
+            "_label": "Previous Attribution Sequence Assignment",
+            "used_specific_object": [
+              {
+                "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/previous-attribution/set",
+                "type": "Set",
+                "_label": "Previous Attribution Set for 86.AE.183"
+              }
+            ],
+            "assigned_property": "dimension",
+            "assigned": [
+              {
+                "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/previous-attribution/433b1487-e855-4263-af6a-a9193c1a0cc3/attribution/sequence",
+                "type": "Dimension",
+                "_label": "Previous Attribution Sequence",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300010269",
+                    "type": "Type",
+                    "_label": "Positional Attributes"
+                  },
+                  {
+                    "id": "http://vocab.getty.edu/aat/300192339",
+                    "type": "Type",
+                    "_label": "Sequences"
+                  }
+                ],
+                "value": 1,
+                "unit": {
+                  "id": "http://vocab.getty.edu/aat/300055665",
+                  "type": "MeasurementUnit",
+                  "_label": "Numbers"
+                }
+              }
+            ]
+          }
+        ],
+        "assigned_property": "part_of",
+        "assigned": [
+          {
+            "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/previous-attribution/433b1487-e855-4263-af6a-a9193c1a0cc3/production",
+            "type": "Production",
+            "_label": "Previously Assigned Production for Unknown",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300404270",
+                "type": "Type",
+                "_label": "Formerly Attributed To (Attribution Qualifier)"
+              }
+            ],
+            "referred_to_by": [
+              {
+                "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/production/previous-attribution/433b1487-e855-4263-af6a-a9193c1a0cc3/production/producer-description",
+                "type": "LinguisticObject",
+                "_label": "Previously Assigned Producer Description",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300417239",
+                    "type": "Type",
+                    "_label": "Compound Names"
+                  },
+                  {
+                    "id": "http://vocab.getty.edu/aat/300404670",
+                    "type": "Type",
+                    "_label": "Preferred Term"
+                  },
+                  {
+                    "id": "http://vocab.getty.edu/aat/300418049",
+                    "type": "Type",
+                    "_label": "Brief Text"
+                  }
+                ],
+                "content": "Unknown"
+              }
+            ],
+            "carried_out_by": [
+              {
+                "id": "https://data.getty.edu/museum/collection/person/25936a78-da08-44b5-b237-9bed6da06204",
+                "type": "Person",
+                "_label": "Unknown"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "current_keeper": [
+    {
+      "id": "https://data.getty.edu/museum/collection/group/9475a475-e5b7-4f2d-bdca-0c435e33f142",
+      "type": "Group",
+      "_label": "Antiquities (Curatorial Department)"
+    }
+  ],
+  "current_location": {
+    "id": "https://data.getty.edu/museum/collection/place/a03fec3c-c7a2-4b29-9995-5eddf3ceb0a4",
+    "type": "Place",
+    "_label": "Storage",
+    "classified_as": [
+      {
+        "id": "http://vocab.getty.edu/aat/300004465",
+        "type": "Type",
+        "_label": "Storage Spaces [Object Off Display]"
+      }
+    ],
+    "identified_by": [
+      {
+        "id": "https://data.getty.edu/museum/collection/place/a03fec3c-c7a2-4b29-9995-5eddf3ceb0a4/name",
+        "type": "Name",
+        "content": "Storage"
+      }
+    ]
+  },
+  "current_owner": [
+    {
+      "id": "https://data.getty.edu/museum/collection/group/c496a7b4-6087-4deb-a1ac-0f21bd3fd87b",
+      "type": "Group",
+      "_label": "J. Paul Getty Museum, Los Angeles, California",
+      "member_of": [
+        {
+          "id": "http://vocab.getty.edu/ulan/500115987",
+          "type": "Group",
+          "_label": "The J. Paul Getty Trust, Los Angeles, California",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/ulan/500000003",
+              "type": "Type",
+              "_label": "Corporate Bodies"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "subject_of": [
+    {
+      "id": "https://www.getty.edu/art/collection/object/103W3W",
+      "type": "LinguisticObject",
+      "_label": "Homepage for Object",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300264578",
+          "type": "Type",
+          "_label": "Web Page"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary"
+        }
+      ],
+      "format": "text/html"
+    },
+    {
+      "id": "https://media.getty.edu/iiif/manifest/9e4155d5-2c8c-40bd-8544-7ffc1185dbd4",
+      "type": "InformationObject",
+      "_label": "IIIF Manifest URL",
+      "classified_as": [
+        {
+          "id": "https://data.getty.edu/local/thesaurus/iiif-manifest",
+          "type": "Type",
+          "_label": "IIIF Manifest"
+        }
+      ],
+      "conforms_to": [
+        {
+          "id": "http://iiif.io/api/presentation",
+          "type": "InformationObject",
+          "_label": "IIIF Presentation API"
+        }
+      ],
+      "format": "application/ld+json;profile=\"http://iiif.io/api/presentation/2/context.json\""
+    }
+  ],
+  "representation": [
+    {
+      "id": "https://media.getty.edu/iiif/image/85998396-1c23-478c-b952-b960de519147/full/full/0/default.jpg",
+      "type": "VisualItem",
+      "_label": "Object Overall Image (01399101)",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300215302",
+          "type": "Type",
+          "_label": "Digital Image"
+        }
+      ],
+      "_deprecated": {
+        "reason": "Please note that in the future, the `representation` property's image, referenced by the `id` property, will be smaller than that currently offered.",
+        "replacement": "Larger images, if needed, will be available via the IIIF Image API endpoints referenced within this document's `shows` property instead.",
+        "since": "2021-03-08"
+      },
+      "format": "image/jpeg"
+    }
+  ],
+  "changed_ownership_through": [
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/8ed18843-bf15-59a2-8647-faf9b3b1b20f/acquisition",
+      "type": "Acquisition",
+      "_label": "Provenance Acquisition for 86.AE.183 associated with Walter Bareiss & Molly Bareiss",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300157782",
+          "type": "Type",
+          "_label": "Acquisition (Collections Management)"
+        }
+      ],
+      "part_of": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity",
+          "type": "Activity",
+          "_label": "Provenance Activity for 86.AE.183 associated with Walter Bareiss & Molly Bareiss",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300055863",
+              "type": "Type",
+              "_label": "Provenance Activity"
+            }
+          ],
+          "referred_to_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity/statement/9b41995b-9f47-40ea-945e-659321bb99e7",
+              "type": "LinguisticObject",
+              "_label": "Provenance Statement",
+              "classified_as": [
+                {
+                  "id": "https://data.getty.edu/local/thesaurus/provenance-statement",
+                  "type": "Type",
+                  "_label": "Provenance Statement",
+                  "_deprecated": {
+                    "reason": "Newly available AAT terms replace obsolete local thesaurus terms.",
+                    "replacement": "Filter on `Provenance Statement` (http://vocab.getty.edu/aat/300444174) instead.",
+                    "since": "2021-08-30"
+                  }
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300444174",
+                  "type": "Type",
+                  "_label": "Provenance Statement"
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300418049",
+                  "type": "Type",
+                  "_label": "Brief Text"
+                }
+              ],
+              "content": "distributed to the Mary S. Bareiss 1983 Trust, 1983.",
+              "assigned_by": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity/statement/9b41995b-9f47-40ea-945e-659321bb99e7/attribution",
+                  "type": "AttributeAssignment",
+                  "_label": "Provenance Statement Sequence Attribution",
+                  "assigned_property": "dimension",
+                  "assigned": [
+                    {
+                      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity/statement/9b41995b-9f47-40ea-945e-659321bb99e7/attribution/dimension",
+                      "type": "Dimension",
+                      "_label": "Provenance Statement Sequence",
+                      "classified_as": [
+                        {
+                          "id": "http://vocab.getty.edu/aat/300010269",
+                          "type": "Type",
+                          "_label": "Positional Attributes"
+                        },
+                        {
+                          "id": "http://vocab.getty.edu/aat/300192339",
+                          "type": "Type",
+                          "_label": "Sequences"
+                        }
+                      ],
+                      "value": 1,
+                      "unit": {
+                        "id": "http://vocab.getty.edu/aat/300055665",
+                        "type": "MeasurementUnit",
+                        "_label": "Numbers"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity/location/9b41995b-9f47-40ea-945e-659321bb99e7",
+              "type": "LinguisticObject",
+              "_label": "Provenance Location",
+              "classified_as": [
+                {
+                  "id": "https://data.getty.edu/local/thesaurus/provenance-location",
+                  "type": "Type",
+                  "_label": "Provenance Location",
+                  "_deprecated": {
+                    "reason": "Newly available AAT terms replace obsolete local thesaurus terms.",
+                    "replacement": "Filter on `Provenance Location Statement` (http://vocab.getty.edu/aat/300444175) instead.",
+                    "since": "2021-08-30"
+                  }
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300444175",
+                  "type": "Type",
+                  "_label": "Provenance Location Statement"
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300418049",
+                  "type": "Type",
+                  "_label": "Brief Text"
+                }
+              ],
+              "content": "Stamford, Connecticut",
+              "assigned_by": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity/location/9b41995b-9f47-40ea-945e-659321bb99e7/attribution",
+                  "type": "AttributeAssignment",
+                  "_label": "Provenance Biography Sequence Attribution",
+                  "assigned_property": "dimension",
+                  "assigned": [
+                    {
+                      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity/location/9b41995b-9f47-40ea-945e-659321bb99e7/attribution/dimension",
+                      "type": "Dimension",
+                      "_label": "Provenance Biography Sequence",
+                      "classified_as": [
+                        {
+                          "id": "http://vocab.getty.edu/aat/300010269",
+                          "type": "Type",
+                          "_label": "Positional Attributes"
+                        },
+                        {
+                          "id": "http://vocab.getty.edu/aat/300192339",
+                          "type": "Type",
+                          "_label": "Sequences"
+                        }
+                      ],
+                      "value": 1,
+                      "unit": {
+                        "id": "http://vocab.getty.edu/aat/300055665",
+                        "type": "MeasurementUnit",
+                        "_label": "Numbers"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "timespan": {
+            "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity/timespan",
+            "type": "TimeSpan",
+            "_label": "Provenance Activity TimeSpan",
+            "identified_by": [
+              {
+                "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity/timespan/name",
+                "type": "Name",
+                "_label": "Provenance Activity TimeSpan Display Name",
+                "content": "1960 - 1983"
+              }
+            ],
+            "begin_of_the_begin": "1960-01-01T00:00:00",
+            "end_of_the_end": "1983-12-31T23:59:59"
+          },
+          "ends_before_the_start_of": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/activity",
+              "type": "Activity",
+              "_label": "Provenance Activity for 86.AE.183"
+            }
+          ]
+        }
+      ],
+      "transferred_title_to": [
+        {
+          "id": "https://data.getty.edu/museum/collection/person/fe2336ea-e972-4aba-8d51-9b77ba87743d",
+          "type": "Person",
+          "_label": "Walter Bareiss",
+          "assigned_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/person/fe2336ea-e972-4aba-8d51-9b77ba87743d/attribution",
+              "type": "AttributeAssignment",
+              "_label": "Provenance Actor Presentation Sequence Attribution",
+              "assigned_property": "dimension",
+              "assigned": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/person/fe2336ea-e972-4aba-8d51-9b77ba87743d/attribution/dimension",
+                  "type": "Dimension",
+                  "_label": "Provenance Actor Presentation Sequence",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300010269",
+                      "type": "Type",
+                      "_label": "Positional Attributes"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/aat/300192339",
+                      "type": "Type",
+                      "_label": "Sequences"
+                    }
+                  ],
+                  "value": 1,
+                  "unit": {
+                    "id": "http://vocab.getty.edu/aat/300055665",
+                    "type": "MeasurementUnit",
+                    "_label": "Numbers"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd",
+          "type": "Person",
+          "_label": "Molly Bareiss",
+          "assigned_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd/attribution",
+              "type": "AttributeAssignment",
+              "_label": "Provenance Actor Presentation Sequence Attribution",
+              "assigned_property": "dimension",
+              "assigned": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd/attribution/dimension",
+                  "type": "Dimension",
+                  "_label": "Provenance Actor Presentation Sequence",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300010269",
+                      "type": "Type",
+                      "_label": "Positional Attributes"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/aat/300192339",
+                      "type": "Type",
+                      "_label": "Sequences"
+                    }
+                  ],
+                  "value": 2,
+                  "unit": {
+                    "id": "http://vocab.getty.edu/aat/300055665",
+                    "type": "MeasurementUnit",
+                    "_label": "Numbers"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd/attribution/name-prefix",
+              "type": "AttributeAssignment",
+              "_label": "Actor Name Prefix Attribution",
+              "assigned_property": "referred_to_by",
+              "assigned": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd/attribution/name-prefix/value",
+                  "type": "LinguisticObject",
+                  "_label": "Actor Name Prefix",
+                  "classified_as": [
+                    {
+                      "id": "https://data.getty.edu/local/thesaurus/actor-name-prefix",
+                      "type": "Type",
+                      "_label": "Actor Name Prefix"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/aat/300418049",
+                      "type": "Type",
+                      "_label": "Brief Text"
+                    }
+                  ],
+                  "content": "and"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/d2ef93e7-4492-5d13-bfe0-6221e1c320e3/acquisition",
+      "type": "Acquisition",
+      "_label": "Provenance Acquisition for 86.AE.183 associated with Mary S. Bareiss 1983 Trust",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300157782",
+          "type": "Type",
+          "_label": "Acquisition (Collections Management)"
+        }
+      ],
+      "part_of": [
+        {
+          "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/activity",
+          "type": "Activity",
+          "_label": "Provenance Activity for 86.AE.183 associated with Mary S. Bareiss 1983 Trust",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300055863",
+              "type": "Type",
+              "_label": "Provenance Activity"
+            }
+          ],
+          "referred_to_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/activity/statement/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a",
+              "type": "LinguisticObject",
+              "_label": "Provenance Statement",
+              "classified_as": [
+                {
+                  "id": "https://data.getty.edu/local/thesaurus/provenance-statement",
+                  "type": "Type",
+                  "_label": "Provenance Statement",
+                  "_deprecated": {
+                    "reason": "Newly available AAT terms replace obsolete local thesaurus terms.",
+                    "replacement": "Filter on `Provenance Statement` (http://vocab.getty.edu/aat/300444174) instead.",
+                    "since": "2021-08-30"
+                  }
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300444174",
+                  "type": "Type",
+                  "_label": "Provenance Statement"
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300418049",
+                  "type": "Type",
+                  "_label": "Brief Text"
+                }
+              ],
+              "content": "sold to the J. Paul Getty Museum, 1986.",
+              "assigned_by": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/activity/statement/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/attribution",
+                  "type": "AttributeAssignment",
+                  "_label": "Provenance Statement Sequence Attribution",
+                  "assigned_property": "dimension",
+                  "assigned": [
+                    {
+                      "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/activity/statement/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/attribution/dimension",
+                      "type": "Dimension",
+                      "_label": "Provenance Statement Sequence",
+                      "classified_as": [
+                        {
+                          "id": "http://vocab.getty.edu/aat/300010269",
+                          "type": "Type",
+                          "_label": "Positional Attributes"
+                        },
+                        {
+                          "id": "http://vocab.getty.edu/aat/300192339",
+                          "type": "Type",
+                          "_label": "Sequences"
+                        }
+                      ],
+                      "value": 1,
+                      "unit": {
+                        "id": "http://vocab.getty.edu/aat/300055665",
+                        "type": "MeasurementUnit",
+                        "_label": "Numbers"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "timespan": {
+            "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/activity/timespan",
+            "type": "TimeSpan",
+            "_label": "Provenance Activity TimeSpan",
+            "identified_by": [
+              {
+                "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/ad709db2-14a0-4fd9-a7bd-0a55e7d8a41a/activity/timespan/name",
+                "type": "Name",
+                "_label": "Provenance Activity TimeSpan Display Name",
+                "content": "1983 - 1986"
+              }
+            ],
+            "begin_of_the_begin": "1983-01-01T00:00:00",
+            "end_of_the_end": "1986-12-31T23:59:59"
+          },
+          "starts_after_the_end_of": [
+            {
+              "id": "https://data.getty.edu/museum/collection/object/dd808888-4dfe-441c-b3d0-ce57c4167c5b/provenance/e3c44664-8238-4198-b3b5-ca7700ab22cc/activity",
+              "type": "Activity",
+              "_label": "Provenance Activity for 86.AE.183"
+            }
+          ]
+        }
+      ],
+      "transferred_title_from": [
+        {
+          "id": "https://data.getty.edu/museum/collection/person/fe2336ea-e972-4aba-8d51-9b77ba87743d",
+          "type": "Person",
+          "_label": "Walter Bareiss",
+          "assigned_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/person/fe2336ea-e972-4aba-8d51-9b77ba87743d/attribution",
+              "type": "AttributeAssignment",
+              "_label": "Provenance Actor Presentation Sequence Attribution",
+              "assigned_property": "dimension",
+              "assigned": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/person/fe2336ea-e972-4aba-8d51-9b77ba87743d/attribution/dimension",
+                  "type": "Dimension",
+                  "_label": "Provenance Actor Presentation Sequence",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300010269",
+                      "type": "Type",
+                      "_label": "Positional Attributes"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/aat/300192339",
+                      "type": "Type",
+                      "_label": "Sequences"
+                    }
+                  ],
+                  "value": 1,
+                  "unit": {
+                    "id": "http://vocab.getty.edu/aat/300055665",
+                    "type": "MeasurementUnit",
+                    "_label": "Numbers"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd",
+          "type": "Person",
+          "_label": "Molly Bareiss",
+          "assigned_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd/attribution",
+              "type": "AttributeAssignment",
+              "_label": "Provenance Actor Presentation Sequence Attribution",
+              "assigned_property": "dimension",
+              "assigned": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd/attribution/dimension",
+                  "type": "Dimension",
+                  "_label": "Provenance Actor Presentation Sequence",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300010269",
+                      "type": "Type",
+                      "_label": "Positional Attributes"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/aat/300192339",
+                      "type": "Type",
+                      "_label": "Sequences"
+                    }
+                  ],
+                  "value": 2,
+                  "unit": {
+                    "id": "http://vocab.getty.edu/aat/300055665",
+                    "type": "MeasurementUnit",
+                    "_label": "Numbers"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd/attribution/name-prefix",
+              "type": "AttributeAssignment",
+              "_label": "Actor Name Prefix Attribution",
+              "assigned_property": "referred_to_by",
+              "assigned": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/person/a399d9b3-bba5-4dd0-b920-fe7e1b8188bd/attribution/name-prefix/value",
+                  "type": "LinguisticObject",
+                  "_label": "Actor Name Prefix",
+                  "classified_as": [
+                    {
+                      "id": "https://data.getty.edu/local/thesaurus/actor-name-prefix",
+                      "type": "Type",
+                      "_label": "Actor Name Prefix"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/aat/300418049",
+                      "type": "Type",
+                      "_label": "Brief Text"
+                    }
+                  ],
+                  "content": "and"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "transferred_title_to": [
+        {
+          "id": "https://data.getty.edu/museum/collection/group/a5db109f-4daf-48c2-902e-a897e4556d0c",
+          "type": "Group",
+          "_label": "Mary S. Bareiss 1983 Trust",
+          "assigned_by": [
+            {
+              "id": "https://data.getty.edu/museum/collection/group/a5db109f-4daf-48c2-902e-a897e4556d0c/attribution",
+              "type": "AttributeAssignment",
+              "_label": "Provenance Actor Presentation Sequence Attribution",
+              "assigned_property": "dimension",
+              "assigned": [
+                {
+                  "id": "https://data.getty.edu/museum/collection/group/a5db109f-4daf-48c2-902e-a897e4556d0c/attribution/dimension",
+                  "type": "Dimension",
+                  "_label": "Provenance Actor Presentation Sequence",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300010269",
+                      "type": "Type",
+                      "_label": "Positional Attributes"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/aat/300192339",
+                      "type": "Type",
+                      "_label": "Sequences"
+                    }
+                  ],
+                  "value": 1,
+                  "unit": {
+                    "id": "http://vocab.getty.edu/aat/300055665",
+                    "type": "MeasurementUnit",
+                    "_label": "Numbers"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

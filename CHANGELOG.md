@@ -18,7 +18,7 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
-## [0.17.1]
+## [0.17.2]
 
 ### Changed
 
@@ -28,6 +28,12 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - added constants for `encountered_by`
 - added a sample record from yale
+
+## [0.17.1]
+
+### Fixed
+
+- fixed a bug with `_getAssignedProperty` where we were expecting an object to always be returned but the new data model includes an array instead.
 
 ## [0.17.0]
 

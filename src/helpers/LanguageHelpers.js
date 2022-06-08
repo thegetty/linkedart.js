@@ -1,8 +1,9 @@
 /**
  * @file LanguageHelpers
+ * @category Files
  * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki
  * @module LanguageHelpers
- * @description This class contains helpers for working with Languages in Linked.art
+ * @description This file contains helpers for working with Languages in Linked.art
  */
 import aat from "../data/aat.json";
 export const NO_LANGUAGE = "NO_LANGUAGE";

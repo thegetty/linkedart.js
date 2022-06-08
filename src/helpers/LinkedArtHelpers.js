@@ -2,7 +2,8 @@
  * @file LinkedArtHelpers
  * @author Adam Brin, Pamela Lam, Alyx Rossetti, Charles Webb, Selina Zawacki, Nabil Kashyap
  * @module LinkedArtHelpers
- * @description This class contains helpers for working with linked.art JSON-LD data
+ * @category Files
+ * @description This file contains helpers for working with LinkedArt JSON-LD data
  */
 
 import { doesObjectLanguageMatch } from "./LanguageHelpers";
@@ -115,7 +116,7 @@ export function getClassifiedBy(
  *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
  *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
  * ]
- * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the object with
+ * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the classification with
  * 'id': 'description' from the 'classified_as' attribute of the third object in the array
  *
  * @returns {Array} an array of objects that match
@@ -151,7 +152,7 @@ export function getClassifiedAsWithClassification(
  *   {content: 'Blue Irises', classified_by: [{id: 'title', classified_by: 'descriptive title'}]},
  *   {content: 'Van Gogh painting', classified_as: [{id: 'description', classified_as: 'descriptive title'}]}
  * ]
- * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the object with
+ * getClassifiedByWithClassification(submittedResource, 'descriptive title') would return the classification with
  * 'id': 'title' from the 'classified_by' attribute of the second object in the array
  *
  * @returns {Array} an array of objects that match
@@ -241,6 +242,7 @@ export function getObjectsClassifiedByWithClassification(
 /**
  * Gets the primary name of the JSON-LD object based on an AAT value or other qualifier, uses the AAT value of Preferred Term as the default
  *
+ * @category Accessors
  * @param {Object} submittedResource - the JSON-LD object
  * @param {Object} options - additional options
  * @param {String|Array} options.requestedClassifications - the requested classifications (default is aat.PRIMARY_TERM)
@@ -273,6 +275,7 @@ export function getPrimaryName(
 /**
  * Gets the primary names of the JSON-LD object based on an AAT value or other qualifier, uses the AAT value of Preferred Term as the default
  *
+ * @category Accessors
  * @param {Object} submittedResource - the JSON-LD object
  * @param {Object} options - additional options
  * @param {String|Array} options.requestedClassifications - the requested classifications (default is aat.PRIMARY_TERM)
@@ -417,7 +420,7 @@ export function getClassified(
  *   {content: 'Blue Irises', classified_as: [{id: 'title'}]},
  *   {content: 'Van Gogh painting', classified_as: [{id: 'description'}]}
  * ]
- * getValuesByClassification(submittedResource, 'title') would return 'Irises'
+ * getValueByClassification(submittedResource, 'title') would return 'Irises'
  *
  * @returns {String|number} the matching value
  */
@@ -508,7 +511,7 @@ export function getValueOrContent(object) {
 }
 
 /**
- * Gets all the values of objects in a Linked Art object's 'referred_to_by' field
+ * Gets all the values of objects in a LinkedArt object's 'referred_to_by' field
  * which are classified by the classification parameter.
  *
  * @param {Object} object - the Actor object to inspect
@@ -705,7 +708,11 @@ function _getAssignedProperty(assigned, assignedProperty) {
   let accumulator = [];
   assigned.forEach((attr) => {
     if (attr[ASSIGNED_PROPERTY] == assignedProperty) {
-      accumulator.push(attr[ASSIGNED]);
+      if (Array.isArray(attr[ASSIGNED])) {
+        accumulator = accumulator.concat(attr[ASSIGNED]);
+      } else {
+        accumulator.push(attr[ASSIGNED]);
+      }
     }
   });
   return accumulator;

@@ -1,5 +1,5 @@
 /**
- * This is the main entrypoint for the module. We import the methods we want to expose
+ * This is the main entrypoint for the module. We import the functions we want to expose
  * from the appropriate helper and then export them as part of the module.
  */
 import {

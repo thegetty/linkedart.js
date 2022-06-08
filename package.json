@@ -1,20 +1,26 @@
 {
   "name": "@thegetty/linkedart.js",
-  "version": "0.17.1",
+  "version": "0.17.2",
+  "keywords": [
+    "LinkedArt",
+    "Linked Art",
+    "JSON-LD",
+    "Getty"
+  ],
+  "description": "Library of functions for parsing Linked Art (https://linked.art/) data for the Getty's Research Applications Development Team.",
   "scripts": {
     "test:unit": "jest",
     "test": "jest",
     "build": "npm run clean:dist && rollup -c build/rollup.config.js",
     "clean:dist": "rm -Rrf ./dist",
     "clean": "del ./dist",
-    "build:jsdoc": "node node_modules/jsdoc/jsdoc.js -c jsdoc-config.json; cp src/docs/style.css jsdoc/",
+    "build:jsdoc": "node node_modules/markdown-toc/cli.js README.md --maxdepth=3 -i; node node_modules/jsdoc/jsdoc.js -c jsdoc-config.json ; cp src/docs/style.css jsdoc/",
     "lint": "prettier --check 'src/**/*.js'",
     "lint:fix": "prettier -w 'src/**/*.js'",
     "prepublishOnly": "rollup -c build/rollup.config.js"
   },
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.0.0",
     "@babel/preset-env": "^7.12.10",
@@ -35,18 +41,21 @@
     "jest-transform-stub": "^2.0.0",
     "jest-watch-typeahead": "^0.3.1",
     "jsdoc": "^3.6.7",
+    "markdown-toc": "^1.2.0",
     "minimist": "1.2.6",
     "node-notifier": "^8.0.1",
     "prettier": "2.4.0",
     "rollup": "^2.51.1",
     "rollup-plugin-terser": "^7.0.2"
   },
-  "description": "Library of functions for parsing Linked Art (https://linked.art/) data for the Getty's Research Applications Development Team.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thegetty/linkedart.js.git"
   },
-  "author": "",
+  "author": "Getty Digital",
+  "bugs": {
+    "url": "https://github.com/thegetty/linkedart.js/issues"
+  },
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/thegetty/linkedart.js#readme"
 }
