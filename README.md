@@ -11,17 +11,17 @@
 - [Why did we create this?](#why-did-we-create-this)
 - [Common Terms](#common-terms)
 - [How Does it Work?](#how-does-it-work)
-  * [Simple Helpers for Simple Functions](#simple-helpers-for-simple-functions)
-  * [Working with Arrays, Objects, Parts, and Values](#working-with-arrays-objects-parts-and-values)
-  * [Working with Classifications](#working-with-classifications)
-  * [Working with Languages](#working-with-languages)
+  - [Simple Helpers for Simple Functions](#simple-helpers-for-simple-functions)
+  - [Working with Arrays, Objects, Parts, and Values](#working-with-arrays-objects-parts-and-values)
+  - [Working with Classifications](#working-with-classifications)
+  - [Working with Languages](#working-with-languages)
 - [More Examples & Documentation](#more-examples--documentation)
 - [What this Library does not do](#what-this-library-does-not-do)
 - [Contributing](#contributing)
 - [What Do I Need to Use It?](#what-do-i-need-to-use-it)
 - [How do I install it?](#how-do-i-install-it)
 - [Getting Started](#getting-started)
-  * [A Simple Example to get the title of an object:](#a-simple-example-to-get-the-title-of-an-object)
+  - [A Simple Example to get the title of an object:](#a-simple-example-to-get-the-title-of-an-object)
 - [List of Files](#list-of-files)
 - [License](#license)
 
@@ -253,7 +253,7 @@ To that end, this library does not make HTTP requests or attempt to resolve link
 
 ## Contributing
 
-We know this library does not include every use-case, or a simple helper for accessing every LinkedArt property. We’d love feedback or pull-requests to continue to broaden and deepen the library to better support the community.
+We know this library does not include every use-case, or a simple helper for accessing every LinkedArt property. We’d love [feedback](https://github.com/thegetty/linkedart.js/issues) or [pull-requests](https://github.com/thegetty/linkedart.js/pulls) to continue to broaden and deepen the library to better support the community.
 
 ## What Do I Need to Use It?
 

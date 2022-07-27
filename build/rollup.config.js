@@ -2,7 +2,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import { terser } from "rollup-plugin-terser";
 import pkg from "../package.json";
-import { alias, babel, resolver } from "./plugins/index.js";
+import { alias, babel, resolver, copy } from "./plugins/index.js";
 
 const external = [...Object.keys(pkg.dependencies)];
 
@@ -21,7 +21,7 @@ export default [
       },
     ],
     external,
-    plugins: [json(), commonjs(), alias, resolver, babel, terser()],
+    plugins: [json(), commonjs(), alias, resolver, copy, babel, terser()],
   },
   {
     input: "src/index.js",
@@ -33,6 +33,6 @@ export default [
       },
     ],
     external,
-    plugins: [json(), commonjs(), alias, resolver, babel, terser()],
+    plugins: [json(), commonjs(), alias, resolver, copy, babel, terser()],
   },
 ];

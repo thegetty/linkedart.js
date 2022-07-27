@@ -18,6 +18,26 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.18.0]
+
+### Added
+
+- Added a few more constants to the constants file
+
+### Changed
+
+- adjusts the readme to link to the issues and contributions section on GitHub
+- exposed the constants and the AAT file to the standard export. This is useful for those who want to use AND/OR or other internal constants as well as common LinkedArt fields e.g.:
+
+```
+// import all the constants
+import aat from "@thegetty/linkedart.js/aat";
+import constants from "@thegetty/linkedart.js/constants";
+
+// import selected constants
+import { REFERRED_TO_BY } from "@thegetty/linkedart.js/constants";
+```
+
 ## [0.17.2]
 
 ### Changed
@@ -218,3 +238,7 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 ## [0.9.0]
 
 - Initial fork from Getty LinkedArt Library.
+
+```
+
+```

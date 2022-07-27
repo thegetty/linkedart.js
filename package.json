@@ -12,8 +12,7 @@
     "test:unit": "jest",
     "test": "jest",
     "build": "npm run clean:dist && rollup -c build/rollup.config.js",
-    "clean:dist": "rm -Rrf ./dist",
-    "clean": "del ./dist",
+    "clean:dist": "rm -Rrf ./dist; rm -Rrf ./constants",
     "build:jsdoc": "node node_modules/markdown-toc/cli.js README.md --maxdepth=3 -i; node node_modules/jsdoc/jsdoc.js -c jsdoc-config.json ; cp src/docs/style.css jsdoc/",
     "lint": "prettier --check 'src/**/*.js'",
     "lint:fix": "prettier -w 'src/**/*.js'",
@@ -47,6 +46,7 @@
     "node-notifier": "^8.0.1",
     "prettier": "2.4.0",
     "rollup": "^2.51.1",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-terser": "^7.0.2"
   },
   "repository": {
