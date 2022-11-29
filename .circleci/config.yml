@@ -12,13 +12,23 @@ orbs:
 
 jobs:
   build:
-    executor: build_env
+    docker:
+      - image: cimg/node:18.12.1
+    working_directory: ~/repo
+    environment:
+      CI: true
+      TZ: "/usr/share/zoneinfo/America/Los_Angeles"
     steps:
       - setup
       - lint
       - run_tests
   deploy:
-    executor: build_env
+    docker:
+      - image: cimg/node:18.12.1
+    working_directory: ~/repo
+    environment:
+      CI: true
+      TZ: "/usr/share/zoneinfo/America/Los_Angeles"
     steps:
       - *attach_workspace
       - build_output
@@ -59,10 +69,3 @@ commands:
       - persist_to_workspace:
           root: *workspace_root # absolute path or relative to working_directory
           paths: . # paths relative to the workspace root
-
-executors:
-  build_env:
-    docker:
-      - image: cimg/node:15.4.0
-    working_directory: ~/repo
-    environment: CI:true
