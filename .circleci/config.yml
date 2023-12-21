@@ -8,7 +8,7 @@ anchors:
       at: *workspace_root
 
 orbs:
-  getty-devops: thegetty/devops-orb@2
+  getty-devops: thegetty/devops-orb@3
 
 jobs:
   build:
