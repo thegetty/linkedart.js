@@ -1,0 +1,205 @@
+{
+    "@context": "https://linked.art/ns/v1/linked-art.json",
+    "about": [],
+    "classified_as": [
+        {
+            "id": "http://data.duchamparchives.org/cp/object/thesaurus/dessin",
+            "label": [
+                {
+                    "@language": "fr",
+                    "@value": "dessins"
+                },
+                "Dessin"
+            ],
+            "type": "Type"
+        },
+        {
+            "id": "aat:300133025",
+            "label": [
+                {
+                    "@language": "en",
+                    "@value": "works of art"
+                },
+                "works of art"
+            ],
+            "type": "Type"
+        }
+    ],
+    "crm:P104_is_subject_to": null,
+    "crm:P57_has_number_of_parts": null,
+    "current_keeper": null,
+    "current_location": null,
+    "current_owner": [
+        {
+            "id": "http://data.duchamparchives.org/pompidou",
+            "label": "Centre Pompidou",
+            "type": "Group"
+        }
+    ],
+    "depicts": [],
+    "id": "http://data.duchamparchives.org/cp/object/150000000076631",
+    "identified_by": [
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300404670",
+                    "label": "preferred terms",
+                    "type": "Type"
+                },
+                {
+                    "id": "aat:300404621",
+                    "label": "repository numbers",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/cp/object/150000000076631/object_id",
+            "type": "Identifier",
+            "value": "150000000076631"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300312355",
+                    "label": "accession numbers",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/cp/object/150000000076631/accession",
+            "type": "Identifier",
+            "value": "AM 1997-98 (163)"
+        },
+        {
+            "id": "http://data.duchamparchives.org/cp/object/150000000076631/title",
+            "type": "Name",
+            "value": "1 l'intention/2 la crainte/3 d\u00e9sir"
+        }
+    ],
+    "label": null,
+    "language": [],
+    "made_of": [],
+    "ore:isAggregatedBy": null,
+    "part_of": [],
+    "produced_by": {
+        "carried_out_by": [
+            "http://data.duchamparchives.org/pma/archive/actor/LCNAF/n80057220"
+        ],
+        "consists_of": [
+            {
+                "carried_out_by": [
+                    {
+                        "id": "http://data.duchamparchives.org/pma/archive/actor/LCNAF/n80057220",
+                        "label": "Duchamp, Marcel, 1887-1968",
+                        "type": "Actor"
+                    }
+                ],
+                "classified_as": [],
+                "id": "http://data.duchamparchives.org/cp/object/150000000076631/production/artiste",
+                "technique": [
+                    {
+                        "id": "aat:artist",
+                        "label": "artist",
+                        "type": "Type"
+                    }
+                ],
+                "type": "Production"
+            }
+        ],
+        "id": "http://data.duchamparchives.org/cp/object/150000000076631/production",
+        "timespan": {
+            "begin_of_the_begin": "1912-01-01T00:00:00.000Z",
+            "end_of_the_end": "1968-01-01T00:00:00.000Z",
+            "id": "http://data.duchamparchives.org/cp/object/150000000076631/production/timespan",
+            "label": "1912 - 1968",
+            "type": "TimeSpan"
+        },
+        "type": "Production"
+    },
+    "referred_to_by": [
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300026687",
+                    "label": "acknowledgments",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/cp/object/150000000076631/credit",
+            "type": "LinguisticObject",
+            "value": "Dation, 1997"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300028702",
+                    "label": [
+                        "inscriptions",
+                        {
+                            "@language": "en",
+                            "@value": "inscriptions"
+                        }
+                    ],
+                    "type": "Type"
+                }
+            ],
+            "type": "LinguisticObject",
+            "value": "Transcription :\n1 l\u2019intention\t  3 d\u00e9sir\n2 la crainte\n\nCentres d\u00e9sir au nombre de 3.\nContiennent une mati\u00e8re\nanalogue \u00e0 la mousse de\nplatine = lente \u00e0 s\u2019allumer."
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300055547",
+                    "label": "legal concepts",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/cp/object/150000000076631/rights",
+            "type": "LinguisticObject",
+            "value": "\u00a9 Association Marcel Duchamp / Adagp, Paris"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300080091",
+                    "label": "description (activity)",
+                    "type": "Type"
+                }
+            ],
+            "type": "LinguisticObject",
+            "value": "Ensemble de 289 notes originales de Marcel Duchamp. Notes publi\u00e9es en fac-simil\u00e9 par Paul Matisse dans \"Marcel Duchamp, Notes\" (Paris, Centre national d'art et de culture Georges Pompidou, 1980), r\u00e9parties en 4 sections : \"Inframince\", \"Le Grand Verre\", \"Projets\" et \"Jeux de mots\".\nentre 1912 et 1968"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300163343",
+                    "label": "media (artists' materials)",
+                    "type": "Type"
+                }
+            ],
+            "type": "LinguisticObject",
+            "value": "Mine graphite sur papier"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300266036",
+                    "label": "dimensions",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/cp/object/150000000076631/dimensions",
+            "type": "LinguisticObject",
+            "value": "20 x 15,8 cm"
+        }
+    ],
+    "refers_to": [],
+    "related": [],
+    "representation": [
+        {
+            "id": "https://iiif.duchamparchives.org/image/iiif/2/9000000064949",
+            "type": "VisualItem"
+        }
+    ],
+    "subject_of": [],
+    "type": "ManMadeObject",
+    "used_for": []
+}

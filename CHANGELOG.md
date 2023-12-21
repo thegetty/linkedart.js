@@ -18,6 +18,16 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.19.0]
+
+### Added
+
+- added a few more examples of LinkedArt data from the PMA
+
+### Changed
+
+- adjusted the logic around 'getPrimaryName' to fallback to `Name` entries when a qualified name isn't used and no qualification is entered
+
 ## [0.18.0]
 
 ### Added

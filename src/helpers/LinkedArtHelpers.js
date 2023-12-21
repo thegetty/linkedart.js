@@ -312,6 +312,15 @@ export function getPrimaryNames(
     return name;
   }
 
+  // if we don't have a name with a classification, and we're using the 'default' values, look for a Name
+  if (names.length > 0 && requestedClassifications == aat.PREFERRED_TERM) {
+    let values = [...names];
+    for (let i in values) {
+      values[i] = getValueOrContent(values[i]);
+    }
+    return values;
+  }
+
   // fallback for error case
   let label = UNKNOWN;
   if (submittedResource && submittedResource.id) {
