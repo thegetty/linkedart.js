@@ -27,6 +27,7 @@ import {
   ASSIGNED,
   AND,
   OR,
+  NOT,
 } from "../data/constants.json";
 
 /**
@@ -307,7 +308,6 @@ export function getPrimaryNames(
     language,
     languageOptions,
   });
-
   if (name.length > 0) {
     return name;
   }
@@ -394,6 +394,10 @@ export function getClassified(
       }
     } else if (operator.toUpperCase() == OR) {
       if (requestedClassArray.some(inClassificationIDs)) {
+        results.push(resource);
+      }
+    } else if (operator.toUpperCase() == NOT) {
+      if (requestedClassArray.every(inClassificationIDs) == false) {
         results.push(resource);
       }
     } else {

@@ -215,6 +215,16 @@ describe("classifiedAs", () => {
     expect(results[0].content).toBe("Young Woman Picking Fruit");
   });
 
+  test("only returns the correct one if there are multiples", () => {
+    const results = getClassifiedAs(
+      sampleData.only_one_identified_by,
+      "http://vocab.getty.edu/aat/300404670",
+      { operator: "not" }
+    );
+    expect(results).toHaveLength(1);
+    expect(results[0].content).toBe("Young Women Plucking Fruit");
+  });
+
   test("returns an empty array with a missing classification", () => {
     const results = getClassifiedAs(
       sampleData.no_classification_identified_by,

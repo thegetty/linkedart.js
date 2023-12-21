@@ -21,6 +21,7 @@
   "LANGUAGE": "language",
   "MEMBER_OF": "member_of",
   "NAME": "Name",
+  "NOT": "NOT",
   "OR": "OR",
   "PART": "part",
   "PART_OF": "part_of",
