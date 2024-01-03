@@ -1,0 +1,215 @@
+{
+    "@context": "https://linked.art/ns/v1/linked-art.json",
+    "about": [],
+    "classified_as": [
+        {
+            "id": "aat:300133025",
+            "label": [
+                {
+                    "@language": "en",
+                    "@value": "works of art"
+                },
+                "works of art"
+            ],
+            "type": "Type"
+        },
+        {
+            "id": "aat:300047090",
+            "label": [
+                {
+                    "@language": "en",
+                    "@value": "sculpture/Readymades"
+                },
+                "sculpture (visual works)"
+            ],
+            "type": "Type"
+        }
+    ],
+    "crm:P104_is_subject_to": null,
+    "crm:P57_has_number_of_parts": null,
+    "current_keeper": null,
+    "current_location": null,
+    "current_owner": [
+        {
+            "id": "http://data.philamuseum.org",
+            "label": "Philadelphia Museum of Art",
+            "type": "Group"
+        }
+    ],
+    "depicts": [],
+    "id": "http://data.duchamparchives.org/pma/object/51617",
+    "identified_by": [
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300312355",
+                    "label": "accession numbers",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/pma/object/51617/object_number",
+            "type": "Identifier",
+            "value": "1950-134-78"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300404670",
+                    "label": "preferred terms",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/pma/object/51617/title/0",
+            "type": "Name",
+            "value": "50 cc of Paris Air"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300404670",
+                    "label": "preferred terms",
+                    "type": "Type"
+                },
+                {
+                    "id": "aat:300404621",
+                    "label": "repository numbers",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/pma/object/51617/id",
+            "type": "Identifier",
+            "value": "51617"
+        }
+    ],
+    "label": null,
+    "language": [],
+    "made_of": [],
+    "ore:isAggregatedBy": null,
+    "part_of": [],
+    "produced_by": {
+        "carried_out_by": [
+            "http://data.duchamparchives.org/pma/archive/actor/LCNAF/n80057220"
+        ],
+        "consists_of": [
+            {
+                "carried_out_by": [
+                    {
+                        "id": "http://data.duchamparchives.org/pma/archive/actor/LCNAF/n80057220",
+                        "label": "Duchamp, Marcel, 1887-1968",
+                        "type": "Actor"
+                    }
+                ],
+                "classified_as": [],
+                "id": "http://data.duchamparchives.org/pma/object/51617/production/0",
+                "technique": [
+                    {
+                        "id": "aat:300025103",
+                        "label": [
+                            {
+                                "@language": "en",
+                                "@value": "artist"
+                            },
+                            {
+                                "@language": "en",
+                                "@value": "artists (visual artists)"
+                            },
+                            "artists (visual artists)"
+                        ],
+                        "type": "Type"
+                    }
+                ],
+                "type": "Production"
+            }
+        ],
+        "id": "http://data.duchamparchives.org/pma/object/51617/production",
+        "timespan": {
+            "begin_of_the_begin": "1919-01-01T00:00:00.000Z",
+            "end_of_the_end": "1919-01-01T00:00:00.000Z",
+            "label": "1919",
+            "type": "TimeSpan"
+        },
+        "type": "Production"
+    },
+    "referred_to_by": [
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300026687",
+                    "label": "acknowledgments",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/pma/object/51617/credit",
+            "type": "LinguisticObject",
+            "value": "The Louise and Walter Arensberg Collection, 1950"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300055547",
+                    "label": "legal concepts",
+                    "type": "Type"
+                }
+            ],
+            "type": "LinguisticObject",
+            "value": "\u00a9 Artists Rights Society (ARS), New York / ADAGP, Paris / Succession Marcel Duchamp"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300080091",
+                    "label": "description (activity)",
+                    "type": "Type"
+                }
+            ],
+            "type": "LinguisticObject",
+            "value": "Duchamp purchased this \"empty\" ampoule from a pharmacist in Paris as a souvenir for his close friend and patron, Walter C. Arensberg. A vial with nothing in it may be the most insubstantial \"work of art\" imaginable. From a molecular point of view, air is not considered nothing, but when displayed so carefully in an art museum it seems to be less than one might expect. Its precise meaning was rendered even more unstable in 1949, when the ampoule was accidentally broken and repaired, thus begging the question: Is the air even from Paris anymore?"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300163343",
+                    "label": "media (artists' materials)",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/pma/object/51617/medium",
+            "type": "LinguisticObject",
+            "value": "Glass ampoule (broken and later restored)"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300266036",
+                    "label": "dimensions",
+                    "type": "Type"
+                }
+            ],
+            "id": "http://data.duchamparchives.org/pma/object/51617/dimensions",
+            "type": "LinguisticObject",
+            "value": "5 1/4 x 2 1/2 inches (13.3 \u00d7 6.4 cm)"
+        },
+        {
+            "classified_as": [
+                {
+                    "id": "aat:300054388",
+                    "label": "geography",
+                    "type": "Type"
+                }
+            ],
+            "type": "LinguisticObject",
+            "value": "Made in Paris, France, Europe"
+        }
+    ],
+    "refers_to": [],
+    "related": [],
+    "representation": [
+        {
+            "id": "https://iiif.duchamparchives.org/image/iiif/2/1950-134-78-pma2017",
+            "type": "VisualItem"
+        }
+    ],
+    "subject_of": [],
+    "type": "ManMadeObject",
+    "used_for": []
+}
