@@ -449,11 +449,10 @@ describe("get assigned", () => {
 
   it("tests an undefined assignment", () => {
     let assigned = helpers.getAssignedBy(jpc);
-    let values = assigned
-      .map((el) =>
-        getValueByClassification(el, "http://vocab.getty.edu/aat/300192339")
-      )
-      .filter((el) => el != null)[0];
+    let values = getValuesByClassification(
+      assigned,
+      "http://vocab.getty.edu/aat/300192339"
+    ).filter((el) => el != null)[0];
     expect(values).toEqual(8);
   });
 
