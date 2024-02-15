@@ -18,6 +18,12 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.20.0]
+
+### Changed
+
+- `attributed_by` does not require an `assigned_property` so adjusting the logic to allow for it to be null
+
 ## [0.19.0]
 
 ### Added

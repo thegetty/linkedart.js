@@ -586,7 +586,7 @@ export function getAttributedBy(object, assignedProperty) {
  * an 'assigned_property' attribute that matches the assignedProperty parameter.
  *
  * @param {Object} object - the LinkedArt Object
- * @param {String} assignedProperty  - the assigned properly
+ * @param {String} assignedProperty  - the assigned properly (optional)
  * 
  * @example getAssignedBy(object, 'identified_by') would return the object with 'type': 'Name'
  * from the example object below
@@ -708,7 +708,7 @@ function _convertToArrayIfNeeded(resourceParam) {
  * Gets the assigned property objects
  *
  * @param {Array} assigned
- * @param {String} assignedProperty
+ * @param {String} assignedProperty (optional)
  * @private
  *
  * @returns {Array} - the assigned values
@@ -716,7 +716,10 @@ function _convertToArrayIfNeeded(resourceParam) {
 function _getAssignedProperty(assigned, assignedProperty) {
   let accumulator = [];
   assigned.forEach((attr) => {
-    if (attr[ASSIGNED_PROPERTY] == assignedProperty) {
+    if (
+      attr[ASSIGNED_PROPERTY] == assignedProperty ||
+      assignedProperty == undefined
+    ) {
       if (Array.isArray(attr[ASSIGNED])) {
         accumulator = accumulator.concat(attr[ASSIGNED]);
       } else {
