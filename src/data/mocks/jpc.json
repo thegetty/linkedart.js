@@ -1,0 +1,113 @@
+{
+    "@context": "https://linked.art/ns/v1/linked-art.json",
+    "_label": "Aiken, Kimberly - Box COI-001A Folder 047 Item 0008",
+    "assigned_by": [
+        {
+            "_label": "Related Media Sequence Assignment",
+            "assigned": [
+                {
+                    "_label": "Related Media Sequence",
+                    "classified_as": [
+                        {
+                            "_label": "sequences",
+                            "id": "http://vocab.getty.edu/aat/300192339",
+                            "type": "Type"
+                        },
+                        {
+                            "_label": "positional attributes",
+                            "id": "http://vocab.getty.edu/aat/300010269",
+                            "type": "Type"
+                        }
+                    ],
+                    "id": "https://staging-data.jpcarchive.org/object/00051151-f80c-4af6-bad2-65a0cb5e9b90/tile/d7453a2c-1a53-4c7a-9679-70724cba59c1/node/b6e12d04-7da0-11ee-90e1-5e9e1d6c824a",
+                    "type": "Dimension",
+                    "unit": {
+                        "_label": "numbers",
+                        "id": "http://vocab.getty.edu/aat/300055665",
+                        "type": "MeasurementUnit"
+                    },
+                    "value": 8
+                }
+            ],
+            "id": "https://staging-data.jpcarchive.org/object/00051151-f80c-4af6-bad2-65a0cb5e9b90/tile/d7453a2c-1a53-4c7a-9679-70724cba59c1/node/0eae4196-7d8a-11ee-b90f-5e9e1d6c824a",
+            "type": "AttributeAssignment",
+            "used_specific_object": [
+                {
+                    "_label": "Item order for urn:aspace:1c4d47e728a3fc5190c88b7f9909b811",
+                    "id": "https://staging-data.jpcarchive.org/object/00051151-f80c-4af6-bad2-65a0cb5e9b90/tile/d7453a2c-1a53-4c7a-9679-70724cba59c1/node/27cd9e14-7d8b-11ee-81da-aa5c27bfb039",
+                    "refers_to": [
+                        {
+                            "id": "https://staging-data.jpcarchive.org/object/00051151-f80c-4af6-bad2-65a0cb5e9b90/tile/d7453a2c-1a53-4c7a-9679-70724cba59c1/node/bd706ed6-8ef4-11ee-b71e-1a7b441944f3",
+                            "identified_by": [
+                                {
+                                    "content": "1c4d47e728a3fc5190c88b7f9909b811",
+                                    "id": "https://staging-data.jpcarchive.org/object/00051151-f80c-4af6-bad2-65a0cb5e9b90/tile/d7453a2c-1a53-4c7a-9679-70724cba59c1/node/48ff2508-8ef7-11ee-be03-aa5c27bfb039",
+                                    "type": "Identifier"
+                                }
+                            ],
+                            "type": "InformationObject"
+                        }
+                    ],
+                    "type": "Set"
+                }
+            ]
+        }
+    ],
+    "id": "https://staging-data.jpcarchive.org/object/00051151-f80c-4af6-bad2-65a0cb5e9b90",
+    "identified_by": [
+        {
+            "_label": "Primary Title",
+            "classified_as": [
+                {
+                    "_label": "titles (general, names)",
+                    "id": "http://vocab.getty.edu/aat/300417193",
+                    "type": "Type"
+                }
+            ],
+            "content": "Aiken, Kimberly - Box COI-001A Folder 047 Item 0008",
+            "id": "https://staging-data.jpcarchive.org/object/00051151-f80c-4af6-bad2-65a0cb5e9b90/tile/45824acb-f920-47db-a933-c0fcce94fd1c/node/0d074a56-7d88-11ee-81da-aa5c27bfb039",
+            "type": "Name"
+        },
+        {
+            "id": "https://staging-data.jpcarchive.org/object/00051151-f80c-4af6-bad2-65a0cb5e9b90/slug",
+            "type": "Identifier",
+            "content": "114PV0",
+            "classified_as": [
+                {
+                    "id": "https://data.getty.edu/local/thesaurus/temporary-slug",
+                    "type": "Type",
+                    "_label": "generated URL slug"
+                }
+            ]
+        }
+    ],
+    "type": "HumanMadeObject",
+    "part_of": [
+        {
+            "id": "https://staging-data.jpcarchive.org/component/1ff71b8c-1e3a-512b-a42c-7b1c4b0939e0",
+            "type": "InformationObject"
+        }
+    ],
+    "subject_of": [
+        {
+            "id": "https://iiif.jpcarchive.org/iiif/v2.0/manifest/arches:00051151-f80c-4af6-bad2-65a0cb5e9b90",
+            "type": "InformationObject",
+            "conforms_to": [
+                {
+                    "id": "http://iiif.io/api/presentation",
+                    "type": "InformationObject"
+                }
+            ],
+            "format": [
+                "application/ld+json;profile=\"http://iiif.io/api/presentation/2/context.json\""
+            ],
+            "classified_as": [
+                {
+                    "id": "https://data.getty.edu/local/thesaurus/iiif-manifest",
+                    "type": "Type",
+                    "_label": "IIIF manifest"
+                }
+            ]
+        }
+    ]
+}

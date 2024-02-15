@@ -10,6 +10,7 @@ import irises from "../data/mocks/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb";
 import titan from "../data/mocks/dff75e58-f8b9-4507-8ab7-5d948451dea7.json";
 import stagBeetle from "../data/mocks/a69d5696-70c2-56ed-9f82-fb2e69311e5d";
 import atticFragment from "../data/mocks/dd808888-4dfe-441c-b3d0-ce57c4167c5b";
+import jpc from "../data/mocks/jpc.json";
 
 let aat = {
   PREFERRED_TERM: "http://vocab.getty.edu/aat/300404670",
@@ -444,6 +445,15 @@ describe("get assigned", () => {
     expect(helpers.getAssignedBy(titan.produced_by, "part_of")[0].id).toEqual(
       "https://data.getty.edu/museum/collection/object/dff75e58-f8b9-4507-8ab7-5d948451dea7/production/previous-attribution/07ebbfca-985b-4a07-96ed-8cc7cf0c1ff1/production"
     );
+  });
+
+  it("tests an undefined assignment", () => {
+    let assigned = helpers.getAssignedBy(jpc);
+    let values = getValuesByClassification(
+      assigned,
+      "http://vocab.getty.edu/aat/300192339"
+    ).filter((el) => el != null)[0];
+    expect(values).toEqual(8);
   });
 
   it("gets the previously attributed artist (single)", () => {
