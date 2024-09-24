@@ -45,7 +45,7 @@
     "minimist": "1.2.6",
     "node-notifier": "^8.0.1",
     "prettier": "2.4.0",
-    "rollup": "^2.51.1",
+    "rollup": "^3.29.5",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-terser": "^7.0.2"
   },
