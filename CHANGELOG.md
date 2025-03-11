@@ -18,6 +18,13 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.21.0]
+
+### Changed
+
+- updated build environment to use Vite/Vitest
+- updated Eslint / prettier environment to remove babel and remove other dependencies
+
 ## [0.20.0]
 
 ### Changed

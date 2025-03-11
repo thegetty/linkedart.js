@@ -31,7 +31,7 @@ describe("getDigitalImages", () => {
 describe("getRightsStatements", () => {
   it("gets the correct right statement if present", () => {
     expect(objectHelpers.getRightsStatements(irises)).toEqual([
-      "No Copyright - United States",
+      "No Copyright - United States"
     ]);
   });
 });
@@ -39,7 +39,7 @@ describe("getRightsStatements", () => {
 describe("getCopyrightStatements", () => {
   it("return empty array if no copyright", () => {
     expect(objectHelpers.getCopyrightStatements(kasten)).toEqual([
-      "© Barbara Kasten",
+      "© Barbara Kasten"
     ]);
   });
 });
@@ -65,7 +65,7 @@ describe("get creators", () => {
     creators.forEach((creator) =>
       filtered.push({
         label: creator._label,
-        id: creator.id,
+        id: creator.id
       })
     );
     expect(filtered.length).toEqual(7);
@@ -73,32 +73,32 @@ describe("get creators", () => {
     expect(filtered).toEqual([
       {
         id: "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production/1663467e-66d8-4170-91b0-2937ba6447e6/unknown-maker",
-        label: "Unknown",
+        label: "Unknown"
       },
       {
         id: "https://data.getty.edu/museum/collection/person/4f6f0d33-2646-4410-93fa-d0ecadf8852a",
-        label: "Aesop",
+        label: "Aesop"
       },
       {
         id: "https://data.getty.edu/museum/collection/person/d7433a2b-feae-4cb8-a5e0-ec14fe1ef308",
-        label: "Pope Clement V",
+        label: "Pope Clement V"
       },
       {
         id: "https://data.getty.edu/museum/collection/person/8bf6aab8-b8f6-416b-b924-7c0020a792f5",
-        label: "Avianus",
+        label: "Avianus"
       },
       {
         id: "https://data.getty.edu/museum/collection/person/c60ea30a-5d9a-4128-abad-ff3714ab8bc5",
-        label: "Richard Fitzralph",
+        label: "Richard Fitzralph"
       },
       {
         id: "https://data.getty.edu/museum/collection/person/c98e9cea-c658-4a47-b054-df28d11471a1",
-        label: "John Mandeville",
+        label: "John Mandeville"
       },
       {
         id: "https://data.getty.edu/museum/collection/person/09a22d6e-a6bd-4f22-9062-814328759bee",
-        label: "Berengarius Fredoli",
-      },
+        label: "Berengarius Fredoli"
+      }
     ]);
   });
 });
@@ -112,7 +112,7 @@ describe("getCultures", () => {
 describe("getMaterialStatements", () => {
   it("gets the correct material(s) description if present", () => {
     expect(objectHelpers.getMaterialStatements(irises)).toEqual([
-      "Oil on canvas",
+      "Oil on canvas"
     ]);
   });
 });
@@ -129,11 +129,11 @@ describe("get production information", () => {
             _label: "Date",
             content: "1889",
             id: "https://data.getty.edu/museum/collection/object/c88b3df0-de91-4f5b-a9ef-7b2b9a6d8abb/production/timespan/name",
-            type: "Name",
-          },
+            type: "Name"
+          }
         ],
-        type: "TimeSpan",
-      },
+        type: "TimeSpan"
+      }
     ]);
   });
   it("gets the timespan(s) in a case where there are multiple productions (in this case, still just one)", () => {
@@ -147,11 +147,11 @@ describe("get production information", () => {
             _label: "Date",
             content: "third quarter of 15th century",
             id: "https://data.getty.edu/museum/collection/object/f8fd6961-6da3-4c39-94ad-e8e9367fa51b/production/timespan/name",
-            type: "Name",
-          },
+            type: "Name"
+          }
         ],
-        type: "TimeSpan",
-      },
+        type: "TimeSpan"
+      }
     ]);
   });
 

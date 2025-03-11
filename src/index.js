@@ -20,13 +20,13 @@ import {
   getAssignedBy,
   getFieldValuesByClassifications,
   getFieldPartSubfield,
-  getObjectParts,
+  getObjectParts
 } from "./helpers/LinkedArtHelpers";
 
 import {
   normalizeAatId,
   normalizeFieldToArray,
-  normalizeFieldWithParts,
+  normalizeFieldWithParts
 } from "./helpers/BasicHelpers";
 
 import {
@@ -34,7 +34,7 @@ import {
   getLanguageId,
   normalizeLanguageId,
   lookupAatFromIso,
-  lookupIsoFromAat,
+  lookupIsoFromAat
 } from "./helpers/LanguageHelpers";
 
 import {
@@ -50,7 +50,7 @@ import {
   getMaterialStatements,
   getProductionTimespans,
   getWorkTypes,
-  getClassifications,
+  getClassifications
 } from "./helpers/ObjectHelpers";
 
 export {
@@ -92,5 +92,5 @@ export {
   getMaterialStatements,
   getProductionTimespans,
   getWorkTypes,
-  getClassifications,
+  getClassifications
 };

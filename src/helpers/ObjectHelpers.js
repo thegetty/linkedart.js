@@ -12,7 +12,7 @@ import {
   getClassifiedAs,
   getClassified,
   getValueOrContent,
-  getClassifiedAsWithClassification,
+  getClassifiedAsWithClassification
 } from "./LinkedArtHelpers";
 import { normalizeFieldToArray } from "./BasicHelpers";
 import aat from "../data/aat.json";
@@ -25,7 +25,7 @@ import {
   REPRESENTATION,
   SUBJECT_TO,
   CLASSIFIED_AS,
-  OR,
+  OR
 } from "../data/constants.json";
 
 /**
@@ -47,7 +47,7 @@ export function getDimensionsDescriptions(
   {
     requestedClassifications = aat.DIMENSIONS_DESCRIPTION,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   return getFieldValuesByClassifications(
@@ -77,7 +77,7 @@ export function getAccessionNumbers(
   {
     requestedClassifications = aat.ACCESSION_NUMBERS,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   return getFieldValuesByClassifications(
@@ -126,7 +126,7 @@ export function getCultures(
   {
     requestedClassifications = aat.CULTURE,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   return getFieldValuesByClassifications(
@@ -182,7 +182,7 @@ export function getRightsStatements(
   {
     requestedClassifications = [aat.LEGAL_CONCEPTS, aat.RIGHTS],
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   const referredToBy = normalizeFieldToArray(submittedResource, REFERRED_TO_BY);
@@ -190,7 +190,7 @@ export function getRightsStatements(
     classificationField: CLASSIFIED_AS,
     language,
     languageOptions,
-    operator: OR,
+    operator: OR
   });
   return rights.map((right) => getValueOrContent(right));
 }
@@ -214,7 +214,7 @@ export function getCopyrightStatements(
   {
     requestedClassifications = aat.COPYRIGHT,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   return getFieldValuesByClassifications(
@@ -233,10 +233,7 @@ export function getCopyrightStatements(
  *
  * @returns {Array} array of urls of assertions of rights the resource is subject to
  */
-export function getRightsAssertions(
-  submittedResource,
-  { language, languageOptions = {} } = {}
-) {
+export function getRightsAssertions(submittedResource) {
   const subjectTo = normalizeFieldToArray(submittedResource, SUBJECT_TO);
 
   // get array of rights assertion objects
@@ -268,7 +265,7 @@ export function getAcknowledgementStatements(
   {
     requestedClassifications = aat.ACKNOWLEDGEMENT,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   return getFieldValuesByClassifications(
@@ -298,7 +295,7 @@ export function getMaterialStatements(
   {
     requestedClassifications = aat.MATERIALS_DESCRIPTION,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   return getFieldValuesByClassifications(
@@ -353,7 +350,7 @@ export function getWorkTypes(
   {
     requestedClassifications = aat.WORK_TYPE,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   let workTypes = getClassifiedAsWithClassification(
@@ -383,7 +380,7 @@ export function getClassifications(
   {
     requestedClassifications = aat.CLASSIFICATION,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   let classifications = getClassifiedAsWithClassification(

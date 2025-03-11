@@ -2,7 +2,7 @@ import {
   getClassifiedAs,
   getClassifiedBy,
   getValueByClassification,
-  getValuesByClassification,
+  getValuesByClassification
 } from "./LinkedArtHelpers";
 import * as helpers from "./LinkedArtHelpers";
 import fables from "../data/mocks/f8fd6961-6da3-4c39-94ad-e8e9367fa51b.json";
@@ -14,7 +14,7 @@ import jpc from "../data/mocks/jpc.json";
 
 let aat = {
   PREFERRED_TERM: "http://vocab.getty.edu/aat/300404670",
-  SEQUENCE_POSITION: "http://vocab.getty.edu/aat/300010269",
+  SEQUENCE_POSITION: "http://vocab.getty.edu/aat/300010269"
 };
 
 describe("classifiedAs", () => {
@@ -27,17 +27,17 @@ describe("classifiedAs", () => {
           {
             id: "http://vocab.getty.edu/aat/300404670",
             _label: "preferred terms",
-            type: "Type",
-          },
-        ],
-      },
+            type: "Type"
+          }
+        ]
+      }
     ],
     without_classified_id: [
       {
         type: "Name",
         content: "Young Woman Picking Fruit",
-        classified_as: [{ _label: "preferred terms", type: "Type" }],
-      },
+        classified_as: [{ _label: "preferred terms", type: "Type" }]
+      }
     ],
     no_array_identified_by: {
       type: "Name",
@@ -46,9 +46,9 @@ describe("classifiedAs", () => {
         {
           id: "http://vocab.getty.edu/aat/300404670",
           _label: "preferred terms",
-          type: "Type",
-        },
-      ],
+          type: "Type"
+        }
+      ]
     },
     multi_identified_by: [
       {
@@ -58,15 +58,15 @@ describe("classifiedAs", () => {
           {
             id: "http://vocab.getty.edu/aat/300404670",
             _label: "preferred terms",
-            type: "Type",
+            type: "Type"
           },
           {
             id: "http://vocab.getty.edu/aat/300404671",
             _label: "mispreferred terms",
-            type: "Type",
-          },
-        ],
-      },
+            type: "Type"
+          }
+        ]
+      }
     ],
     two_identified_by: [
       {
@@ -76,9 +76,9 @@ describe("classifiedAs", () => {
           {
             id: "http://vocab.getty.edu/aat/300404670",
             _label: "preferred terms",
-            type: "Type",
-          },
-        ],
+            type: "Type"
+          }
+        ]
       },
       {
         type: "Name",
@@ -87,10 +87,10 @@ describe("classifiedAs", () => {
           {
             id: "http://vocab.getty.edu/aat/300404670",
             _label: "preferred terms",
-            type: "Type",
-          },
-        ],
-      },
+            type: "Type"
+          }
+        ]
+      }
     ],
     only_one_identified_by: [
       {
@@ -100,9 +100,9 @@ describe("classifiedAs", () => {
           {
             id: "http://vocab.getty.edu/aat/300404670",
             _label: "preferred terms",
-            type: "Type",
-          },
-        ],
+            type: "Type"
+          }
+        ]
       },
       {
         type: "Name",
@@ -111,10 +111,10 @@ describe("classifiedAs", () => {
           {
             id: "http://vocab.getty.edu/aat/300404671",
             _label: "un-preferred terms",
-            type: "Type",
-          },
-        ],
-      },
+            type: "Type"
+          }
+        ]
+      }
     ],
     object_identified_by: [
       {
@@ -123,29 +123,29 @@ describe("classifiedAs", () => {
         classified_as: {
           id: "http://vocab.getty.edu/aat/300404670",
           _label: "preferred terms",
-          type: "Type",
-        },
-      },
+          type: "Type"
+        }
+      }
     ],
     string_identified_by: [
       {
         type: "Name",
         content: "Young Woman Picking Fruit",
-        classified_as: "http://vocab.getty.edu/aat/300404670",
-      },
+        classified_as: "http://vocab.getty.edu/aat/300404670"
+      }
     ],
     string_array_identified_by: [
       {
         type: "Name",
         content: "Young Woman Picking Fruit",
-        classified_as: ["http://vocab.getty.edu/aat/300404670"],
-      },
+        classified_as: ["http://vocab.getty.edu/aat/300404670"]
+      }
     ],
     no_classification_identified_by: [
       {
         type: "Name",
-        content: "Young Woman Picking Fruit",
-      },
+        content: "Young Woman Picking Fruit"
+      }
     ],
     classified_by: [
       {
@@ -155,11 +155,11 @@ describe("classifiedAs", () => {
           {
             id: "http://vocab.getty.edu/aat/300404670",
             _label: "preferred terms",
-            type: "Type",
-          },
-        ],
-      },
-    ],
+            type: "Type"
+          }
+        ]
+      }
+    ]
   };
 
   test("classifiedBy checks the other classification field", () => {
@@ -284,10 +284,10 @@ describe("getValueByClassification", () => {
         content: "Rembrandt van Rijn",
         classified_as: [
           {
-            id: "http://vocab.getty.edu/aat/300404670",
-          },
-        ],
-      },
+            id: "http://vocab.getty.edu/aat/300404670"
+          }
+        ]
+      }
     };
     expect(
       getValueByClassification(object.identified_by, aat.PREFERRED_TERM)
@@ -300,15 +300,15 @@ describe("getValueByClassification", () => {
           content: "Rembrandt van Rijn",
           classified_as: [
             {
-              id: "http://vocab.getty.edu/aat/300404670",
-            },
-          ],
+              id: "http://vocab.getty.edu/aat/300404670"
+            }
+          ]
         },
         {
           content: "Hilma af Klint",
-          classified_as: [{ id: "http://local-thesaurus/primary-name" }],
-        },
-      ],
+          classified_as: [{ id: "http://local-thesaurus/primary-name" }]
+        }
+      ]
     };
     expect(
       getValuesByClassification(
@@ -325,15 +325,15 @@ describe("getValueByClassification", () => {
           content: "Rembrandt van Rijn",
           classified_as: [
             {
-              id: "http://vocab.getty.edu/aat/300404670",
-            },
-          ],
+              id: "http://vocab.getty.edu/aat/300404670"
+            }
+          ]
         },
         {
           content: "Hilma af Klint",
-          classified_as: [{ id: "http://local-thesaurus/primary-name" }],
-        },
-      ],
+          classified_as: [{ id: "http://local-thesaurus/primary-name" }]
+        }
+      ]
     };
     expect(
       getValuesByClassification(
@@ -350,10 +350,10 @@ describe("getValueByClassification", () => {
         value: 10,
         classified_as: [
           {
-            id: "http://vocab.getty.edu/aat/300404670",
-          },
-        ],
-      },
+            id: "http://vocab.getty.edu/aat/300404670"
+          }
+        ]
+      }
     };
     expect(
       getValueByClassification(object.identified_by, aat.PREFERRED_TERM)
@@ -369,15 +369,15 @@ describe("getValueByClassification", () => {
           {
             id: "http://vocab.getty.edu/aat/300010269",
             type: "Type",
-            _label: "Sequence Position",
-          },
+            _label: "Sequence Position"
+          }
         ],
         unit: {
           id: "http://vocab.getty.edu/aat/300055665",
           type: "MeasurementUnit",
-          _label: "numbers",
-        },
-      },
+          _label: "numbers"
+        }
+      }
     ];
 
     expect(getValueByClassification(list, aat.SEQUENCE_POSITION)).toEqual(16);
@@ -389,18 +389,18 @@ describe("getValueByClassification", () => {
           {
             _label: "camera bearing",
             id: "https://data.getty.edu/local/thesaurus/camera-bearing",
-            type: "Type",
-          },
+            type: "Type"
+          }
         ],
         id: "https://data.getty.edu/research/collections/object/946d57fa-9318-4ac8-829d-2b81eb44db54/tile/d41a1d1c-4d74-4eea-83b3-048971a18674/node/ad36af84-a04c-11ea-bfdd-0a6344088a1e",
         type: "Dimension",
         unit: {
           _label: "degrees",
           id: "https://data.getty.edu/local/thesaurus/angle",
-          type: "MeasurementUnit",
+          type: "MeasurementUnit"
         },
-        value: 0,
-      },
+        value: 0
+      }
     ];
 
     expect(
@@ -423,10 +423,10 @@ describe("getValueByClassification", () => {
         _label: "Rembrandt van Rijn",
         classified_as: [
           {
-            id: "not_preferred",
-          },
-        ],
-      },
+            id: "not_preferred"
+          }
+        ]
+      }
     };
     expect(
       getValueByClassification(object.identified_by, aat.PREFERRED_TERM)
@@ -464,8 +464,8 @@ describe("get assigned", () => {
       {
         _label: "Unknown",
         id: "https://data.getty.edu/museum/collection/person/25936a78-da08-44b5-b237-9bed6da06204",
-        type: "Person",
-      },
+        type: "Person"
+      }
     ]);
   });
 });
@@ -533,12 +533,12 @@ describe("tests getClassifiedAsWithClassification", () => {
           {
             _label: "local clearance level",
             id: "https://data.getty.edu/local/thesaurus/clearance-level",
-            type: "Type",
-          },
+            type: "Type"
+          }
         ],
         id: "https://data.getty.edu/local/thesaurus/clearance/download",
-        type: "Type",
-      },
+        type: "Type"
+      }
     ];
     expect(
       helpers.getClassifiedAsWithClassification(
@@ -555,12 +555,12 @@ describe("tests getClassifiedAsWithClassification", () => {
           {
             _label: "local clearance level",
             id: "https://data.getty.edu/local/thesaurus/clearance-level",
-            type: "Type",
-          },
+            type: "Type"
+          }
         ],
         id: "https://data.getty.edu/local/thesaurus/clearance/download",
-        type: "Type",
-      },
+        type: "Type"
+      }
     ];
     let resourceObject = JSON.parse(JSON.stringify(stagBeetle.subject_to[0]));
     // change all classifications to use classified_by instead of classified_as
@@ -595,7 +595,7 @@ describe("tests resourceByClassifications", () => {
     expect(
       helpers.getClassified(titan.referred_to_by, [
         "http://vocab.getty.edu/aat/300435430",
-        "http://vocab.getty.edu/aat/300418049",
+        "http://vocab.getty.edu/aat/300418049"
       ])
     ).toEqual([
       {
@@ -604,18 +604,18 @@ describe("tests resourceByClassifications", () => {
           {
             _label: "Dimensions Description",
             id: "http://vocab.getty.edu/aat/300435430",
-            type: "Type",
+            type: "Type"
           },
           {
             _label: "Brief Text",
             id: "http://vocab.getty.edu/aat/300418049",
-            type: "Type",
-          },
+            type: "Type"
+          }
         ],
         content: "40.6 × 24.1 cm (16 × 9 1/2 in.)",
         id: "https://data.getty.edu/museum/collection/object/dff75e58-f8b9-4507-8ab7-5d948451dea7/dimensions/790c8915-292e-4825-af8b-629dbfb59f8b",
-        type: "LinguisticObject",
-      },
+        type: "LinguisticObject"
+      }
     ]);
   });
   it("gets the expected resource with the OR operator", () => {
@@ -624,7 +624,7 @@ describe("tests resourceByClassifications", () => {
         titan.referred_to_by,
         [
           "http://vocab.getty.edu/aat/300435430",
-          "http://vocab.getty.edu/aat/300418049",
+          "http://vocab.getty.edu/aat/300418049"
         ],
         { operator: "OR" }
       ).length
@@ -636,7 +636,7 @@ describe("tests resourceByClassifications", () => {
         titan.referred_to_by,
         [
           "http://vocab.getty.edu/aat/300435430",
-          "http://vocab.getty.edu/aat/300418049",
+          "http://vocab.getty.edu/aat/300418049"
         ],
         { operator: "OR" }
       )
@@ -647,14 +647,14 @@ describe("tests resourceByClassifications", () => {
       "40.6 × 24.1 cm (16 × 9 1/2 in.)",
       "Black and white chalk (recto); black chalk (verso) on blue paper",
       "Drawing",
-      "No Copyright - United States",
+      "No Copyright - United States"
     ]);
   });
   it("returns an empty array if no objects match AND", () => {
     expect(
       helpers.getClassified(titan.identified_by, [
         "http://vocab.getty.edu/aat/300435430",
-        "http://vocab.getty.edu/aat/300404670",
+        "http://vocab.getty.edu/aat/300404670"
       ])
     ).toEqual([]);
   });
@@ -702,9 +702,9 @@ describe("tests getValuesByClassification", () => {
     let mockValuesArray = [
       {
         classified_as: [{ id: "http://vocab.getty.edu/aat/300418049" }],
-        content: "test",
+        content: "test"
       },
-      { classified_as: [{ id: "http://vocab.getty.edu/aat/300418049" }] },
+      { classified_as: [{ id: "http://vocab.getty.edu/aat/300418049" }] }
     ];
     expect(
       helpers.getValuesByClassification(
@@ -748,21 +748,21 @@ describe("removeDuplicatesById", () => {
       {
         id: "urn:uuid:1475464c-752a-46b9-bfbe-0ab93a7ee921",
         type: "Group",
-        _label: "Grand Central Art Galleries",
+        _label: "Grand Central Art Galleries"
       },
       {
         id: "urn:uuid:1475464c-752a-46b9-bfbe-0ab93a7ee921",
         type: "Group",
-        _label: "Grand Central Art Galleries",
-      },
+        _label: "Grand Central Art Galleries"
+      }
     ];
 
     expect(helpers.removeDuplicatesById(sellers)).toEqual([
       {
         id: "urn:uuid:1475464c-752a-46b9-bfbe-0ab93a7ee921",
         type: "Group",
-        _label: "Grand Central Art Galleries",
-      },
+        _label: "Grand Central Art Galleries"
+      }
     ]);
   });
 });

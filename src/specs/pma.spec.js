@@ -1,4 +1,3 @@
-import * as basicHelpers from "../helpers/BasicHelpers";
 import * as helpers from "../helpers/LinkedArtHelpers";
 import * as objectHelpers from "../helpers/ObjectHelpers";
 import photo from "../data/mocks/pma-49280.json";
@@ -15,8 +14,8 @@ describe("tests the PMA O'Keeffe record", () => {
       {
         _label: "O'Keeffe, Georgia",
         id: "http://vocab.getty.edu/ulan/500018666",
-        type: "Actor",
-      },
+        type: "Actor"
+      }
     ]);
   });
   it("gets the creation date", () => {
@@ -24,8 +23,8 @@ describe("tests the PMA O'Keeffe record", () => {
       {
         _label: "1927",
         id: "https://data.philamuseum.org/work/49280/production/timespan",
-        type: "TimeSpan",
-      },
+        type: "TimeSpan"
+      }
     ]);
   });
   it("gets the dimensions statement", () => {
@@ -34,7 +33,7 @@ describe("tests the PMA O'Keeffe record", () => {
   it("gets the material statement(s)", () => {
     expect(
       objectHelpers.getMaterialStatements(photo, {
-        requestedClassifications: "http://vocab.getty.edu/aat/300010358",
+        requestedClassifications: "http://vocab.getty.edu/aat/300010358"
       })
     ).toEqual(["Oil on canvas"]);
   });
@@ -49,7 +48,7 @@ describe("tests the PMA O'Keeffe record", () => {
   });
   it("gets the digital image", () => {
     expect(objectHelpers.getDigitalImages(photo)).toEqual([
-      "https://philamuseum.org/images/cad/zoomers/1944-95-4.jpg",
+      "https://philamuseum.org/images/cad/zoomers/1944-95-4.jpg"
     ]);
   });
   it("gets the culture", () => {
@@ -60,7 +59,7 @@ describe("tests the PMA O'Keeffe record", () => {
   });
   it("gets the acknowledgements", () => {
     expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([
-      "Gift of Dr. Herman Lorber, 1944",
+      "Gift of Dr. Herman Lorber, 1944"
     ]);
   });
 });

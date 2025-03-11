@@ -14,8 +14,8 @@ describe("tests the VAM O'Keeffe record", () => {
       {
         id: "https://data.vam.ac.uk/Actor/0",
         label: "photographer",
-        type: "Actor",
-      },
+        type: "Actor"
+      }
     ]);
   });
   it("gets the creation date", () => {
@@ -36,7 +36,7 @@ describe("tests the VAM O'Keeffe record", () => {
   it("gets the digital image", () => {
     expect(objectHelpers.getDigitalImages(photo)).toEqual([
       "http://media.vam.ac.uk/media/thira/collection_images/2006BB/2006BB4563.jpg",
-      "http://media.vam.ac.uk/media/thira/collection_images/2006AF/2006AF5252.jpg",
+      "http://media.vam.ac.uk/media/thira/collection_images/2006AF/2006AF5252.jpg"
     ]);
   });
   it("gets the culture", () => {
@@ -44,7 +44,7 @@ describe("tests the VAM O'Keeffe record", () => {
   });
   it("gets the acknowledgements", () => {
     expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([
-      "Gift of the Georgia O'Keeffe Foundation",
+      "Gift of the Georgia O'Keeffe Foundation"
     ]);
   });
   it("gets the descriptions", () => {
@@ -59,7 +59,7 @@ describe("tests the VAM O'Keeffe record", () => {
   it("gets the material statement(s)", () => {
     expect(
       objectHelpers.getMaterialStatements(photo, {
-        requestedClassifications: "http://vocab.getty.edu/aat/300010358",
+        requestedClassifications: "http://vocab.getty.edu/aat/300010358"
       })
     ).toEqual(["Gelatin-silver print"]);
   });

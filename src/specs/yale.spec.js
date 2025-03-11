@@ -8,7 +8,7 @@ describe("tests the yale record", () => {
     expect(
       helpers.getPrimaryName(photo, {
         requestedClassifications:
-          "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
+          "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8"
       })
     ).toEqual("Torosaurus latus");
   });
@@ -16,14 +16,14 @@ describe("tests the yale record", () => {
     expect(
       objectHelpers.getAccessionNumbers(photo, {
         requestedClassifications:
-          "https://lux-front-tst.collections.yale.edu/data/concept/5020b403-c0cd-400e-b9f9-63aae5f360af",
+          "https://lux-front-tst.collections.yale.edu/data/concept/5020b403-c0cd-400e-b9f9-63aae5f360af"
       })
     ).toEqual([
       "VP.001830",
       "YPM VP 001830",
       "ACCNARRAY.3469|3809.2",
       "Skull #19",
-      "ypm:ecatalogue:835577",
+      "ypm:ecatalogue:835577"
     ]);
   });
   it("gets the person who found it", () => {
@@ -39,31 +39,31 @@ describe("tests the yale record", () => {
               {
                 _label: "Primary Name",
                 id: "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
-                type: "Type",
-              },
+                type: "Type"
+              }
             ],
             content: "John Bell Hatcher",
             language: [
               {
                 _label: "French",
                 id: "https://lux-front-tst.collections.yale.edu/data/concept/bd559a50-38cd-43a4-94da-b54ae3dec0bb",
-                type: "Language",
+                type: "Language"
               },
               {
                 _label: "English",
                 id: "https://lux-front-tst.collections.yale.edu/data/concept/d735d432-1cdd-460d-ac94-1999bde22f68",
-                type: "Language",
+                type: "Language"
               },
               {
                 _label: "Portuguese",
                 id: "https://lux-front-tst.collections.yale.edu/data/concept/aa47a3fe-ceaf-410d-b8d2-8f4a5ed22a18",
-                type: "Language",
+                type: "Language"
               },
               {
                 _label: "Dutch",
                 id: "https://lux-front-tst.collections.yale.edu/data/concept/3bd83627-fddd-4167-ba2f-b741f2297bb5",
-                type: "Language",
-              },
+                type: "Language"
+              }
             ],
             part: [
               {
@@ -71,57 +71,57 @@ describe("tests the yale record", () => {
                   {
                     _label: "First Name",
                     id: "https://lux-front-tst.collections.yale.edu/data/concept/ef2b8dd3-00c6-440b-bc02-b3cdb4d3e721",
-                    type: "Type",
-                  },
+                    type: "Type"
+                  }
                 ],
                 content: "John",
-                type: "Name",
+                type: "Name"
               },
               {
                 classified_as: [
                   {
                     _label: "Middle Name",
                     id: "https://lux-front-tst.collections.yale.edu/data/concept/f557f720-8e7c-47f3-89d5-390ce740a3a5",
-                    type: "Type",
-                  },
+                    type: "Type"
+                  }
                 ],
                 content: "Bell",
-                type: "Name",
+                type: "Name"
               },
               {
                 classified_as: [
                   {
                     _label: "Last Name",
                     id: "https://lux-front-tst.collections.yale.edu/data/concept/a50a5ee1-3852-4077-b592-891bbd258236",
-                    type: "Type",
-                  },
+                    type: "Type"
+                  }
                 ],
                 content: "Hatcher",
-                type: "Name",
-              },
+                type: "Name"
+              }
             ],
-            type: "Name",
+            type: "Name"
           },
           {
             classified_as: [
               {
                 _label: "Primary Name",
                 id: "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
-                type: "Type",
-              },
+                type: "Type"
+              }
             ],
             content: "John B. Hatcher",
             language: [
               {
                 _label: "German",
                 id: "https://lux-front-tst.collections.yale.edu/data/concept/22641a9b-e7f3-4b18-985b-b0ea6b257584",
-                type: "Language",
-              },
+                type: "Language"
+              }
             ],
-            type: "Name",
-          },
+            type: "Name"
+          }
         ],
-        type: "Person",
+        type: "Person"
       },
       {
         _label: "Collector",
@@ -132,15 +132,15 @@ describe("tests the yale record", () => {
               {
                 _label: "Primary Name",
                 id: "https://lux-front-tst.collections.yale.edu/data/concept/04468525-e6f3-4aae-9d04-a1cca6b4a2d8",
-                type: "Type",
-              },
+                type: "Type"
+              }
             ],
             content: "Yale Hatcher 1891 Cretaceous Expedition",
-            type: "Name",
-          },
+            type: "Name"
+          }
         ],
-        type: "Group",
-      },
+        type: "Group"
+      }
     ]);
   });
   it("gets the creation date", () => {
@@ -158,10 +158,10 @@ describe("tests the yale record", () => {
         identified_by: [
           {
             content: "1891",
-            type: "Name",
-          },
-        ],
-      },
+            type: "Name"
+          }
+        ]
+      }
     ]);
   });
 
@@ -178,7 +178,7 @@ describe("tests the yale record", () => {
     expect(
       objectHelpers.getDigitalImages(photo, {
         requestedClassifications:
-          "https://lux-front-tst.collections.yale.edu/data/concept/3a2ed981-70a1-4d7c-a315-b364d4dfc449",
+          "https://lux-front-tst.collections.yale.edu/data/concept/3a2ed981-70a1-4d7c-a315-b364d4dfc449"
       })
     ).toEqual([]);
   });
@@ -186,14 +186,14 @@ describe("tests the yale record", () => {
     expect(
       helpers.getDescriptions(photo, {
         requestedClassifications:
-          "https://lux-front-tst.collections.yale.edu/data/concept/30267c5d-c887-44e4-ac17-3d95f752df6b",
+          "https://lux-front-tst.collections.yale.edu/data/concept/30267c5d-c887-44e4-ac17-3d95f752df6b"
       })
     ).toEqual([
       "Preservation Notes: mounted",
       "Anatomical Notes: skull; femur",
       "Other Attributes: Stratigraphy = Period:Cretaceous, Epoch:Late Cretaceous, Formation:Lance Fm",
       "Identification Notes: Det. Marsh, O. C., 1891. Marsh, Othniel C. 1891. Notice of new vertebrate fossils. American Journal of Science. (3) xlii: 265-269. [p. 266; table p. 266.]",
-      "Other Identifications: Triceratops, Torosaurus",
+      "Other Identifications: Triceratops, Torosaurus"
     ]);
   });
 });

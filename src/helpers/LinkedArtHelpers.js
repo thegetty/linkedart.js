@@ -10,7 +10,7 @@ import { doesObjectLanguageMatch } from "./LanguageHelpers";
 import {
   normalizeAatId,
   normalizeFieldToArray,
-  normalizeFieldWithParts,
+  normalizeFieldWithParts
 } from "./BasicHelpers";
 import aat from "../data/aat.json";
 import {
@@ -26,7 +26,7 @@ import {
   ASSIGNED_PROPERTY,
   ASSIGNED,
   AND,
-  OR,
+  OR
 } from "../data/constants.json";
 
 /**
@@ -60,7 +60,7 @@ export function getClassifiedAs(
     classificationField: CLASSIFIED_AS,
     language,
     languageOptions,
-    operator,
+    operator
   });
 }
 
@@ -94,7 +94,7 @@ export function getClassifiedBy(
     classificationField: CLASSIFIED_BY,
     language,
     languageOptions,
-    operator,
+    operator
   });
 }
 
@@ -262,13 +262,13 @@ export function getPrimaryName(
   {
     requestedClassifications = aat.PREFERRED_TERM,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   return getPrimaryNames(submittedResource, {
     requestedClassifications,
     language,
-    languageOptions,
+    languageOptions
   })[0];
 }
 
@@ -295,7 +295,7 @@ export function getPrimaryNames(
   {
     requestedClassifications = aat.PREFERRED_TERM,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   if (submittedResource == undefined) {
@@ -305,7 +305,7 @@ export function getPrimaryNames(
   let names = identified_by.filter((item) => item.type == NAME);
   let name = getValuesByClassification(names, requestedClassifications, {
     language,
-    languageOptions,
+    languageOptions
   });
 
   if (name.length > 0) {
@@ -367,7 +367,7 @@ export function getClassified(
     classificationField = CLASSIFIED_AS,
     language = undefined,
     languageOptions = {},
-    operator = AND,
+    operator = AND
   } = {}
 ) {
   let results = [];
@@ -441,7 +441,7 @@ export function getValueByClassification(
   let results = getClassifiedAs(submittedResource, requestedClassifications, {
     language,
     languageOptions,
-    operator,
+    operator
   });
   if (results.length) {
     let result = getValueOrContent(results[0]);
@@ -479,7 +479,7 @@ export function getValuesByClassification(
   let results = getClassifiedAs(submittedResource, requestedClassifications, {
     language,
     languageOptions,
-    operator,
+    operator
   });
   if (results.length) {
     let values = [];
@@ -839,7 +839,7 @@ export function _getObjectsAndClassificationsWithNestedClass(
       classificationField,
       language,
       languageOptions,
-      operator,
+      operator
     });
     returnObject.classifications =
       returnObject.classifications.concat(classifications);
@@ -924,7 +924,7 @@ export function getDescriptions(
   {
     requestedClassifications = aat.DESCRIPTION,
     language,
-    languageOptions = {},
+    languageOptions = {}
   } = {}
 ) {
   return getFieldValuesByClassifications(

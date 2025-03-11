@@ -75,27 +75,27 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
 
   it("gets the correct acknowledgements if present", () => {
     expect(objectHelpers.getAcknowledgementStatements(photo)).toEqual([
-      "Gift of The Georgia O'Keeffe Foundation      ",
+      "Gift of The Georgia O'Keeffe Foundation      "
     ]);
   });
 
   it("gets the correct rights statements if present", () => {
     expect(objectHelpers.getRightsStatements(photo)).toEqual([
       "Gift",
-      "© Georgia O'Keeffe Museum",
+      "© Georgia O'Keeffe Museum"
     ]);
   });
 
   it("gets the correct descriptions if present", () => {
     expect(helpers.getDescriptions(photo)).toEqual([
-      "A textured adobe wall with a kiva log ladder leaning against O'Keeffe's studio wall casting a shadow.",
+      "A textured adobe wall with a kiva log ladder leaning against O'Keeffe's studio wall casting a shadow."
     ]);
   });
 
   it("gets the material statement(s) if present", () => {
     expect(
       objectHelpers.getMaterialStatements(photo, {
-        requestedClassifications: "aat:300010358",
+        requestedClassifications: "aat:300010358"
       })
     ).toEqual(["Gelatin silver print"]);
   });
@@ -107,8 +107,8 @@ describe("tests Basic and LinkedArt helpers using O'Keeffe data", () => {
         end_of_the_end: "1969-12-31T00:00:00",
         id: "http://data.okeeffemuseum.org/object/6401/production/timespan/0",
         label: "ca. 1964",
-        type: "TimeSpan",
-      },
+        type: "TimeSpan"
+      }
     ]);
   });
 

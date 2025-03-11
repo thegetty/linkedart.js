@@ -58,7 +58,7 @@ describe("normalizeFieldToArray", () => {
   });
   it("tests check normalizeFieldToArray with a number", () => {
     expect(basicHelpers.normalizeFieldToArray({ test: 42 }, "test")).toEqual([
-      42,
+      42
     ]);
   });
   it("tests check normalizeFieldToArray with an object", () => {
