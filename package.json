@@ -1,6 +1,6 @@
 {
   "name": "@thegetty/linkedart.js",
-  "version": "0.21.0",
+  "version": "0.21.1-0",
   "keywords": [
     "LinkedArt",
     "Linked Art",
@@ -19,8 +19,17 @@
     "prepublishOnly": "vite build",
     "build:jsdoc": "node node_modules/markdown-toc/cli.js README.md --maxdepth=3 -i; node node_modules/jsdoc/jsdoc.js -c jsdoc-config.json ; cp src/docs/style.css jsdoc/"
   },
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/linkedart.js.umd.cjs",
+  "module": "dist/linkedart.js.js ",
+  "exports": {
+    "import": "./dist/linkedart.js.js",
+    "require": "./dist/linkedart.js.umd.cjs"
+  },
   "devDependencies": {
     "eslint": "^9.2.0",
     "better-docs": "^2.7.2",
