@@ -9,26 +9,26 @@ const defaultObj = {
     {
       id: "http://vocab.getty.edu/aat/300417193",
       type: "Type",
-      _label: "Titles (General, Names)",
+      _label: "Titles (General, Names)"
     },
     {
       id: "http://vocab.getty.edu/aat/300417227",
       type: "Type",
-      _label: "Alternate Title",
+      _label: "Alternate Title"
     },
     {
       id: "https://data.getty.edu/museum/ontology/linked-data/tms/object/titles/group-title",
       type: "Type",
-      _label: "Group Title",
-    },
+      _label: "Group Title"
+    }
   ],
   language: [
     {
       id: "http://vocab.getty.edu/aat/300389311",
       type: "Language",
-      _label: "Spanish (language)",
-    },
-  ],
+      _label: "Spanish (language)"
+    }
+  ]
 };
 
 describe("Language Helpers: normalize language", () => {
@@ -67,7 +67,7 @@ describe("Language Helpers: normalize language", () => {
   it("translates English (with custom mapping)", () => {
     expect(
       languageHelpers.normalizeLanguageId("english", {
-        lookupMap: { english: "http://vocab.getty.edu/aat/300388277" },
+        lookupMap: { english: "http://vocab.getty.edu/aat/300388277" }
       })
     ).toEqual("http://vocab.getty.edu/aat/300388277");
   });
@@ -84,13 +84,13 @@ describe("Language Helpers: get language id", () => {
   });
   it("handles nulls", () => {
     expect(languageHelpers.getLanguageId(undefined)).toEqual([
-      languageHelpers.NO_LANGUAGE,
+      languageHelpers.NO_LANGUAGE
     ]);
   });
 
   it("handles a single language", () => {
     expect(languageHelpers.getLanguageId(obj)).toEqual([
-      "http://vocab.getty.edu/aat/300389311",
+      "http://vocab.getty.edu/aat/300389311"
     ]);
   });
 
@@ -98,11 +98,11 @@ describe("Language Helpers: get language id", () => {
     obj.language.push({
       id: "en",
       type: "Language",
-      _label: "English (language)",
+      _label: "English (language)"
     });
     expect(languageHelpers.getLanguageId(obj)).toEqual([
       "http://vocab.getty.edu/aat/300389311",
-      "http://vocab.getty.edu/aat/300388277",
+      "http://vocab.getty.edu/aat/300388277"
     ]);
   });
 
@@ -110,15 +110,15 @@ describe("Language Helpers: get language id", () => {
     obj.language.push({
       id: "english",
       type: "Language",
-      _label: "English (language)",
+      _label: "English (language)"
     });
     expect(
       languageHelpers.getLanguageId(obj, {
-        lookupMap: { english: "http://vocab.getty.edu/aat/300388277" },
+        lookupMap: { english: "http://vocab.getty.edu/aat/300388277" }
       })
     ).toEqual([
       "http://vocab.getty.edu/aat/300389311",
-      "http://vocab.getty.edu/aat/300388277",
+      "http://vocab.getty.edu/aat/300388277"
     ]);
   });
 });

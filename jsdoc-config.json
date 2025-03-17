@@ -3,9 +3,14 @@
     "allowUnknownTags": true
   },
   "source": {
-    "include": ["src/helpers/"]
+    "include": [
+      "src/helpers/"
+    ]
   },
-  "plugins": ["plugins/markdown", "node_modules/better-docs/category"],
+  "plugins": [
+    "plugins/markdown",
+    "node_modules/better-docs/category"
+  ],
   "templates": {
     "cleverLinks": false,
     "monospaceLinks": false,
@@ -15,7 +20,7 @@
     },
     "better-docs": {
       "name": "LinkedArt.js",
-      "title": "LinkedArt.js", // HTML title
+      "title": "LinkedArt.js",
       "css": "style.css",
       "hideGenerator": true,
       "navLinks": [

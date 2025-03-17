@@ -15,12 +15,12 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
     expect(creators.length).toEqual(1);
     expect({ label: creators[0]._label, id: creators[0].id }).toEqual({
       id: "http://nomisma.org/id/philip_iii_arrhidaeus",
-      label: "Philip III Arrhidaeus",
+      label: "Philip III Arrhidaeus"
     });
   });
   it("gets the accession number of the object", () => {
     expect(objectHelpers.getAccessionNumbers(gold_coin)).toEqual([
-      "1944.100.51606",
+      "1944.100.51606"
     ]);
   });
 
@@ -37,13 +37,13 @@ describe("tests Basic and LinkedArt helpers using Nomisma data", () => {
   it("gets the iiif image of one side", () => {
     const part = basicHelpers.normalizeFieldToArray(gold_coin, "part")[0];
     expect(objectHelpers.getDigitalImages(part)).toEqual([
-      "http://numismatics.org/collectionimages/19001949/1944/1944.100.51606.obv.width350.jpg",
+      "http://numismatics.org/collectionimages/19001949/1944/1944.100.51606.obv.width350.jpg"
     ]);
   });
   it("gets the description of one side", () => {
     const part = basicHelpers.normalizeFieldToArray(gold_coin, "part")[0];
     expect(helpers.getDescriptions(part)).toEqual([
-      "Head of Athena right wearing Corinthian helmet with crest",
+      "Head of Athena right wearing Corinthian helmet with crest"
     ]);
   });
   it("gets the iiif image of the object", () => {
