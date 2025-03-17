@@ -25,7 +25,7 @@
     "src"
   ],
   "main": "dist/linkedart.js.umd.cjs",
-  "module": "dist/linkedart.js.js ",
+  "module": "dist/linkedart.js.js",
   "exports": {
     "import": "./dist/linkedart.js.js",
     "require": "./dist/linkedart.js.umd.cjs"
