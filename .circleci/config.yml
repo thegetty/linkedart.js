@@ -13,7 +13,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:18.12.1
+      - image: cimg/node:24.11.1
     working_directory: ~/repo
     environment:
       CI: true
@@ -24,7 +24,7 @@ jobs:
       - run_tests
   deploy:
     docker:
-      - image: cimg/node:22.12.0
+      - image: cimg/node:24.11.1
     working_directory: ~/repo
     environment:
       CI: true
