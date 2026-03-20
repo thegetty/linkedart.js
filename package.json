@@ -31,8 +31,9 @@
     "require": "./dist/linkedart.js.umd.cjs"
   },
   "devDependencies": {
-    "eslint": "^9.2.0",
+    "@csstools/css-parser-algorithms": "^4.0.0",
     "better-docs": "^2.7.2",
+    "eslint": "^9.2.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-json": "^4.0.1",
     "eslint-plugin-prettier": "^5.2.3",
