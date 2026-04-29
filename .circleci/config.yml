@@ -34,7 +34,11 @@ jobs:
       - build_output
       - getty-devops/sync-with-s3:
           local-path: "jsdoc"
-
+      - run:
+          name: Publish to npm with OIDC
+          command: |
+            export NPM_ID_TOKEN=$(circleci run oidc get --claims '{"aud": "npm:registry.npmjs.org"}')
+            npm publish
 workflows:
   version: 2
   build-deploy:

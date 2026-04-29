@@ -18,6 +18,10 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.21.3]
+
+- updated package deploy script and dependencies
+
 ## [0.21.2]
 
 ### Bumped
