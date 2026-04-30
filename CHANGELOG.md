@@ -20,7 +20,7 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 ## [0.21.3]
 
-- updated package deploy script and dependencies
+- updated package deploy script and dependencies.
 
 ## [0.21.2]
 
