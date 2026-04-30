@@ -24,7 +24,7 @@ jobs:
       - run_tests
   deploy:
     docker:
-      - image: cimg/node:24.11.1
+      - image: cimg/node:24.15
     working_directory: ~/repo
     environment:
       CI: true
