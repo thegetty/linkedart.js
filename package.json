@@ -44,7 +44,7 @@
     "markdown-toc": "^1.2.0",
     "prettier": "^3.5.1",
     "vite": "^6.1.1",
-    "vitest": "^3.0.6"
+    "vitest": "^4.1.0"
   },
   "repository": {
     "type": "git",
