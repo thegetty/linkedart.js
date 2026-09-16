@@ -42,7 +42,8 @@
     "sr": "http://vocab.getty.edu/aat/300389247",
     "sv": "http://vocab.getty.edu/aat/300389336",
     "tr": "http://vocab.getty.edu/aat/300389470",
-    "cy": "http://vocab.getty.edu/aat/300389555"
+    "cy": "http://vocab.getty.edu/aat/300389555",
+    "ty": "http://vocab.getty.edu/aat/300389346"
   },
   "ACCESSION_NUMBERS": "http://vocab.getty.edu/aat/300312355",
   "ACKNOWLEDGEMENT": "http://vocab.getty.edu/aat/300026687",
