@@ -18,6 +18,12 @@ Project versions conform to [Semantic Versioning](https://semver.org/)
 
 - `Removed`: for deprecated features removed in this release
 
+## [0.21.4]
+
+### Added
+
+- added support for Tahitian in ISO language code mapping.
+
 ## [0.21.3]
 
 - updated package deploy script and dependencies.
